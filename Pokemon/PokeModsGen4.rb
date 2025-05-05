@@ -15,19 +15,19 @@ PokeModifier.add(:TORTERRA)
 
 # CHIMCHAR
 PokeModifier.add(:CHIMCHAR)
-            .ability(2, :MAGICGUARD)
+            .ability(Reborn ? 1 : 2, :MAGICGUARD)
             .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE]])
 
 # MONFERNO
 PokeModifier.add(:MONFERNO)
             .type2(:ELECTRIC)
-            .ability(2, :MAGICGUARD)
+            .ability(Reborn ? 1 : 2, :MAGICGUARD)
             .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [42, :THUNDERBOLT], [55, :THUNDER]])
 
 # INFERNAPE
 PokeModifier.add(:INFERNAPE)
             .type2(:ELECTRIC)
-            .ability(2, :MAGICGUARD)
+            .ability(Reborn ? 1 : 2, :MAGICGUARD)
             .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [42, :THUNDERBOLT], [50, :WILDCHARGE], [55, :THUNDER]])
 
 # PIPLUP
@@ -85,7 +85,7 @@ PokeModifier.add(:ROSERADE)
 
 # ROSERADE-A
 PokeModifier.add(:ROSERADE, "Aevian")
-            .set_pokebilities(1)
+            .set_pokebilities(1) if Rejuv
 
 # RAMPARDOS
 PokeModifier.add(:RAMPARDOS)
@@ -122,11 +122,11 @@ PokeModifier.add(:FLOATZEL)
 
 # SHELLOS-A-EAST
 PokeModifier.add(:SHELLOS, "East Aevian")
-            .stats(48, 34, 0, 76, 0, 57)
+            .stats(48, 34, 0, 76, 0, 57) if Rejuv
 
 # GASTRODON-A-EAST
 PokeModifier.add(:GASTRODON, "East Aevian")
-            .stats(83, 39, 0, 118, 0, 92)
+            .stats(83, 39, 0, 118, 0, 92) if Rejuv
 
 # AMBIPOM
 PokeModifier.add(:AMBIPOM)
@@ -361,11 +361,11 @@ PokeModifier.add(:AZELF)
 
 # DIALGA-O
 PokeModifier.add(:DIALGA, "Origin")
-            .ability(2, :EARTHEATER)
+            .ability(2, :EARTHEATER) if Rejuv
 
 # PALKIA-O
 PokeModifier.add(:PALKIA, "Origin")
-            .ability(2, :MEGALAUNCHER)
+            .ability(2, :MEGALAUNCHER) if Rejuv
 
 # HEATRAN
 PokeModifier.add(:HEATRAN)

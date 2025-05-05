@@ -19,7 +19,7 @@ CrestBuilder.add(:PALOSSAND, "Grants innate abilities based on the form.")
               when 3 then next [:SNOWWARNING, :HEATPROOF]
               else next [:ROUGHSKIN, :SOLIDROCK]
               end
-            end
+            end if Rejuv
 
 CrestBuilder.add(:KOMALA, "0.8x damage dealt, grants Prankster.")
             .damage_mod { next 0.8 }

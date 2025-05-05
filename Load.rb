@@ -1,5 +1,9 @@
-require_relative "UniLib/StandardAPI"
+NESTED = true
+
+require_relative "#{NESTED ? "../" : ""}UniLib/StandardAPI"
 UniLib.set_aggressive_caching
+
+def UniLib.alt_balance_load(f) = UniLib.file_load "#{NESTED ? "AlternativeBalance" : ""}/#{f}"
 
 UniLib.include "PokemonOM"
 UniLib.include "ExtraMoveFlags"
@@ -9,65 +13,81 @@ UniLib.include "Battle"
 UniLib.include "Fixes"
 UniLib.include "Asset"
 
-UniLib.file_load "Abilities/Atebilities"
-UniLib.file_load "Abilities/Custom"
-UniLib.file_load "Abilities/Existing"
-UniLib.file_load "Abilities/Gen9"
+UniLib.alt_balance_load "Abilities/Atebilities"
+UniLib.alt_balance_load "Abilities/Custom"
+UniLib.alt_balance_load "Abilities/Existing"
+UniLib.alt_balance_load "Abilities/Gen9"
 
-UniLib.file_load "Pokemon/PokeModsGen1"
-UniLib.file_load "Pokemon/PokeModsGen2"
-UniLib.file_load "Pokemon/PokeModsGen3"
-UniLib.file_load "Pokemon/PokeModsGen4"
-UniLib.file_load "Pokemon/PokeModsGen5"
-UniLib.file_load "Pokemon/PokeModsGen6"
-UniLib.file_load "Pokemon/PokeModsGen7"
-UniLib.file_load "Pokemon/PokeModsGen8"
+UniLib.alt_balance_load "Pokemon/PokeModsGen1"
+UniLib.alt_balance_load "Pokemon/PokeModsGen2"
+UniLib.alt_balance_load "Pokemon/PokeModsGen3"
+UniLib.alt_balance_load "Pokemon/PokeModsGen4"
+UniLib.alt_balance_load "Pokemon/PokeModsGen5"
+UniLib.alt_balance_load "Pokemon/PokeModsGen6"
+UniLib.alt_balance_load "Pokemon/PokeModsGen7"
+UniLib.alt_balance_load("Pokemon/PokeModsGen8") if Rejuv
 
-UniLib.file_load "Items/Custom"
-UniLib.file_load "Items/Gen1Crests"
-UniLib.file_load "Items/Gen2Crests"
-UniLib.file_load "Items/Gen3Crests"
-UniLib.file_load "Items/Gen4Crests"
-UniLib.file_load "Items/Gen5Crests"
-UniLib.file_load "Items/Gen6Crests"
-UniLib.file_load "Items/Gen7Crests"
-UniLib.file_load "Items/Gen8Crests"
+UniLib.alt_balance_load "Items/Custom"
+UniLib.alt_balance_load "Items/Gen1Crests"
+UniLib.alt_balance_load "Items/Gen2Crests"
+UniLib.alt_balance_load "Items/Gen3Crests"
+UniLib.alt_balance_load "Items/Gen4Crests"
+UniLib.alt_balance_load "Items/Gen5Crests"
+UniLib.alt_balance_load "Items/Gen6Crests"
+UniLib.alt_balance_load "Items/Gen7Crests"
+UniLib.alt_balance_load("Items/Gen8Crests") if Rejuv
 
-UniLib.file_load "Maps/Battles"
-UniLib.file_load "Maps/Items"
-UniLib.file_load "Maps/Misc"
+UniLib.alt_balance_load "Battles/_Mechanics"
+UniLib.alt_balance_load "Battles/_EVSpreads"
 
-UniLib.file_load "Battles/_Mechanics"
-UniLib.file_load "Battles/_EVSpreads"
-TrainerModifier.with_defaults(boss: {iv: 31, ev: EVEN60}, sos: {iv: 31, ev: EVEN60}) {
-  UniLib.file_load "Battles/_Bosses"
-  UniLib.file_load "Battles/_BossesCustom"
-  UniLib.file_load "Battles/_Recurring"
-  UniLib.file_load "Battles/Virtual"
-  UniLib.file_load "Battles/EastGearen"
-  UniLib.file_load "Battles/Goldenwood"
-  UniLib.file_load "Battles/Route2"
-  UniLib.file_load "Battles/Amethyst"
-  UniLib.file_load "Battles/Sheridan"
-  UniLib.file_load "Battles/Route3"
-  UniLib.file_load "Battles/Goldenleaf"
-  UniLib.file_load "Battles/WispyTower"
-  UniLib.file_load "Battles/WispyRuins"
-  UniLib.file_load "Battles/Route4"
-  UniLib.file_load "Battles/Blacksteeple"
-  UniLib.file_load "Battles/TerajumaBeach"
-  UniLib.file_load "Battles/TerajumaJungle"
-  UniLib.file_load "Battles/MynoriSea"
-  UniLib.file_load "Battles/Route11"
-  UniLib.file_load "Battles/Evergreen"
-  UniLib.file_load "Battles/Route5"
-  UniLib.file_load "Battles/MountTerajuma"
-  UniLib.file_load "Battles/Helojak"
-  UniLib.file_load "Battles/Kakori"
-  UniLib.file_load "Battles/Aquamarine"
-  UniLib.file_load "Battles/Teila"
-  UniLib.file_load "Battles/Kristilline"
-  UniLib.file_load "Battles/GarufanSanctuary"
-  UniLib.file_load "Battles/Route6"
-  UniLib.file_load "Battles/ValorMountain"
-}
+if Rejuv
+
+  UniLib.alt_balance_load "Maps/Rejuv/Battles"
+  UniLib.alt_balance_load "Maps/Rejuv/Items"
+  UniLib.alt_balance_load "Maps/Rejuv/Misc"
+
+  TrainerModifier.with_defaults(boss: {iv: 31, ev: EVEN60}, sos: {iv: 31, ev: EVEN60}) {
+    UniLib.alt_balance_load "Battles/Rejuv/_Bosses"
+    UniLib.alt_balance_load "Battles/Rejuv/_BossesCustom"
+    UniLib.alt_balance_load "Battles/Rejuv/_Recurring"
+    UniLib.alt_balance_load "Battles/Rejuv/Virtual"
+    UniLib.alt_balance_load "Battles/Rejuv/EastGearen"
+    UniLib.alt_balance_load "Battles/Rejuv/Goldenwood"
+    UniLib.alt_balance_load "Battles/Rejuv/Route2"
+    UniLib.alt_balance_load "Battles/Rejuv/Amethyst"
+    UniLib.alt_balance_load "Battles/Rejuv/Sheridan"
+    UniLib.alt_balance_load "Battles/Rejuv/Route3"
+    UniLib.alt_balance_load "Battles/Rejuv/Goldenleaf"
+    UniLib.alt_balance_load "Battles/Rejuv/WispyTower"
+    UniLib.alt_balance_load "Battles/Rejuv/WispyRuins"
+    UniLib.alt_balance_load "Battles/Rejuv/Route4"
+    UniLib.alt_balance_load "Battles/Rejuv/Blacksteeple"
+    UniLib.alt_balance_load "Battles/Rejuv/TerajumaBeach"
+    UniLib.alt_balance_load "Battles/Rejuv/TerajumaJungle"
+    UniLib.alt_balance_load "Battles/Rejuv/MynoriSea"
+    UniLib.alt_balance_load "Battles/Rejuv/Route11"
+    UniLib.alt_balance_load "Battles/Rejuv/Evergreen"
+    UniLib.alt_balance_load "Battles/Rejuv/Route5"
+    UniLib.alt_balance_load "Battles/Rejuv/MountTerajuma"
+    UniLib.alt_balance_load "Battles/Rejuv/Helojak"
+    UniLib.alt_balance_load "Battles/Rejuv/Kakori"
+    UniLib.alt_balance_load "Battles/Rejuv/Aquamarine"
+    UniLib.alt_balance_load "Battles/Rejuv/Teila"
+    UniLib.alt_balance_load "Battles/Rejuv/Kristilline"
+    UniLib.alt_balance_load "Battles/Rejuv/GarufanSanctuary"
+    UniLib.alt_balance_load "Battles/Rejuv/Route6"
+    UniLib.alt_balance_load "Battles/Rejuv/ValorMountain"
+  }
+
+end
+
+if Reborn
+
+  UniLib.alt_balance_load "Maps/Reborn/Items"
+
+  TrainerModifier.with_defaults(boss: {iv: 31, ev: EVEN60}, sos: {iv: 31, ev: EVEN60}) {
+    UniLib.alt_balance_load "Battles/Reborn/Opal"
+    UniLib.alt_balance_load "Battles/Reborn/LowerPeridot"
+  }
+
+end

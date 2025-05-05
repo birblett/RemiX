@@ -9,7 +9,7 @@ UniLib.replace_in_method(:PokeBattle_AI, :protectcode, "if @attacker.ability == 
 
 UniLib.replace_in_method(:PokeBattle_AI, :protectcode, "miniscore*=8", "miniscore*=16")
 
-UniLib.insert_in_method(:PokeBattle_Move_20C, :pbType, :HEAD, "return attacker.type2.nil? ? attacker.type1 : attacker.type2")
+UniLib.insert_in_method(:PokeBattle_Move_20C, :pbType, :HEAD, "return attacker.type2.nil? ? attacker.type1 : attacker.type2") if Rejuv
 
 class PokeBattle_AI
 

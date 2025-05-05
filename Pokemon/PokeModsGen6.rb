@@ -154,7 +154,7 @@ PokeModifier.add(:GOODRA)
 
 # GOODRA-H
 PokeModifier.add(:GOODRA, "Hisuian")
-            .set_plates(:SPLASHPLATE)
+            .set_plates(:SPLASHPLATE) if Rejuv
 
 # KLEFKI
 PokeModifier.add(:KLEFKI)

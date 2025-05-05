@@ -31,4 +31,14 @@ module AltBalance
     TrainerModifier.with_defaults(**defaults, &block)
   end
 
+  def self.gym(badge, &block)
+    defaults =
+    case badge
+    when 0..6 then {trainer: {iv: 31, ev: EVEN40}, boss: {iv: 31, ev: EVEN40}, sos: {iv: 31, ev: EVEN40}}
+    when 6..10 then {trainer: {iv: 31, ev: EVEN60}, boss: {iv: 31, ev: EVEN60}, sos: {iv: 31, ev: EVEN60}}
+    else {trainer: {iv: 31, ev: EVEN80}, boss: {iv: 31, ev: EVEN80}, sos: {iv: 31, ev: EVEN80}}
+    end
+    TrainerModifier.with_defaults(**defaults, &block)
+  end
+
 end

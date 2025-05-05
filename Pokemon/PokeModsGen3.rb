@@ -150,7 +150,7 @@ PokeModifier.add(:ROSELIA)
 
 # ROSELIA-A
 PokeModifier.add(:ROSELIA, "Aevian")
-            .set_pokebilities(1)
+            .set_pokebilities(1) if Rejuv
 
 # GULPIN
 PokeModifier.add(:GULPIN)
@@ -233,7 +233,7 @@ PokeModifier.add(:LUNATONE)
 PokeModifier.add(:LUNATONE, "Lunatone Dominant Fusion")
             .type1(:GHOST)
             .level_moves([[40, :SHADOWBALL], [70, :MOONGEISTBEAM]])
-            .set_plates(:ICICLEPLATE)
+            .set_plates(:ICICLEPLATE) if Rejuv
 
 # SOLROCK
 PokeModifier.add(:SOLROCK)
@@ -243,7 +243,7 @@ PokeModifier.add(:SOLROCK)
 PokeModifier.add(:SOLROCK, "Solrock Dominant Fusion")
             .type1(:STEEL)
             .level_moves([[40, :IRONHEAD], [70, :SUNSTEELSTRIKE]])
-            .set_plates(:FLAMEPLATE)
+            .set_plates(:FLAMEPLATE) if Rejuv
 
 # LILEEP
 PokeModifier.add(:LILEEP)
@@ -275,7 +275,7 @@ PokeModifier.add(:MILOTIC)
 
 # MILOTIC-A
 PokeModifier.add(:MILOTIC, "Aevian")
-            .ability(0, :MARVELSCALE)
+            .ability(0, :MARVELSCALE) if Rejuv
 
 # KECLEON
 PokeModifier.add(:KECLEON)

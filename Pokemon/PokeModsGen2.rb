@@ -96,7 +96,7 @@ PokeModifier.add(:FLAAFFY)
 
 # FLAAFFY-A
 PokeModifier.add(:FLAAFFY, "Aevian")
-            .ability(2, :FLUFFY)
+            .ability(2, :FLUFFY) if Rejuv
 
 # AMPHAROS
 PokeModifier.add(:AMPHAROS)
@@ -108,7 +108,7 @@ PokeModifier.add(:AMPHAROS)
 
 # AMPHAROS-A
 PokeModifier.add(:AMPHAROS, "Aevian")
-            .ability(2, :FLUFFY)
+            .ability(2, :FLUFFY) if Rejuv
 
 # AMPHAROS-M
 PokeModifier.add(:AMPHAROS, "Mega")

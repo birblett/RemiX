@@ -13,7 +13,7 @@ CrestBuilder.add(:CLEFABLE, "When damage is taken, gain Laser Focus and increase
             .damage_taken_mod { |defender, _, _, _, _| next 0.75 if defender.hp == defender.totalhp }
 
 CrestBuilder.add(:ELECTRODE, "Damage increase the lower the health.", "Hisuian", "H. Electrode Crest")
-            .damage_mod { |pkmn, _, _, _, _| 1.6 - ((pkmn.hp.to_f - 1) / (pkmn.totalhp - 1)) * 0.6 }
+            .damage_mod { |pkmn, _, _, _, _| 1.6 - ((pkmn.hp.to_f - 1) / (pkmn.totalhp - 1)) * 0.6 } if Rejuv
 
 CrestBuilder.add(:HITMONLEE, "Accuracy decreased by flat 10%. Damage increased proportional to move inaccuracy.")
             .accuracy_mod do |attacker, _, base, acc, eva|

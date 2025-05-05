@@ -1,6 +1,6 @@
 CrestBuilder.add_existing(:TYPHCREST)
             .add_receiver(:TYPHLOSION)
-            .add_receiver(:TYPHLOSION, "Hisuian")
+            .add_receiver(:TYPHLOSION, "Hisuian") if Rejuv
 
 CrestBuilder.add(:LANTURN, "Neutral to Ground. Recover HP at the end of each turn, with additional recovery if attacked.")
             .force_resistance(:GROUND, 4)

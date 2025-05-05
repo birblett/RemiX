@@ -21,9 +21,20 @@ CrestBuilder.add(:THROH, "Throwing moves reduce attack and defense.")
 CrestBuilder.add(:SAWK, "Grants Ambidextrous and Tinted Lens.")
             .ability_provider { [:AMBIDEXTROUS, :TINTEDLENS] }
 
-CrestBuilder.add_existing(:DARMCREST)
-            .add_receiver(:DARMANITAN, "Galarian Standard Mode")
-            .form_change { |pkmn, _| next 3 if pkmn.species == :DARMANITAN and pkmn.form == 2 }
+CrestBuilder.add(:SIMISAGE, "Gain non-weak Fire-type, Normal moves become Fire-type, offenses boosted by 1.2x.")
+            .secondary_no_weakness(:FIRE)
+            .ability_provider { :COMBUSTION }
+            .damage_mod { next 1.2 } if Reborn
+
+if Reborn
+  CrestBuilder.add(:DARMANITAN, "Automatically changes form.")
+              .add_receiver(:DARMANITAN, "Galarian Standard Mode")
+              .form_change { |pkmn, _| next pkmn.form + 1 if pkmn.species == :DARMANITAN and pkmn.form & 1 == 0 }
+else
+  CrestBuilder.add_existing(:DARMCREST)
+              .add_receiver(:DARMANITAN, "Galarian Standard Mode")
+              .form_change { |pkmn, _| next 3 if pkmn.species == :DARMANITAN and pkmn.form == 2 }
+end
 
 CrestBuilder.add(:KROOKODILE, "Attacks change secondary type; grants Open Wounds.")
             .on_move_attempt { |pkmn, move| UniLib.display_if_visible(pkmn.battle, _INTL("{1} had its secondary type changed to {2}!", pkmn.pbThis, (pkmn.type2 = move.type).capitalize)) if move.type != pkmn.type1 and move.type != pkmn.type2 }

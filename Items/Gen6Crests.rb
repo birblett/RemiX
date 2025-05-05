@@ -16,7 +16,7 @@ CrestBuilder.add(:CLAWITZER, "Secondary type matches Mimicry type.")
 CrestBuilder.add(:AVALUGG, "Grants Stamina and Filter.")
             .add_receiver(:AVALUGG, "Hisuian")
             .ability_provider { [:STAMINA, :FILTER] }
-            .role_provider { :TANK }
+            .role_provider { :TANK } if Rejuv
 
 CrestBuilder.add(:NOIVERN, "First two moves match the user's type.")
             .move_type_override do |attacker, move, _|

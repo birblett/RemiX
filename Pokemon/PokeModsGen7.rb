@@ -1,5 +1,5 @@
 # ROWLET
-PokeModifier.add(:ROWLET)
+PokeModifier.add(:ROWLET).type2(:GHOST)
             .ability(2, :CURSEDBODY)
 
 # DARTRIX
@@ -112,7 +112,7 @@ PokeModifier.add(:GOLISOPOD)
 
 # GOLISOPOD-A
 PokeModifier.add(:GOLISOPOD, "Aevian")
-            .set_pokebilities
+            .set_pokebilities if Rejuv
 
 # PYUKUMUKU
 PokeModifier.add(:PYUKUMUKU)

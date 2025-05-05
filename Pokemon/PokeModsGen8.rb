@@ -78,11 +78,11 @@ PokeModifier.add(:BARRASKEWDA)
 # TOXTRICITY-A
 PokeModifier.add(:TOXTRICITY, "Aevian")
             .ability(2, :COMBUSTION)
-            .set_plates(:ZAPPLATE)
+            .set_plates(:ZAPPLATE) if Rejuv
 
 # TOXTRICITY
 PokeModifier.add(:TOXTRICITY, "Giga")
-            .ability(0, :PUNKROCK)
+            .ability(0, :PUNKROCK) if Rejuv
 
 # SIZZLIPEDE
 PokeModifier.add(:SIZZLIPEDE)
@@ -96,7 +96,7 @@ PokeModifier.add(:CENTISKORCH)
 
 # CENTISKORCH-G
 PokeModifier.add(:CENTISKORCH, "Giga")
-            .stats(0, 0, 90, 75, 0, 0)
+            .stats(0, 0, 90, 75, 0, 0) if Rejuv
 
 # CLOBBOPUS
 PokeModifier.add(:CLOBBOPUS)

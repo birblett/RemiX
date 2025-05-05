@@ -38,7 +38,7 @@ CrestBuilder.add(:MILOTIC, "First move matches secondary type and uses highest s
                 UniLib.display_if_visible(pkmn.battle, _INTL("{1} was burned by its {2}!", pkmn.pbThis,getItemName(pkmn.item)))
               end
             end
-            .move_type_override { |attacker, move, _| next attacker.type2 if move == attacker.moves[0] }
+            .move_type_override { |attacker, move, _| next attacker.type2 if move == attacker.moves[0] } if Rejuv
 
 CASTFORM_CREST_STATS = [
   [70, 70, 70, 90, 70, 110], # sun
@@ -50,4 +50,4 @@ CrestBuilder.add_existing(:CASTCREST)
             .add_receiver(:CASTFORM, "Sunny")
             .add_receiver(:CASTFORM, "Rainy")
             .add_receiver(:CASTFORM, "Snowy")
-            .base_stat_mods { |pkmn, stats| CASTFORM_CREST_STATS[pkmn.form - 1].each_with_index { |stat, i| stats[i].set(stat) } }
+            .base_stat_mods { |pkmn, stats| CASTFORM_CREST_STATS[pkmn.form - 1].each_with_index { |stat, i| stats[i].set(stat) } } if Rejuv

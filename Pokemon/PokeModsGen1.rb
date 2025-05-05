@@ -42,16 +42,17 @@ PokeModifier.add(:CATERPIE)
 
 # BUTTERFREE
 PokeModifier.add(:BUTTERFREE)
-            .stat(:SPE, 90)
+            .stat(:SPE, 80)
             .set_pokebilities(1)
 
 # BUTTERFREE-M
 PokeModifier.add(:BUTTERFREE, "Giga")
-            .stat(:DEF, 70)
+            .stat(:DEF, 70) if Rejuv
 
 # BEEDRILL
 PokeModifier.add(:BEEDRILL)
             .stat(:SPE, 85)
+            .ability(1, :SNIPER)
             .ability(2, :SERENEGRACE)
             .set_pokebilities(1)
 
@@ -250,7 +251,8 @@ PokeModifier.add(:MEOWTH, "Alolan")
 # MEOWTH-G
 PokeModifier.add(:MEOWTH, "Galarian")
             .type2(:FIGHTING)
-            .level_moves([[15, :ROCKSMASH], [26, :KARATECHOP], [30, :BULLETPUNCH], [37, :SKYUPPERCUT], [43, :CROSSCHOP], [65, :CLOSECOMBAT]])
+            .level_moves([[15, :ROCKSMASH], [26, :KARATECHOP], [30, :BULLETPUNCH], [37, :SKYUPPERCUT], [43, :CROSSCHOP], [65, :CLOSECOMBAT]])  if Rejuv
+
 
 # PERSIAN
 PokeModifier.add(:PERSIAN)
@@ -371,7 +373,7 @@ PokeModifier.add(:PONYTA)
 # PONYTA-G
 PokeModifier.add(:PONYTA, "Galarian")
             .swap(:ATK, :SPA)
-            .level_moves([59, :MOONBLAST])
+            .level_moves([59, :MOONBLAST]) if Rejuv
 
 # RAPIDASH
 PokeModifier.add(:RAPIDASH)
@@ -380,11 +382,11 @@ PokeModifier.add(:RAPIDASH)
 # RAPIDASH-G
 PokeModifier.add(:RAPIDASH, "Galarian")
             .swap(:ATK, :SPA)
-            .level_moves([59, :MOONBLAST])
+            .level_moves([59, :MOONBLAST]) if Rejuv
 
 # SLOWBRO_G
 PokeModifier.add(:SLOWBRO, "Galarian")
-            .ability(1, :SERENEGRACE)
+            .ability(1, :SERENEGRACE) if Rejuv
 
 # MAGNEMITE
 PokeModifier.add(:MAGNEMITE)
@@ -402,7 +404,7 @@ PokeModifier.add(:FARFETCHD)
 
 # FARFETCH'D-G
 PokeModifier.add(:FARFETCHD, "Galarian")
-            .abilities({ 0 => :SUPERLUCK })
+            .abilities({ 0 => :SUPERLUCK }) if Rejuv
 
 # DODUO
 PokeModifier.add(:DODUO)
@@ -448,7 +450,7 @@ PokeModifier.add(:GENGAR)
 
 # GENGAR-GMAX
 PokeModifier.add(:GENGAR, "Giga")
-            .ability(0, :LEVITATE)
+            .ability(0, :LEVITATE) if Rejuv
 
 # ONIX
 PokeModifier.add(:ONIX)
@@ -550,11 +552,11 @@ PokeModifier.add(:TAUROS)
 
 # MAGIKARP-A
 PokeModifier.add(:MAGIKARP, "Aevian")
-            .compatible_moves(:CALMMIND)
+            .compatible_moves(:CALMMIND) if Rejuv
 
 # GYARADOS-A
 PokeModifier.add(:GYARADOS, "Aevian")
-            .compatible_moves(:CALMMIND)
+            .compatible_moves(:CALMMIND) if Rejuv
 
 # LAPRAS
 PokeModifier.add(:LAPRAS)

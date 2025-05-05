@@ -20,4 +20,4 @@ UniLib.insert_in_function(:checkEvoConditionsItem, :HEAD, "return nil if pokemon
 UniLib.insert_in_method_before(:AdvancedPokedexScene, :getEvolutionMessage, "ret = _INTL(\"{1} by an unknown way\", evoPokemon) if(ret.empty?)", proc do |evolution, evoPokemon, evoMethod, evoItem|
   ret = "Sylveon while knowing a Fairy move" if evolution[0] == :SYLVEON
   ret += " at level 60" if ret and evolution and [:VAPOREON, :JOLTEON, :FLAREON, :ESPEON, :UMBREON, :LEAFEON, :GLACEON, :SYLVEON].include? evolution[0]
-end)
+end) if Rejuv

@@ -14,7 +14,7 @@ CrestBuilder.add(:KRICKETUNE, "Consecutive move uses increase in power.")
 CrestBuilder.add_existing(:CHERCREST)
             .add_receiver(:CHERRIM, "Sunshine")
             .secondary_no_weakness(:FIRE)
-            .ability_provider { next :COMBUSTION }
+            .ability_provider { next :COMBUSTION } if Rejuv
 
 CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buff effects.")
             .add_receiver(:GASTRODON, "East Sea")
@@ -44,14 +44,14 @@ CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buff effects.")
               when 3 then bs[5].mul(1.3)
               else bs[2].mul(1.3)
               end
-            end
+            end if Rejuv
 
 CrestBuilder.add(:YANMEGA, "Weak moves have 2x power.")
             .damage_mod { |_, _, move, _, _| next 2 if move.basedamage <= 60 }
 
 CrestBuilder.add_existing(:PROBOCREST)
             .add_receiver(:PROBOPASS)
-            .ability_provider { :LEVITATE }
+            .ability_provider { :LEVITATE } if Rejuv
 
 CrestBuilder.add(:ROTOM, "Grants innate abilities based on the form.")
             .add_receiver(:ROTOM, "Heat")

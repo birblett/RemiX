@@ -178,7 +178,7 @@ PokeModifier.add(:SEWADDLE)
 
 # SEWADDLE-A
 PokeModifier.add(:SEWADDLE, "Aevian")
-            .set_camo(1)
+            .set_camo(1) if Rejuv
 
 # SWADLOON
 PokeModifier.add(:SWADLOON)
@@ -186,7 +186,7 @@ PokeModifier.add(:SWADLOON)
 
 # SWADLOON-A
 PokeModifier.add(:SWADLOON, "Aevian")
-            .set_camo(1)
+            .set_camo(1) if Rejuv
 
 # LEAVANNY
 PokeModifier.add(:LEAVANNY)
@@ -194,7 +194,7 @@ PokeModifier.add(:LEAVANNY)
 
 # LEAVANNY-A
 PokeModifier.add(:LEAVANNY, "Aevian")
-            .set_camo(1)
+            .set_camo(1) if Rejuv
 
 # VENIPEDE
 PokeModifier.add(:VENIPEDE)
@@ -226,7 +226,7 @@ PokeModifier.add(:BASCULIN, "Red-Striped")
 
 # BASCULIN-WS
 PokeModifier.add(:BASCULIN, "White-Striped")
-            .level_moves([1, :WAVECRASH])
+            .level_moves([1, :WAVECRASH]) if Rejuv
 
 # BASCULIN-BS
 PokeModifier.add(:BASCULIN, "Blue-Striped")
@@ -258,11 +258,11 @@ PokeModifier.add(:SIGILYPH)
 
 # SIGILYPH-A
 PokeModifier.add(:SIGILYPH, "Aevian")
-            .set_pokebilities(1)
+            .set_pokebilities(1) if Rejuv
 
 # SIGILYPH-AMALGAM
 PokeModifier.add(:SIGILYPH, "Amalgamation")
-            .ability(0, :DOOMSEER)
+            .ability(0, :DOOMSEER) if Rejuv
 
 # COFAGRIGUS
 PokeModifier.add(:COFAGRIGUS)
@@ -292,11 +292,11 @@ PokeModifier.add(:GARBODOR)
 
 # ZORUA-H
 PokeModifier.add(:ZORUA, "Hisuian")
-            .set_camo(1)
+            .set_camo(1) if Rejuv
 
 # ZOROARK-H
 PokeModifier.add(:ZOROARK, "Hisuian")
-            .set_camo(1)
+            .set_camo(1) if Rejuv
 
 # REUNICLUS
 PokeModifier.add(:REUNICLUS)
@@ -388,7 +388,7 @@ PokeModifier.add(:LITWICK)
 
 # LITWICK-A
 PokeModifier.add(:LITWICK, "Aevian")
-            .set_pokebilities(1)
+            .set_pokebilities(1) if Rejuv
 
 # LAMPENT
 PokeModifier.add(:LAMPENT)
@@ -397,7 +397,7 @@ PokeModifier.add(:LAMPENT)
 
 # LAMPENT-A
 PokeModifier.add(:LAMPENT, "Aevian")
-            .set_pokebilities(1)
+            .set_pokebilities(1) if Rejuv
 
 # CHANDELURE
 PokeModifier.add(:CHANDELURE)
@@ -406,7 +406,7 @@ PokeModifier.add(:CHANDELURE)
 
 # CHANDELURE-A
 PokeModifier.add(:CHANDELURE, "Aevian")
-            .set_pokebilities(1)
+            .set_pokebilities(1) if Rejuv
 
 # CUBCHOO
 PokeModifier.add(:CUBCHOO)
@@ -455,7 +455,7 @@ PokeModifier.add(:BRAVIARY)
 
 # BRAVIARY-H
 PokeModifier.add(:BRAVIARY, "Hisuian")
-            .set_camo(1)
+            .set_camo(1) if Rejuv
 
 # HEATMOR
 PokeModifier.add(:HEATMOR)

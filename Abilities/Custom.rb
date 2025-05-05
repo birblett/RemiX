@@ -40,14 +40,18 @@ AbilityBuilder.add(:C0000005, "0xC0000005", "Sets 3 turns of Glitch field on swi
               end
               .disrupt_score { next 1.8 }
 
-AbilityBuilder.add(:STEELSKULL, "Steel Skull", "Take no recoil, recoil moves become Steel-type.")
-              .replace_in_move("0FA", :pbEffect, "if opponent.damagestate.calcdamage>0 && !opponent.damagestate.substitute &&",
-                "if opponent.damagestate.calcdamage>0 && !opponent.damagestate.substitute && attacker.ability != :STEELSKULL && ")
-              .replace_in_move("0FD", :pbEffect, "if opponent.damagestate.calcdamage>0 && !opponent.damagestate.substitute &&",
-                "if opponent.damagestate.calcdamage>0 && !opponent.damagestate.substitute && attacker.ability != :STEELSKULL && ")
-              .replace_in_move("0FE", :pbEffect, "if opponent.damagestate.calcdamage>0 && !opponent.damagestate.substitute &&",
-                "if opponent.damagestate.calcdamage>0 && !opponent.damagestate.substitute && attacker.ability != :STEELSKULL && ")
-              .move_type_override { |_, move, _| next :STEEL if [0x0FA, 0x0FD, 0x0FE].include?(move.function) }
+target = Reborn ? "if (!attacker.midwayThroughMove || @loopcount == alltargets.length) && hitnum == 0 && attacker.ability != :MAGICGUARD && !(attacker.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)" :
+           "if opponent.damagestate.calcdamage>0 && !opponent.damagestate.substitute &&"
+replacement = Reborn ? "if (!attacker.midwayThroughMove || @loopcount == alltargets.length) && hitnum == 0 && attacker.ability != :MAGICGUARD && attacker.ability != :STEELSKULL && !(attacker.ability == :WONDERGUARD && @battle.FE == :COLOSSEUM)" : "if opponent.damagestate.calcdamage>0 && !opponent.damagestate.substitute && attacker.ability != :STEELSKULL && "
+methods = Reborn ? [0x175] : [0x0FA, 0x0FD, 0x0FE]
+
+a = AbilityBuilder.add(:STEELSKULL, "Steel Skull", "Take no recoil, recoil moves become Steel-type.")
+              .replace_in_move(Reborn ? "175" : "0FA", :pbEffect, target, replacement)
+              .move_type_override { |_, move, _| next :STEEL if methods.include?(move.function) }
+a.replace_in_move("0FD", :pbEffect, target, replacement)
+  .replace_in_move("0FE", :pbEffect, target, replacement) if Rejuv
+UniLib.replace_in_method(:PokeBattle_Battler, :pbEffectsOnDealingDamage, "user.ability != :ROCKHEAD && user.crested != :RAMPARDOS && user.ability != :MAGICGUARD &&",
+  "user.ability != :ROCKHEAD && user.crested != :RAMPARDOS && user.ability != :MAGICGUARD && user.ability != :STEELSKULL &&") if Reborn
 
 AbilityBuilder.add(:SWINEFORCE, "Swineforce", "Moves of the lower attack use the stronger stat...", "Moves of the lower attack stat use the stronger stat, but are 20% weaker.")
               .move_stat_override do |attacker, _, move|
