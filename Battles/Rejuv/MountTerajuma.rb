@@ -1,7 +1,7 @@
 AltBalance.chapter(6) {
 
   TrainerModifier.add(:XENGRUNT_F, "Demetra", 0)
-                 .set_pkmn(0, :CARNIVINE, 45, :LEVITATE, item: :BUGGEM, moves: [:FIRSTIMPRESSION, :POWERWHIP, :KNOCKOFF, :XSCISSOR])
+                 .set_pkmn(0, :CARNIVINE, 45, :LEVITATE, item: :DRAGONGEM, moves: [:DRAGONHAMMER, :POWERWHIP, :KNOCKOFF, :PROTECT])
                  .set_pkmn(1, :ARBOK, 45, :INTIMIDATE, item: :BLACKSLUDGE)
                  .set_pkmn(2, :SALAZZLE, 45, :CORROSION, item: :BLACKSLUDGE)
 

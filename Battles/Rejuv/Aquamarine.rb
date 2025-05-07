@@ -12,7 +12,7 @@ AltBalance.chapter(7) {
                  .set_pkmn(2, :WISHIWASHI, 50, :SCHOOLING, item: :WISHIWASHICREST, ev: HPSPA)
 
   TrainerModifier.add(:XENMAGE_M, "???", 0)
-                 .set_pkmn(0, :CARNIVINE, 50, :LEVITATE, item: :LIFEORB, moves: [:FIRSTIMPRESSION, :SEEDBOMB, :LEECHSEED, :XSCISSOR])
+                 .set_pkmn(0, :CARNIVINE, 50, :LEVITATE, item: :LIFEORB, moves: [:DRAGONHAMMER, :SEEDBOMB, :LEECHSEED, :SWORDSDANCE])
                  .set_pkmn(1, :GALVANTULA, 50, :COMPOUNDEYES, item: :CHOICESPECS, moves: [:BUGBUZZ, :VOLTSWITCH, :THUNDER, :STRUGGLEBUG])
                  .set_pkmn(2, :CHANDELURE, 50, :FLASHFIRE, item: :FOCUSSASH, moves: [:INFERNO, :SHADOWBALL, :SUBSTITUTE, :FIRESPIN])
                  .set_pkmn(3, :HIPPOWDON, 50, :SANDSTREAM, item: :CATALYZER, moves: [:DIG, :ICEFANG, :CURSE, :ROCKSLIDE])

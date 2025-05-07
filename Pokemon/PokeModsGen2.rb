@@ -256,9 +256,11 @@ PokeModifier.add(:OCTILLERY)
 
 # DELIBIRD
 PokeModifier.add(:DELIBIRD)
-            .stats(0, 75, 0, 75, 0, 85)
+            .type2(:WATER)
+            .stats(0, 75, 0, 75, 0, 75)
             .ability(0, :REFRIGERATE)
             .level_moves([[1, :FAKEOUT], [40, :BOOMBURST]])
+            .egg_moves([:MUDDYWATER, :BUBBLEBEAM, :BUBBLE, :SCALD, :SURF])
 
 # HOUNDOOM
 PokeModifier.add(:HOUNDOOM)

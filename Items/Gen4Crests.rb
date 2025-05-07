@@ -11,10 +11,13 @@ CrestBuilder.add(:KRICKETUNE, "Consecutive move uses increase in power.")
             end
             .cairo(1, 2000)
 
-CrestBuilder.add_existing(:CHERCREST)
-            .add_receiver(:CHERRIM, "Sunshine")
-            .secondary_no_weakness(:FIRE)
-            .ability_provider { next :COMBUSTION } if Rejuv
+(Rejuv ? CrestBuilder.add_existing(:CHERCREST) : CrestBuilder.add(:CHERRIM, "Gain non-weak Fire-type and Combustion. Activates Flower Gift."))
+                     .add_receiver(:CHERRIM, "Sunshine")
+                     .secondary_no_weakness(:FIRE)
+                     .ability_provider { next :COMBUSTION }
+
+CrestBuilder.add(:SKUNTANK, "Ground moves deal no damage and boost Attack. Boosts offenses by 20%.")
+            .battle_stat_mods { |_, bs| bs[1].mul(1.2); bs[3].mul(1.2) } if Reborn
 
 CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buff effects.")
             .add_receiver(:GASTRODON, "East Sea")

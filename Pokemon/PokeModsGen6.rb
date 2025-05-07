@@ -27,17 +27,17 @@ PokeModifier.add(:GRENINJA)
 # FLETCHLING
 PokeModifier.add(:FLETCHLING)
             .stats(0, 0, 0, 50, 40, 0)
-            .level_moves([[6, :GUST], [18, :AIRCUTTER], [30, :AIRSLASH], [49, :HURRICANE]])
+            .level_moves([[6, :GUST], [18, :AIRCUTTER], [30, :AIRSLASH], [36, :HEATWAVE], [49, :HURRICANE]])
 
 # FLETCHINDER
 PokeModifier.add(:FLETCHINDER)
             .stats(0, 0, 0, 73, 53, 0)
-            .level_moves([[6, :GUST], [18, :AIRCUTTER], [30, :AIRSLASH], [49, :HURRICANE]])
+            .level_moves([[6, :GUST], [18, :AIRCUTTER], [30, :AIRSLASH], [36, :HEATWAVE], [49, :HURRICANE]])
 
 # TALONFLAME
 PokeModifier.add(:TALONFLAME)
             .stats(0, 85, 72, 85, 72, 0)
-            .level_moves([[6, :GUST], [18, :AIRCUTTER], [30, :AIRSLASH], [49, :HURRICANE]])
+            .level_moves([[6, :GUST], [18, :AIRCUTTER], [30, :AIRSLASH], [36, :HEATWAVE], [49, :HURRICANE]])
 
 # VIVILLON
 PokeModifier.add(:VIVILLON)

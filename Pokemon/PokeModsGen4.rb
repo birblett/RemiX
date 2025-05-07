@@ -227,10 +227,9 @@ PokeModifier.add(:TOXICROAK)
 # CARNIVINE
 PokeModifier.add(:CARNIVINE)
             .stat(:ATK, 110)
-            .type2(:BUG)
+            .type2(:DRAGON)
             .set_camo(1)
-            .level_moves([[16, :BUGBITE], [25, :FIRSTIMPRESSION], [45, :XSCISSOR]])
-            .compatible_moves(:UTURN)
+            .level_moves([[5, :TWISTER], [20, :DRAGONBREATH], [35, :DRAGONCLAW], [50, :DRAGONHAMMER], [70, :OUTRAGE]])
 
 # FINNEON
 PokeModifier.add(:FINNEON)

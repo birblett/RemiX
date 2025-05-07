@@ -12,6 +12,7 @@ UniLib.include "BattleEffects"
 UniLib.include "Battle"
 UniLib.include "Fixes"
 UniLib.include "Asset"
+UniLib.include "Move"
 
 UniLib.alt_balance_load "Abilities/Atebilities"
 UniLib.alt_balance_load "Abilities/Custom"
@@ -83,11 +84,26 @@ end
 
 if Reborn
 
+  UniLib.alt_balance_load "Moves/Port"
+
+  UniLib.alt_balance_load "Maps/Reborn/Events"
   UniLib.alt_balance_load "Maps/Reborn/Items"
+  UniLib.alt_balance_load "Battles/Reborn/_Recurring"
+  UniLib.alt_balance_load "Battles/Reborn/_Meteor"
 
   TrainerModifier.with_defaults(boss: {iv: 31, ev: EVEN60}, sos: {iv: 31, ev: EVEN60}) {
     UniLib.alt_balance_load "Battles/Reborn/Opal"
     UniLib.alt_balance_load "Battles/Reborn/LowerPeridot"
+    UniLib.alt_balance_load "Battles/Reborn/Peridot"
+    UniLib.alt_balance_load "Battles/Reborn/Obsidia"
+    UniLib.alt_balance_load "Battles/Reborn/SouthObsidia"
+    UniLib.alt_balance_load "Battles/Reborn/Coral"
+    UniLib.alt_balance_load "Battles/Reborn/Onyx"
+    UniLib.alt_balance_load "Battles/Reborn/Jasper"
+    UniLib.alt_balance_load "Battles/Reborn/Beryl"
+    UniLib.alt_balance_load "Battles/Reborn/NorthObsidia"
+    UniLib.alt_balance_load "Battles/Reborn/Lapis"
+    UniLib.alt_balance_load "Battles/Reborn/Gangs"
   }
 
 end

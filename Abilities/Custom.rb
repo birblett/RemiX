@@ -55,10 +55,10 @@ UniLib.replace_in_method(:PokeBattle_Battler, :pbEffectsOnDealingDamage, "user.a
 
 AbilityBuilder.add(:SWINEFORCE, "Swineforce", "Moves of the lower attack use the stronger stat...", "Moves of the lower attack stat use the stronger stat, but are 20% weaker.")
               .move_stat_override do |attacker, _, move|
-                next :atk if attacker.attack > attacker.spatk and move.pbIsSpecial?
-                next :spa if attacker.attack < attacker.spatk and !move.pbIsSpecial?
+                next :atk if attacker.attack > attacker.spatk and Reborn ? move.pbIsSpecial?(attacker) : move.pbIsSpecial?
+                next :spa if attacker.attack < attacker.spatk and !(Reborn ? move.pbIsSpecial?(attacker) : move.pbIsSpecial?)
               end
-              .damage_mod { |attacker, _, move, _, _| next 0.9 if (attacker.attack > attacker.spatk and move.pbIsSpecial?) or (attacker.attack < attacker.spatk and !move.pbIsSpecial?) }
+              .damage_mod { |attacker, _, move, _, _| next 0.9 if (attacker.attack > attacker.spatk and Reborn ? move.pbIsSpecial?(attacker) : move.pbIsSpecial?) or (attacker.attack < attacker.spatk and !(Reborn ? move.pbIsSpecial?(attacker) : move.pbIsSpecial?)) }
               .disrupt_score { next 1.1 }
 
 AbilityBuilder.add(:HOARDING, "Hoarding", "Stockpile at the end of turns when damaged.")
@@ -204,7 +204,7 @@ AbilityBuilder.add(:TAKEOFF, "Takeoff", "Fly changes type, 2-turn moves last 1 t
               end
 
 AbilityBuilder.add(:FORTITUDE, "Fortitude", "Special attacks use special defense.")
-              .move_stat_override { |_, _, move| next :spd if move.pbIsSpecial? }
+              .move_stat_override { |attacker, _, move| next :spd if Reborn ? move.pbIsSpecial?(attacker) : move.pbIsSpecial? }
 
 AbilityBuilder.add(:SPECTRALBODY, "Spectral Body", "Ghost STAB and resistances.")
               .type_fake(:GHOST)

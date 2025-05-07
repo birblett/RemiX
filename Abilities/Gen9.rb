@@ -38,3 +38,5 @@ AbilityBuilder.add(:PURIFYINGSALT, "Purifying Salt", "Can't be statused, 0.5x da
               .role_provider { :STATUSABSORBER }
 UniLib.insert_in_method(:PokeBattle_Battler, :pbCanStatus?, :HEAD,
   "return false if @ability == :PURIFYINGSALT and !self.moldbroken")
+
+AbilityBuilder.add(:SHARPNESS, "Sharpness", "1.5x damage to slicing moves.") if Reborn

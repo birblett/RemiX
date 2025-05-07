@@ -1,5 +1,5 @@
 # ROWLET
-PokeModifier.add(:ROWLET).type2(:GHOST)
+PokeModifier.add(:ROWLET)
             .ability(2, :CURSEDBODY)
 
 # DARTRIX

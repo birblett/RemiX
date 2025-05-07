@@ -108,16 +108,19 @@ PokeModifier.add(:MUSHARNA)
 PokeModifier.add(:PIDOVE)
             .ability(2, :SNIPER)
             .set_pokebilities(1)
+            .level_moves([15, :FOCUSENERGY])
 
 # TRANQUILL
 PokeModifier.add(:TRANQUILL)
             .ability(2, :SNIPER)
             .set_pokebilities(1)
+            .level_moves([15, :FOCUSENERGY])
 
 # UNFEZANT
 PokeModifier.add(:UNFEZANT)
             .ability(2, :SNIPER)
             .set_pokebilities(1)
+            .level_moves([15, :FOCUSENERGY])
 
 # BLITZLE
 PokeModifier.add(:BLITZLE)

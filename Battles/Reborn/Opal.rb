@@ -35,3 +35,47 @@ AltBalance.gym(0) {
                  .set_pkmn(0, :MUDBRAY, 8, :OWNTEMPO, item: :CATALYZER, moves: [:MUDSLAP, :ROCKSMASH, :BULLDOZE, :ROTOTILLER])
 
 }
+
+AltBalance.gym(1) {
+
+  TrainerModifier.add(:Casanova, "Elio", 0)
+                 .set_pkmn(0, :WHISMUR, 17, :SOUNDPROOF)
+                 .set_pkmn(1, :LOUDRED, 19, :SOUNDPROOF)
+
+  TrainerModifier.add(:Doxy, "Elena", 0)
+                 .set_pkmn(0, :SEWADDLE, 19, :SWARM)
+
+  TrainerModifier.add(:COOLTRAINER_Male, "Zane", 0)
+                 .set_pkmn(0, :NINCADA, 17, :COMPOUNDEYES)
+                 .set_pkmn(1, :SLAKOTH, 17, :TRUANT)
+
+}
+
+AltBalance.gym(2) {
+
+  TrainerModifier.add(:YOUNGSTER, "Bart", 0)
+                 .set_pkmn(0, :BEEDRILL, 30, :SERENEGRACE)
+                 .set_pkmn(1, :TRUMBEAK, 30, :KEENEYE)
+
+}
+
+AltBalance.gym(2.5) {
+
+  TrainerModifier.add(:PSYCHIC_Male, "Inuki", 0)
+                 .set_pkmn(0, :PORYGON2, 35, :TRACE, item: :EVIOLITE, moves: [:DISCHARGE, :ICEBEAM, :RECOVER, :TOXIC])
+                 .set_pkmn(1, :PORYGON2, 35, :DOWNLOAD, item: :CATALYZER, moves: [:THUNDERBOLT, :ICEBEAM, :AGILITY, :RECOVER])
+
+
+  TrainerModifier.add(:COOLTRAINER_Female, "Miku", 0)
+                 .set_pkmn(0, :SWABLU, 35, :NATURALCURE)
+                 .set_pkmn(0, :DRAGONAIR, 35, :MARVELSCALE)
+
+}
+
+AltBalance.gym(3) {
+
+  TrainerModifier.add(:PSYCHIC_Male, "Michael", 0)
+                 .set_pkmn(0, :INKAY, 38, :CONTRARY)
+                 .set_pkmn(1, :MISDREAVUS, 39, :LEVITATE)
+
+}

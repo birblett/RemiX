@@ -23,7 +23,17 @@ CrestBuilder.add(:SAWK, "Grants Ambidextrous and Tinted Lens.")
 
 CrestBuilder.add(:SIMISAGE, "Gain non-weak Fire-type, Normal moves become Fire-type, offenses boosted by 1.2x.")
             .secondary_no_weakness(:FIRE)
-            .ability_provider { :COMBUSTION }
+            .move_type_override { |_, move, _| next :FIRE if move.type == :NORMAL }
+            .damage_mod { next 1.2 } if Reborn
+
+CrestBuilder.add(:SIMISEAR, "Gain non-weak Water-type, Normal moves become Water-type, offenses boosted by 1.2x.")
+            .secondary_no_weakness(:WATER)
+            .move_type_override { |_, move, _| next :WATER if move.type == :NORMAL }
+            .damage_mod { next 1.2 } if Reborn
+
+CrestBuilder.add(:SIMIPOUR, "Gain non-weak Grass-type, Normal moves become Grass-type, offenses boosted by 1.2x.")
+            .secondary_no_weakness(:GRASS)
+            .move_type_override { |_, move, _| next :GRASS if move.type == :NORMAL }
             .damage_mod { next 1.2 } if Reborn
 
 if Reborn

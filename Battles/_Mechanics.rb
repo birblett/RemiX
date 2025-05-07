@@ -31,7 +31,7 @@ UniLib.replace_in_method(:PokeBattle_Battle, :seedCheck, "battler.ability=:CLEAR
 UniLib.insert_in_method(:PokeBattle_Battler, :pbCanFreeze?, :HEAD, "return false if @battle.pbParty(@index).any? { |pkmn| pkmn.status == :FREEZE }")
 
 UniLib.insert_in_method(:PokeBattle_Battler, :pbCanSleep?, :HEAD,
-  "if !selfsleep and @status.nil? and @battle.pbParty(@index).any? { |pkmn| pkmn.status == :SLEEP }
+  "if !selfsleep and @status.nil? and @battle.pbParty(@index).any? { |pkmn| !pkmn.nil? && pkmn.status == :SLEEP }
     @battle.pbDisplay(_INTL('{1} was protected by the Sleep Clause!', pbThis)) if showMessages
     return false
   end")

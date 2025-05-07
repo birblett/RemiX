@@ -1,3 +1,9 @@
+if Reborn
+
+  CrestBuilder.add(:CLAYDOL, "Attacks use the Defense stat and beam moves are boosted.")
+
+end
+
 CrestBuilder.add(:MIGHTYENA, "Biting moves go first.")
             .priority_mod { |_, move| 1 if move.is_bite_move? }
 

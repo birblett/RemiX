@@ -495,13 +495,13 @@ PokeModifier.add(:LICKITUNG)
 # KOFFING
 PokeModifier.add(:KOFFING)
             .type2(:FIRE)
-            .abilities({ 1 => :NEUTRALIZINGGAS, 2 => :STENCH })
+            .abilities({ 1 => Reborn ? :FLASHFIRE : :NEUTRALIZINGGAS, 2 => :STENCH })
             .level_moves([[7, :EMBER], [18, :WILLOWISP], [21, :FLAMEBURST], [35, :LAVAPLUME], [45, :FIREBLAST]])
 
 # WEEZING
 PokeModifier.add(:WEEZING)
             .type2(:FIRE)
-            .abilities({ 1 => :NEUTRALIZINGGAS, 2 => :STENCH })
+            .abilities({ 1 => Reborn ? :FLASHFIRE : :NEUTRALIZINGGAS, 2 => :STENCH })
             .level_moves([[7, :EMBER], [18, :WILLOWISP], [21, :FLAMEBURST], [35, :LAVAPLUME], [45, :FIREBLAST]])
 
 # RHYDON
