@@ -1,6 +1,6 @@
 UniLib.trainer_modifier_set_debug
 
-AltBalance.chapter(1) {
+RemiX.chapter(1) {
 
   # overworld west
   TrainerModifier.add(:OPT, "Talia", 0)
@@ -42,7 +42,7 @@ AltBalance.chapter(1) {
   TrainerModifier.add(:HIKER, "Denko", 0)
                  .set_pkmn(0, :ZUBAT, 9, :AIRLOCK)
                  .set_pkmn(1, :WOOPER, 9, :WATERABSORB)
-                 .set_pkmn(2, :KOMALA, 9, :COMATOSE, item: :KOMALACREST, moves: [:SLEEPTALK, :BODYSLAM])
+                 .set_pkmn(2, :KOMALA, 9, :COMATOSE, item: KOMALA_CREST, moves: [:SLEEPTALK, :BODYSLAM])
 
   TrainerModifier.add(:BEAUTY, "Penelope", 0)
                  .set_pkmn(0, :FEEBAS, 1, :SWIFTSWIM)
@@ -163,7 +163,7 @@ AltBalance.chapter(1) {
 
 }
 
-AltBalance.chapter(2) {
+RemiX.chapter(2) {
 
   # junction bridge
   TrainerModifier.add(:MADSCIENTIST, "Dr. Jenkel", 0)
@@ -231,13 +231,13 @@ AltBalance.chapter(2) {
 
 }
 
-AltBalance.chapter(3) {
+RemiX.chapter(3) {
 
   # west
   TrainerModifier.add(:TRAINER_AMANDA, "Amanda", 1)
                  .set_pkmn(0, :BRONZOR, 30, :LEVITATE, item: :LEFTOVERS, moves: [:SUNNYDAY, :GYROBALL, :CONFUSERAY, :DISCHARGE], ev: HPDEF, nature: :BOLD)
                  .set_pkmn(1, :WEEPINBELL, 30, :TINTEDLENS, item: :MIRACLESEED, ev: ATKSPE, nature: :ADAMANT)
-                 .set_pkmn(2, :MILTANK, 30, :SCRAPPY, item: :MILTANKCREST, moves: [:STOMP, :MILKDRINK, :ICYWIND, :STACKINGSHOT], ev: ATKSPE, nature: :JOLLY)
+                 .set_pkmn(2, :MILTANK, 30, :SCRAPPY, item: MILTANK_CREST, moves: [:STOMP, :MILKDRINK, :ICYWIND, :STACKINGSHOT], ev: ATKSPE, nature: :JOLLY)
                  .set_pkmn(3, :HATENNA, 30, :MAGICBOUNCE, item: :TWISTEDSPOON, ev: HPSPA, nature: :TIMID)
                  .set_pkmn(4, :DRUDDIGON, 30, :ROUGHSKIN, item: :HEATROCK, moves: [:FIREPUNCH, :DRAGONTAIL, :SUNNYDAY, :METALCLAW], ev: HPATK, nature: :ADAMANT)
                  .set_pkmn(5, :TAUROS, 30, :SHEERFORCE, item: :LIFEORB, moves: [:ROCKCLIMB, :ICEBEAM, :THUNDERBOLT, :FLAMETHROWER], ev: ATKSPE, nature: :NAIVE)

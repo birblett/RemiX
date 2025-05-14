@@ -1,15 +1,15 @@
-AltBalance.chapter(7) {
+RemiX.chapter(7) {
 
   TrainerModifier.add(:COOLTRAINER_F, "Fiona", 0)
                  .set_pkmn(0, :LICKILICKY, 50, :OWNTEMPO, item: :CATALYZER, moves: [:PROTECT, :SHADOWBALL, :BODYPRESS, :TOXIC], nature: :RELAXED)
-                 .set_pkmn(1, :ZOROARK, 50, :ILLUSION, item: :ZOROCREST)
+                 .set_pkmn(1, :ZOROARK, 50, :ILLUSION, item: ZOROARK_CREST)
                  .set_pkmn(2, :JELLICENT, 50, :WATERABSORB)
                  .set_pkmn(3, :YANMEGA, 50, :TINTEDLENS)
 
   TrainerModifier.add(:FISHERMAN, "Sami", 0)
                  .set_pkmn(0, :GYARADOS, 50, :INTIMIDATE)
                  .set_pkmn(1, :VAPOREON, 50, :SAPSIPPER)
-                 .set_pkmn(2, :WISHIWASHI, 50, :SCHOOLING, item: :WISHIWASHICREST, ev: HPSPA)
+                 .set_pkmn(2, :WISHIWASHI, 50, :SCHOOLING, item: WISHIWASHI_CREST, ev: HPSPA)
 
   TrainerModifier.add(:XENMAGE_M, "???", 0)
                  .set_pkmn(0, :CARNIVINE, 50, :LEVITATE, item: :LIFEORB, moves: [:DRAGONHAMMER, :SEEDBOMB, :LEECHSEED, :SWORDSDANCE])
@@ -42,7 +42,7 @@ AltBalance.chapter(7) {
 
   TrainerModifier.add(:PROFJENNER, "Jenner", 0)
                  .set_pkmn(0, :STOUTLAND, 50, :SCRAPPY, moves: [:RETURN, :SUPERPOWER, :CRUNCH, :ICEFANG], item: :CHOICESCARF, ev: ATKSPE)
-                 .set_pkmn(1, :NOIVERN, 51, :INFILTRATOR, moves: [:BOOMBURST, :DRACOMETEOR, :FLAMETHROWER, :SUPERFANG], item: :NOIVERNCREST, nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(1, :NOIVERN, 51, :INFILTRATOR, moves: [:BOOMBURST, :DRACOMETEOR, :FLAMETHROWER, :SUPERFANG], item: NOIVERN_CREST, nature: :TIMID, ev: SPASPE)
                  .set_pkmn(2, :KOMMOO, 53, :SOUNDPROOF, moves: [:CLANGINGSCALES, :ROCKSLIDE, :CLOSECOMBAT, :POISONJAB], item: :KOMMONIUMZ, ev: ATKSPE)
                  .set_pkmn(3, :KLINKLANG, 50, :OVERCLOCKING, moves: [:GEARGRIND, :AERIALACE, :WILDCHARGE, :SHIFTGEAR], item: :CATALYZER, nature: :ADAMANT, ev: ATKSPE)
                  .set_pkmn(4, :SLOWKING, 50, :REGENERATOR, moves: [:FUTURESIGHT, :FLAMETHROWER, :SLUDGEBOMB, :PSYSHOCK], item: :ASSAULTVEST, nature: :MODEST, ev: HPSPA, form: 1)
@@ -54,7 +54,7 @@ AltBalance.chapter(7) {
                  .set_pkmn(0, :LILLIGANT, 50, :CHLOROPHYLL, moves: [:SOLARBLADE, :AXEKICK, :AERIALACE, :VICTORYDANCE], item: :LIFEORB, ev: ATKSPE, nature: :ADAMANT, form: 1)
                  .set_pkmn(1, :HEATMOR, 50, :CHLOROPHYLL, moves: [:HEATWAVE, :SOLARBEAM, :SCORCHINGSANDS, :GIGADRAIN], ev: SPASPE)
                  .set_pkmn(2, :HELIOLISK, 50, :SOLARPOWER, moves: [:THUNDERBOLT, :HIDDENPOWERFIR, :HYPERVOICE, :PROTECT], item: :EXPERTBELT, ev: SPASPE, nature: :TIMID)
-                 .set_pkmn(3, :TORKOAL, 52, :DROUGHT, moves: [:LAVAPLUME, :FLAMETHROWER, :SCALD, :EARTHPOWER], item: :TORKOALCREST, ev: HPSPA, nature: :MODEST)
+                 .set_pkmn(3, :TORKOAL, 52, :DROUGHT, moves: [:LAVAPLUME, :FLAMETHROWER, :SCALD, :EARTHPOWER], item: TORKOAL_CREST, ev: HPSPA, nature: :MODEST)
                  .set_pkmn(4, :SIRFETCHD, 50, :SUPERLUCK, moves: [:FIRSTIMPRESSION, :CLOSECOMBAT, :KNOCKOFF, :BRAVEBIRD], item: :LIFEORB, ev: ATKSPE, nature: :ADAMANT)
 
 }

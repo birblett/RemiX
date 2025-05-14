@@ -1,6 +1,6 @@
-CrestBuilder.add(:KRICKETUNE, "Consecutive move uses increase in power.")
+KRICKETUNE_CREST = CrestBuilder.add(:KRICKETUNE, "Consecutive move uses increase in power.")
             .damage_mod { |pkmn, _, move, _, _| next 1 + 0.4 * pkmn.effects[:KricketuneCrest][1] if pkmn.effects[:KricketuneCrest] and move.move == pkmn.effects[:KricketuneCrest][0] }
-            .on_damage_dealt do |pkmn, _, move, damage|
+            .on_damage_dealt { |pkmn, _, move, damage|
               if damage > 0
                 if pkmn.effects[:KricketuneCrest] and move.move == pkmn.effects[:KricketuneCrest][0]
                   pkmn.effects[:KricketuneCrest][1] += 1 if pkmn.effects[:KricketuneCrest][1] < 5
@@ -8,22 +8,21 @@ CrestBuilder.add(:KRICKETUNE, "Consecutive move uses increase in power.")
                   pkmn.effects[:KricketuneCrest] = [move.move, 1]
                 end
               end
-            end
+            }
             .cairo(1, 2000)
+            .sym
 
-(Rejuv ? CrestBuilder.add_existing(:CHERCREST) : CrestBuilder.add(:CHERRIM, "Gain non-weak Fire-type and Combustion. Activates Flower Gift."))
+CrestBuilder.add_existing(CHERRIM_CREST)
+                     .desc("Gain non-weak Fire-type and Combustion. Activates Flower Gift.")
                      .add_receiver(:CHERRIM, "Sunshine")
                      .secondary_no_weakness(:FIRE)
                      .ability_provider { next :COMBUSTION }
 
-CrestBuilder.add(:SKUNTANK, "Ground moves deal no damage and boost Attack. Boosts offenses by 20%.")
-            .battle_stat_mods { |_, bs| bs[1].mul(1.2); bs[3].mul(1.2) } if Reborn
-
-CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buff effects.")
+GASTRODON_CREST = CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buff effects.")
             .add_receiver(:GASTRODON, "East Sea")
-            .add_receiver(:GASTRODON, "West Aevian")
-            .add_receiver(:GASTRODON, "East Aevian")
-            .on_battle_entry do |pkmn, _, _|
+            .add_receiver(:GASTRODON, Reborn ? 0 : "West Aevian")
+            .add_receiver(:GASTRODON, Reborn ? 0 : "East Aevian")
+            .on_battle_entry { |pkmn, _, _|
               battle = pkmn.battle
               case pkmn.pokemon.form
               when 2
@@ -35,34 +34,37 @@ CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buff effects.")
                 battle.pbCommonAnimation("Burn", pkmn, nil)
                 UniLib.display_if_visible(battle, _INTL("{1} was burned by its {2}!", pkmn.pbThis, getItemName(pkmn.item)))
               end
-            end
-            .ability_provider do |pkmn, _|
+            }
+            .ability_provider { |pkmn, _|
               next :DRIZZLE if pkmn.form == 0
               next :SANDSTREAM if pkmn.form == 1
-            end
-            .battle_stat_mods do |pkmn, bs|
+            }
+            .battle_stat_mods { |pkmn, bs|
               case pkmn.pokemon.form
               when 1 then bs[3].mul(1.3)
               when 2 then bs[4].mul(1.3)
               when 3 then bs[5].mul(1.3)
               else bs[2].mul(1.3)
               end
-            end if Rejuv
+            }
+            .sym
 
-CrestBuilder.add(:YANMEGA, "Weak moves have 2x power.")
+YANMEGA_CREST = CrestBuilder.add(:YANMEGA, "Weak moves have 2x power.")
             .damage_mod { |_, _, move, _, _| next 2 if move.basedamage <= 60 }
+            .sym
 
-CrestBuilder.add_existing(:PROBOCREST)
-            .add_receiver(:PROBOPASS)
-            .ability_provider { :LEVITATE } if Rejuv
+CrestBuilder.add_existing(PROBOPASS_CREST)
+            .desc("Grants Levitate. Follow up attacks with attacks from 3 mini-noses.")
+            .ability_provider { :LEVITATE }
 
-CrestBuilder.add(:ROTOM, "Grants innate abilities based on the form.")
+ROTOM_CREST = CrestBuilder.add(:ROTOM, "Grants innate abilities based on the form.")
             .add_receiver(:ROTOM, "Heat")
             .add_receiver(:ROTOM, "Wash")
             .add_receiver(:ROTOM, "Frost")
             .add_receiver(:ROTOM, "Fan")
             .add_receiver(:ROTOM, "Mow")
-            .ability_provider do |pkmn, _|
+            .battle_stat_mods { |_, bs| bs[5].mul(1.1) }
+            .ability_provider { |pkmn, _|
               case pkmn.form
               when 1 then next [:FLAMEBODY, :REGENERATOR]
               when 2 then next [:DAUNTLESSSHIELD, :RAINDISH]
@@ -71,7 +73,8 @@ CrestBuilder.add(:ROTOM, "Grants innate abilities based on the form.")
               when 5 then next [:DROUGHT, :SOLARPOWER]
               else next [:ADAPTABILITY, :MAGICGUARD]
               end
-            end
+            }
+            .sym
 
 =begin
 # scrapping this! too much work...

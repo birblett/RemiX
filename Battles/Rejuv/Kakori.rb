@@ -1,4 +1,4 @@
-AltBalance.chapter(6) {
+RemiX.chapter(6) {
 
   TrainerModifier.add(:TEAMAA_M, "Marcin", 0)
                  .set_pkmn(0, :GRENINJA, 45, :PROTEAN, item: :LIFEORB, moves: [:ICEBEAM, :SCALD, :GUNKSHOT, :SHADOWBALL], ev: SPASPE, nature: :NAIVE)
@@ -15,7 +15,7 @@ AltBalance.chapter(6) {
   # gym
   TrainerModifier.add(:POKEMONRANGER_M, "Andy", 0)
                  .set_pkmn(0, :RIBOMBEE, 45, :SHIELDDUST, item: :FOCUSSASH, moves: [:STICKYWEB, :MOONBLAST, :BUGBUZZ, :STUNSPORE])
-                 .set_pkmn(1, :KRICKETUNE, 45, :TECHNICIAN, item: :KRICKETUNECREST, ev: ATKSPE, nature: :JOLLY)
+                 .set_pkmn(1, :KRICKETUNE, 45, :TECHNICIAN, item: KRICKETUNE_CREST, ev: ATKSPE, nature: :JOLLY)
                  .set_pkmn(2, :PARASECT, 45, :RESUSCITATION, form: 1)
                  .set_pkmn(3, :PARASECT, 45, :WELLBAKEDBODY)
 
@@ -31,15 +31,15 @@ AltBalance.chapter(6) {
                  .set_pkmn(2, :MILOTIC, 45, :DEFIANT, form: 1)
 
   TrainerModifier.add(:POKEMONRANGER_F, "Sisi", 0)
-                 .set_pkmn(0, :CRAMORANT, 45, :GULPMISSILE, item: :CRAMORANTCREST)
+                 .set_pkmn(0, :CRAMORANT, 45, :GULPMISSILE, item: CRAMORANT_CREST)
                  .set_pkmn(1, :GYARADOS, 45, :INTIMIDATE)
                  .set_pkmn(2, :PACHIRISU, 45, :SCRAPPY, moves: [:FAKEOUT, :EXTREMESPEED, :LASTRESORT, :NUZZLE])
 
   TrainerModifier.add(:DISCOTEEN, "Rorim B.", 1)
                  .set_pkmn(0, :ORICORIO, 45, :DANCER, item: :FOCUSSASH, moves: [:CALMMIND, :HIDDENPOWERICE, :REVELATIONDANCE, :TAILWIND], form: 1, ev: SPASPE, nature: :TIMID)
                  .set_pkmn(1, :LILLIGANT, 45, :REVEL, item: :LIFEORB, moves: [:QUIVERDANCE, :TEETERDANCE, :REVELATIONDANCE, :PETALDANCE], ev: SPASPE, nature: :TIMID)
-                 .set_pkmn(2, :LUDICOLO, 45, :SWIFTSWIM, item: :LUDICOLOCREST, moves: [:RAINDANCE, :SCALD, :ENERGYBALL, :MUDDYWATER], ev: SPASPE, nature: :MODEST)
-                 .set_pkmn(3, :ORICORIO, 45, :DANCER, item: :ORICREST, moves: [:CALMMIND, :HIDDENPOWERROC, :REVELATIONDANCE, :AIRSLASH], ev: SPASPE, nature: :TIMID)
+                 .set_pkmn(2, :LUDICOLO, 45, :SWIFTSWIM, item: LUDICOLO_CREST, moves: [:RAINDANCE, :SCALD, :ENERGYBALL, :MUDDYWATER], ev: SPASPE, nature: :MODEST)
+                 .set_pkmn(3, :ORICORIO, 45, :DANCER, item: ORICORIO_CREST, moves: [:CALMMIND, :HIDDENPOWERROC, :REVELATIONDANCE, :AIRSLASH], ev: SPASPE, nature: :TIMID)
                  .set_pkmn(4, :LUDICOLO, 45, :SWIFTSWIM, item: :LIFEORB, moves: [:RAINDANCE, :SCALD, :ENERGYBALL, :MUDDYWATER], ev: SPASPE, nature: :MODEST)
                  .set_pkmn(5, :ALTARIA, 45, :FLUFFY, item: :YACHEBERRY, moves: [:DRAGONDANCE, :EARTHQUAKE, :DRAGONCLAW, :ROOST], ev: ATKSPE, nature: :JOLLY)
 
@@ -48,7 +48,7 @@ AltBalance.chapter(6) {
                  .set_pkmn(1, :GALVANTULA, 45, :COMPOUNDEYES, item: :FOCUSSASH, moves: [:BUGBUZZ, :STICKYWEB, :THUNDER, :STRUGGLEBUG], ev: SPASPE)
                  .set_pkmn(2, :SCIZOR, 46, :TECHNICIAN, item: :LIFEORB, moves: [:SWORDSDANCE, :BULLETPUNCH, :BARBEDWEB, :KNOCKOFF], ev: HPATK, nature: :ADAMANT)
                  .set_pkmn(3, :ARMALDO, 45, :WATERABSORB, item: :LIFEORB, moves: [:BARBEDWEB, :AQUAJET, :ROCKSLIDE, :KNOCKOFF], ev: HPATK)
-                 .set_pkmn(4, :YANMEGA, 48, :SPEEDBOOST, item: :YANMEGACREST, moves: [:STRUGGLEBUG, :AIRCUTTER, :PROTECT, :HIDDENPOWERFIG], ev: SPASPE, nature: :TIMID)
+                 .set_pkmn(4, :YANMEGA, 48, :SPEEDBOOST, item: YANMEGA_CREST, moves: [:STRUGGLEBUG, :AIRCUTTER, :PROTECT, :HIDDENPOWERFIG], ev: SPASPE, nature: :TIMID)
                  .set_pkmn(5, :ARAQUANID, 46, :WATERBUBBLE, item: :MYSTICWATER, moves: [:LIQUIDATION, :STICKYWEB, :BARBEDWEB, :POISONJAB], nature: :ADAMANT, ev: ATKSPE)
 
 }

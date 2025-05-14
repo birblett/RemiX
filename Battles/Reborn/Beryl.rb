@@ -1,4 +1,4 @@
-AltBalance.gym(2) {
+RemiX.gym(2) {
 
   # rhodochrine
   TrainerModifier.add(:PkMnRANGER_Male, "Endow", 0)
@@ -21,12 +21,12 @@ AltBalance.gym(2) {
                  .set_pkmn(0, :FLAAFFY, 34, :FLUFFY)
                  .set_pkmn(1, :GROWLITHE, 34, :INTIMIDATE)
 
-  TrainerModifier.add(:Corey, "Borealis", 0)
-                 .set_pkmn(0, :SKRELP, 36, :FORTITUDE, item: :ASSAULTVEST, moves: [:DRAGONPULSE, :SLUDGEBOMB, :HYDROPUMP, :VENOMDRENCH], nature: :CALM, ev: HPSPD)
-                 .set_pkmn(1, :MAREANIE, 34, :MERCILESS, item: :EVIOLITE, moves: [:SCALD, :BITE, :VENOSHOCK, :PROTECT], nature: :HASTY, ev: HPSPD)
-                 .set_pkmn(2, :NIDORINA, 34, :HUSTLE, item: :EVIOLITE, moves: [:DOUBLEKICK, :VENOMDRENCH, :BITE, :DISABLE], ev: ATKSPA)
-                 .set_pkmn(3, :CROAGUNK, 35, :DRYSKIN, item: :FOCUSSASH, moves: [:SUCKERPUNCH, :DRAINPUNCH, :VENOSHOCK, :MUDBOMB], ev: ATKSPE)
-                 .set_pkmn(4, :SKUNTANK, 36, :AFTERMATH, item: :SKUNTANKCREST, moves: [:SUCKERPUNCH, :FLAMETHROWER, :KNOCKOFF, :VENOSHOCK], nature: :NAUGHTY, ev: ATKSPA)
-                 .set_pkmn(5, :CROBAT, 38, :AIRLOCK, moves: [:VENOMDRENCH, :VENOSHOCK, :AIRSLASH, :NASTYPLOT], ev: HPSPA)
+  TrainerModifier.add(:Tribe, "Tribe", 0)
+                 .set_pkmn(0, :NUZLEAF, 25, :CHLOROPHYLL)
+                 .set_pkmn(1, :NUZLEAF, 25, :CHLOROPHYLL)
+                 .set_pkmn(2, :NUZLEAF, 30, :CHLOROPHYLL)
+                 .set_pkmn(3, :NUZLEAF, 30, :CHLOROPHYLL)
+                 .set_pkmn(4, :NUZLEAF, 35, :CHLOROPHYLL)
+                 .set_pkmn(5, :SHIFTRY, 55, :CHLOROPHYLL)
 
 }

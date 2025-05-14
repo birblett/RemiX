@@ -1,4 +1,4 @@
-AltBalance.chapter(6) {
+RemiX.chapter(6) {
 
   TrainerModifier.add(:AROMALADY, "Stacy", 0)
                  .set_pkmn(0, :VENUSAUR, 45, :THICKFAT, item: :BLACKSLUDGE)
@@ -14,7 +14,7 @@ AltBalance.chapter(6) {
                  .set_pkmn(0, :MORPEKO, 45, :HUNGERSWITCH)
                  .set_pkmn(1, :MORPEKO, 45, :HUNGERSWITCH)
                  .set_pkmn(2, :MORPEKO, 45, :HUNGERSWITCH)
-                 .set_pkmn(3, :MORPEKO, 45, :HUNGERSWITCH, item: :MORPEKOCREST, moves: [:FAKEOUT, :RETURN, :AURAWHEEL, :ICEFANG], ev: ATKSPE, nature: :JOLLY)
+                 .set_pkmn(3, :MORPEKO, 45, :HUNGERSWITCH, item: MORPEKO_CREST, moves: [:FAKEOUT, :RETURN, :AURAWHEEL, :ICEFANG], ev: ATKSPE, nature: :JOLLY)
 
   TrainerModifier.add(:XENGRUNT_M, "Mac", 0)
                  .set_pkmn(0, :SCYTHER, 45, :TECHNICIAN)
@@ -22,7 +22,7 @@ AltBalance.chapter(6) {
                  .set_pkmn(2, :SERPERIOR, 45, :CONTRARY, moves: [:LEAFSTORM, :HIDDENPOWERFIR, :DRAGONPULSE, :GLARE])
 
   TrainerModifier.add(:XENANALYST_F, "Shino", 0)
-                 .set_pkmn(0, :RAMPARDOS, 45, :SHEERFORCE, item: :RAMPCREST, moves: [:ROCKSLIDE, :FIREPUNCH, :ZENHEADBUTT, :CRUNCH], ev: ATKSPE, nature: :ADAMANT)
+                 .set_pkmn(0, :RAMPARDOS, 45, :SHEERFORCE, item: RAMPARDOS_CREST, moves: [:ROCKSLIDE, :FIREPUNCH, :ZENHEADBUTT, :CRUNCH], ev: ATKSPE, nature: :ADAMANT)
                  .set_pkmn(1, :AERODACTYL, 45, :ROCKHEAD, item: :LIFEORB, moves: [:BRAVEBIRD, :STONEEDGE, :EARTHQUAKE, :CRUNCH], ev: ATKSPE, nature: :JOLLY)
                  .set_pkmn(2, :ARMALDO, 45, :WATERABSORB, item: :CATALYZER, moves: [:ROCKSLIDE, :XSCISSOR, :AQUAJET, :KNOCKOFF], ev: HPATK, nature: :ADAMANT)
 

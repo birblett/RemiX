@@ -1,4 +1,4 @@
-AltBalance.gym(0) {
+RemiX.gym(0) {
 
   TrainerModifier.add(:YOUNGSTER, "Sid", 0)
                  .set_pkmn(0, :HOOTHOOT, 15, :TINTEDLENS)

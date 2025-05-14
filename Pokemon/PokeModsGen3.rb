@@ -122,15 +122,7 @@ PokeModifier.add(:PLUSLE)
             .stats(0, 40, 50, 105, 60, 0)
             .type2(:WATER)
             .abilities({ 1 => :LIGHTNINGROD, 2 => :SKILLLINK })
-            .level_moves([[5, :WATERPULSE], [25, :WATERSHURIKEN], [40, :SNIPESHOT], [55, :HYDROPUMP]])
-            .compatible_moves(:SCALD)
-
-# PLUSLE
-PokeModifier.add(:PLUSLE)
-            .stats(0, 40, 50, 105, 60, 0)
-            .type2(:WATER)
-            .abilities({ 1 => :LIGHTNINGROD, 2 => :SKILLLINK })
-            .level_moves([[5, :WATERPULSE], [25, :WATERSHURIKEN], [40, :SNIPESHOT], [55, :HYDROPUMP]])
+            .level_moves([[5, :WATERPULSE], [25, :BUBBLEBEAM], [40, :SNIPESHOT], [55, :HYDROPUMP], [60, :WATERSHURIKEN]])
             .compatible_moves(:SCALD)
 
 # MINUN
@@ -138,13 +130,20 @@ PokeModifier.add(:MINUN)
             .stats(0, 0, 60, 85, 65, 100)
             .type2(:WATER)
             .abilities({ 1 => :VOLTABSORB, 2 => :ADAPTABILITY })
-            .level_moves([[5, :BUBBLE], [25, :OCTAZOOKA], [40, :MUDDYWATER], [55, :ORIGINPULSE]])
+            .level_moves([[5, :BUBBLE], [25, :OCTAZOOKA], [40, :MUDDYWATER], [55, :ORIGINPULSE], [60, :WATERSHURIKEN]])
             .compatible_moves(:SURF)
+
+# VOLBEAT
+PokeModifier.add(:VOLBEAT)
+            .ability(0, :ILLUMINATE)
+            .set_camo
+            .level_moves([[25, :SLASH], [36, :RETURN], [44, :SWORDSDANCE]])
+            .compatible_moves(:KNOCKOFF)
 
 # ILLUMISE
 PokeModifier.add(:ILLUMISE)
-            .compatible_moves(:REFLECT)
             .set_stab
+            .compatible_moves(:REFLECT)
 
 # ROSELIA
 PokeModifier.add(:ROSELIA)

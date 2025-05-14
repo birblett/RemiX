@@ -1,4 +1,4 @@
-AltBalance.chapter(2) {
+RemiX.chapter(2) {
 
 # mars
 TrainerModifier.add(:CHALLENGER, "Mars", 0)
@@ -18,7 +18,7 @@ TrainerModifier.add(:XENGRUNT_F, "Leela", 0)
 
 TrainerModifier.add(:XENGRUNT_F, "Shiela", 0)
                .set_pkmn(0, :BRELOOM, 25, :TECHNICIAN, moves: [:MEGADRAIN, :HEADBUTT, :SPORE, :MACHPUNCH])
-               .set_pkmn(1, :CHERRIM, 25, :FLOWERGIFT, item: :CHERCREST, moves: [:TAKEDOWN, :LEAFAGE, :LEECHSEED, :SUNNYDAY])
+               .set_pkmn(1, :CHERRIM, 25, :FLOWERGIFT, item: CHERRIM_CREST, moves: [:TAKEDOWN, :LEAFAGE, :LEECHSEED, :SUNNYDAY])
 
 TrainerModifier.add(:XENGRUNT_M, "Daryle", 0)
                .set_pkmn(0, :DUCKLETT, 25, :KEENEYE)
@@ -29,7 +29,7 @@ TrainerModifier.add(:XENGRUNT_M, "Henrie", 0)
                .set_pkmn(1, :CUBCHOO, 26, :SLUSHRUSH, moves: [:HAIL, :ICICLECRASH, :CLOSECOMBAT, :LIQUIDATION])
 
 }
-AltBalance.chapter(4) {
+RemiX.chapter(4) {
 
   TrainerModifier.add(:CUEBALL, "Emile", 0)
                  .set_pkmn(0, :ARCANINE, 35, :INTIMIDATE, item: :CATALYZER, moves: [:FLAREBLITZ, :WILDCHARGE, :EXTREMESPEED, :CLOSECOMBAT])
@@ -37,7 +37,7 @@ AltBalance.chapter(4) {
 
   TrainerModifier.add(:OPT, "Kairi", 0)
                  .set_pkmn(0, :SANDSLASH, 35, :TOUGHCLAWS)
-                 .set_pkmn(1, :SIMIPOUR, 35, :GLUTTONY, item: :POURCREST, moves: [:SCALD, :TRIATTACK, :TOXIC, :HYPERBEAM])
+                 .set_pkmn(1, :SIMIPOUR, 35, :GLUTTONY, item: SIMIPOUR_CREST, moves: [:SCALD, :TRIATTACK, :TOXIC, :HYPERBEAM])
 
   TrainerModifier.add(:TOURIST, "Karin", 0)
                  .set_pkmn(0, :NINETALES, 35, :DROUGHT)
@@ -45,12 +45,12 @@ AltBalance.chapter(4) {
 
   TrainerModifier.add(:LEADER_CRAWLI2, "C", 0)
                  .set_pkmn(0, :ORBEETLE, 35, :SWARM, ev: HPSPA)
-                 .set_pkmn(1, :ARIADOS, 35, :SWARM, item: :ARIACREST, ev: HPATK)
+                 .set_pkmn(1, :ARIADOS, 35, :SWARM, item: ARIADOS_CREST, ev: HPATK)
                  .set_pkmn(2, :GALVANTULA, 35, :COMPOUNDEYES, moves: [:THUNDER, :HIDDENPOWERGRA, :CHARGEBEAM, :SIGNALBEAM], ev: SPASPE)
 
 }
 
-AltBalance.chapter(6) {
+RemiX.chapter(6) {
 
   # cave
   TrainerModifier.add(:KIMONOGIRL, "Satella", 0)

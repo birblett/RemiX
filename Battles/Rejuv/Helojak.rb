@@ -1,4 +1,4 @@
-AltBalance.chapter(6) {
+RemiX.chapter(6) {
 
   TrainerModifier.add(:XENGRUNT_M, "Bentley", 0)
                  .set_pkmn(0, :ESCAVALIER, 45, :LANCER)
@@ -11,7 +11,7 @@ AltBalance.chapter(6) {
                  .set_pkmn(2, :BALTOY, 40, :LEVITATE, moves: [:STEELBEAM, :FLAMETHROWER, :ANCIENTPOWER, :ROCKBLAST], shadow: true)
 
   TrainerModifier.add(:XENGRUNT_M, "Firion", 0)
-                 .set_pkmn(0, :ROTOM, 45, :LEVITATE, item: :ROTOMCREST)
+                 .set_pkmn(0, :ROTOM, 45, :LEVITATE, item: ROTOM_CREST)
                  .set_pkmn(1, :RAPIDASH, 45, :PASTELVEIL, form: 1)
                  .set_pkmn(2, :STUNFISK, 40, :MIMICRY, Moves: [:GYROBALL, :NATUREPOWER, :EARTHQUAKE, :YAWN], form: 1, shadow: true)
 

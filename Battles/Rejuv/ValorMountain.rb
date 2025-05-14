@@ -1,4 +1,4 @@
-AltBalance.chapter(8) {
+RemiX.chapter(8) {
 
   TrainerModifier.add(:XENGRUNT_M, "Awul", 0)
                  .set_pkmn(0, :GOLDUCK, 55, :SWIFTSWIM, moves: [:RAINDANCE, :SURF, :PSYCHIC, :ICEBEAM])
@@ -14,7 +14,7 @@ AltBalance.chapter(8) {
 
   TrainerModifier.add(:XENGRUNT_M, "Cruz", 0)
                  .set_pkmn(0, :FLAREON, 55, :POISONHEAL, item: :TOXICORB, moves: [:FACADE, :FLAREBLITZ, :QUICKATTACK, :PROTECT])
-                 .set_pkmn(1, :CHERRIM, 55, :FLOWERGIFT, item: :CHERCREST, moves: [:SEEDBOMB, :RETURN, :SWORDSDANCE, :PLAYROUGH])
+                 .set_pkmn(1, :CHERRIM, 55, :FLOWERGIFT, item: CHERRIM_CREST, moves: [:SEEDBOMB, :RETURN, :SWORDSDANCE, :PLAYROUGH])
                  .set_pkmn(2, :SOLROCK, 55, :LEVITATE, item: :FLAMEPLATE)
 
   TrainerModifier.add(:XENGRUNT_M, "Aldente", 0)
@@ -24,7 +24,7 @@ AltBalance.chapter(8) {
 
   TrainerModifier.add(:XENGRUNT_F, "Alias", 0)
                  .set_pkmn(0, :ARCANINE, 55, :INTIMIDATE, item: :CATALYZER, moves: [:CLOSECOMBAT, :FLAREBLITZ, :WILDCHARGE, :EXTREMESPEED])
-                 .set_pkmn(1, :TORKOAL, 55, :DROUGHT, item: :TORKOALCREST, moves: [:SCALD, :LAVAPLUME, :STEALTHROCK, :RAPIDSPIN])
+                 .set_pkmn(1, :TORKOAL, 55, :DROUGHT, item: TORKOAL_CREST, moves: [:SCALD, :LAVAPLUME, :STEALTHROCK, :RAPIDSPIN])
                  .set_pkmn(2, :CENTISKORCH, 55, :FLASHFIRE, item: :CATALYZER, moves: [:FIRELASH, :POWERWHIP, :KNOCKOFF, :LEECHLIFE])
 
   TrainerModifier.add(:XENGRUNT_M, "Tin", 0)
@@ -38,7 +38,7 @@ AltBalance.chapter(8) {
   TrainerModifier.add(:XENGRUNT_M, "Tobias", 0)
                  .set_pkmn(0, :CAMERUPT, 55, :COMBUSTION, item: :METRONOME, moves: [:ECHOEDVOICE, :EARTHPOWER, :YAWN, :PROTECT])
                  .set_pkmn(1, :CACTURNE, 55, :OPENWOUNDS, item: :FOCUSSASH, moves: [:FAKEOUT, :SUCKERPUNCH, :SPIKYSHIELD, :NEEDLEARM])
-                 .set_pkmn(2, :CLAYDOL, 55, :LEVITATE, item: :CLAYCREST, moves: [:STEELBEAM, :EARTHPOWER, :ICEBEAM, :HYPERBEAM])
+                 .set_pkmn(2, :CLAYDOL, 55, :LEVITATE, item: CLAYDOL_CREST, moves: [:STEELBEAM, :EARTHPOWER, :ICEBEAM, :HYPERBEAM])
 
   TrainerModifier.add(:TECH, "Jensen", 0)
                  .set_pkmn(0, :MAGNEZONE, 55, :MAGNETPULL, item: :CHOICESCARF, moves: [:THUNDERBOLT, :VOLTSWITCH, :HIDDENPOWERGRA, :FLASHCANNON])

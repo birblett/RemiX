@@ -1,7 +1,17 @@
+# CHESPIN
+PokeModifier.add(:CHESPIN)
+            .abilities({ 1 => :IRONBARBS, 2 => :FILTER })
+
+# QUILLADIN
+PokeModifier.add(:QUILLADIN)
+            .abilities({ 1 => :IRONBARBS, 2 => :FILTER })
+            .level_moves([[31, :IRONDEFENSE], [47, :BODYPRESS]])
+
 # CHESNAUGHT
 PokeModifier.add(:CHESNAUGHT)
-            .abilities({ 1 => :BULLETPROOF, 2 => :FILTER })
-            .set_stab
+            .abilities({ 1 => :IRONBARBS, 2 => :FILTER })
+            .set_pokebilities
+            .level_moves([[31, :IRONDEFENSE], [47, :BODYPRESS]])
 
 # FENNEKIN
 PokeModifier.add(:FENNEKIN)
@@ -135,7 +145,7 @@ PokeModifier.add(:AURORUS)
 PokeModifier.add(:SYLVEON)
             .stat(:DEF, 100)
             .type2(:STEEL)
-            .ability(2, :REGENERATOR)
+            .abilities({ 1 => :REGENERATOR, 2 => :PIXILATE })
             .set_plates(:PIXIEPLATE)
             .level_moves([[20, :IRONTAIL], [30, :MIRRORSHOT], [55, :FLASHCANNON]])
             .compatible_moves(:UTURN)

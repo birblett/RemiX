@@ -121,6 +121,8 @@ PokeModifier.add(:PYUKUMUKU)
 # TURTONATOR
 PokeModifier.add(:TURTONATOR)
             .ability(2, :STAMINA)
+            .remove_level_moves(:SHELLSMASH)
+            .level_moves([64, :SHELLSMASH])
 
 # TOGEDEMARU
 PokeModifier.add(:TOGEDEMARU)

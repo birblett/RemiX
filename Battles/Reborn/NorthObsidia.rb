@@ -1,4 +1,4 @@
-AltBalance.gym(2.5) {
+RemiX.gym(2.5) {
 
   TrainerModifier.add(:COOLTRAINER_Female, "Akemi", 0)
                  .set_pkmn(0, :SNUBBULL, 35, :INTIMIDATE)
@@ -11,7 +11,12 @@ AltBalance.gym(2.5) {
 
 }
 
-AltBalance.gym(3) {
+RemiX.gym(3) {
+
+  TrainerModifier.add(:EXPERT_Male, "Yagami", 0)
+                 .set_pkmn(0, :SPHEAL, 37, :THICKFAT)
+                 .set_pkmn(1, :WALREIN, 42, :THICKFAT)
+
 
   TrainerModifier.add(:Casanova, "Daniel", 0)
                  .set_pkmn(0, :SHEDINJA, 38, :WONDERGUARD)

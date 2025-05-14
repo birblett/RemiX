@@ -27,14 +27,23 @@ PokeModifier.add(:CHARIZARD)
 # SQUIRTLE
 PokeModifier.add(:SQUIRTLE)
             .abilities({ 1 => :RAINDISH, 2 => :MEGALAUNCHER })
+            .level_moves([[25, :CRUNCH], [35, :JAWLOCK]])
 
 # WARTORTLE
 PokeModifier.add(:WARTORTLE)
+            .type2(:DARK)
             .abilities({ 1 => :RAINDISH, 2 => :MEGALAUNCHER })
+            .level_moves([[25, :CRUNCH], [35, :JAWLOCK], [50, :TERRAINPULSE], [50, :DARKPULSE], [50, :AURASPHERE]])
 
 # BLASTOISE
 PokeModifier.add(:BLASTOISE)
+            .type2(:DARK)
             .abilities({ 1 => :RAINDISH, 2 => :MEGALAUNCHER })
+            .level_moves([[25, :CRUNCH], [35, :JAWLOCK], [50, :TERRAINPULSE], [50, :DARKPULSE], [50, :AURASPHERE]])
+
+# BLASTOISE-M
+PokeModifier.add(:BLASTOISE, "Mega")
+            .type2(:DARK)
 
 # CATERPIE
 PokeModifier.add(:CATERPIE)
@@ -587,9 +596,9 @@ PokeModifier.add(:JOLTEON)
 PokeModifier.add(:FLAREON)
             .stats(110, 0, 95, 60, 100, 0)
             .type2(:NORMAL)
-            .ability(1, :POISONHEAL)
-            .set_plates(:FLAMEPLATE)
-            .level_moves([28, :FACADE], [38, :BODYSLAM])
+            .abilities({ 1 => :MAGICGUARD, 2 => :GUTS })
+            .set_plates(:FIRE)
+            .level_moves([[28, :FACADE], [38, :BODYSLAM], [50, :DOUBLEEDGE]])
 
 # PORYGON
 PokeModifier.add(:PORYGON)

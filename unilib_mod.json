@@ -1,0 +1,8 @@
+{
+  "id": "remix",
+  "version": 1.0,
+  "priority": 1000,
+  "entrypoints": [
+    "RemiX.rb"
+  ]
+}

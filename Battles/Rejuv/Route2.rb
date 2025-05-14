@@ -1,4 +1,4 @@
-AltBalance.chapter(2) {
+RemiX.chapter(2) {
 
   # main
   TrainerModifier.add(:AROMALADY, "Ruddie", 0)

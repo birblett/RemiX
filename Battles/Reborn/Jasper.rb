@@ -1,4 +1,4 @@
-AltBalance.gym(2) {
+RemiX.gym(2) {
 
   TrainerModifier.add(:PoliceOfficer, "Joe", 0)
                  .set_pkmn(0, :GROWLITHE, 27, :INTIMIDATE)

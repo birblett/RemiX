@@ -1,4 +1,4 @@
-AltBalance.gym(1) {
+RemiX.gym(1) {
 
   TrainerModifier.add(:YOUNGSTER, "Baxter", 0)
                  .set_pkmn(0, :CHARJABUG, 23, :SWARM)
@@ -25,7 +25,7 @@ AltBalance.gym(1) {
                  .set_pkmn(1, :DEWPIDER, 25, :WATERBUBBLE, item: :FOCUSSASH, moves: [:ORIGINPULSE, nil, nil, nil])
 
   TrainerModifier.add(:COOLTRAINER_Female, "Tristy", 0)
-                 .set_pkmn(0, :CHERRIM, 25, :FLOWERGIFT, item: :CHERRIMCREST)
+                 .set_pkmn(0, :CHERRIM, 25, :FLOWERGIFT, item: CHERRIM_CREST)
                  .set_pkmn(1, :BUIZEL, 23, :SWIFTSWIM)
 
   TrainerModifier.add(:YOUNGSTER, "Jojo", 0)
@@ -46,7 +46,7 @@ AltBalance.gym(1) {
 
   TrainerModifier.add(:COOLTRAINER_Female, "Susan", 0)
                  .set_pkmn(0, :COMBEE, 18, :HONEYGATHER)
-                 .set_pkmn(1, :KRICKETUNE, 26, :TECHNICIAN, item: :KRICKETUNECREST, moves: [:FURYCUTTER, nil, nil, nil])
+                 .set_pkmn(1, :KRICKETUNE, 26, :TECHNICIAN, item: KRICKETUNE_CREST, moves: [:FURYCUTTER, nil, nil, nil])
 
   TrainerModifier.add(:YOUNGSTER, "Trey", 0)
                  .set_pkmn(0, :RATICATE, 24, :HUSTLE)

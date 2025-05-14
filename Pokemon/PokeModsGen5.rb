@@ -1,14 +1,12 @@
-# SNIVY
-PokeModifier.add(:SNIVY)
-            .set_camo(1)
-
 # SERVINE
 PokeModifier.add(:SERVINE)
-            .set_camo(1)
+            .type2(:DRAGON)
+            .level_moves([[0, :TWISTER], [20, :DRAGONTAIL], [33, :DRAGONBREATH], [45, :DRAGONPULSE]])
 
 # SERPERIOR
 PokeModifier.add(:SERPERIOR)
-            .set_camo(1)
+            .type2(:DRAGON)
+            .level_moves([[0, :TWISTER], [20, :DRAGONTAIL], [33, :DRAGONBREATH], [45, :DRAGONPULSE]])
 
 # TEPIG
 PokeModifier.add(:TEPIG)
@@ -422,6 +420,7 @@ PokeModifier.add(:BEARTIC)
 # CRYOGONAL
 PokeModifier.add(:CRYOGONAL)
             .type2(:STEEL)
+            .level_moves([[14, :MAGNETBOMB], [22, :MIRRORSHOT], [45, :FLASHCANNON]])
 
 # ACCELGOR
 PokeModifier.add(:ACCELGOR)

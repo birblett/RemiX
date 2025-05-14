@@ -1,4 +1,4 @@
-AltBalance.chapter(5) {
+RemiX.chapter(5) {
 
   # player segment
   TrainerModifier.add(:OPT, "Cici", 0)
@@ -65,7 +65,7 @@ AltBalance.chapter(5) {
 
   TrainerModifier.add(:PRISONGUARD, "Shin", 0)
                  .set_pkmn(0, :GYARADOS, 40, :INTIMIDATE)
-                 .set_pkmn(1, :CRAMORANT, 40, :GULPMISSILE, item: :CRAMORANTCREST)
+                 .set_pkmn(1, :CRAMORANT, 40, :GULPMISSILE, item: CRAMORANT_CREST)
                  .set_pkmn(2, :HUNTAIL, 40, :SWIFTSWIM, item: :DEEPSEATOOTH)
 
 }

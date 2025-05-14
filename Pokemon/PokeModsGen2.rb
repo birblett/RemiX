@@ -42,15 +42,17 @@ PokeModifier.add(:TOTODILE)
 
 # CROCONAW
 PokeModifier.add(:CROCONAW)
+            .stats(0, 0, 70, 74, 58, 0)
             .type2(:ICE)
             .abilities({ 1 => :SHEERFORCE, 2 => :RATTLED })
-            .level_moves([[12, :ICESHARD], [30, :ICEPUNCH], [35, :ICEBEAM], [55, :ICICLECRASH]])
+            .level_moves([[12, :ICESHARD], [22, :ICYWIND], [30, :ICEPUNCH], [35, :ICEBEAM], [55, :ICICLECRASH], [70, :BLIZZARD]])
 
 # FERALIGATR
 PokeModifier.add(:FERALIGATR)
+            .stats(0, 0, 90, 94, 78, 0)
             .type2(:ICE)
             .abilities({ 1 => :SHEERFORCE, 2 => :RATTLED })
-            .level_moves([[12, :ICESHARD], [30, :ICEPUNCH], [35, :ICEBEAM], [55, :ICICLECRASH]])
+            .level_moves([[12, :ICESHARD], [22, :ICYWIND], [30, :ICEPUNCH], [35, :ICEBEAM], [55, :ICICLECRASH], [70, :BLIZZARD]])
 
 # HOOTHOOT
 PokeModifier.add(:HOOTHOOT)
@@ -71,6 +73,7 @@ PokeModifier.add(:LEDIAN)
 
 # ARIADOS
 PokeModifier.add(:ARIADOS)
+            .stat(:SPE, 55)
             .set_stab
 
 # CROBAT
@@ -167,7 +170,7 @@ PokeModifier.add(:QUAGSIRE)
 PokeModifier.add(:ESPEON)
             .stat(:HP, 100)
             .type2(:GHOST)
-            .ability(1, :SPOOKYSEASON)
+            .abilities({ 1 => :SPOOKYSEASON, 2 => :MAGICBOUNCE })
             .set_plates(:MINDPLATE)
             .level_moves([[10, :OMINOUSWIND], [23, :HEX], [35, :SHADOWBALL]])
             .compatible_moves([:WILLOWISP, :EARTHPOWER])
@@ -176,7 +179,7 @@ PokeModifier.add(:ESPEON)
 PokeModifier.add(:UMBREON)
             .stat(:SPE, 100)
             .type2(:POISON)
-            .ability(1, :LEVITATE)
+            .abilities({ 1 => :LEVITATE, 2 => :INNERFOCUS })
             .set_plates(:DREADPLATE)
             .level_moves([[20, :SLUDGE], [30, :TOXIC], [40, :SLUDGEBOMB]])
             .compatible_moves(:SLUDGEWAVE)
@@ -207,8 +210,14 @@ PokeModifier.add(:DUNSPARCE)
 
 # STEELIX
 PokeModifier.add(:STEELIX)
+            .stats(90, 95, 0, 30, 0, 0)
             .ability(0, :STEELSKULL)
             .level_moves([1, :COUNTER])
+
+# STEELIXMEGA
+PokeModifier.add(:STEELIX, "Mega")
+            .stats(90, 0, 0, 30, 125, 10)
+            .ability(0, :SOLIDROCK)
 
 # SNUBBULL
 PokeModifier.add(:SNUBBULL)

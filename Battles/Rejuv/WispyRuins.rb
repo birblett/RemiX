@@ -1,4 +1,4 @@
-AltBalance.chapter(5) {
+RemiX.chapter(5) {
 
   TrainerModifier.add(:CRUSHGIRL, "Moira", 0)
                  .set_pkmn(0, :MACHAMP, 40, :NOGUARD)
@@ -8,7 +8,7 @@ AltBalance.chapter(5) {
   TrainerModifier.add(:ROCKER, "Rudey", 0)
                  .set_pkmn(0, :LYCANROC, 40, :SANDRUSH, moves: [:ROCKSLIDE, :PLAYROUGH, :ACCELEROCK, :SWORDSDANCE])
                  .set_pkmn(1, :SUDOWOODO, 40, :STURDY, moves: [:ROCKSLIDE, :ACCELEROCK, :SHIFTGEAR, :SUCKERPUNCH])
-                 .set_pkmn(2, :LUXRAY, 40, :STRONGJAW, item: :LUXCREST, moves: [:CRUNCH, :THUNDERFANG, :ICEFANG, :VOLTSWITCH])
+                 .set_pkmn(2, :LUXRAY, 40, :STRONGJAW, item: LUXRAY_CREST, moves: [:CRUNCH, :THUNDERFANG, :ICEFANG, :VOLTSWITCH])
 
   TrainerModifier.add(:HIKER, "Jeremie", 0)
                  .set_pkmn(0, :GRAVELER, 40, :DENSITY)
@@ -18,7 +18,7 @@ AltBalance.chapter(5) {
 
   TrainerModifier.add(:GUITARIST, "Vitali", 0)
                  .set_pkmn(0, :EXPLOUD, 40, :SCRAPPY, item: :CATALYZER, moves: [:BOOMBURST, :SHADOWBALL, :FIREBLAST, :SURF])
-                 .set_pkmn(1, :YANMEGA, 40, :SPEEDBOOST, item: :YANMEGACREST, moves: [:AIRCUTTER, :STRUGGLEBUG, :HIDDENPOWERFIG, :PROTECT], nature: :MODEST, ev: SPASPE)
+                 .set_pkmn(1, :YANMEGA, 40, :SPEEDBOOST, item: YANMEGA_CREST, moves: [:AIRCUTTER, :STRUGGLEBUG, :HIDDENPOWERFIG, :PROTECT], nature: :MODEST, ev: SPASPE)
 
   TrainerModifier.add(:POKEGANG3, "Banette", 0)
                  .set_pkmn(0, :SHUPPET, 40, :TECHNICIAN, moves: [:SHADOWSNEAK, :POLTERGEIST, :KNOCKOFF, :NIGHTSHADE])
@@ -33,7 +33,7 @@ AltBalance.chapter(5) {
                  .set_pkmn(3, :CONKELDURR, 42, :GUTS, item: :MAGICALSEED, moves: [:BRICKBREAK, :FACADE, :KNOCKOFF, :BULKUP], nature: :ADAMANT, ev: HPATK)
 
 }
-AltBalance.chapter(6) {
+RemiX.chapter(6) {
 
   TrainerModifier.add(:BLACKBELT, "Kain", 0)
                  .set_pkmn(0, :MIENSHAO, 50, :REGENERATOR, item: :LIFEORB)

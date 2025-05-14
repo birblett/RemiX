@@ -1,4 +1,4 @@
-AltBalance.chapter(6) {
+RemiX.chapter(6) {
 
   TrainerModifier.add(:BLACKBELT, "Sheen", 0)
                  .set_pkmn(0, :PRIMEAPE, 45, :VITALSPIRIT, moves: [:CLOSECOMBAT, :POLTERGEIST, :UTURN, :ICEPUNCH])

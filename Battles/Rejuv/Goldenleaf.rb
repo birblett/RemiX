@@ -1,4 +1,4 @@
-AltBalance.chapter(4) {
+RemiX.chapter(4) {
 
   TrainerModifier.add(:GHOSTGIRL, "Sariah", 6)
                  .set_pkmn(0, :TREVENANT, 45, :NATURALCURE)
@@ -57,7 +57,7 @@ AltBalance.chapter(4) {
                  .set_pkmn(5, :DUSCLOPS, 35, :PRESSURE, ev: HPDEF)
 
 }
-AltBalance.chapter(8) {
+RemiX.chapter(8) {
 
   TrainerModifier.add(:GAUNTLET, "Narcissa", 0)
                  .set_pkmn(0, :GOLURK, 55, :TAKEOFF, item: :SITRUSBERRY, moves: [:PHANTOMFORCE, :FLY, :STOMPINGTANTRUM, :ZENHEADBUTT], ev: HPATK, nature: :ADAMANT)

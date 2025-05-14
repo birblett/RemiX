@@ -1,3 +1,5 @@
+if Rejuv
+
 # RILLABOOM
 PokeModifier.add(:RILLABOOM)
             .level_moves([45, :GRASSYGLIDE])
@@ -187,3 +189,5 @@ PokeModifier.add(:MILCERY)
 # ALCREMIE
 PokeModifier.add(:ALCREMIE)
             .abilities({ 1 => :AROMAVEIL, 2 => :WELLBAKEDBODY })
+
+end

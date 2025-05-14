@@ -1,4 +1,4 @@
-AltBalance.chapter(6) {
+RemiX.chapter(6) {
 
   TrainerModifier.add(:KIMONOGIRL, "Sarai", 0)
                  .set_pkmn(0, :CINDERACE, 45, :LIBERO)

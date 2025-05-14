@@ -1,4 +1,4 @@
-AltBalance.chapter(4) {
+RemiX.chapter(4) {
 
   # wispy path
   TrainerModifier.add(:GHOSTGIRL, "Anna", 0)
@@ -9,7 +9,7 @@ AltBalance.chapter(4) {
   TrainerModifier.add(:COOLTRAINER_F, "Michelle", 0)
                  .set_pkmn(0, :LIEPARD, 35, :PRANKSTER)
                  .set_pkmn(1, :SABLEYE, 35, :PRANKSTER, item: :LEFTOVERS, moves: [:KNOCKOFF, :PROTECT, :WILLOWISP, :RECOVER], ev: HPDEF)
-                 .set_pkmn(2, :SPIRITOMB, 35, :INFILTRATOR, item: :SPIRITCREST, moves: [:KNOCKOFF, :SHADOWSNEAK, :POLTERGEIST, :PROTECT], ev: HPATK)
+                 .set_pkmn(2, :SPIRITOMB, 35, :INFILTRATOR, item: SPIRITOMB_CREST, moves: [:KNOCKOFF, :SHADOWSNEAK, :POLTERGEIST, :PROTECT], ev: HPATK)
 
   TrainerModifier.add(:CHANELLER, "Lanya", 0)
                  .set_pkmn(0, :TALONFLAME, 35, :GALEWINGS)
@@ -24,7 +24,7 @@ AltBalance.chapter(4) {
   TrainerModifier.add(:XENGRUNT_F, "Sheila", 0)
                  .set_pkmn(0, :ARBOK, 35, :INTIMIDATE)
                  .set_pkmn(1, :ZEBSTRIKA, 35, :RECKLESS, moves: [:WILDCHARGE, :FLAREBLITZ, :DOUBLEEDGE, :VOLTSWITCH])
-                 .set_pkmn(2, :GASTRODON, 35, :FLAREBOOST, item: :GASTRODONCREST, moves: [:STRANGESTEAM, :EARTHPOWER, :SLUDGEBOMB, :BRINE], form: 3, ev: SPASPE, nature: :TIMID)
+                 .set_pkmn(2, :GASTRODON, 35, :FLAREBOOST, item: GASTRODON_CREST, moves: [:STRANGESTEAM, :EARTHPOWER, :SLUDGEBOMB, :BRINE], form: 3, ev: SPASPE, nature: :TIMID)
 
   TrainerModifier.add(:XENGRUNT_M, "Malik", 0)
                  .set_pkmn(0, :GIBLE, 35, :SANDVEIL)

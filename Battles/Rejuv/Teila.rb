@@ -1,4 +1,4 @@
-AltBalance.chapter(7) {
+RemiX.chapter(7) {
 
   TrainerModifier.add(:LADY, "Valencia", 0)
                  .set_pkmn(0, :GOTHITELLE, 50, :FRISK)
@@ -9,7 +9,7 @@ AltBalance.chapter(7) {
   TrainerModifier.add(:CHARMER, "Brady", 0)
                  .set_pkmn(0, :HOUNDOOM, 50, :STRONGJAW, moves: [:CRUNCH, :THUNDERFANG, :FIREFANG, :ICEFANG], item: :FOCUSSASH)
                  .set_pkmn(1, :LUXRAY, 50, :STRONGJAW, moves: [:CRUNCH, :THUNDERFANG, :FIREFANG, :ICEFANG], item: :FOCUSSASH)
-                 .set_pkmn(2, :MIGHTYENA, 50, :MOXIE, moves: [:CRUNCH, :THUNDERFANG, :FIREFANG, :ICEFANG], item: :MIGHTYENACREST)
+                 .set_pkmn(2, :MIGHTYENA, 50, :MOXIE, moves: [:CRUNCH, :THUNDERFANG, :FIREFANG, :ICEFANG], item: MIGHTYENA_CREST)
                  .set_pkmn(3, :BOLTUND, 50, :STRONGJAW, moves: [:CRUNCH, :THUNDERFANG, :FIREFANG, :PSYCHICFANGS], item: :FOCUSSASH)
 
   TrainerModifier.add(:POKEMONRANGER_F1, "Alex", 1)
@@ -34,7 +34,7 @@ AltBalance.chapter(7) {
 
   TrainerModifier.add(:XENMAGE_M, "Harris", 0)
                  .set_pkmn(0, :WALREIN, 50, [:THICKFAT, :LANCER], item: :LEFTOVERS, moves: [:CURSE, :ICICLESPEAR, :EARTHQUAKE, :LIQUIDATION], ev: HPATK, nature: :ADAMANT)
-                 .set_pkmn(1, :GUMSHOOS, 50, :STRONGJAW, item: :GUMSHOOSCREST, moves: [:HYPERFANG, :ICEFANG, :FIREFANG, :CRUNCH], ev: ATKSPE, nature: :JOLLY)
+                 .set_pkmn(1, :GUMSHOOS, 50, :STRONGJAW, item: GUMSHOOS_CREST, moves: [:HYPERFANG, :ICEFANG, :FIREFANG, :CRUNCH], ev: ATKSPE, nature: :JOLLY)
                  .set_pkmn(2, :CHARIZARD, 50, [:SOLARPOWER, :DROUGHT], item: :LEFTOVERS, moves: [:FLAMETHROWER, :AIRSLASH, :SOLARBEAM, :WORKUP], ev: SPASPE, nature: :TIMID)
                  .set_pkmn(3, :PIDGEOT, 50, [:GALEFORCE, :NOGUARD], item: :LIFEORB, moves: [:HURRICANE, :HEATWAVE, :HYPERVOICE, :ROOST], ev: SPASPE, nature: :TIMID)
                  .set_pkmn(4, :ARBOK, 50, :INTIMIDATE, item: :LEFTOVERS, moves: [:COIL, :EARTHQUAKE, :GUNKSHOT, :SHOREUP], ev: HPATK, nature: :ADAMANT)

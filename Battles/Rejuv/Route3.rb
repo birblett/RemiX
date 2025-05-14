@@ -1,4 +1,4 @@
-AltBalance.chapter(4) {
+RemiX.chapter(4) {
 
   # mirage woods
   TrainerModifier.add(:CAMPER, "Tommy", 0)
@@ -10,8 +10,8 @@ AltBalance.chapter(4) {
   TrainerModifier.add(:AROMALADY, "Fennel", 0)
                  .set_pkmn(0, :COMBEE, 35, :HONEYGATHER)
                  .set_pkmn(1, :AROMATISSE, 35, :HEALER)
-                 .set_pkmn(2, :VESPIQUEN, 35, :PRESSURE, item: :VESPICREST, moves: [:ATTACKORDER, :DEFENDORDER, :HEALORDER, :TOXIC])
-                 .set_pkmn(3, :SIMISAGE, 35, :GLUTTONY, item: :SAGECREST, moves: [:LEAFSTORM, :TRIATTACK, :NASTYPLOT, :TAUNT])
+                 .set_pkmn(2, :VESPIQUEN, 35, :PRESSURE, item: VESPIQUEN_CREST, moves: [:ATTACKORDER, :DEFENDORDER, :HEALORDER, :TOXIC])
+                 .set_pkmn(3, :SIMISAGE, 35, :GLUTTONY, item: SIMISAGE_CREST, moves: [:LEAFSTORM, :TRIATTACK, :NASTYPLOT, :TAUNT])
 
   TrainerModifier.add(:HIKER, "???", 0)
                  .set_pkmn(0, :ZOROARK, 46, :ILLUSION, item: :FOCUSSASH, moves: [:NIGHTDAZE, :FLAMETHROWER, :NASTYPLOT, :SHADOWBALL], ev: SPASPE)

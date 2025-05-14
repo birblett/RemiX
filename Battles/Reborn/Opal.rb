@@ -1,4 +1,4 @@
-AltBalance.gym(0) {
+RemiX.gym(0) {
 
   TrainerModifier.add(:COOLTRAINER_Male, "Eric", 0)
                  .set_pkmn(0, :BIDOOF, 8, :SIMPLE, item: :NORMALIUMZ)
@@ -36,7 +36,7 @@ AltBalance.gym(0) {
 
 }
 
-AltBalance.gym(1) {
+RemiX.gym(1) {
 
   TrainerModifier.add(:Casanova, "Elio", 0)
                  .set_pkmn(0, :WHISMUR, 17, :SOUNDPROOF)
@@ -51,7 +51,7 @@ AltBalance.gym(1) {
 
 }
 
-AltBalance.gym(2) {
+RemiX.gym(2) {
 
   TrainerModifier.add(:YOUNGSTER, "Bart", 0)
                  .set_pkmn(0, :BEEDRILL, 30, :SERENEGRACE)
@@ -59,7 +59,7 @@ AltBalance.gym(2) {
 
 }
 
-AltBalance.gym(2.5) {
+RemiX.gym(2.5) {
 
   TrainerModifier.add(:PSYCHIC_Male, "Inuki", 0)
                  .set_pkmn(0, :PORYGON2, 35, :TRACE, item: :EVIOLITE, moves: [:DISCHARGE, :ICEBEAM, :RECOVER, :TOXIC])
@@ -72,10 +72,44 @@ AltBalance.gym(2.5) {
 
 }
 
-AltBalance.gym(3) {
+RemiX.gym(3) {
 
   TrainerModifier.add(:PSYCHIC_Male, "Michael", 0)
                  .set_pkmn(0, :INKAY, 38, :CONTRARY)
                  .set_pkmn(1, :MISDREAVUS, 39, :LEVITATE)
+
+}
+
+RemiX.gym(4) {
+
+  TrainerModifier.add(:TechNerd, "Caleb", 0)
+                 .set_pkmn(0, :PORYGON2, 40, :TRACE)
+
+  TrainerModifier.add(:PSYCHIC_Male, "Damon", 0)
+                 .set_pkmn(0, :HAUNTER, 40, :LEVITATE)
+                 .set_pkmn(1, :LAMPENT, 40, :FLASHFIRE)
+
+  TrainerModifier.add(:PSYCHIC_Female, "Rin", 0)
+                 .set_pkmn(0, :PUMPKABOO, 40, :PICKUP)
+                 .set_pkmn(1, :COFAGRIGUS, 40, :MUMMY)
+
+}
+
+RemiX.gym(5) {
+
+  TrainerModifier.add(:COOLTRAINER_Male, "Mikey", 0)
+                 .set_pkmn(0, :TOGEDEMARU, 50, :IRONBARBS)
+
+  TrainerModifier.add(:StreetRat, "Owen", 0)
+                 .set_pkmn(0, :NINETALES, 50, :FLASHFIRE)
+
+}
+
+RemiX.gym(7) {
+
+  TrainerModifier.add(:COOLTRAINER_Male, "Kaz", 0)
+                 .set_pkmn(0, :DIGGERSBY, 55, :HUGEPOWER)
+                 .set_pkmn(1, :OMASTAR, 55, :SWIFTSWIM)
+                 .set_pkmn(2, :PILOSWINE, 55, :THICKFAT)
 
 }

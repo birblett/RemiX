@@ -1,4 +1,4 @@
-AltBalance.gym(1) {
+RemiX.gym(1) {
 
   TrainerModifier.add(:COOLTRAINER_Male, "Davinson", 0)
                  .set_pkmn(0, :SERVINE, 21, :CONTRARY)
@@ -26,8 +26,8 @@ AltBalance.gym(1) {
                  .set_pkmn(1, :DEERLING, 24, :CHLOROPHYLL)
 
   TrainerModifier.add(:MIGHTYENA, "Strays", 0)
-                 .set_pkmn(0, :MIGHTYENA, 29, :INTIMIDATE, item: :MIGHTYENACREST, moves: [:SNARL, :SWAGGER, :BITE, :THUNDERFANG])
-                 .set_pkmn(1, :MIGHTYENA, 29, :INTIMIDATE, item: :MIGHTYENACREST, moves: [:SNARL, :SWAGGER, :BITE, :FIREFANG])
+                 .set_pkmn(0, :MIGHTYENA, 29, :INTIMIDATE, item: MIGHTYENA_CREST, moves: [:SNARL, :SWAGGER, :BITE, :THUNDERFANG])
+                 .set_pkmn(1, :MIGHTYENA, 29, :INTIMIDATE, item: MIGHTYENA_CREST, moves: [:SNARL, :SWAGGER, :BITE, :FIREFANG])
 
   TrainerModifier.add(:COOLTRAINER_Female, "Eilee", 0)
                  .set_pkmn(0, :STUFFUL, 16, :FLUFFY)

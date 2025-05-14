@@ -1,4 +1,4 @@
-AltBalance.chapter(5) {
+RemiX.chapter(5) {
 
   TrainerModifier.add(:POKEMONRANGER_F, "Ceil", 0)
                  .set_pkmn(0, :ROSERADE, 40, :NATURALCURE, moves: [:GIGADRAIN, :HIDDENPOWERFIG, :TOXICSPIKES, :WEATHERBALL], nature: :TIMID)
@@ -8,7 +8,7 @@ AltBalance.chapter(5) {
   TrainerModifier.add(:POKEMONRANGER_F, "Diandra", 0)
                  .set_pkmn(0, :PERSIAN, 40, :TECHNICIAN)
                  .set_pkmn(1, :COMFEY, 40, :TRIAGE, moves: [:DRAININGKISS, :GIGADRAIN, :CALMMIND, :SYNTHESIS])
-                 .set_pkmn(2, :CHERRIM, 40, :FLOWERGIFT, item: :CHERCREST, moves: [:RETURN, :SEEDBOMB, :SUNNYDAY, :LEECHSEED])
+                 .set_pkmn(2, :CHERRIM, 40, :FLOWERGIFT, item: CHERRIM_CREST, moves: [:RETURN, :SEEDBOMB, :SUNNYDAY, :LEECHSEED])
                  .set_pkmn(3, :RILLABOOM, 40, :GRASSYSURGE, moves: [:GRASSYGLIDE, :WOODHAMMER, :KNOCKOFF, :UTURN])
 
   # black shards quest

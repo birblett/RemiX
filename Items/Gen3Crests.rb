@@ -1,50 +1,51 @@
-if Reborn
-
-  CrestBuilder.add(:CLAYDOL, "Attacks use the Defense stat and beam moves are boosted.")
-
-end
-
-CrestBuilder.add(:MIGHTYENA, "Biting moves go first.")
+MIGHTYENA_CREST = CrestBuilder.add(:MIGHTYENA, "Biting moves go first.")
             .priority_mod { |_, move| 1 if move.is_bite_move? }
+            .sym
 
-CrestBuilder.add(:LINOONE, "Set Inverse Field for 4 turns on switch-in.")
-            .on_battle_entry do |_, battle, _|
+LINOONE_CREST = CrestBuilder.add(:LINOONE, "Set Inverse Field for 4 turns on switch-in.")
+            .on_battle_entry { |_, battle, _|
               unless battle.FE == :INVERSE or battle.FE == :FROZENDIMENSION
                 battle.setField(:INVERSE, 4)
                 UniLib.display_if_visible(battle, _INTL("The terrain was inverted!"))
               end
-            end
+            }
+            .sym
 
-CrestBuilder.add(:LUDICOLO, "Uses its first move on switch-in, once per battle.")
-            .on_battle_entry do |pkmn, _, _|
-              unless pkmn.permanent_effect(:LudiCrest)
+LUDICOLO_CREST = CrestBuilder.add(:LUDICOLO, "Uses its first move on switch-in, once per battle.")
+            .on_battle_entry { |pkmn, _, _|
+              unless pkmn.permanent_effect(:LUDICOLO_CREST)
                 pkmn.pbUseMoveSimple(pkmn.moves[0].move, 0)
-                pkmn.set_permanent_effect(:LudiCrest, true)
+                pkmn.set_permanent_effect(:LUDICOLO_CREST, true)
               end
-            end
+            }
+            .sym
 
-CrestBuilder.add(:HARIYAMA, "Burn on switch-in. Increased damage when moving before the target.")
-            .on_battle_entry do |pkmn, _, _|
+HARIYAMA_CREST = CrestBuilder.add(:HARIYAMA, "Burn on entry, stronger when moving first. Gain Solid Rock.")
+            .on_battle_entry { |pkmn, _, _|
               pkmn.status = :BURN
               pkmn.battle.pbCommonAnimation("Burn", pkmn, nil)
               UniLib.display_if_visible(pkmn.battle, _INTL("{1} was burned by its {2}!", pkmn.pbThis,getItemName(pkmn.item)))
-            end
+            }
             .damage_mod { |_, target, _, _, _| next 1.2 unless target.hasMovedThisRound? }
+            .ability_provider { :SOLIDROCK }
+            .sym
 
-CrestBuilder.add(:TORKOAL, "Gain the Water-type. Water moves deal 50% extra damage instead of halved damage in sun.")
+TORKOAL_CREST = CrestBuilder.add(:TORKOAL, "Gain the Water-type. Water moves deal 50% extra damage instead of halved damage in sun.")
             .secondary_no_weakness(:WATER)
             .damage_mod { |attacker, _, move, _, _| next 3 if move.type == :WATER and attacker.battle.weather == :SUNNYDAY }
+            .sym
 
-CrestBuilder.add(:MILOTIC, "First move matches secondary type and uses highest stat. Burns if Marvel Scale.")
-            .add_receiver(:MILOTIC, "Aevian")
-            .on_battle_entry do |pkmn, _, _|
+MILOTIC_CREST = CrestBuilder.add(:MILOTIC, "First move matches secondary type and uses highest stat. Burns if Marvel Scale.")
+            .add_receiver(:MILOTIC, Reborn ? 0 : "Aevian")
+            .on_battle_entry { |pkmn, _, _|
               if pkmn.ability == :MARVELSCALE and pkmn.pbCanBurn?(false)
                 pkmn.status = :BURN
                 pkmn.battle.pbCommonAnimation("Burn", pkmn, nil)
                 UniLib.display_if_visible(pkmn.battle, _INTL("{1} was burned by its {2}!", pkmn.pbThis,getItemName(pkmn.item)))
               end
-            end
-            .move_type_override { |attacker, move, _| next attacker.type2 if move == attacker.moves[0] } if Rejuv
+            }
+            .move_type_override { |attacker, move, _| next attacker.type2 if move == attacker.moves[0] }
+            .sym
 
 CASTFORM_CREST_STATS = [
   [70, 70, 70, 90, 70, 110], # sun
@@ -52,7 +53,7 @@ CASTFORM_CREST_STATS = [
   [70, 70, 70, 110, 70, 90]  # hail
 ]
 
-CrestBuilder.add_existing(:CASTCREST)
+CrestBuilder.add_existing(CASTFORM_CREST)
             .add_receiver(:CASTFORM, "Sunny")
             .add_receiver(:CASTFORM, "Rainy")
             .add_receiver(:CASTFORM, "Snowy")

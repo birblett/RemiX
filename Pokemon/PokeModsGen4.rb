@@ -23,12 +23,14 @@ PokeModifier.add(:MONFERNO)
             .type2(:ELECTRIC)
             .ability(Reborn ? 1 : 2, :MAGICGUARD)
             .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [42, :THUNDERBOLT], [55, :THUNDER]])
+            .compatible_moves(:VOLTSWITCH)
 
 # INFERNAPE
 PokeModifier.add(:INFERNAPE)
             .type2(:ELECTRIC)
             .ability(Reborn ? 1 : 2, :MAGICGUARD)
             .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [42, :THUNDERBOLT], [50, :WILDCHARGE], [55, :THUNDER]])
+            .compatible_moves(:VOLTSWITCH)
 
 # PIPLUP
 PokeModifier.add(:PIPLUP)
@@ -135,12 +137,14 @@ PokeModifier.add(:AMBIPOM)
 # DRIFLOON
 PokeModifier.add(:DRIFLOON)
             .ability(0, :PRANKSTER)
-            .level_moves([45, :CALMMIND])
+            .remove_compatible_moves(:DESTINYBOND)
+            .level_moves([[45, :CALMMIND], [80, :DESTINYBOND]])
 
 # DRIFBLIM
 PokeModifier.add(:DRIFBLIM)
             .ability(0, :PRANKSTER)
-            .level_moves([45, :CALMMIND])
+            .remove_compatible_moves(:DESTINYBOND)
+            .level_moves([[45, :CALMMIND], [80, :DESTINYBOND]])
 
 # BUNEARY
 PokeModifier.add(:BUNEARY)
@@ -306,7 +310,7 @@ PokeModifier.add(:TOGEKISS)
 PokeModifier.add(:LEAFEON)
             .stats(100, 95, 0, 0, 0, 110)
             .type2(:ROCK)
-            .ability(2, :TINTEDLENS)
+            .abilities({ 1 => :TINTEDLENS, 2 => :CHLOROPHYLL })
             .set_plates(:MEADOWPLATE)
             .level_moves([[15, :SWORDSDANCE], [20, :ROCKTHROW], [28, :ROCKTOMB], [42, :ROCKSLIDE], [55, :STONEEDGE]])
 
@@ -314,7 +318,7 @@ PokeModifier.add(:LEAFEON)
 PokeModifier.add(:GLACEON)
             .stats(100, 0, 0, 0, 65, 95)
             .type2(:FIGHTING)
-            .ability(1, :NOGUARD)
+            .abilities({ 1 => :NOGUARD, 2 => :ICEBODY })
             .set_plates(:ICICLEPLATE)
             .level_moves([[30, :AURASPHERE], [40, :VACUUMWAVE], [50, :FOCUSBLAST]])
 
@@ -324,7 +328,7 @@ PokeModifier.add(:MAMOSWINE)
 
 # PORYGONZ
 PokeModifier.add(:PORYGONZ)
-            .set_camo(1)
+            .set_camo
 
 # GALLADE
 PokeModifier.add(:GALLADE)

@@ -181,7 +181,7 @@ AbilityBuilder.add(:REVEL, "Revel", "Type changes to match dance moves...", "Pri
 
 AbilityBuilder.add(:LANCER, "Lancer", "Stabbing moves boosted and crit defensive targets.", "1.2x damage on stabbing moves, and will crit if the opposing Pokemon has positive defensive stat boosts.")
               .damage_mod { |_, _, move, _, _| next 1.2 if move.is_stabbing_move? }
-              .crit_mod { |_, opponent, move| next 3 if move.is_stabbing_move? and opponent.stages[move.pbIsSpecial?(move) ? 4 : 2] > 0 }
+              .crit_mod { |attacker, opponent, move| next 3 if move.is_stabbing_move? and opponent.stages[move.pbIsSpecial?(attacker) ? 4 : 2] > 0 }
               .disrupt_score { next 1.2 }
 
 AbilityBuilder.add(:STINGINGCELLS, "Stinging Cells", "Contact moves gain Electric sub-type.")

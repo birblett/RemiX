@@ -1,4 +1,4 @@
-AltBalance.chapter(1) {
+RemiX.gym(1) {
 
   TrainerModifier.add(:StreetRat, "Wayne", 0)
                  .set_pkmn(0, :PIDGEY, 19, :KEENEYE)
@@ -6,10 +6,9 @@ AltBalance.chapter(1) {
                  .set_pkmn(2, :PIDGEOTTO, 24, :GALEFORCE)
 
   # slums
-
   TrainerModifier.add(:StreetRat, "Rafe", 0)
                  .set_pkmn(0, :MIMEJR, 20, :SOUNDPROOF)
-                 .set_pkmn(1, :SIMISEAR, 22, :GLUTTONY, item: :SIMISEARCREST, moves: [:TRIATTACK, :FLAMEBURST, :NASTYPLOT, nil])
+                 .set_pkmn(1, :SIMISEAR, 22, :GLUTTONY, item: SIMISEAR_CREST, moves: [:TRIATTACK, :FLAMEBURST, :NASTYPLOT, nil])
 
   TrainerModifier.add(:StreetRat, "Omar", 0)
                  .set_pkmn(0, :CHINGLING, 21, :LEVITATE)
@@ -56,5 +55,18 @@ AltBalance.chapter(1) {
   TrainerModifier.add(:StreetRat, "Carter", 0)
                  .set_pkmn(0, :BARBOACH, 24, :OBLIVIOUS)
                  .set_pkmn(1, :SPINDA, 24, :OWNTEMPO)
+
+}
+
+RemiX.gym(3) {
+
+  TrainerModifier.add(:PANGORO, "Don", 0)
+                 .set_pkmn(0, :PANGORO, 45, :SCRAPPY, moves: [:BODYSLAM, :CIRCLETHROW, :CRUNCH, :VITALTHROW], ev: ATKSPE)
+
+  TrainerModifier.add(:PANGORO, "Don", 0)
+                 .set_pkmn(0, :PANGORO, 45, :SCRAPPY, moves: [:BODYSLAM, :CIRCLETHROW, :CRUNCH, :VITALTHROW], ev: ATKSPE)
+
+  TrainerModifier.add(:PANGORO, "Don", 1)
+                 .set_pkmn(0, :PANGORO, 50, :IRONFIST, item: :SITRUSBERRY, moves: [:BODYSLAM, :CIRCLETHROW, :CRUNCH, :HAMMERARM], ev: ATKSPE)
 
 }

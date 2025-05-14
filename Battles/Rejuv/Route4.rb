@@ -1,10 +1,10 @@
-AltBalance.chapter(5) {
+RemiX.chapter(5) {
 
   # south
   TrainerModifier.add(:LASS, "Tana", 0)
                  .set_pkmn(0, :MARACTUS, 40, :OPENWOUNDS)
                  .set_pkmn(1, :LURANTIS, 40, :CONTRARY, moves: [:SUPERPOWER, :ICEHAMMER, :HEADLONGRUSH, :SLASHANDBURN])
-                 .set_pkmn(2, :LUVDISC, 40, :SWIFTSWIM, item: :LUVCREST, happiness: 255)
+                 .set_pkmn(2, :LUVDISC, 40, :SWIFTSWIM, item: LUVDISC_CREST, happiness: 255)
 
   TrainerModifier.add(:OPT, "Sheila", 0)
                  .set_pkmn(0, :SKITTY, 40, :CUTECHARM)
@@ -22,6 +22,6 @@ AltBalance.chapter(5) {
 
   TrainerModifier.add(:LADY, "Sissy", 0)
                  .set_pkmn(0, :RATICATE, 40, :HUSTLE, item: :WIDELENS, form: 1, moves: [:DOUBLEEDGE, :CRUNCH, :SUCKERPUNCH, :HONECLAWS])
-                 .set_pkmn(1, :GUMSHOOS, 40, :STRONGJAW, item: :GUMSHOOSCREST, moves: [:CRUNCH, :PSYCHICFANGS, :HYPERFANG, :FIREFANG])
+                 .set_pkmn(1, :GUMSHOOS, 40, :STRONGJAW, item: GUMSHOOS_CREST, moves: [:CRUNCH, :PSYCHICFANGS, :HYPERFANG, :FIREFANG])
 
 }

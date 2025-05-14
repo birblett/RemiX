@@ -1,4 +1,4 @@
-AltBalance.chapter(2) {
+RemiX.chapter(2) {
 
   TrainerModifier.add(:CRUSHGIRL, "Lilith", 0)
                  .set_pkmn(0, :PIGNITE, 25, :THICKFAT)
@@ -64,12 +64,12 @@ AltBalance.chapter(2) {
   TrainerModifier.add(:XENGRUNT_F, "Sarah", 0)
                  .set_pkmn(0, :SALANDIT, 25, :CORROSION)
                  .set_pkmn(1, :ARBOK, 25, :INTIMIDATE)
-                 .set_pkmn(2, :FEAROW, 25, :KEENEYE, item: :FEARCREST, moves: [:DRILLRUN, :DRILLPECK, :ASSURANCE, :SLASH])
+                 .set_pkmn(2, :FEAROW, 25, :KEENEYE, item: FEAROW_CREST, moves: [:DRILLRUN, :DRILLPECK, :ASSURANCE, :SLASH])
 
   TrainerModifier.add(:XENANALYST_M, "Jensly", 0)
                  .set_pkmn(0, :ELECTRODE, 25, :SOUNDPROOF, moves: [:THUNDERBOLT, :THUNDERWAVE, :EXPLOSION, :SCREECH])
                  .set_pkmn(1, :ACCELGOR, 25, :TECHNICIAN, moves: [:STRUGGLEBUG, :WATERSHURIKEN, :MEGADRAIN, :SWIFT])
-                 .set_pkmn(2, :ELDEGOSS, 25, :REGENERATOR, item: :ELDEGOSSCREST, moves: [:HYPERVOICE, :LEAFTORNADO, :LEECHSEED, :SYNTHESIS])
+                 .set_pkmn(2, :ELDEGOSS, 25, :REGENERATOR, item: ELDEGOSS_CREST, moves: [:HYPERVOICE, :LEAFTORNADO, :LEECHSEED, :SYNTHESIS])
 
   TrainerModifier.add(:XENGRUNT_M, "Demil", 0)
                  .set_pkmn(0, :ONIX, 25, :ROCKHEAD)
@@ -98,25 +98,25 @@ AltBalance.chapter(2) {
                  .set_pkmn(3, :ROSERADE, 25, :NATURALCURE)
 
 }
-AltBalance.chapter(4) {
+RemiX.chapter(4) {
 
   TrainerModifier.add(:CRUSHGIRL, "Janelle", 0)
                  .set_pkmn(0, :SANDSLASH, 35, :SANDVEIL, moves: [:CRUSHCLAW, :EARTHQUAKE, :HONECLAWS, :STEALTHROCK], ev: HPATK)
                  .set_pkmn(1, :NINJASK, 35, :SPEEDBOOST, moves: [:PROTECT, :AERIALACE, :SWORDSDANCE, :BATONPASS], ev: HPSPE)
                  .set_pkmn(2, :RAMPARDOS, 35, :MOLDBREAKER, moves: [:ROCKSLIDE, :ZENHEADBUTT, :FIREPUNCH, :ROCKPOLISH], ev: ATKSPE)
-                 .set_pkmn(3, :ZANGOOSE, 35, :TOXICBOOST, item: :ZANGCREST, moves: [:QUICKATTACK, :SHADOWCLAW, :CRUSHCLAW, :SWORDSDANCE], ev: ATKSPE, nature: :JOLLY)
+                 .set_pkmn(3, :ZANGOOSE, 35, :TOXICBOOST, item: ZANGOOSE_CREST, moves: [:QUICKATTACK, :SHADOWCLAW, :CRUSHCLAW, :SWORDSDANCE], ev: ATKSPE, nature: :JOLLY)
                  .set_pkmn(4, :SNEASEL, 35, :INNERFOCUS, moves: [:ICEPUNCH, :HONECLAWS, :ICESHARD, :KNOCKOFF], ev: ATKSPE)
                  .set_pkmn(5, :SIRFETCHD, 35, :SUPERLUCK, item: :STICK, moves: [:LEAFBLADE, :SLASH, :NIGHTSLASH, :BRICKBREAK], ev: HPATK)
 
 }
-AltBalance.chapter(8) {
+RemiX.chapter(8) {
 
   TrainerModifier.add(:LEADER_TEXEN, "Texen", 0)
-                 .set_pkmn(0, :HITMONCHAN, 55, :IRONFIST, item: :HITMONCHANCREST, moves: [:FAKEOUT, :MACHPUNCH, :ICEPUNCH, :THUNDERPUNCH], ev: ATKSPE)
+                 .set_pkmn(0, :HITMONCHAN, 55, :IRONFIST, item: HITMONCHAN_CREST, moves: [:FAKEOUT, :MACHPUNCH, :ICEPUNCH, :THUNDERPUNCH], ev: ATKSPE)
                  .set_pkmn(1, :PASSIMIAN, 55, :SCRAPPY, item: :SALACBERRY, moves: [:ACROBATICS, :CLOSECOMBAT, :ROCKSLIDE, :ENDURE], ev: ATKSPE)
                  .set_pkmn(2, :CONKELDURR, 55, :GUTS, item: :ASSAULTVEST, moves: [:DRAINPUNCH, :MACHPUNCH, :KNOCKOFF, :METEORMASH], ev: HPATK)
                  .set_pkmn(3, :STARAPTOR, 55, :INTIMIDATE, item: :CHOICEBAND, moves: [:CLOSECOMBAT, :BRAVEBIRD, :QUICKATTACK, :UTURN], ev: ATKSPE, nature: :JOLLY)
-                 .set_pkmn(4, :SAWK, 55, :STURDY, item: :SAWKCREST, moves: [:BRICKBREAK, :KNOCKOFF, :POISONJAB, :BULKUP], ev: ATKSPE, nature: :JOLLY)
+                 .set_pkmn(4, :SAWK, 55, :STURDY, item: SAWK_CREST, moves: [:BRICKBREAK, :KNOCKOFF, :POISONJAB, :BULKUP], ev: ATKSPE, nature: :JOLLY)
                  .set_pkmn(5, :KOMMOO, 55, :SOUNDPROOF, item: :CHOICESCARF, moves: [:CLANGINGSCALES, :HYPERVOICE, :FOCUSBLAST, :FLASHCANNON], ev: SPASPE, nature: :TIMID)
 
 }

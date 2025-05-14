@@ -13,11 +13,11 @@ ItemBuilder.add(:CATALYZER, "Catalyzer", "May activate the user's hidden potenti
            .no_use_in_battle
            .crystal
 
-UniLib.insert_in_function(:checkEvoConditions, :HEAD, "return nil if pokemon and pokemon.species == :EEVEE and pokemon.level < 60")
+UniLib.insert_in_function(:checkEvoConditions, :HEAD, "return nil if pokemon and pokemon.species == :EEVEE and pokemon.level < 78")
 
-UniLib.insert_in_function(:checkEvoConditionsItem, :HEAD, "return nil if pokemon and pokemon.species == :EEVEE and pokemon.level < 60")
+UniLib.insert_in_function(:checkEvoConditionsItem, :HEAD, "return nil if pokemon and pokemon.species == :EEVEE and pokemon.level < 78")
 
 UniLib.insert_in_method_before(:AdvancedPokedexScene, :getEvolutionMessage, "ret = _INTL(\"{1} by an unknown way\", evoPokemon) if(ret.empty?)", proc do |evolution, evoPokemon, evoMethod, evoItem|
   ret = "Sylveon while knowing a Fairy move" if evolution[0] == :SYLVEON
-  ret += " at level 60" if ret and evolution and [:VAPOREON, :JOLTEON, :FLAREON, :ESPEON, :UMBREON, :LEAFEON, :GLACEON, :SYLVEON].include? evolution[0]
+  ret += " at level 78" if ret and evolution and [:VAPOREON, :JOLTEON, :FLAREON, :ESPEON, :UMBREON, :LEAFEON, :GLACEON, :SYLVEON].include? evolution[0]
 end) if Rejuv

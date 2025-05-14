@@ -1,4 +1,4 @@
-AltBalance.chapter(1) {
+RemiX.chapter(1) {
 
   BossModifier.add(:BOSSGARBODOR)
               .set_name("Garbage Menace")
@@ -21,7 +21,7 @@ AltBalance.chapter(1) {
 
 }
 
-AltBalance.chapter(2) {
+RemiX.chapter(2) {
 
   BossModifier.add(:RIFTGALVANTULA)
               .set_name("Rift Galvantula")
@@ -49,7 +49,7 @@ AltBalance.chapter(2) {
 
 }
 
-AltBalance.chapter(3) {
+RemiX.chapter(3) {
 
   BossModifier.add(:BOSSDUSKNOIR)
               .set_name("Dusknoir")
@@ -61,7 +61,7 @@ AltBalance.chapter(3) {
 
 }
 
-AltBalance.chapter(4) {
+RemiX.chapter(4) {
 
   BossModifier.add(:BOSSCROBAT)
               .set_name("Furious Bat")
@@ -100,7 +100,7 @@ AltBalance.chapter(4) {
 
 }
 
-AltBalance.chapter(5) {
+RemiX.chapter(5) {
 
   BossModifier.add(:BOSSCONKELDURR)
               .set_name("HARDHAT DAVE")
@@ -127,7 +127,7 @@ AltBalance.chapter(5) {
               .set_sos_pkmn(2, :TANGROWTH, 43, :DANCER, moves: [:FOLLOWME, :REVELATIONDANCE, :POLLENPUFF, :ROCKTOMB])
 
 }
-AltBalance.chapter(6) {
+RemiX.chapter(6) {
 
   BossModifier.add(:TAPUKOKOJUNGLE)
               .set_name("Thunder Warrior")
@@ -141,7 +141,7 @@ AltBalance.chapter(6) {
 
 }
 
-AltBalance.chapter(7) {
+RemiX.chapter(7) {
 
   BossModifier.add(:AMETHYSTREGISTEEL)
               .set_name("Iron Guardian")
