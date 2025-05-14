@@ -641,8 +641,7 @@ PokeModifier.add(:MOLTRES)
 
 # DRAGONITE
 PokeModifier.add(:DRAGONITE)
-            .stats(100, 100, 100, 115, 0, 85)
-            .ability(2, :AERILATE)
+            .stats(95, 120, 0, 110, 0, 0)
 
 # MEW
 PokeModifier.add(:MEW)

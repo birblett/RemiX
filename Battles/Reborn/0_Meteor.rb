@@ -80,12 +80,12 @@ RemiX.meteor {
                    .set_pkmn(5, :GALVANTULA, 71, :COMPOUNDEYES, item: :FOCUSSASH, moves: [:THUNDER, :BUGBUZZ, :HIDDENPOWER, :RAGEPOWDER], hptype: :ICE, gender: "F", shiny: true, nature: :TIMID, ev: SPASPE)
 
     TrainerModifier.add(:AsterKnight, "Aster", 4)
-                   .set_pkmn(0, :SOLROCK, 75, :LEVITATE)
+                   .set_pkmn(0, :SOLROCK, 75, :LEVITATE, ev: HPATK)
                    .set_pkmn(1, :GOLURK, 75, :TAKEOFF, item: :LEFTOVERS,  moves: [:PHANTOMFORCE, :FLY, :EARTHQUAKE, :CLOSECOMBAT], nature: :ADAMANT, ev: HPATK)
                    .set_pkmn(2, :KROOKODILE, 75, :INTIMIDATE, item: :CHOICESCARF, moves: [:EARTHQUAKE, :OUTRAGE, :ROCKSLIDE, :FOULPLAY], ev: ATKSPE)
                    .set_pkmn(3, :MILOTIC, 76, :MARVELSCALE, item: MILOTIC_CREST, moves: [:BLIZZARD, :SCALD, :RECOVER, :ICEBEAM], gender: "F", nature: :MODEST, ev: HPSPA)
-                   .set_pkmn(4, :LYCANROC, 77, :SANDRUSH, item: :LIFEORB, moves: [:BRICKBREAK, :ROCKSLIDE, :PLAYROUGH, :DRILLRUN])
-                   .set_pkmn(5, :LYCANROC, 77, :NOGUARD, item: :ELEMENTALSEED, moves: [:THUNDERPUNCH, :STONEEDGE, :SUCKERPUNCH, :SWORDSDANCE])
+                   .set_pkmn(4, :LYCANROC, 77, :SANDRUSH, item: :LIFEORB, moves: [:BRICKBREAK, :ROCKSLIDE, :PLAYROUGH, :DRILLRUN], ev: ATKSPE)
+                   .set_pkmn(5, :LYCANROC, 77, :NOGUARD, item: :ELEMENTALSEED, moves: [:THUNDERPUNCH, :STONEEDGE, :SUCKERPUNCH, :SWORDSDANCE], ev: ATKSPE)
 
   }
 

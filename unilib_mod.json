@@ -1,7 +1,18 @@
 {
   "id": "remix",
   "version": 1.0,
+  "unilib_version": 0.7,
   "priority": 1000,
+  "modules": [
+    "Asset",
+    "Battle",
+    "BattleEffects",
+    "CrestCompat",
+    "ExtraMoveFlags",
+    "Fixes",
+    "Move",
+    "PokemonOM"
+  ],
   "entrypoints": [
     "RemiX.rb"
   ]
