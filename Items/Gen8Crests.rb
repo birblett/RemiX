@@ -2,7 +2,7 @@ if Rejuv
 
 ELDEGOSS_CREST = CrestBuilder.add(:ELDEGOSS, "0.9x damage taken, grants Pixilate.")
             .damage_taken_mod { next 0.9 }
-            .ability_provider { next :PIXILATE }
+            .ability_provider { :PIXILATE }
             .cairo(1, 4000)
             .sym
 
@@ -28,7 +28,7 @@ MORPEKO_CREST = CrestBuilder.add(:MORPEKO, "Start off Hangry, replaces Hunger Sw
 
 FALINKS_CREST = CrestBuilder.add(:FALINKS, "Bug resists and STAB; grants Lancer.")
             .secondary_no_weakness(:BUG)
-            .ability_provider { next [:LANCER, :DAUNTLESSSHIELD] }
+            .ability_provider { [:LANCER, :DAUNTLESSSHIELD] }
             .sym
 
 end

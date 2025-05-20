@@ -1,15 +1,15 @@
 # BULBASAUR
 PokeModifier.add(:BULBASAUR)
-            .ability(2, :THICKFAT)
+            .abilities({ 1 => :CHLOROPHYLL, 2 => :THICKFAT })
 
 # IVYSAUR
 PokeModifier.add(:IVYSAUR)
-            .ability(2, :THICKFAT)
+            .abilities({ 1 => :CHLOROPHYLL, 2 => :THICKFAT })
 
 # VENUSAUR
 PokeModifier.add(:VENUSAUR)
-            .ability(2, :THICKFAT)
-            .set_plates(:FLAMEPLATE)
+            .abilities({ 1 => :CHLOROPHYLL, 2 => :THICKFAT })
+            .set_plates(:FIRE)
             .level_moves([60, :WEATHERBALL])
 
 # CHARMANDER
@@ -558,6 +558,16 @@ PokeModifier.add(:MAGMAR)
 PokeModifier.add(:TAUROS)
             .stats(70, 0, 80, 80, 0, 0)
             .set_pokebilities(1)
+
+# MAGIKARP
+PokeModifier.add(:MAGIKARP)
+            .add_mega(:MAGIKARPITE, "Mega Form")
+
+PokeModifier.add_form(:MAGIKARP, "Mega Form")
+            .type1(:WATER).type2(:DRAGON)
+            .abilities({ 0 => :DRAGONFORCE, 1 => nil, 2 => :DRAGONFORCE })
+            .stats(100, 120, 80, 20, 200, 120)
+            .asset_override(nil, "RemiX/Assets/gigakarp.png")
 
 # MAGIKARP-A
 PokeModifier.add(:MAGIKARP, "Aevian")

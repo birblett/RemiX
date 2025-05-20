@@ -31,6 +31,10 @@ AbilityBuilder.add(:OVERCLOCKING, "Overclocking", "Boosts damage but wears off o
               .damage_mod { |attacker, _, _, _, _| next attacker.effects[:Overclocking] }
               .on_turn_end { |pkmn| pkmn.effects[:Overclocking] -= 0.1 if pkmn.effects[:Overclocking] > 0.9 }
 
+AbilityBuilder.add(:DRAGONFORCE, "Dragonforce", "...")
+              .on_move_attempt { |pkmn, move| UniLib.display_if_visible(pkmn.battle, _INTL("{1} is ascending!", pkmn.pbThis, (pkmn.type2 = move.type).capitalize)) if move.move == :DRAGONASCENT and pkmn.type2 != :FLYING }
+              .damage_mod { |pkmn, _, move, _, ai| next 1.5 if ai and move.move == :DRAGONASCENT and pkmn.type2 != :FLYING }
+
 AbilityBuilder.add(:C0000005, "0xC0000005", "Sets 3 turns of Glitch field on switch.")
               .on_battle_entry do |_, battle, _|
                 unless battle.FE == :GLITCH or battle.FE == :FROZENDIMENSION
@@ -80,18 +84,29 @@ AbilityBuilder.add(:HOARDING, "Hoarding", "Stockpile at the end of turns when da
               end
               .disrupt_score { next 1.5 }
 
+AbilityBuilder.add(:REVERB, "Reverb", "Sound moves hit twice. Second hit deals 0.3x damage.")
+              .hit_count_mod { |_, move| 2 if move.isSoundBased? }
+              .damage_mod { |attacker, _, move, hit, _|
+                if move.isSoundBased?
+                  next 0.3 if attacker.effects[:Reverb]
+                  attacker.effects[:Reverb] = true
+                end
+                nil
+              }
+              .on_turn_end { |pkmn| pkmn.effects[:Reverb] = nil }
+
 AbilityBuilder.add(:OPENWOUNDS, "Open Wounds", "On contact, inflict stacking damage over time.", "Contact moves inflict a stack of open wounds which deal 1/16 damage per stack, with up to 4 active at once.")
-              .on_damage_dealt do |_, target, move, damage|
+              .on_damage_dealt { |_, target, move, damage|
                 if damage > 0 and move.contactMove?
                   target.effects[:OpenWounds] ? target.effects[:OpenWounds] += 1 : target.effects[:OpenWounds] = 1
                   UniLib.display_if_visible(target.battle, _INTL("{1} was riddled with wounds!", target.pbThis))
                 end unless target.isFainted? or (target.effects[:OpenWounds] and target.effects[:OpenWounds] >= 4)
-              end
-              .move_score do |_, _, target, move|
+              }
+              .move_score { |_, _, target, move|
                 if move.contactMove? and (!target.effects[:OpenWounds] or target.effects[:OpenWounds] < 4)
                   next (target.effects[:OpenWounds] and target.effects[:OpenWounds] < 3 and move.pbIsMultiHit) ? 1.3 : 1.2
                 end
-              end
+              }
               .disrupt_score { next 1.1 }
 
 BattleEffects.add(:OpenWounds)
@@ -132,17 +147,21 @@ AbilityBuilder.add(:CAMOUFLAGE, "Camouflage", "Gain resistances (but not immunit
                 $camouflage_type_cache = {} unless defined? $camouflage_type_cache
                 if $camouflage_type_cache[key].nil?
                   $camouflage_type_cache[key] = []
-                  dtypes = []
-                  dtypes.push(defender.pokemon.type1)
+                  dtypes, types = [defender.pokemon.type1], []
                   dtypes.push(defender.pokemon.type2) unless defender.pokemon.type2.nil?
-                  types = []
-                  t1, t2 = $cache.pkmn[defender.species].Type1, $cache.pkmn[defender.species].Type2
-                  types.push(t1) unless t1.nil? or dtypes.include?(t1)
-                  types.push(t2) unless t2.nil? or types.include?(t2) or dtypes.include?(t2)
-                  $cache.pkmn[defender.species].formData.each do |_, form|
-                    t1, t2 = form[:Type1], form[:Type2]
+                  if Reborn
+                    $cache.pkmn[defender.species].pokemonData.each { |form|
+                      types |= [form.Type1] - dtypes if form.Type1
+                      types |= [form.Type2] - dtypes if form.Type2
+                    }
+                  else
+                    t1, t2 = $cache.pkmn[defender.species].Type1, $cache.pkmn[defender.species].Type2
                     types.push(t1) unless t1.nil? or dtypes.include?(t1)
                     types.push(t2) unless t2.nil? or types.include?(t2) or dtypes.include?(t2)
+                    $cache.pkmn[defender.species].formData.each { |_, form|
+                      types |= [form[:Type1]] - dtypes if form[:Type1]
+                      types |= [form[:Type2]] - dtypes if form[:Type2]
+                    }
                   end
                   types.each { |type| $camouflage_type_cache[key] += UniLib::TYPE_RESISTANCE_MAP[type] }
                 end
@@ -238,4 +257,4 @@ AbilityBuilder.add(:OVERBITE, "Overbite", "Bite moves are Rock-type, stronger, a
               .move_type_override { |_, move, _| next :ROCK if move.is_bite_move? }
               .on_damage_dealt { |_, target, _, damage| target.pbReduceStat(PBStats::SPEED, 1) if damage > 0 and target.pbCanReduceStatStage?(PBStats::SPEED, false, true) }
 
-PokeModifier.add_bans(:C0000005, :ELEMENTALBODY, :FEEDINGFRENZY)
+PokeModifier.add_bans(:C0000005, :DRAGONFORCE, :ELEMENTALBODY, :FEEDINGFRENZY)

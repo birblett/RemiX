@@ -1,5 +1,5 @@
 {
-  "id": "remix",
+  "id": "birb_remix",
   "version": 1.0,
   "unilib_version": 0.7,
   "priority": 1000,
@@ -10,6 +10,7 @@
     "CrestCompat",
     "ExtraMoveFlags",
     "Fixes",
+    "FormPorts",
     "Move",
     "PokemonOM"
   ],

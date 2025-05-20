@@ -9,6 +9,7 @@ LINOONE_CREST = CrestBuilder.add(:LINOONE, "Set Inverse Field for 4 turns on swi
                 UniLib.display_if_visible(battle, _INTL("The terrain was inverted!"))
               end
             }
+            .role_provider { :FIELDSETTER }
             .sym
 
 LUDICOLO_CREST = CrestBuilder.add(:LUDICOLO, "Uses its first move on switch-in, once per battle.")
@@ -18,6 +19,7 @@ LUDICOLO_CREST = CrestBuilder.add(:LUDICOLO, "Uses its first move on switch-in, 
                 pkmn.set_permanent_effect(:LUDICOLO_CREST, true)
               end
             }
+            .role_provider { |_, pkmn| :WEATHERSETTER if pkmn.moves[3].move == :RAINDANCE }
             .sym
 
 HARIYAMA_CREST = CrestBuilder.add(:HARIYAMA, "Burn on entry, stronger when moving first. Gain Solid Rock.")
@@ -28,6 +30,7 @@ HARIYAMA_CREST = CrestBuilder.add(:HARIYAMA, "Burn on entry, stronger when movin
             }
             .damage_mod { |_, target, _, _, _| next 1.2 unless target.hasMovedThisRound? }
             .ability_provider { :SOLIDROCK }
+            .role_provider { :TANK }
             .sym
 
 TORKOAL_CREST = CrestBuilder.add(:TORKOAL, "Gain the Water-type. Water moves deal 50% extra damage instead of halved damage in sun.")
@@ -46,15 +49,3 @@ MILOTIC_CREST = CrestBuilder.add(:MILOTIC, "First move matches secondary type an
             }
             .move_type_override { |attacker, move, _| next attacker.type2 if move == attacker.moves[0] }
             .sym
-
-CASTFORM_CREST_STATS = [
-  [70, 70, 70, 90, 70, 110], # sun
-  [100, 70, 90, 70, 80, 70], # rain
-  [70, 70, 70, 110, 70, 90]  # hail
-]
-
-CrestBuilder.add_existing(CASTFORM_CREST)
-            .add_receiver(:CASTFORM, "Sunny")
-            .add_receiver(:CASTFORM, "Rainy")
-            .add_receiver(:CASTFORM, "Snowy")
-            .base_stat_mods { |pkmn, stats| CASTFORM_CREST_STATS[pkmn.form - 1].each_with_index { |stat, i| stats[i].set(stat) } } if Rejuv

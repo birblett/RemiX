@@ -58,9 +58,35 @@ RemiX.gym(1) {
                  .set_pkmn(1, :LARVITAR, 22, :GUTS)
                  .set_pkmn(2, :PUPITAR, 25, :SHEDSKIN)
 
+  TrainerModifier.add(:COOLTRAINER_Female, "Lithi", 0)
+                 .set_pkmn(0, :PORYGON, 25, :TRACE)
+                 .set_pkmn(1, :TORCHIC, 25, :BLAZE)
+
   TrainerModifier.add(:COOLTRAINER_Male, "Skye", 0)
                  .set_pkmn(0, :EEVEE, 25, :RUNAWAY)
                  .set_pkmn(1, :OSHAWOTT, 24, :TORRENT)
                  .set_pkmn(2, :PHANPY, 24, :SANDVEIL)
+
+}
+
+RemiX.gym(13) {
+
+  TrainerModifier.add(:CUEBALL, "Colin", 0)
+                 .set_pkmn(0, :WEEZING, 80, :LEVITATE)
+                 .set_pkmn(1, :MUDSDALE, 80, :STAMINA)
+                 .set_pkmn(2, :ZANGOOSE, 81, :TOXICBOOST, item: ZANGOOSE_CREST)
+
+  TrainerModifier.add(:CUEBALL, "Matthew", 0)
+                 .set_pkmn(0, :MUK, 80, :WATERABSORB, item: :BLACKSLUDGE)
+                 .set_pkmn(1, :TSAREENA, 80, :QUEENLYMAJESTY)
+                 .set_pkmn(2, :LUDICOLO, 81, :SWIFTSWIM, item: LUDICOLO_CREST, moves: [:RAINDANCE, :MUDDYWATER, :BLIZZARD, :GIGADRAIN], nature: :MODEST)
+
+  TrainerModifier.add(:MASTERMIND, "Eustace", 0)
+                 .set_pkmn(0, :MANECTRIC, 81, :LIGHTNINGROD, ev: SPASPE)
+                 .set_pkmn(1, :SCEPTILE, 81, :UNBURDEN, ev: ATKSPE)
+                 .set_pkmn(2, :SHARPEDO, 82, :SPEEDBOOST, ev: ATKSPE)
+                 .set_pkmn(3, :SCIZOR, 83, :TECHNICIAN, ev: ATKSPE)
+                 .set_pkmn(4, :ALAKAZAM, 84, :MAGICGUARD, ev: SPASPE)
+                 .set_pkmn(5, :CHERRIM, 85, :FLOWERGIFT, item: CHERRIM_CREST, moves: [:SEEDBOMB, :RETURN, :SWORDSDANCE, :PLAYROUGH], nature: :ADAMANT, ev: HPATK, happiness: 255)
 
 }

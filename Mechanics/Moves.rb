@@ -30,11 +30,10 @@ PBStuff::BITEMOVE |= [:BUGBITE]
 
 # simple mods
 
-MoveModifier.add(:DRAGONRUSH)
-            .accuracy(85)
+MoveModifier.add(:DRAGONRUSH).accuracy(85)
 
-MoveModifier.add(:ROCKSLIDE)
-            .accuracy(95)
+MoveModifier.add(:ROCKSLIDE).accuracy(95)
 
-MoveModifier.add(:STONEEDGE)
-            .accuracy(85)
+MoveModifier.add(:STONEEDGE).accuracy(85)
+
+MoveModifier.add(:PLAYROUGH).damage(85).accuracy(100)

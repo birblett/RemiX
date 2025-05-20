@@ -42,3 +42,12 @@ RemiX.gym(1) {
                  .set_pkmn(5, :PINECO, 25, :STURDY, item: :BUGINIUMZ, moves: [:EXPLOSION, :BUGBITE, nil, nil], iv: 31)
 
 }
+
+RemiX.gym(13) {
+
+  TrainerModifier.add(:StreetRat, "Alphonso", 0)
+                 .set_pkmn(0, :ARCHEOPS, 80, :DEFEATIST, item: :FOCUSSASH)
+                 .set_pkmn(1, :RHYPERIOR, 80, :SOLIDROCK, item: :ZAPPLATE)
+                 .set_pkmn(2, :ARAQUANID, 80, :WATERBUBBLE)
+
+}

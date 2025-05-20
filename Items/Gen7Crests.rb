@@ -1,5 +1,5 @@
 GUMSHOOS_CREST = CrestBuilder.add(:GUMSHOOS, "Grants Protean.")
-            .ability_provider { next :PROTEAN }
+            .ability_provider { :PROTEAN }
             .sym
 
 WISHIWASHI_CREST = CrestBuilder.add(:WISHIWASHI, "Heal up to 50% when switching below 50% HP. All moves deal more damage but have recoil.")
@@ -16,16 +16,17 @@ PALOSSAND_CREST = CrestBuilder.add(:PALOSSAND, "Grants innate abilities based on
             .add_receiver(:PALOSSAND, Reborn ? 0 : "Icy Aevian")
             .ability_provider { |pkmn, _|
               case pkmn.form
-              when 1 then next [:PURIFYINGSALT]
-              when 2 then next [:VOLTABSORB]
-              when 3 then next [:SNOWWARNING, :HEATPROOF]
-              else next [:ROUGHSKIN, :SOLIDROCK]
+              when 1 then [:PURIFYINGSALT]
+              when 2 then [:VOLTABSORB]
+              when 3 then [:SNOWWARNING, :HEATPROOF]
+              else [:ROUGHSKIN, :SOLIDROCK]
               end
             }
+            .role_provider { :TANK }
             .sym
 
 KOMALA_CREST = CrestBuilder.add(:KOMALA, "0.8x damage dealt, grants Prankster.")
             .damage_mod { next 0.8 }
-            .ability_provider { next :PRANKSTER }
-            .move_score { |_, _, _, move| next 3 if move.move == :SLEEPTALK }
+            .ability_provider { :PRANKSTER }
+            .move_score { |_, _, defender, move| next 3 if move.move == :SLEEPTALK unless defender.hasType? :GHOST }
             .sym

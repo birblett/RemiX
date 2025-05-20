@@ -12,12 +12,6 @@ KRICKETUNE_CREST = CrestBuilder.add(:KRICKETUNE, "Consecutive move uses increase
             .cairo(1, 2000)
             .sym
 
-CrestBuilder.add_existing(CHERRIM_CREST)
-                     .desc("Gain non-weak Fire-type and Combustion. Activates Flower Gift.")
-                     .add_receiver(:CHERRIM, "Sunshine")
-                     .secondary_no_weakness(:FIRE)
-                     .ability_provider { next :COMBUSTION }
-
 GASTRODON_CREST = CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buff effects.")
             .add_receiver(:GASTRODON, "East Sea")
             .add_receiver(:GASTRODON, Reborn ? 0 : "West Aevian")
@@ -53,10 +47,6 @@ YANMEGA_CREST = CrestBuilder.add(:YANMEGA, "Weak moves have 2x power.")
             .damage_mod { |_, _, move, _, _| next 2 if move.basedamage <= 60 }
             .sym
 
-CrestBuilder.add_existing(PROBOPASS_CREST)
-            .desc("Grants Levitate. Follow up attacks with attacks from 3 mini-noses.")
-            .ability_provider { :LEVITATE }
-
 ROTOM_CREST = CrestBuilder.add(:ROTOM, "Grants innate abilities based on the form.")
             .add_receiver(:ROTOM, "Heat")
             .add_receiver(:ROTOM, "Wash")
@@ -66,12 +56,22 @@ ROTOM_CREST = CrestBuilder.add(:ROTOM, "Grants innate abilities based on the for
             .battle_stat_mods { |_, bs| bs[5].mul(1.1) }
             .ability_provider { |pkmn, _|
               case pkmn.form
-              when 1 then next [:FLAMEBODY, :REGENERATOR]
-              when 2 then next [:DAUNTLESSSHIELD, :RAINDISH]
-              when 3 then next [:SLUSHRUSH, :SNOWCOAT, :FILTER]
-              when 4 then next [:DELTASTREAM, :SERENEGRACE]
-              when 5 then next [:DROUGHT, :SOLARPOWER]
-              else next [:ADAPTABILITY, :MAGICGUARD]
+              when 1 then [:FLAMEBODY, :REGENERATOR]
+              when 2 then [:DAUNTLESSSHIELD, :RAINDISH]
+              when 3 then [:SLUSHRUSH, :SNOWCOAT, :FILTER]
+              when 4 then [:DELTASTREAM, :SERENEGRACE]
+              when 5 then [:DROUGHT, :SOLARPOWER]
+              else [:ADAPTABILITY, :MAGICGUARD]
+              end
+            }
+            .role_provider { |_, pkmn|
+              case pkmn.form
+              when 1 then :PIVOT
+              when 2 then :TANK if pkmn.battle.weather == :RAIN
+              when 3 then :SWEEPER if pkmn.battle.weather == :HAIL
+              when 5 then :SWEEPER
+              when 0 then :STATUSABSORBER
+              else nil
               end
             }
             .sym

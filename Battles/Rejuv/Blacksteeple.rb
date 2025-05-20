@@ -7,9 +7,9 @@ RemiX.chapter(5) {
                  .set_pkmn(2, :TENTACRUEL, 40, :CLEARBODY)
 
   TrainerModifier.add(:CAMPER, "Billy", 0)
-                 .set_pkmn(0, :VAPOREON, 40, :SAPSIPPER,  moves: [:SCALD, :EARTHPOWER, :PROTECT, :WISH], ev: EVEN60, nature: :BOLD)
-                 .set_pkmn(1, :FLAREON, 40, :POISONHEAL, item: :TOXICORB, moves: [:FACADE, :FLAREBLITZ, :PROTECT, :BULKUP], ev: EVEN60, nature: :ADAMANT)
-                 .set_pkmn(2, :JOLTEON, 40, :AERILATE,  moves: [:FAKEOUT, :HYPERVOICE, :THUNDERBOLT, :VOLTSWITCH], ev: EVEN60, nature: :TIMID)
+                 .set_pkmn(0, :VAPOREON, 40, :SAPSIPPER, moves: [:SCALD, :EARTHPOWER, :PROTECT, :WISH], ev: EVEN64, nature: :BOLD)
+                 .set_pkmn(1, :FLAREON, 40, :POISONHEAL, item: :TOXICORB, moves: [:FACADE, :FLAREBLITZ, :PROTECT, :BULKUP], ev: EVEN64, nature: :ADAMANT)
+                 .set_pkmn(2, :JOLTEON, 40, :AERILATE, moves: [:FAKEOUT, :HYPERVOICE, :THUNDERBOLT, :VOLTSWITCH], ev: EVEN64, nature: :TIMID)
 
   TrainerModifier.add(:BEAUTY, "Jona", 0)
                  .set_pkmn(0, :STUNFISK, 40, :MIMICRY, form: 1, moves: [:TERRAINPULSE, :EARTHPOWER, :FLASHCANNON])

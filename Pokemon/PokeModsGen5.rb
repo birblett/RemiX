@@ -29,19 +29,16 @@ PokeModifier.add(:EMBOAR)
 
 # OSHAWOTT
 PokeModifier.add(:OSHAWOTT)
-            .ability(2, :SNIPER)
             .level_moves([[12, :TWINEEDLE], [18, :FURYCUTTER]])
 
 # DEWOTT
 PokeModifier.add(:DEWOTT)
             .type2(:BUG)
-            .ability(2, :SNIPER)
             .level_moves([[12, :TWINEEDLE], [18, :FURYCUTTER], [26, :BUGBITE], [31, :XSCISSOR], [48, :FIRSTIMPRESSION], [51, :UTURN], [60, :MEGAHORN]])
 
 # SAMUROTT
 PokeModifier.add(:SAMUROTT)
             .type2(:BUG)
-            .ability(2, :SNIPER)
             .level_moves([[12, :TWINEEDLE], [18, :FURYCUTTER], [26, :BUGBITE], [31, :XSCISSOR], [48, :FIRSTIMPRESSION], [51, :UTURN], [60, :MEGAHORN]])
 
 # WATCHOG
@@ -149,7 +146,7 @@ PokeModifier.add(:GIGALITH)
 
 # EXCADRILL
 PokeModifier.add(:EXCADRILL)
-            .level_moves([45, :QUICKSILVERSPEAR])
+            .level_moves([45, :QUICKSILVERSPEAR]) if Rejuv
 
 # AUDINO
 PokeModifier.add(:AUDINO)
@@ -298,6 +295,16 @@ PokeModifier.add(:ZORUA, "Hisuian")
 # ZOROARK-H
 PokeModifier.add(:ZOROARK, "Hisuian")
             .set_camo(1) if Rejuv
+
+# MINCCINO
+PokeModifier.add(:MINCCINO)
+            .type2(:FAIRY)
+            .level_moves([[5, :FAIRYWIND], [45, :PLAYROUGH]])
+
+# CINCCINO
+PokeModifier.add(:CINCCINO)
+            .type2(:FAIRY)
+            .level_moves([[5, :FAIRYWIND], [45, :PLAYROUGH]])
 
 # REUNICLUS
 PokeModifier.add(:REUNICLUS)

@@ -9,9 +9,10 @@ PokeModifier.add(:QUILLADIN)
 
 # CHESNAUGHT
 PokeModifier.add(:CHESNAUGHT)
-            .abilities({ 1 => :IRONBARBS, 2 => :FILTER })
+            .abilities({ 1 => :IRONBARBS, 2 => :HEATPROOF })
             .set_pokebilities
-            .level_moves([[31, :IRONDEFENSE], [47, :BODYPRESS]])
+            .remove_compatible_moves(:IRONDEFENSE)
+            .level_moves([47, :BODYPRESS])
 
 # FENNEKIN
 PokeModifier.add(:FENNEKIN)

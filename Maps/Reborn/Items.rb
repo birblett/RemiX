@@ -12,6 +12,12 @@ UniLib.category("Girafarig Crest, Spinel") {
 
 }
 
+UniLib.category("Magcargo Crest, Pyrous Strength") {
+
+  MapEvent.add_map_event(35) { |map| MapEvent.add_overworld_item(map, 62, 12, "Item", MAGCARGO_CREST, :MagcargoCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
 UniLib.category("Lapras Crest, Spinel") {
 
   MapEvent.add_map_event(510) { |map| MapEvent.add_overworld_item(map, 19, 11, "Item", LAPRAS_CREST, :LaprasCrest, "itemball", graphic: { character_hue: 310 }) }
@@ -42,79 +48,74 @@ UniLib.category("Gogoat Crest, Fiore Mansion Right") {
 
 }
 
-# 7th street shop
-class SylveonMartAdapter < PokemonMartAdapter
+UniLib.category("Feraligatr Crest, Azurine Island") {
 
-  def initialize(stock)
-    super()
-    @stock = stock
-  end
+  MapEvent.add_map_event(569) { |map| MapEvent.add_overworld_item(map, 48, 83, "Item", FERALIGATR_CREST, :FeraligatrCrest, "itemball", graphic: { character_hue: 310 }) }
 
-  def getPrice(item, selling = false) =  @stock[item]
+}
 
-end
+UniLib.category("Whiscash Crest, Route 1 Celestinine Dive") {
 
-class SylveonMartScreen < PokemonMartScreen
-  def initialize(scene, prices)
-    @scene = scene
-    @prices = prices
-    @stock = @prices.keys
-    clean_stock
-    @adapter = SylveonMartAdapter.new(@prices)
-  end
+  MapEvent.add_map_event(388) { |map| MapEvent.add_overworld_item(map, 17, 9, "Item", WHISCASH_CREST, :WhiscashCrest, "itemball", graphic: { character_hue: 310 }) }
 
-  def clean_stock
-    @stock.reject! { |k| $unilib_switches[k.to_s.concat("_PURCHASED")] }
-    @stock.compact!
-  end
+}
 
-  def pbBuyScreen
-    @scene.pbStartBuyScene(@stock, @adapter)
-    loop do
-      item = @scene.pbChooseBuyItem
-      break if item.nil?
-      if @adapter.getMoney() < (price = @adapter.getPrice(item))
-        pbDisplayPaused(_INTL("  (you don't have enough money)"))
-        next
-      end
-      next unless pbConfirm(_INTL(" (buy the {1}?)", @adapter.getDisplayName(item)))
-      added = 0
-      if @adapter.addItem(item)
-        added = 1
-      end
-      if added != 1
-        added.times { raise _INTL("Failed to delete stored items") unless@adapter.removeItem(item) }
-        pbDisplayPaused(_INTL("  (no more room...)"))
-      else
-        @adapter.setMoney(@adapter.getMoney() - price)
-        $unilib_switches[item.to_s.concat("_PURCHASED")] = true
-        clean_stock
-        pbDisplayPaused(_INTL("  bweh!!"))
-      end
-    end
-    @scene.pbEndBuyScene
-  end
+UniLib.category("Typhlosion Crest, Sunrise 4") {
 
-end
-def crest_mart
-  prices = {
-    SIMISAGE_CREST => 5000,
-    SIMISEAR_CREST => 5000,
-    SIMIPOUR_CREST => 5000,
-    CASTFORM_CREST => 5000,
-    LINOONE_CREST => 10000,
-    FEAROW_CREST => 10000
-  }
-  # post luna
-  if $game_switches[422]
-    prices[DONPHAN_CREST] = 10000
-    prices[TORKOAL_CREST] = 10000
-  end
-  SylveonMartScreen.new(PokemonMartScene.new, prices).pbBuyScreen
-end
+  MapEvent.add_map_event(579) { |map| MapEvent.add_overworld_item(map, 5, 3, "Item", TYPHLOSION_CREST, :TyphlosionCrest, "itemballb", graphic: { character_hue: 310 }) }
 
-MapEvent.add_map_event(324) { |map|
-  sylvie = MapEvent.basic_npc(35, 31, "crest_shop_7th", "pkmn_sylveon", ["bwee...?"],
-                              variable_id: 160, variable_value: 13, script: "crest_mart")
-  MapEvent.add_event(map, sylvie)
+}
+
+UniLib.category("Gastrodon Crest, Kingsbury 22") {
+
+  MapEvent.add_map_event(575) { |map| MapEvent.add_overworld_item(map, 2, 4, "Item", GASTRODON_CREST, :GastrodonCrest, "itemballb", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Oricorio Crest, Fairview 10") {
+
+  MapEvent.add_map_event(579) { |map| MapEvent.add_overworld_item(map, 65, 27, "Item", ORICORIO_CREST, :OricorioCrest, "itemballb", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Rampardos Crest, Teknite Cave") {
+
+  MapEvent.add_map_event(645) { |map| MapEvent.add_overworld_item(map, 13, 24, "Item", RAMPARDOS_CREST, :RampardosCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Bastiodon Crest, Sugiline Cave") {
+
+  MapEvent.add_map_event(659) { |map| MapEvent.add_overworld_item(map, 38, 36, "Item", BASTIODON_CREST, :BastiodonCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Darmanitan Crest, Teknite Outer Rock Climb") {
+
+  MapEvent.add_map_event(646) { |map| MapEvent.add_overworld_item(map, 21, 6, "Item", DARMANITAN_CREST, :DarmanitanCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Probopass Crest, Sugiline Cave") {
+
+  MapEvent.add_map_event(662) { |map| MapEvent.add_overworld_item(map, 47, 23, "Item", PROBOPASS_CREST, :ProbopassCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Dusknoir Crest, Teknite Fulgor Room") {
+
+  MapEvent.add_map_event(747) { |map| MapEvent.add_overworld_item(map, 13, 10, "Item", DUSKNOIR_CREST, :DusknoirCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Dedenne Crest, Never After") {
+
+  MapEvent.add_map_event(700) { |map| MapEvent.add_overworld_item(map, 12, 27, "Item", DEDENNE_CREST, :DedenneCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Electrode Crest, Obsidia Meteor Base") {
+
+  MapEvent.add_map_event(765) { |map| MapEvent.add_overworld_item(map, 25, 53, "Item", ELECTRODE_CREST, :ElectrodeCrest, "itemball", graphic: { character_hue: 310 }) }
+
 }

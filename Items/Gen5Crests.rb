@@ -18,16 +18,13 @@ THROH_CREST = CrestBuilder.add(:THROH, "Throwing moves reduce attack and defense
                 UniLib.display_if_visible(attacker.battle, _INTL("{1}'s {2} lowered by {3}'s crest!", target.pbThis, s, attacker.pbThis))  unless s.nil?
               end
             }
+            .role_provider { :PHAZER }
             .sym
 
 SAWK_CREST = CrestBuilder.add(:SAWK, "Grants Dazzling and Tinted Lens, boosts speed.")
             .ability_provider { [:DAZZLING, :TINTEDLENS] }
             .battle_stat_mods { |_, bs| bs[5].mul(1.2) }
             .sym
-
-CrestBuilder.add_existing(:DARMCREST)
-            .add_receiver(:DARMANITAN, "Galarian Standard Mode")
-            .form_change { |pkmn, _| next 3 if pkmn.species == :DARMANITAN and pkmn.form == 2 } if Rejuv
 
 KROOKODILE_CREST = CrestBuilder.add(:KROOKODILE, "Attacks change secondary type; grants Open Wounds.")
             .on_move_attempt { |pkmn, move| UniLib.display_if_visible(pkmn.battle, _INTL("{1} had its secondary type changed to {2}!", pkmn.pbThis, (pkmn.type2 = move.type).capitalize)) if move.type != pkmn.type1 and move.type != pkmn.type2 }

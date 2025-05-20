@@ -322,6 +322,10 @@ PokeModifier.add(:GLACEON)
             .set_plates(:ICICLEPLATE)
             .level_moves([[30, :AURASPHERE], [40, :VACUUMWAVE], [50, :FOCUSBLAST]])
 
+# GLISCOR
+PokeModifier.add(:GLISCOR)
+            .level_moves([45, :EARTHQUAKE])
+
 # MAMOSWINE
 PokeModifier.add(:MAMOSWINE)
             .ability(0, :SWINEFORCE)

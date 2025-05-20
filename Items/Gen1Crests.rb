@@ -1,5 +1,5 @@
 RATICATE_CREST = CrestBuilder.add(:RATICATE, "Gain innate Parental Bond.")
-            .ability_provider { |_, _| next :PARENTALBOND }
+            .ability_provider { :PARENTALBOND }
             .sym
 
 CLEFABLE_CREST = CrestBuilder.add(:CLEFABLE, "When damage is taken, gain Laser Focus and increase accuracy. Take less damage while at max health.")

@@ -54,3 +54,12 @@ RemiX.gym(4) {
                  .set_pkmn(0, :PALOSSAND, 45, :WATERCOMPACTION)
 
 }
+
+RemiX.gym(13) {
+
+  TrainerModifier.add(:SWIMMERGRIL, "Tsuki", 0)
+                 .set_pkmn(0, :BRUXISH, 80, :STRONGJAW)
+                 .set_pkmn(1, :ALOMOMOLA, 80, :REGENERATOR)
+                 .set_pkmn(2, :STARMIE, 80, :NATURALCURE)
+
+}

@@ -65,3 +65,25 @@ RemiX.gym(0) {
                  .set_pkmn(3, :AZUMARILL, 21, :HUGEPOWER)
 
 }
+
+RemiX.gym(13) {
+
+  TrainerModifier.add(:SWIMMERBOI, "Hubert", 0)
+                 .set_pkmn(0, :KINGDRA, 80, :SWIFSWIM)
+                 .set_pkmn(1, :WISHIWASHI, 80, :SCHOOLING)
+                 .set_pkmn(2, :TENTACRUEL, 80, :CLEARBODY)
+
+  TrainerModifier.add(:PoliceOfficer, "Seer", 0)
+                 .set_pkmn(0, :TOXICROAK, 80, :DRYSKIN)
+                 .set_pkmn(1, :STOUTLAND, 80, :INTIMIDATE, moves: [:CRUNCH, :PLAYROUGH, :SUPERPOWER, :GIGAIMPACT])
+                 .set_pkmn(2, :ARCANINE, 80, :INTIMIDATE, item: :CATALYZER, moves: [:DRAGONPULSE, :FLAMETHROWER, :MORNINGSUN, :HIDDENPOWER])
+                 .set_pkmn(3, :MACHAMP, 80, :NOGUARD)
+
+
+  TrainerModifier.add(:CUEBALL, "Santiago", 0)
+                 .set_pkmn(0, :AZUMARILL, 80, :HUGEPOWER, item: :SITRUSBERRY, moves: [:AQUAJET, :PLAYROUGH, :BELLYDRUM, :WATERFALL])
+                 .set_pkmn(1, :SYLVEON, 80, :REGENERATOR, item: :ASSAULTVEST, moves: [:MOONBLAST, :SHADOWBALL, :FLASHCANNON, :HIDDENPOWER], hptype: :GROUND)
+                 .set_pkmn(2, :LOPUNNY, 82, :LIMBER, item: :LOPUNNITE, moves: [:POWERUPPUNCH, :HIJUMPKICK, :ICEPUNCH, :RETURN], happiness: 255)
+                 .forced_fe(:MISTY)
+
+}

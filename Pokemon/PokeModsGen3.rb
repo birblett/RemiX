@@ -182,7 +182,7 @@ PokeModifier.add(:CAMERUPT)
 
 # TORKOAL
 PokeModifier.add(:TORKOAL)
-            .level_moves([[10, :BUBBLE], [18, :BUBBLEBEAM], [35, :SCALD], [60, :STEAMERUPTION]])
+            .level_moves([35, :SCALD])
 
 # SPOINK
 PokeModifier.add(:SPOINK)

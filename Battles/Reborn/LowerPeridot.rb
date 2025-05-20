@@ -66,3 +66,17 @@ RemiX.gym(0) {
                  .set_pkmn(1, :EELEKTRIK, 17, :LEVITATE)
 
 }
+
+RemiX.gym(13) {
+
+  TrainerModifier.add(:SWIMMERBOI, "Arlo", 0)
+                 .set_pkmn(0, :ROTOM, 80, :LEVITATE, item: ROTOM_CREST, moves: [:THUNDERBOLT, :HYDROPUMP, :WILLOWISP, :VOLTSWITCH])
+                 .set_pkmn(1, :BASCULIN, 80, :RECKLESS, item: :CHOICESCARF, moves: [:AQUAJET, :CRUNCH, :WAVECRASH, :ZENHEADBUTT])
+                 .set_pkmn(2, :JELLICENT, 80, :WATERABSORB, item: :ELEMENTALSEED)
+
+  TrainerModifier.add(:SWIMMERGRIL, "Leigh", 0)
+                 .set_pkmn(0, :AZUMARILL, 80, :HUGEPOWER, item: :SITRUSBERRY, moves: [:BELLYDRUM, :AQUAJET, :PLAYROUGH, :KNOCKOFF], nature: :ADAMANT)
+                 .set_pkmn(1, :PRIMARINA, 80, :TORRENT, item: :ASSAULTVEST, moves: [:SURF, :PSYCHIC, :MOONBLAST, :ICEBEAM], nature: :MODEST)
+                 .set_pkmn(2, :GRENINJA, 80, :BATTLEBOND, item: :LIFEORB, moves: [:WATERSHURIKEN, :SURF, :SHADOWBALL, :GUNKSHOT], form: 1, nature: :RASH)
+
+}

@@ -30,3 +30,26 @@ RemiX.gym(2) {
                  .set_pkmn(5, :SHIFTRY, 55, :CHLOROPHYLL)
 
 }
+
+RemiX.gym(13) {
+
+  TrainerModifier.add(:KECLEONS, "Refugees", 0)
+                 .set_pkmn(0, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(1, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(2, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(3, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(4, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(5, :KECLEON, 90, :COLORCHANGE)
+
+  TrainerModifier.add(:KECLEONS, "Runaways", 0)
+                 .set_pkmn(0, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(1, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(2, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(3, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(4, :KECLEON, 70, :COLORCHANGE)
+                 .set_pkmn(5, :KECLEON, 90, :COLORCHANGE)
+
+  TrainerModifier.add(:KECLEON, "Kecleon", 0)
+                 .set_pkmn(0, :KECLEON, 90, :PROTEAN, ev: ATKSPE)
+
+}

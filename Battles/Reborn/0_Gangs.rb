@@ -44,6 +44,11 @@ UniLib.category("Aqua") {
                  .set_pkmn(1, :CARVANHA, 35, :ROUGHSKIN)
                  .set_pkmn(2, :STARYU, 35, :ILLUMINATE)
 
+  TrainerModifier.add(:AQUA1, "Jakob", 0)
+                 .set_pkmn(0, :TOXAPEX, 40, :MERCILESS)
+                 .set_pkmn(1, :LAPRAS, 40, :WATERABSORB)
+                 .set_pkmn(2, :SHARPEDO, 40, :ROUGHSKIN)
+
   TrainerModifier.add(:Archer, "Archer", 0)
                  .set_pkmn(0, :PELIPPER, 41, :DRIZZLE, item: :DAMPROCK, moves: [:ROOST, :UTURN, :BRINE, :SCALD], nature: :BOLD, ev: HPDEF)
                  .set_pkmn(1, :BLASTOISE, 42, :MEGALAUNCHER, item: :ASSAULTVEST, moves: [:SCALD, :DARKPULSE, :AURASPHERE, :ICEBEAM], nature: :MODEST, ev: HPSPA)
