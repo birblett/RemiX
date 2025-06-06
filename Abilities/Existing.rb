@@ -1,8 +1,8 @@
 AbilityModifier.add(:ILLUMINATE)
                .set_desc("Wish on switch-in, once per battle...")
-               .set_full_desc("Wish on switch-in, once per battle, while not at full health. Raises the likelihood of meeting wild Pokémon.")
+               .set_full_desc("Wish on switch-in, once per battle. Raises the likelihood of meeting wild Pokémon.")
                .on_battle_entry do |battler, _, _|
-                 unless battler.permanent_effect(:Illuminate) or battler.hp == battler.totalhp
+                 unless battler.permanent_effect(:Illuminate)
                    battler.pbUseMoveSimple(:WISH)
                    battler.set_permanent_effect(:Illuminate, true)
                  end

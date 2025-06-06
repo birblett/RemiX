@@ -4,10 +4,10 @@ UniLib.category("Julia") {
 
   # lower peridot
   TrainerModifier.add(:JULIA, "Julia", 0)
-                 .set_pkmn(0, :MINUN, 16, :MINUS, moves: [:NUZZLE, :CHARGEBEAM, :ENCORE, :OCTAZOOKA], ev: EVEN64)
+                 .set_pkmn(0, :MINUN, 16, :MINUS, moves: [:NUZZLE, :CHARGEBEAM, :ENCORE, :GIGADRAIN], ev: EVEN64)
                  .set_pkmn(1, :GEODUDE, 17, :GALVANIZE, moves: [:SELFDESTRUCT, :TACKLE, :CHARGE, :ROLLOUT], ev: EVEN64)
                  .set_pkmn(2, :VOLTORB, 17, :AFTERMATH, moves: [:EXPLOSION, :ROLLOUT, :CHARGEBEAM, :SONICBOOM], ev: EVEN64)
-                 .set_pkmn(3, :PLUSLE, 18, :PLUS, moves: [:NUZZLE, :CHARGEBEAM, :ENCORE, :SCALD], ev: EVEN64)
+                 .set_pkmn(3, :PLUSLE, 18, :PLUS, moves: [:NUZZLE, :CHARGEBEAM, :ENCORE, :ICYWIND], ev: EVEN64)
                  .set_pkmn(4, :ORICORIO, 19, :DANCER, moves: [:WORKUP, :TAILWIND, :POUND, :AIRCUTTER], ev: HPSPA)
                  .set_pkmn(5, :ELECTRODE, 20, :AFTERMATH, moves: [:CHARGEBEAM, :SONICBOOM, :ROLLOUT, :CHARGE], ev: HPSPA)
                  .set_items([:SUPERPOTION, :SUPERPOTION])
@@ -43,6 +43,15 @@ UniLib.category("Florinia") {
                  .set_pkmn(4, :TANGROWTH, 75, :REGENERATOR, item: :ASSAULTVEST, moves: [:KNOCKOFF, :GIGADRAIN, :EARTHPOWER, :SLUDGEBOMB], nature: :SASSY, ev: HPSPD)
                  .set_pkmn(5, :CRADILY, 75, :SUCTIONCUPS, ev: HPSPD)
 
+  # b00ty
+  TrainerModifier.add(:FLORINIA, "Florinia", 3)
+                 .set_pkmn(0, :CLAYDOL, 96, :LEVITATE, item: CLAYDOL_CREST, moves: [:STEALTHROCK, :PSYBEAM, :ICEBEAM, :SOLARBEAM], nature: :BOLD, ev: HPDEF)
+                 .set_pkmn(1, :TORTERRA, 97, :SHELLARMOR, item: :SYNTHETICSEED, ev: HPSPD)
+                 .set_pkmn(2, :FERROTHORN, 96, :IRONBARBS, item: :ASSAULTVEST, ev: HPSPD)
+                 .set_pkmn(3, :LANDORUS, 97, :SHEERFORCE, item: :CHOICESCARF, moves: [:EARTHPOWER, :ROCKSLIDE, :SLUDGEWAVE, :UTURN], ev: ATKSPE)
+                 .set_pkmn(4, :TANGROWTH, 96, :REGENERATOR, item: :SYNTHETICSEED, ev: HPSPA)
+                 .set_pkmn(5, :VENUSAUR, 98, :THICKFAT, item: :VENUSAURITE, moves: [:LEAFSTORM, :HIDDENPOWER, :AMNESIA, :SYNTHESIS], hptype: :FIRE, ev: HPSPD)
+
 }
 
 UniLib.category("Corey") {
@@ -66,7 +75,7 @@ UniLib.category("Shelly") {
                  .set_pkmn(2, :ARMALDO, 36, :SWIFTSWIM, item: :TELLURICSEED, moves: [:AQUAJET, :RAPIDSPIN, :KNOCKOFF, :ROCKSLIDE], nature: :ADAMANT, ev: ATKSPE)
                  .set_pkmn(3, :ARAQUANID, 36, :WATERBUBBLE, item: :DAMPROCK, moves: [:RAINDANCE, :MUDDYWATER, :ICYWIND, :BUGBITE], nature: :MODEST, ev: HPSPA)
                  .set_pkmn(4, :YANMEGA, 38, :SPEEDBOOST, item: YANMEGA_CREST, moves: [:STRUGGLEBUG, :ANCIENTPOWER, :HIDDENPOWER, :PROTECT], ev: SPASPE)
-                 .set_pkmn(5, :VOLBEAT, 37, :PRANKSTER, item: :LEFTOVERS, moves: [:TAILGLOW, :MOONLIGHT, :STRUGGLEBUG, :DAZZLINGGLEAM], ev: SPASPE)
+                 .set_pkmn(5, :LEAVANNY, 37, :INTIMIDATE, item: :LEFTOVERS, moves: [:XSCISSOR, :DUALCHOP, :CRUNCH, :SWORDSDANCE], form: LEAVANNY_AEVIAN, nature: :ADAMANT, ev: ATKSPE)
 
   # orphanage
   TrainerModifier.add(:SHELLY, "Shelly", 1)
@@ -75,7 +84,7 @@ UniLib.category("Shelly") {
                  .set_pkmn(2, :MASQUERAIN, 38, :INTIMIDATE, item: :SILVERPOWDER, moves: [:STRUGGLEBUG, :ICYWIND, :BUBBLEBEAM, :ENERGYBALL], nature: :MODEST, ev: SPASPE)
                  .set_pkmn(3, :ARMALDO, 39, :SWIFTSWIM, item: :LEFTOVERS, moves: [:AQUAJET, :RAPIDSPIN, :KNOCKOFF, :ROCKSLIDE], nature: :ADAMANT, ev: ATKSPE)
                  .set_pkmn(4, :ARAQUANID, 38, :WATERBUBBLE, item: :DAMPROCK, moves: [:RAINDANCE, :MUDDYWATER, :ICYWIND, :BUGBITE], nature: :MODEST, ev: HPSPA)
-                 .set_pkmn(5, :VOLBEAT, 38, :PRANKSTER, item: :LEFTOVERS, moves: [:TAILGLOW, :MOONLIGHT, :STRUGGLEBUG, :DAZZLINGGLEAM], ev: SPASPE)
+                 .set_pkmn(5, :LEAVANNY, 38, :INTIMIDATE, item: :LEFTOVERS, moves: [:XSCISSOR, :DUALCHOP, :CRUNCH, :SWORDSDANCE], form: LEAVANNY_AEVIAN, nature: :ADAMANT, ev: ATKSPE)
 
   # ametrine
   TrainerModifier.add(:SHELLY, "Shelly", 2)
@@ -83,7 +92,7 @@ UniLib.category("Shelly") {
                  .set_pkmn(1, :VIVILLON, 75, :COMPOUNDEYES, item: :FOCUSSASH, nature: :TIMID, ev: SPASPE)
                  .set_pkmn(2, :RIBOMBEE, 75, :SHIELDDUST, item: :LIFEORB, ev: SPASPE)
                  .set_pkmn(3, :SCOLIPEDE, 75, :SPEEDBOOST, item: :LIFEORB, moves: [:ROCKSLIDE, :PROTECT, :MEGAHORN, :POISONJAB], ev: ATKSPE)
-                 .set_pkmn(4, :VOLBEAT, 75, :PRANKSTER, item: :FAIRIUMZ, moves: [:PLAYROUGH, :FIREPUNCH, :SWORDSDANCE, :BRICKBREAK], nature: :ADAMANT, ev: ATKSPE)
+                 .set_pkmn(5, :LEAVANNY, 75, :INTIMIDATE, item: :LEFTOVERS, moves: [:XSCISSOR, :DUALCHOP, :CRUNCH, :SWORDSDANCE], form: LEAVANNY_AEVIAN, nature: :ADAMANT, ev: ATKSPE)
                  .set_pkmn(5, :ILLUMISE, 75, :PRANKSTER, ev: SPASPE)
 
   # glass
@@ -93,7 +102,7 @@ UniLib.category("Shelly") {
                  .set_pkmn(2, :SCOLIPEDE, 90, :SPEEDBOOST, item: :LIFEORB, ev: ATKSPE)
                  .set_pkmn(3, :VOLCARONA, 90, :FLAMEBODY, ev: SPASPE)
                  .set_pkmn(4, :YANMEGA, 90, :SPEEDBOOST, item: YANMEGA_CREST, moves: [:STRUGGLEBUG, :ANCIENTPOWER, :HIDDENPOWER, :PROTECT], hptype: :FIRE, ev: SPASPE)
-                 .set_pkmn(5, :LEAVANNY, 90, :SWARM, ev: ATKSPE)
+                 .set_pkmn(5, :LEAVANNY, 90, :INTIMIDATE, item: :LEFTOVERS, moves: [:XSCISSOR, :DUALCHOP, :CRUNCH, :SWORDSDANCE], form: LEAVANNY_AEVIAN, nature: :ADAMANT, ev: ATKSPE)
 
 }
 
@@ -103,7 +112,7 @@ UniLib.category("Shade") {
                  .set_pkmn(0, :GENGAR, 40, :LEVITATE, item: :WIDELENS, moves: [:HYPNOSIS, :DREAMEATER, :SHADOWBALL, :THUNDERBOLT], nature: :TIMID, ev: SPASPE)
                  .set_pkmn(1, :DHELMISE, 41, :STEELWORKER, item: :IRONPLATE, moves: [:BRICKBREAK, :GYROBALL, :ANCHORSHOT, :SHADOWCLAW], ev: HPATK, iv: 32)
                  .set_pkmn(2, :ROTOM, 41, :LEVITATE, item: ROTOM_CREST, moves: [:PAINSPLIT, :CONFUSERAY, :SHADOWBALL, :DISCHARGE], nature: :TIMID, ev: SPASPE)
-                 .set_pkmn(3, :BANETTE, 41, :TECHNICIAN, item: :SYNTHETICSEED, moves: [:SHADOWCLAW, :KNOCKOFF, :SHADOWSNEAK, :DESTINYBOND], nature: :ADAMANT, ev: HPATK)
+                 .set_pkmn(3, :ZOROARK, 41, :ILLUSION, item: :LIFEORB, moves: [:SHADOWBALL, :HYPERVOICE, :FLAMETHROWER, :UTURN], form: ZOROARK_HISUIAN, nature: :TIMID, ev: SPASPE)
                  .set_pkmn(4, :DOUBLADE, 41, :NOGUARD, item: :EVIOLITE, moves: [:GYROBALL, :SHADOWSNEAK, :BRICKBREAK, :SWORDSDANCE], ev: HPATK, iv: 32)
                  .set_pkmn(5, :MIMIKYU, 42, :DISGUISE, item: :LIFEORB, moves: [:SHADOWSNEAK, :SWORDSDANCE, :SHADOWCLAW, :PLAYROUGH], ev: ATKSPE)
 
@@ -113,10 +122,10 @@ UniLib.category("Kiki") {
 
   TrainerModifier.add(:Sensei, "Kiki", 0)
                  .set_pkmn(0, :MACHAMP, 45, :NOGUARD, item: :FOCUSSASH, moves: [:STRENGTH, :MEDITATE, :ROCKSLIDE, :PAYBACK], ev: HPATK)
-                 .set_pkmn(1, :DONPHAN, 47, :STURDY, item: DONPHAN_CREST, moves: [:EARTHQUAKE, :BODYPRESS, :KNOCKOFF, :COUNTER], nature: :IMPISH, ev: HPDEF)
+                 .set_pkmn(1, :DONPHAN, 47, :STURDY, item: DONPHAN_CREST, moves: [:EARTHQUAKE, :BODYPRESS, :KNOCKOFF, :ICESHARD], nature: :IMPISH, ev: HPDEF)
                  .set_pkmn(2, :HITMONLEE, 46, :UNBURDEN, item: :TELLURICSEED, moves: [:POISONJAB, :MEDITATE, :KNOCKOFF, :HIJUMPKICK], nature: :ADAMANT, ev: ATKSPE)
                  .set_pkmn(3, :GALLADE, 46, :SHARPNESS, item: :CHOICEBAND, moves: [:NIGHTSLASH, :SACREDSWORD, :LEAFBLADE, :ROCKSLIDE], nature: :JOLLY, ev: ATKSPE)
-                 .set_pkmn(4, :LUCARIO, 47, :STEADFAST, item: :LEFTOVERS, moves: [:AURASPHERE, :PSYCHIC, :CALMMIND, :HIDDENPOWER], hptype: :DARK, ev: SPASPE)
+                 .set_pkmn(4, :GLACEON, 47, :NOGUARD, item: :TELLURICSEED, moves: [:FOCUSBLAST, :BLIZZARD, :VACUUMWAVE, :HIDDENPOWER], hptype: :ELECTRIC, ev: SPASPE)
                  .set_pkmn(5, :MEDICHAM, 45, :PUREPOWER, item: :CHOICESCARF, moves: [:DRAINPUNCH, :BULLETPUNCH, :STRENGTH, :ICEPUNCH], ev: ATKSPE)
 
   TrainerModifier.add(:Spectral, "Kiki", 0)
@@ -250,6 +259,15 @@ UniLib.category("Terra") {
                  .set_pkmn(4, :STEELIX, 78, :STURDY, item: :STEELIXITE, moves: [:EARTHQUAKE, :AQUATAIL, :FIREFANG, :CURSE], name: "SNEK", nature: :CAREFUL, ev: HPSPD)
                  .set_pkmn(5, :GARCHOMP, 77, :ROUGHSKIN, moves: [:DRACOMETEOR, :EARTHQUAKE, :STONEEDGE, :FLAMETHROWER], ev: SPDSPE)
 
+  # b00ty
+  TrainerModifier.add(:TERRA, "T3RR4", 1)
+                 .set_pkmn(0, :GARCHOMP, 100, :ROUGHSKIN, item: :GARCHOMPITE, moves: [:EARTHQUAKE, :STONEEDGE, :IRONHEAD, :SWORDSDANCE], name: "RAWRCHOMP", nature: :JOLLY, ev: PULSE2)
+                 .set_pkmn(1, :DONPHAN, 1, [:STURDY, :MAGICGUARD], item: :SHELLBELL, moves: [:ICESHARD, :ENDEAVOR, nil, nil], happiness: 0, name: "JESUS")
+                 .set_pkmn(2, :CHANSEY, 100, :SERENEGRACE, item: :EVIOLITE, moves: [:BLIZZARD, :THUNDERBOLT, :PSYCHIC, :SOFTBOILED], ev: DEFSPD)
+                 .set_pkmn(3, :QUAGSIRE, 100, :UNAWARE, ev: PULSE2)
+                 .set_pkmn(4, :PORYGONZ, 100, :ADAPTABILITY, moves: [:SHADOWBALL, :THUNDERBOLT, :BLIZZARD, :CONVERSION], ev: PULSE2)
+                 .set_pkmn(5, :ZYGARDE, 100, :AURABREAK, moves: [:DRACOMETEOR, :EARTHQUAKE, :STONEEDGE, :EXTREMESPEED], form: 1, name: "ZYDOG", ev: PULSE2)
+
 }
 
 UniLib.category("Ciel") {
@@ -314,21 +332,64 @@ UniLib.category("Amaria") {
                  .set_pkmn(4, :BLASTOISE, 88, :TORRENT, moves: [:AURASPHERE, :SURF, :DARKPULSE, :WHIRLPOOL], ev: HPSPA)
                  .set_pkmn(5, :LAPRAS, 89, :HYDRATION, item: LAPRAS_CREST, moves: [:PROTECT, :REST, :PERISHSONG, :SURF], ev: [252, 0, 156, 0, 100, 0])
 
+  # resh labradorra
+  TrainerModifier.add(:AMARIA2, "Amaria", 2)
+                 .set_pkmn(0, :STARMIE, 95, :ILLUMINATE, ev: SPASPE)
+                 .set_pkmn(1, :KINGDRA, 95, :SWIFTSWIM,  ev: SPASPE)
+                 .set_pkmn(2, :PRIMARINA, 95, :LIQUIDVOICE, item: :ASSAULTVEST, moves: [:ENERGYBALL, :DAZZLINGGLEAM, :HYPERVOICE, :ICEBEAM], ev: HPSPA)
+                 .set_pkmn(3, :SWAMPERT, 95, :TORRENT, item: :SWAMPERTITE, ev: HPATK)
+                 .set_pkmn(4, :TENTACRUEL, 95, :CLEARBODY, nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(5, :LAPRAS, 95, :HYDRATION, item: LAPRAS_CREST, ev: HPSPA)
+
 }
 
 UniLib.category("Hardy") {
 
   TrainerModifier.add(:HARDY, "Hardy", 0)
-                 .set_pkmn(0, :LYCANROC, 92, :SANDRUSH, moves: [:ROCKSLIDE, :DRILLRUN, :BRICKBREAK, :PLAYROUGH], ev: ATKSPE)
+                 .set_pkmn(0, :LYCANROC, 92, :SANDRUSH, moves: [:ROCKSLIDE, :DRILLRUN, :CLOSECOMBAT, :PLAYROUGH], ev: ATKSPE)
                  .set_pkmn(1, :GIGALITH, 90, :SANDSTREAM, item: :ASSAULTVEST, ev: HPATK)
-                 .set_pkmn(2, :ARCHEOPS, 91, :DEFEATIST, item: :FLYINGGEM, ev: ATKSPE)
+                 .set_pkmn(3, :TERRAKION, 92, :SHARPNESS, item: :CHOICESCARF, moves: [:ROCKSLIDE, :STONEEDGE, :QUICKATTACK, :SACREDSWORD], ev: ATKSPE)
                  .set_pkmn(3, :RAMPARDOS, 91, :SHEERFORCE, item: RAMPARDOS_CREST, moves: [:ROCKSLIDE, :IRONHEAD, :FIREPUNCH, :ROCKSMASH], ev: ATKSPE)
                  .set_pkmn(4, :AERODACTYL, 92, :PRESSURE, item: :AERODACTYLITE, ev: ATKSPE)
-                 .set_pkmn(5, :LYCANROC, 97, :TOUGHCLAWS, item: :CATALYZER, moves: [:DRILLRUN, :BRICKBREAK, :ACCELEROCK, :CRUNCH], ev: ATKSPE)
+                 .set_pkmn(5, :LYCANROC, 97, :TOUGHCLAWS, item: :CATALYZER, moves: [:DRILLRUN, :CLOSECOMBAT, :ACCELEROCK, :CRUNCH], ev: ATKSPE)
+
+  TrainerModifier.add(:HARDY, "Hardy", 1)
+                 .set_pkmn(0, :GIGALITH, 91, :SANDSTREAM, ev: HPATK)
+                 .set_pkmn(1, :AERODACTYL, 92, :PRESSURE, item: :AERODACTYLITE, moves: [:AQUATAIL, :ROCKSLIDE, :DUALWINGBEAT, :ROCKSMASH], nature: :JOLLY, ev: ATKSPE)
+                 .set_pkmn(2, :LYCANROC, 92, :SANDRUSH, item: :CHOICEBAND, moves: [:ROCKSLIDE, :DRILLRUN, :CLOSECOMBAT, :PLAYROUGH], ev: ATKSPE)
+                 .set_pkmn(3, :TERRAKION, 93, :SHARPNESS, item: :CHOICESCARF, moves: [:ROCKSLIDE, :STONEEDGE, :QUICKATTACK, :SACREDSWORD], ev: ATKSPE)
+                 .set_pkmn(4, :RAMPARDOS, 94, :SHEERFORCE, item: RAMPARDOS_CREST, moves: [:ROCKSLIDE, :IRONHEAD, :FIREPUNCH, :ROCKSMASH], ev: ATKSPE)
+                 .set_pkmn(5, :LYCANROC, 95, :TOUGHCLAWS, item: :TELLURICSEED, ev: ATKSPE)
 
 }
 
-UniLib.category("Bennett") {
+UniLib.category("Saphira") {
+
+  TrainerModifier.add(:SAPHIRA, "Saphira", 0)
+                 .set_pkmn(0, :NAGANADEL, 97, :BEASTBOOST, item: :ELEMENTALSEED, moves: [:SLUDGEBOMB, :DRAGONPULSE, :FLAMETHROWER, :TAILWIND], ev: SPASPE)
+                 .set_pkmn(1, :SALAMENCE, 97, :MOXIE, ev: ATKSPE)
+                 .set_pkmn(2, :GARCHOMP, 97, :ROUGHSKIN, ev: ATKSPE)
+                 .set_pkmn(3, :DRUDDIGON, 97, :SHEERFORCE, item: DRUDDIGON_CREST, moves: [:DRAGONCLAW, :POISONJAB, :FIREPUNCH, :EARTHQUAKE], nature: :ADAMANT, ev: HPATK)
+                 .set_pkmn(4, :CHARIZARD, 98, :BLAZE, item: :CHARIZARDITEX, moves: [:DRAGONDANCE, :DRAGONCLAW, :FLAREBLITZ, :EARTHQUAKE], ev: ATKSPE)
+                 .set_pkmn(5, :DRAGONITE, 100, :MULTISCALE, item: :IAPAPABERRY, nature: :ADAMANT, ev: ATKSPE)
+
+}
+
+# elite 4
+
+UniLib.category("Heather") {
+
+  TrainerModifier.add(:HEATHER, "Heather", 0)
+                 .set_pkmn(0, :CROBAT, 100, :AIRLOCK, ev: ATKSPE)
+                 .set_pkmn(1, :NIHILEGO, 100, :BEASTBOOST, item: :ROCKIUMZ, moves: [:SLUDGEBOMB, :POWERGEM, :HIDDENPOWER, :STEALTHROCK], hptype: :FIRE, nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(2, :GYARADOS, 100, [:MOXIE, :AERILATE], item: :CHOICESCARF, moves: [:RETURN, :EARTHQUAKE, :WATERFALL, :STONEEDGE], happiness: 255, ev: ATKSPE)
+                 .set_pkmn(3, :YANMEGA, 100, [:SPEEDBOOST, :AERILATE], item: YANMEGA_CREST, moves: [:ROUND, :SILVERWIND, :HIDDENPOWER, :PROTECT], hptype: :FIRE, nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(4, :GENGAR, 100, :LEVITATE, ev: SPASPE)
+                 .set_pkmn(5, :SALAMENCE, 103, :INTIMIDATE, ev: ATKSPE)
+
+}
+
+UniLib.category("Bennett/Laura") {
 
   TrainerModifier.add(:BENNETT, "Bennett", 0)
                  .set_pkmn(0, :LARVESTA, 50, :FLAMEBODY, item: :WIDELENS, moves: [:FLAMECHARGE, :BUGBITE, :ZENHEADBUTT, :MORNINGSUN], ev: ATKSPE)
@@ -346,11 +407,76 @@ UniLib.category("Bennett") {
                  .set_pkmn(4, :YANMEGA, 67, :SPEEDBOOST, item: YANMEGA_CREST, moves: [:PROTECT, :AIRCUTTER, :ANCIENTPOWER, :SIGNALBEAM], ev: SPASPE)
                  .set_pkmn(5, :BUTTERFREE, 66, :COMPOUNDEYES, item: :LEFTOVERS, moves: [:SLEEPPOWDER, :QUIVERDANCE, :SIGNALBEAM, :GIGADRAIN], ev: SPASPE)
 
+  TrainerModifier.add(:BENNETTLAURA, "Bennett & Laura", 0)
+                 .set_pkmn(0, :GALVANTULA, 100, :SWARM, ev: SPASPE)
+                 .set_pkmn(1, :WHIMSICOTT, 100, :PRANKSTER, moves: [:DAZZLINGGLEAM, :GIGADRAIN, :TAILWIND, :NATUREPOWER], ev: SPASPE)
+                 .set_pkmn(2, :VENUSAUR, 100, :CHLOROPHYLL, moves: [:GROWTH, :SLEEPPOWDER, :HIDDENPOWER, :GIGADRAIN], ev: SPASPE)
+                 .set_pkmn(3, :GENESECT, 100, [:DOWNLOAD, :FLASHFIRE], item: :SYNTHETICSEED, moves: [:BUGBUZZ, :FLASHCANNON, :THUNDER, :EXTREMESPEED], nature: :HASTY, ev: SPASPE)
+                 .set_pkmn(4, :PINSIR, 103, :HYPERCUTTER, item: :PINSIRITE, moves: [:RETURN, :CLOSECOMBAT, :QUICKATTACK, :SWORDSDANCE], nature: :JOLLY, happiness: 255, ev: ATKSPE)
+                 .set_pkmn(5, :SHIFTRY, 100, [:CHLOROPHYLL, :SHARPNESS], moves: [:LEAFBLADE, :KNOCKOFF, :SUCKERPUNCH, :GROWTH], nature: :ADAMANT, ev: ATKSPE)
+
+}
+
+UniLib.category("Elias") {
+
+  TrainerModifier.add(:ELIAS, "Elias", 0)
+                 .set_pkmn(0, :NOIVERN, 100, :INFILTRATOR, ev: SPASPE)
+                 .set_pkmn(1, :KOMMOO, 100, :BULLETPROOF, ev: ATKSPE)
+                 .set_pkmn(2, :DRAGONITE, 100, :MULTISCALE, ev: ATKSPE)
+                 .set_pkmn(3, :DRAMPA, 100, :BERSERK, item: DRAMPA_CREST, ev: HPSPA)
+                 .set_pkmn(4, :DITTO, 100, :IMPOSTER, ev: HPSPE)
+                 .set_pkmn(5, :LATIAS, 103, [:LEVITATE, :DAUNTLESSSHIELD], item: :LATIASITE, moves: [:DRACOMETEOR, :PSYSHOCK, :CALMMIND, :RECOVER], gender: "F", nature: :TIMID, ev: SPASPE)
+
+}
+
+UniLib.category("Anna") {
+
+  TrainerModifier.add(:ANNA, "Anna", 0)
+                 .set_pkmn(0, :NINETALES, 100, :SNOWCLOAK, ev: SPASPE)
+                 .set_pkmn(1, :STARMIE, 100, :ILLUMINATE, item: :LIFEORB, ev: SPASPE)
+                 .set_pkmn(2, :CLEFABLE, 100, [:MAGICGUARD, :ILLUMINATE], item: CLEFABLE_CREST, moves: [:FIREBLAST, :MOONBLAST, :WISH, :PROTECT], nature: :MODEST, ev: HPSPA)
+                 .set_pkmn(3, :SYLVEON, 100, :REGENERATOR, moves: [:MOONBLAST, :WISH, :FLASHCANNON, :PROTECT], ev: HPSPD)
+                 .set_pkmn(4, :METAGROSS, 103, :CLEARBODY, ev: ATKSPE)
+                 .set_pkmn(5, :JIRACHI, 100, [:SERENEGRACE, :FILTER], ev: HPSPA)
+
+}
+
+UniLib.category("Lin") {
+
+  TrainerModifier.add(:LIN, "Lin", 1)
+                 .set_pkmn(0, :NINETALES, 100, :SNOWWARNING, item: :FOCUSSASH, ev: PULSE2)
+                 .set_pkmn(1, :GARDEVOIR, 100, :FAIRYAURA, ev: PULSE2)
+                 .set_pkmn(2, :GARCHOMP, 100, :ROUGHSKIN, ev: PULSE2)
+                 .set_pkmn(3, :TOGEKISS, 100, :SERENEGRACE, ev: PULSE2)
+                 .set_pkmn(4, :DELPHOX, 100, :NOGUARD, moves: [:FIREBLAST, :PSYSHOCK, :DAZZLINGGLEAM, :SHADOWBALL], ev: PULSE2)
+                 .set_pkmn(5, :ABRA, 100, :MAGICGUARD, ev: PULSE2)
+
+  # anna route
+
+  TrainerModifier.add(:LIN, "Lin", 0)
+                 .set_pkmn(0, :NINETALES, 100, :SNOWWARNING, item: :FOCUSSASH, ev: PULSE2)
+                 .set_pkmn(1, :GARDEVOIR, 100, :FAIRYAURA, ev: PULSE2)
+                 .set_pkmn(2, :GARCHOMP, 100, :ROUGHSKIN, ev: PULSE2)
+                 .set_pkmn(3, :CONKELDURR, 100, [:GUTS, :QUICKFEET], moves: [:DRAINPUNCH, :BULLETPUNCH, :FACADE, :KNOCKOFF], ev: PULSE2)
+                 .set_pkmn(4, :DELPHOX, 100, [:NOGUARD, :DESOLATELAND], moves: [:FIREBLAST, :PSYSHOCK, :DAZZLINGGLEAM, :SHADOWBALL], ev: PULSE2)
+                 .set_pkmn(5, :ABRA, 100, :MAGICGUARD, ev: PULSE2)
+
+  TrainerModifier.add(:LIN, "Lin", 3)
+                 .set_pkmn(0, :MISMAGIUS, 100, :LEVITATE, moves: [:MOONBLAST, :SHADOWBALL, :POWERGEM, :FOULPLAY], ev: PULSE2)
+                 .set_pkmn(1, :FLYGON, 100, :LEVITATE, item: FLYGON_CREST, moves: [:EARTHPOWER, :DRACOMETEOR, :ROOST, :TOXIC], ev: PULSE2)
+                 .set_pkmn(2, :HONCHKROW, 100, [:MOXIE, :TINTEDLENS], ev: PULSE2)
+                 .set_pkmn(3, :GARDEVOIR, 100, [:FAIRYAURA, :LEVITATE], item: :CHOICESCARF, moves: [:MOONBLAST, :PSYCHIC, :THUNDERBOLT, :FOCUSBLAST], nature: :MODEST, ev: PULSE2)
+                 .set_pkmn(4, :CELESTEELA, 100, [:BEASTBOOST, :DOOMSEER], ev: PULSE2)
+                 .set_pkmn(5, :RAYQUAZA, 100, [:AIRLOCK, :DAZZLING], item: :CHOICESPECS, moves: [:DRACOMETEOR, :VCREATE, :EXTREMESPEED, :EARTHPOWER], nature: :HASTY, ev: PULSE2)
+
+  TrainerModifier.add(:CHILDLIN, "Lin", 0)
+                 .set_pkmn(0, :ARCEUS, 100, :MULTITYPE, ev: PULSE2)
+
 }
 
 # meteor
 
-UniLib.category("ZEL") {
+UniLib.category("Zero") {
 
   # obsidia
   TrainerModifier.add(:ZEL, "ZEL", 0)
@@ -358,7 +484,7 @@ UniLib.category("ZEL") {
 
   # blacksteam
   TrainerModifier.add(:ZEL, "ZEL", 2)
-                 .set_pkmn(0, :GLACEON, 45, :NOGUARD, item: :NEVERMELTICE, moves: [:VACUUMWAVE, :ICEBEAM, :FOCUSBLAST, :HIDDENPOWER], hptype: :ELECTRIC, nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(0, :GLACEON, 45, :NOGUARD, item: GLACEON_CREST, moves: [:VACUUMWAVE, :ICEBEAM, :FOCUSBLAST, :HIDDENPOWER], hptype: :ELECTRIC, nature: :TIMID, ev: SPASPE)
                  .set_pkmn(1, :ESPEON, 45, :SPOOKYSEASON, item: :SYNTHETICSEED, moves: [:HYPERVOICE, :PSYCHIC, :SIGNALBEAM, :YAWN], nature: :TIMID, ev: SPASPE)
                  .set_pkmn(2, :UMBREON, 45, :LEVITATE, item: :BLACKSLUDGE, moves: [:MOONLIGHT, :TOXIC, :FOULPLAY, :CONFUSERAY], nature: :BOLD, ev: HPDEF)
                  .set_pkmn(3, :MUK, 46, :PROTEAN, item: :LEFTOVERS, moves: [:SLUDGEWAVE, :MUDBOMB, :MUDDYWATER, :DISCHARGE], ev: HPSPA)
@@ -371,6 +497,15 @@ UniLib.category("ZEL") {
                  .set_pkmn(3, :ESPEON, 83, :SPOOKYSEASON, item: :SYNTHETICSEED, moves: [:HYPERVOICE, :LIGHTSCREEN, :REFLECT, :PSYSHOCK], nature: :TIMID, ev: SPASPE)
                  .set_pkmn(4, :UMBREON, 83, :LEVITATE, item: :LEFTOVERS, moves: [:FOULPLAY, :WISH, :PROTECT, :TOXIC], nature: :BOLD, ev: HPDEF)
                  .set_pkmn(5, :MAGNEZONE, 83, :LEVITATE, item: :ASSAULTVEST, moves: [:FLASHCANNON, :DISCHARGE, :AUTOTOMIZE, :HIDDENPOWER], nature: :MODEST, ev: PULSE2)
+
+  # labradorra
+  TrainerModifier.add(:ZEL2, "Zero", 0)
+                 .set_pkmn(0, :HOUNDOOM, 95, :FLASHFIRE, item: :FOCUSSASH, moves: [:FLAMETHROWER, :DARKPULSE, :NASTYPLOT, :SLUDGEBOMB], gender: "M", nature: :TIMID, ev: PULSE2)
+                 .set_pkmn(1, :HONCHKROW, 96, :MOXIE, item: :FLYINIUMZ, moves: [:SUPERPOWER, :BRAVEBIRD, :SUCKERPUNCH, :NIGHTSLASH], gender: "F", nature: :ADAMANT, ev: PULSE2)
+                 .set_pkmn(2, :WEAVILE, 96, :PRESSURE, item: :CHOICEBAND, moves: [:KNOCKOFF, :ICICLECRASH, :ICESHARD, :BRICKBREAK], gender: "F", nature: :JOLLY, ev: PULSE2)
+                 .set_pkmn(3, :UMBREON, 96, :LEVITATE, item: :LEFTOVERS, moves: [:WISH, :PROTECT, :TOXIC, :FOULPLAY], gender: "M", nature: :CALM, ev: PULSE2)
+                 .set_pkmn(4, :SPIRITOMB, 97, :PRESSURE, item: SPIRITOMB_CREST, moves: [:WILLOWISP, :PURSUIT, :SHADOWSNEAK, :SUCKERPUNCH], gender: "M", nature: :CAREFUL, ev: PULSE2)
+                 .set_pkmn(5, :CLAWITZER, 95, :CONTRARY, ev: HPSPA)
 
 }
 
@@ -485,11 +620,26 @@ UniLib.category("Sirius") {
                  .set_pkmn(6, :KOMALA, 57, :COMATOSE, item: KOMALA_CREST, moves: [:SLEEPTALK, :LASTRESORT, nil, nil], gender: "M", nature: :ADAMANT, ev: HPATK)
                  .set_pkmn(7, :ROTOM, 57, :LEVITATE, item: ROTOM_CREST, moves: [:SOLARBEAM, :THUNDERBOLT, :HIDDENPOWER, :VOLTSWITCH], gender: "M", form: 5, hptype: :FIRE, nature: :TIMID, ev: SPASPE)
 
+  # victory road
+  TrainerModifier.add(:Sirius, "Sirius", 2)
+                 .set_pkmn(0, :MANECTRIC, 100, :LIGHTNINGROD, ev: PULSE2)
+                 .set_pkmn(1, :MAROWAK, 100, [:LIGHTNINGROD, :ROCKHEAD], ev: PULSE2)
+                 .set_pkmn(2, :MINIOR, 100, :SHIELDSDOWN, item: :WHITEHERB, nature: :ADAMANT, ev: PULSE2)
+                 .set_pkmn(3, :TYRANTRUM, 100, :ROCKHEAD, ev: PULSE2)
+                 .set_pkmn(4, :SEVIPER, 100, [:SHEDSKIN, :SPEEDBOOST], ev: PULSE2)
+                 .set_pkmn(5, :CHANDELURE, 100, [:FLASHFIRE, :OVERCHARGED], ev: PULSE2)
+
 }
 
 # supporting
 
 UniLib.category("Cain") {
+
+  TrainerModifier.add(:Cain, "Cain", 0)
+                 .set_pkmn(0, :NIDORANmA, 5, :HUSTLE, iv: 3)
+
+  TrainerModifier.add(:Victoria, "Victoria", 0)
+                 .set_pkmn(0, :LITTEN, 5, :BLAZE, iv: 23)
 
   # coral
   TrainerModifier.add(:Cain, "Cain", 1)
@@ -601,6 +751,15 @@ UniLib.category("Victoria") {
                  .set_pkmn(4, :LOPUNNY, 83, :LIMBER, item: :LOPUNNITE, moves: [:FAKEOUT, :CLOSECOMBAT, :RETURN, :POWERUPPUNCH], happiness: 255, nature: :JOLLY, ev: ATKSPE)
                  .set_pkmn(5, :INCINEROAR, 81, :INTIMIDATE, ev: HPATK)
 
+  # labradorra
+  TrainerModifier.add(:Victoria2, "Victoria", 2)
+                 .set_pkmn(0, :MIENSHAO, 95, :REGENERATOR, item: :LIFEORB, moves: [:KNOCKOFF, :CLOSECOMBAT, :UTURN, :POISONJAB], ev: ATKSPE)
+                 .set_pkmn(1, :RAICHU, 95, :SURGESURFER, ev: SPASPE)
+                 .set_pkmn(2, :GALLADE, 95, :SHARPNESS, item: :CHOICESCARF, moves: [:LEAFBLADE, :NIGHTSLASH, :PSYCHOCUT, :SACREDSWORD], nature: :ADAMANT, ev: ATKSPE)
+                 .set_pkmn(3, :TOGEKISS, 95, :SERENEGRACE, item: :LEFTOVERS, ev: SPASPE)
+                 .set_pkmn(4, :LOPUNNY, 95, :LIMBER, item: :LOPUNNITE, moves: [:FAKEOUT, :CLOSECOMBAT, :RETURN, :POWERUPPUNCH], happiness: 255, nature: :JOLLY, ev: ATKSPE)
+                 .set_pkmn(5, :INCINEROAR, 95, :INTIMIDATE, ev: HPATK)
+
 }
 
 UniLib.category("Fern") {
@@ -659,6 +818,15 @@ UniLib.category("Fern") {
                  .set_pkmn(4, :ROSERADE, 76, :TECHNICIAN, item: :CHOICESCARF)
                  .set_pkmn(5, :DECIDUEYE, 76, :SPECTRALBODY, item: :DECIDIUMZ)
 
+  # victory road
+  TrainerModifier.add(:Hotshot, "Fern", 7)
+                 .set_pkmn(0, :RHYPERIOR, 100, :SOLIDROCK, item: :ZAPPLATE, moves: [:DRILLRUN, :THUNDERPUNCH, :STEALTHROCK, :ROCKPOLISH], gender: "M", nature: :JOLLY, iv: 31, ev: PULSE2)
+                 .set_pkmn(1, :HAXORUS, 100, :MOLDBREAKER, ev: PULSE2)
+                 .set_pkmn(2, :SCIZOR, 100, [:TECHNICIAN, :INTIMIDATE], ev: PULSE2)
+                 .set_pkmn(3, :SERPERIOR, 100, :CONTRARY, ev: PULSE2)
+                 .set_pkmn(4, :KROOKODILE, 100, [:MOXIE, :SPEEDBOOST], item: KROOKODILE_CREST, nature: :JOLLY, ev: PULSE2)
+                 .set_pkmn(5, :DECIDUEYE, 100, [:SPECTRALBODY, :DELTASTREAM], ev: PULSE2)
+
 }
 
 UniLib.category("Cal") {
@@ -677,7 +845,7 @@ UniLib.category("Cal") {
   TrainerModifier.add(:Exleader, "Cal", 0)
                  .set_pkmn(0, :BARBARACLE, 45, :TOUGHCLAWS, item: :FOCUSSASH, moves: [:STEALTHROCK, :SHELLSMASH, :SCALD, :CROSSCHOP], nature: :NAUGHTY, ev: ATKSPE)
                  .set_pkmn(1, :TURTONATOR, 45, :STAMINA, item: :WHITEHERB, moves: [:SHELLSMASH, :FIREBLAST, :DRAGONPULSE, :HIDDENPOWER], hptype: :ELECTRIC, nature: :MODEST, ev: SPASPE)
-                 .set_pkmn(2, :HAKAMOO, 45, :SOUNDPROOF, item: :CHOICEBAND, moves: [:SKYUPPERCUT, :OUTRAGE, :HEADBUTT, :ROCKTOMB], ev: ATKSPE)
+                 .set_pkmn(2, :NOIBAT, 45, :FRISK, item: :EVIOLITE, moves: [:AIRSLASH, :DRAGONPULSE, :ROOST, :TAILWIND], nature: :TIMID, ev: SPASPE)
                  .set_pkmn(3, :TYPHLOSION, 47, :FLASHFIRE, item: TYPHLOSION_CREST, moves: [:SOLARBEAM, :DRILLRUN, :SUNNYDAY, :FLAREBLITZ], ev: SPASPE, nature: :TIMID)
                  .set_pkmn(4, :CHARIZARD, 45, :BLAZE, item: :LEFTOVERS, moves: [:THUNDERPUNCH, :FIREPUNCH, :DRAGONCLAW, :DRAGONDANCE], ev: ATKSPE)
                  .set_pkmn(5, :MAGMORTAR, 47, :MEGALAUNCHER, item: :ASSAULTVEST, moves: [:AURASPHERE, :THUNDERBOLT, :SOLARBEAM, :FIREBLAST], ev: SPASPE)
@@ -689,8 +857,25 @@ UniLib.category("Cal") {
                  .set_pkmn(1, :MEDICHAM, 75, :PUREPOWER, item: :CHOICESCARF, moves: [:DRAINPUNCH, :ZENHEADBUTT, :HIJUMPKICK, :ICEPUNCH], nature: :ADAMANT, ev: ATKSPE)
                  .set_pkmn(2, :ARCANINE, 75, :INTIMIDATE, item: :CATALYZER, ev: ATKSPE)
                  .set_pkmn(3, :KINGDRA, 75, :SNIPER, moves: [:HYDROPUMP, :BLIZZARD, :DRAGONPULSE, :SIGNALBEAM], ev: SPASPE)
-                 .set_pkmn(4, :KOMMOO, 75, :SOUNDPROOF, item: :SITRUSBERRY, moves: [:IRONHEAD, :DRAGONDANCE, :BRICKBREAK, :DRAGONCLAW], ev: ATKSPE)
+                 .set_pkmn(3, :NOIVERN, 75, :FRISK, item: NOIVERN_CREST, moves: [:BOOMBURST, :HYPERVOICE, :HEATWAVE, :UTURN], nature: :TIMID, ev: SPASPE)
                  .set_pkmn(5, :CHARIZARD, 75, :BLAZE, item: :LIFEORB, moves: [:HEATWAVE, :DRAGONPULSE, :AIRSLASH, :ROOST], ev: SPASPE)
+
+  # b00ty6
+  TrainerModifier.add(:REBORN, "Cal", 3)
+                 .set_pkmn(0, :MAGMORTAR, 95, :MEGALAUNCHER, moves: [:AURASPHERE, :THUNDERBOLT, :VACUUMWAVE, :FLAMETHROWER], ev: SPASPE)
+                 .set_pkmn(1, :VICTINI, 95, :VICTORYSTAR, item: :CHOICEBAND, moves: [:VCREATE, :BOLTSTRIKE, :UTURN, :ZENHEADBUTT], ev: ATKSPE)
+                 .set_pkmn(2, :CAMERUPT, 95, :MAGMAARMOR, ev: HPATK)
+                 .set_pkmn(3, :NOIVERN, 95, :FRISK, item: NOIVERN_CREST, moves: [:BOOMBURST, :HYPERVOICE, :HEATWAVE, :UTURN], nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(4, :CHARIZARD, 95, :BLAZE, item: :CHOICESCARF, ev: SPASPE)
+                 .set_pkmn(5, :MEDICHAM, 95, :PUREPOWER, moves: [:FAKEOUT, :CLOSECOMBAT, :ZENHEADBUTT, :FIREPUNCH], ev: ATKSPE)
+
+  TrainerModifier.add(:REBORN, "Cal", 2)
+                 .set_pkmn(0, :MAGMORTAR, 96, :FLAMEBODY, ev: SPASPE)
+                 .set_pkmn(1, :VICTINI, 97, :VICTORYSTAR, item: :CHOICESCARF, moves: [:VCREATE, :BOLTSTRIKE, :UTURN, :ZENHEADBUTT], gender: nil, ev: ATKSPE)
+                 .set_pkmn(2, :CAMERUPT, 96, :MAGMAARMOR, ev: HPSPA)
+                 .set_pkmn(3, :NOIVERN, 97, :FRISK, item: NOIVERN_CREST, moves: [:HYPERVOICE, :BOOMBURST, :HEATWAVE, :UTURN], nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(4, :CHARIZARD, 96, :BLAZE, item: :FOCUSSASH, moves: [:FIREBLAST, :DRAGONPULSE, :FOCUSBLAST, :AIRSLASH], ev: SPASPE)
+                 .set_pkmn(5, :MEDICHAM, 98, :PUREPOWER, item: :MEDICHAMITE, moves: [:FAKEOUT, :CLOSECOMBAT, :ZENHEADBUTT, :FIREPUNCH], ev: ATKSPE)
 
 }
 
@@ -718,6 +903,17 @@ UniLib.category("Sigmund") {
                  .set_pkmn(3, :HYPNO, 57, :INSOMNIA, item: HYPNO_CREST, moves: [:HYPNOSIS, :NASTYPLOT, :PSYCHIC, :FOCUSBLAST], ev: HPSPA)
                  .set_pkmn(4, :ROTOM, 58, :LEVITATE, item: ROTOM_CREST, moves: [:THUNDERBOLT, :LEAFSTORM, :WILLOWISP, :FOULPLAY], form: 5, ev: SPASPE)
                  .set_pkmn(5, :ELECTIVIRE, 58, :IRONFIST, item: :CHOICEBAND, moves: [:THUNDERPUNCH, :ICEPUNCH, :CLOSECOMBAT, :VOLTSWITCH], ev: ATKSPE)
+
+  TrainerModifier.add(:FRIEND, "Sigmund Connal", 0)
+                 .set_pkmn(0, :AROMATISSE, 95, :AROMAVEIL, item: :ASSAULTVEST, ev: [200, 0, 56, 252, 0, 0])
+                 .set_pkmn(1, :DRAMPA, 95, :BERSERK, ev: HPSPA)
+                 .set_pkmn(2, :RAICHU, 95, :SURGESURFER, ev: SPASPE)
+                 .set_pkmn(3, :ROTOM, 96, :LEVITATE, item: ROTOM_CREST, ev: SPASPE)
+                 .set_pkmn(4, :ALAKAZAM, 97, :MAGICGUARD, ev: PULSE2)
+                 .set_pkmn(5, :ELECTIVIRE, 96, :IRONFIST, ev: ATKSPE)
+
+  TrainerModifier.add(:MIME, "Mime", 0)
+                 .set_pkmn(0, :MRMIME, 100, :WONDERGUARD, ev: [236, 0, 16, 0, 252, 0])
 
 }
 
@@ -752,6 +948,15 @@ UniLib.category("Blake") {
                  .set_pkmn(3, :WEAVILE, 76, :PICKPOCKET, item: :FOCUSSASH, ev: ATKSPE)
                  .set_pkmn(4, :STARMIE, 76, :NATURALCURE, ev: SPASPE)
                  .set_pkmn(5, :CRYOGONAL, 78, :LEVITATE, item: CRYOGONAL_CREST, moves: [:BLIZZARD, :FREEZEDRY, :FLASHCANNON, :HIDDENPOWER], form: 0, hptype: :FIGHTING, nature: :TIMID, ev: [0, 0, 0, 176, 148, 184])
+
+  # victory road
+  TrainerModifier.add(:BLAKE, "Blake", 2)
+                 .set_pkmn(0, :CRYOGONAL, 100, [:LEVITATE, :DAZZLING], item: CRYOGONAL_CREST, moves: [:FREEZEDRY, :FLASHCANNON, :HIDDENPOWER, :AURORAVEIL], gender: nil, hptype: :FIGHTING, nature: :TIMID, ev: PULSE2)
+                 .set_pkmn(1, :STARMIE, 100, :NATURALCURE, item: :CHOICESPECS, moves: [:SURF, :ICEBEAM, :THUNDERBOLT, :PSYSHOCK], gender: nil, nature: :TIMID, ev: PULSE2)
+                 .set_pkmn(2, :GLALIE, 100, :MOODY, item: :GLALITITE, moves: [:EARTHQUAKE, :SPIKES, :ICESHARD, :DOUBLEEDGE], nature: :JOLLY, ev: PULSE2)
+                 .set_pkmn(3, :GYARADOS, 100, [:MOXIE, :FORTITUDE], item: :ELEMENTALSEED, moves: [:EARTHQUAKE, :ICEBEAM, :WATERFALL, :HURRICANE], nature: :LONELY, ev: PULSE2)
+                 .set_pkmn(4, :WEAVILE, 100, [:PRESSURE, :REFRIGERATE], moves: [:FAKEOUT, :FRUSTRATION, :QUICKATTACK, :KNOCKOFF], happiness: 0, ev: PULSE2)
+                 .set_pkmn(5, :SANDSLASH, 100, :SLUSHRUSH, item: :ICIUMZ, ev: PULSE2)
 
 }
 
@@ -813,5 +1018,31 @@ UniLib.category("BreloomBot") {
 
   TrainerModifier.add(:BRELOOM, "CL:4R1-C3", 0)
                  .set_pkmn(0, :BRELOOM, 90, :TECHNICIAN, item: :LEFTOVERS, ev: PULSE2)
+
+}
+
+UniLib.category("Lumi") {
+
+  # b00ty
+  TrainerModifier.add(:LUMI, "Lumi", 0)
+                 .set_pkmn(0, :NINETALES, 95, :SNOWWARNING, ev: SPASPE)
+                 .set_pkmn(1, :MAMOSWINE, 96, :SWINEFORCE, item: :CHOICEBAND, moves: [:BLIZZARD, :STEALTHROCK, :RETURN, :EARTHQUAKE], ev: ATKSPE)
+                 .set_pkmn(2, :LAPRAS, 96, :WATERABSORB, item: :MAGICALSEED, ev: HPSPA)
+                 .set_pkmn(3, :ABOMASNOW, 96, :SNOWWARNING, item: :ABOMASITE, moves: [:BLIZZARD, :GIGADRAIN, :ICESHARD, :HIDDENPOWER], hptype: :ROCK, gender: "F", nature: :QUIET, ev: HPSPA)
+                 .set_pkmn(4, :KYUREM, 96, :PRESURE, item: :ASSAULTVEST, moves: [:DRAGONPULSE, :FREEZEDRY, :BLIZZARD, :EARTHPOWER], gender: nil, nature: :MODEST, ev: [252, 0, 0, 252, 4, 0])
+                 .set_pkmn(5, :GLACEON, 97, :NOGUARD, item: :MAGICALSEED, moves: [:BLIZZARD, :FOCUSBLAST, :HYPERVOICE, :HELPINGHAND], ev: PULSE2)
+
+}
+
+UniLib.category("Eve") {
+
+  # b00ty
+  TrainerModifier.add(:EVE, "Eve", 0)
+                 .set_pkmn(0, :PORYGONZ, 95, :DOWNLOAD, item: :MAGICALSEED, moves: [:SHADOWBALL, :TRIATTACK, :THUNDERBOLT, :BLIZZARD], ev: SPASPE)
+                 .set_pkmn(1, :SIGILYPH, 96, :MAGICGUARD, moves: [:PSYCHIC, :TAILWIND, :PROTECT, :ENERGYBALL], ev: ATKSPE)
+                 .set_pkmn(2, :ALAKAZAM, 96, :MAGICGUARD, item: :LIFEORB, moves: [:PSYCHIC, :SHADOWBALL, :GRASSKNOT, :DAZZLINGGLEAM], ev: SPASPE)
+                 .set_pkmn(3, :HOOPA, 96, :PRANKSTER, item: :FOCUSSASH, moves: [:SHADOWBALL, :PSYSHOCK, :THUNDERWAVE, :NASTYPLOT], gender: nil, nature: :QUIET, ev: HPSPA)
+                 .set_pkmn(4, :METAGROSS, 97, :CLEARBODY, item: :METAGROSSITE, moves: [:METEORMASH, :BULLETPUNCH, :ZENHEADBUTT, :RETURN], ev: ATKSPE)
+                 .set_pkmn(5, :ESPEON, 97, :SPOOKYSEASON, item: :CHOICESPECS, moves: [:PSYCHIC, :HYPERVOICE, :HYPERBEAM, :GRASSKNOT], ev: PULSE2)
 
 }

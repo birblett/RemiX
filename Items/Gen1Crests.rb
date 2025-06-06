@@ -14,7 +14,7 @@ CLEFABLE_CREST = CrestBuilder.add(:CLEFABLE, "When damage is taken, gain Laser F
             .damage_taken_mod { |defender, _, _, _, _| next 0.75 if defender.hp == defender.totalhp }
             .sym
 
-ELECTRODE_CREST = CrestBuilder.add(:ELECTRODE, "Damage increase the lower the health.", "Hisuian", "H. Electrode Crest")
+ELECTRODE_CREST = CrestBuilder.add(:ELECTRODE, "Damage increases the lower the health.", "Hisuian", "H. Electrode Crest")
             .damage_mod { |pkmn, _, _, _, _| 1.6 - ((pkmn.hp.to_f - 1) / (pkmn.totalhp - 1)) * 0.6 }
             .sym if Rejuv
 
@@ -28,7 +28,7 @@ HITMONLEE_CREST = CrestBuilder.add(:HITMONLEE, "Accuracy decreased by flat 10%. 
             .sym
 
 HITMONCHAN_CREST = CrestBuilder.add(:HITMONCHAN, "First use of a punching move deals double damage.")
-            .damage_mod { |attacker, _, move, _, is_ai| next 2 if attacker.effects[:HITMONCHAN_CREST].nil? and move.punchMove? and (is_ai or attacker.effects[:HITMONCHAN_CREST] = true unless is_ai) }
+            .damage_mod { |attacker, _, move, _, is_ai| next 2 if attacker.effects[:HITMONCHAN_CREST].nil? and move.punchMove? and (is_ai or (attacker.effects[:HITMONCHAN_CREST] = true)) }
             .sym
 
 LAPRAS_CREST = CrestBuilder.add(:LAPRAS, "Gain resistances to Fighting and Rock.")

@@ -30,3 +30,7 @@ KOMALA_CREST = CrestBuilder.add(:KOMALA, "0.8x damage dealt, grants Prankster.")
             .ability_provider { :PRANKSTER }
             .move_score { |_, _, defender, move| next 3 if move.move == :SLEEPTALK unless defender.hasType? :GHOST }
             .sym
+
+DRAMPA_CREST = CrestBuilder.add(:DRAMPA, "Grants Multiscale. Heal 30% of damage dealt.")
+            .ability_provider { :MULTISCALE }
+            .on_damage_dealt { |pkmn, _, _, dmg| UniLib.heal_pkmn(pkmn, (dmg * 0.3).ceil, _INTL("{1} was healed by its crest!", pkmn.pbThis)) if dmg > 0 }

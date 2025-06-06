@@ -122,6 +122,14 @@ PokeModifier.add(:FLOATZEL)
             .level_moves([50, :WAVECRASH])
             .set_camo(1)
 
+# CHERRIM
+PokeModifier.add(:CHERRIM)
+            .level_moves([45, :SEEDBOMB])
+
+# CHERRIM-SUNSHINE
+PokeModifier.add(:CHERRIM, "Sunshine")
+            .level_moves([45, :SEEDBOMB])
+
 # SHELLOS-A-EAST
 PokeModifier.add(:SHELLOS, "East Aevian")
             .stats(48, 34, 0, 76, 0, 57) if Rejuv
@@ -133,6 +141,7 @@ PokeModifier.add(:GASTRODON, "East Aevian")
 # AMBIPOM
 PokeModifier.add(:AMBIPOM)
             .ability(1, :AMBIDEXTROUS)
+            .set_plates(:DREADPLATE)
 
 # DRIFLOON
 PokeModifier.add(:DRIFLOON)
@@ -227,6 +236,7 @@ PokeModifier.add(:TOXICROAK)
             .stats(0, 90, 0, 90, 0, 0)
             .ability(0, :ADAPTABILITY)
             .compatible_moves(:CLOSECOMBAT)
+            .set_plates(:DREADPLATE)
 
 # CARNIVINE
 PokeModifier.add(:CARNIVINE)
@@ -281,7 +291,7 @@ PokeModifier.add(:LICKILICKY)
 # RHYPERIOR
 PokeModifier.add(:RHYPERIOR)
             .ability(2, :HEAVENPIERCER)
-            .set_plates([:ELECTRIC, :FLAMEPLATE, :ICICLEPLATE])
+            .set_plates([:ZAPPLATE, :FLAMEPLATE, :ICICLEPLATE])
 
 # TANGROWTH
 PokeModifier.add(:TANGROWTH)
@@ -330,8 +340,9 @@ PokeModifier.add(:GLISCOR)
 PokeModifier.add(:MAMOSWINE)
             .ability(0, :SWINEFORCE)
 
-# PORYGONZ
+# PORYGON-Z
 PokeModifier.add(:PORYGONZ)
+            .stats(0, 90, 0, 0, 0, 80)
             .set_camo
 
 # GALLADE

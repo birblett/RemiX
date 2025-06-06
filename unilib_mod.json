@@ -4,15 +4,7 @@
   "unilib_version": 0.8,
   "priority": 1000,
   "modules": [
-    "Asset",
-    "Battle",
-    "BattleEffects",
-    "CrestCompat",
-    "ExtraMoveFlags",
-    "Fixes",
-    "FormPorts",
-    "Move",
-    "PokemonOM"
+    "Pokemon"
   ],
   "entrypoints": [
     "RemiX.rb"

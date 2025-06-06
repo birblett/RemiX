@@ -54,6 +54,7 @@ class SylveonMartScreen < PokemonMartScreen
 end
 def crest_mart
   prices = {
+    :CATALYZER => 4000,
     SIMISAGE_CREST => 5000,
     SIMISEAR_CREST => 5000,
     SIMIPOUR_CREST => 5000,
@@ -64,12 +65,15 @@ def crest_mart
   # post luna
   if $game_switches[460]
     prices[DONPHAN_CREST] = 10000
-    prices[TORKOAL_CREST] = 10000
+    prices[HITMONTOP_CREST] = 12000
+    prices[HITMONLEE_CREST] = 12000
+    prices[HITMONCHAN_CREST] = 12000
   end
   # post restoration
   if $game_switches[581]
-    prices[WISHIWASHI_CREST] = 12000
-    prices[MEGANIUM_CREST] = 12000
+    prices[TORKOAL_CREST] = 15000
+    prices[WISHIWASHI_CREST] = 15000
+    prices[MEGANIUM_CREST] = 15000
     prices[CLAYDOL_CREST] = 15000
     prices[HARIYAMA_CREST] = 15000
   end
@@ -84,6 +88,17 @@ def crest_mart
     prices[CRYOGONAL_CREST] = 18000
     prices[GOTHITELLE_CREST] = 18000
     prices[LUXRAY_CREST] = 18000
+  end
+  # post hardy
+  if $game_switches[658]
+    prices[DRUDDIGON_CREST] = 18000
+    prices[KOMALA_CREST] = 18000
+    prices[ZANGOOSE_CREST] = 18000
+  end
+  # post saphira
+  if $game_switches[659]
+    prices[ROTOM_CREST] = 21000
+    prices[MILOTIC_CREST] = 21000
   end
   stock = prices.keys
   stock.reject! { |k| $unilib_switches[k.to_s.concat("_PURCHASED")] }

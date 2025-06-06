@@ -8,7 +8,7 @@ GOGOAT_CREST = CrestBuilder.add(:GOGOAT, "Rock resists and STAB, grant Grassy Su
             .sym
 
 CLAWITZER_CREST = CrestBuilder.add(:CLAWITZER, "Secondary type matches Mimicry type.")
-            .secondary_type_battle { |pkmn, _|
+            .type2_battle { |pkmn, _|
               if (type = pkmn.battle.field.mimicry) and pkmn.type1 != type and pkmn.type2 != type
                 pkmn.type2 = type
               end

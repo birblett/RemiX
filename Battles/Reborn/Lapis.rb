@@ -1,8 +1,8 @@
 RemiX.gym(2.5) {
 
   TrainerModifier.add(:LADY, "Lenore", 0)
-                 .set_pkmn(0, :LUVDISC, 26, :SWIFTSWIM)
-                 .set_pkmn(1, :MURKROW, 26, :INSOMNIA)
+                 .set_pkmn(0, :LUVDISC, 35, :SWIFTSWIM)
+                 .set_pkmn(1, :MURKROW, 35, :INSOMNIA)
 
   TrainerModifier.add(:GENTLEMAN, "Murray", 0)
                  .set_pkmn(0, :SUNFLORA, 35, :SOLARPOWER, ev: HPSPA)
@@ -31,7 +31,7 @@ RemiX.gym(2.5) {
                  .set_pkmn(2, :WORMADAM, 35, :CAMOUFLAGE)
 
   TrainerModifier.add(:LADY, "Eve", 0)
-                 .set_pkmn(0, :SHUCKLE, 40, :CONTRARY, ev: HPDEF, moves: [:SHELLSMASH, :REST, nil, nil])
+                 .set_pkmn(0, :SHUCKLE, 40, :STAMINA, ev: HPDEF, moves: [:TOXIC, :REST, nil, nil])
 
   TrainerModifier.add(:LADY, "Lily", 0)
                  .set_pkmn(0, :SWADLOON, 31, :LEAFGUARD)

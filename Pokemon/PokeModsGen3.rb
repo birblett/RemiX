@@ -120,18 +120,16 @@ PokeModifier.add(:MANECTRIC)
 # PLUSLE
 PokeModifier.add(:PLUSLE)
             .stats(0, 40, 50, 105, 60, 0)
-            .type2(:WATER)
-            .abilities({ 1 => :LIGHTNINGROD, 2 => :SKILLLINK })
-            .level_moves([[5, :WATERPULSE], [25, :BUBBLEBEAM], [40, :SNIPESHOT], [55, :HYDROPUMP], [60, :WATERSHURIKEN]])
-            .compatible_moves(:SCALD)
+            .type2(:ICE)
+            .abilities({ 1 => :LIGHTNINGROD, 2 => :TECHNICIAN })
+            .level_moves([[10, :POWDERSNOW], [25, :ICYWIND], [32, :GLACIATE], [40, :ICEBEAM], [55, :FROSTBREATH], [60, :BLIZZARD]])
 
 # MINUN
 PokeModifier.add(:MINUN)
-            .stats(0, 0, 60, 85, 65, 100)
-            .type2(:WATER)
-            .abilities({ 1 => :VOLTABSORB, 2 => :ADAPTABILITY })
-            .level_moves([[5, :BUBBLE], [25, :OCTAZOOKA], [40, :MUDDYWATER], [55, :ORIGINPULSE], [60, :WATERSHURIKEN]])
-            .compatible_moves(:SURF)
+            .stats(0, 0, 60, 90, 60, 100)
+            .type2(:GRASS)
+            .abilities({ 1 => :VOLTABSORB, 2 => :MOLDBREAKER })
+            .level_moves([[10, :MEGADRAIN], [25, :MAGICALLEAF], [32, :SLEEPPOWDER], [40, :GIGADRAIN], [55, :STRENGTHSAP], [60, :LEAFSTORM]])
 
 # VOLBEAT
 PokeModifier.add(:VOLBEAT)
@@ -208,7 +206,8 @@ PokeModifier.add(:VIBRAVA)
 
 # FLYGON
 PokeModifier.add(:FLYGON)
-            .stat(:SPA, 110)
+            .stat(:SPA, 100)
+            .ability(2, :REVERB)
             .set_plates([:FLAMEPLATE, :INSECTPLATE])
             .level_moves([60, :BUGBUZZ])
 
@@ -333,14 +332,6 @@ PokeModifier.add(:LUVDISC)
 # SALAMENCE
 PokeModifier.add(:SALAMENCE)
             .compatible_moves(:ACROBATICS)
-
-# BELDUM
-PokeModifier.add(:BELDUM)
-            .ability(2, :IRONFIST)
-
-# METANG
-PokeModifier.add(:METANG)
-            .ability(2, :IRONFIST)
 
 # METAGROSS
 PokeModifier.add(:METAGROSS)

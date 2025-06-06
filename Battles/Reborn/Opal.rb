@@ -1,5 +1,8 @@
 RemiX.gym(0) {
 
+  TrainerModifier.add(:TechNerd, "Jonathan", 0)
+                 .set_pkmn(0, :YUNGOOS, 6, :STAKEOUT)
+
   TrainerModifier.add(:COOLTRAINER_Male, "Eric", 0)
                  .set_pkmn(0, :BIDOOF, 8, :SIMPLE, item: :NORMALIUMZ)
 
@@ -87,7 +90,7 @@ RemiX.gym(4) {
 
   TrainerModifier.add(:PSYCHIC_Male, "Damon", 0)
                  .set_pkmn(0, :HAUNTER, 40, :LEVITATE)
-                 .set_pkmn(1, :LAMPENT, 40, :FLASHFIRE)
+                 .set_pkmn(1, :LAMPENT, 40, :FLASHFIRE, form: LAMPENT_AEVIAN)
 
   TrainerModifier.add(:PSYCHIC_Female, "Rin", 0)
                  .set_pkmn(0, :PUMPKABOO, 40, :PICKUP)

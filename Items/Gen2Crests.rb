@@ -11,7 +11,7 @@ LANTURN_CREST = CrestBuilder.add(:LANTURN, "Neutral to Ground. Recover HP at the
             .sym
 
 GIRAFARIG_CREST = CrestBuilder.add(:GIRAFARIG, "Make type-based immunities super effective instead.")
-            .type_effectiveness_mod { |_, _, _, mod1, mod2| [mod1 == 0 ? 4 : mod1, mod2 == 0 ? 4 : mod2] }
+            .attack_type_effectiveness_mod { |_, _, _, mod1, mod2| [mod1 == 0 ? 8 : mod1, mod2 == 0 ? 8 : mod2] }
             .cairo(1, 3000)
             .sym
 

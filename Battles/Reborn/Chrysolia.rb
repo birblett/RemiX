@@ -2,7 +2,7 @@ RemiX.gym(5) {
 
   TrainerModifier.add(:RANGERF, "Elizabeth", 0)
                   .set_pkmn(0, :DRATINI, 49, :SHEDSKIN)
-                  .set_pkmn(1, :SUNFLORA, 49, :CHLOROPHYLL)
+                  .set_pkmn(1, :SUNFLORA, 49, :SOLARPOWER)
 
   TrainerModifier.add(:Casanova, "Christian", 0)
                  .set_pkmn(0, :MIMIKYU, 52, :DISGUISE)

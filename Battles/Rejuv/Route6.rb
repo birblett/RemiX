@@ -2,7 +2,7 @@ RemiX.chapter(8) {
 
   TrainerModifier.add(:LEADER_CRAWLI, "Crawli", 3)
                  .set_pkmn(0, :ILLUMISE, 55, :PRANKSTER, item: :MENTALHERB, moves: [:TAILWIND, :REFLECT, :LIGHTSCREEN, :STRUGGLEBUG], nature: :BOLD, ev: HPDEF)
-                 .set_pkmn(1, :ACCELGOR, 56, :DAZZLING, item: :TELLURICSEED, moves: [:MUDDYWATER, :BUGBUZZ, :WATERSHURIKEN, :PROTECT], nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(1, :ACCELGOR, 56, :DAZZLING, item: :TELLURICSEED, moves: [:THUNDERBOLT, :BUGBUZZ, :THUNDERCLAP, :PROTECT], nature: :TIMID, ev: SPASPE)
                  .set_pkmn(2, :YANMEGA, 56, :SPEEDBOOST, item: YANMEGA_CREST, moves: [:AIRCUTTER, :STRUGGLEBUG, :HIDDENPOWERFIG, :PROTECT], nature: :TIMID, ev: SPASPE)
                  .set_pkmn(3, :FALINKS, 55, :DEFIANT, item: FALINKS_CREST, moves: [:CLOSECOMBAT, :MEGAHORN, :IRONHEAD, :NORETREAT], nature: :ADAMANT, ev: ATKSPE)
                  .set_pkmn(4, :GALVANTULA, 55, :COMPOUNDEYES, item: :TELLURICSEED, moves: [:BUGBUZZ, :ENERGYBALL, :THUNDER, :HIDDENPOWERICE], nature: :TIMID, ev: SPASPE)

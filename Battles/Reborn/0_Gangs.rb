@@ -10,6 +10,16 @@ UniLib.category("Magma") {
                  .set_pkmn(1, :BRAIXEN, 35, :BLAZE)
                  .set_pkmn(2, :HOUNDOOM, 35, :STRONGJAW)
 
+  TrainerModifier.add(:MAGMA2, "Darm", 0)
+                 .set_pkmn(0, :DARUMAKA, 35, :HUSTLE)
+                 .set_pkmn(1, :HOUNDOUR, 35, :STRONGJAW)
+                 .set_pkmn(2, :DARUMAKA, 35, :HUSTLE)
+
+  TrainerModifier.add(:MAGMA2, "Break", 0)
+                 .set_pkmn(0, :HOUNDOUR, 35, :STRONGJAW)
+                 .set_pkmn(1, :LITLEO, 35, :RIVALRY)
+                 .set_pkmn(2, :LAMPENT, 35, :FLASHFIRE)
+
 }
 
 UniLib.category("Aqua") {

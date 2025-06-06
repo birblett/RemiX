@@ -37,3 +37,5 @@ MoveModifier.add(:ROCKSLIDE).accuracy(95)
 MoveModifier.add(:STONEEDGE).accuracy(85)
 
 MoveModifier.add(:PLAYROUGH).damage(85).accuracy(100)
+
+MoveModifier.add(:LUSTERPURGE).damage(95)

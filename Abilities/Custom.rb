@@ -2,7 +2,7 @@ AbilityBuilder.add(:GALEFORCE, "Gale Force", "Wind-based moves are stronger.", "
               .damage_mod { |_, _, move, _, _| next 1.3 if move.is_wind_move? }
 
 AbilityBuilder.add(:DRAGONSLAYER, "Dragonslayer", "All moves are effective on Dragons.")
-              .type_effectiveness_mod do |_, target, _, mod1, mod2|
+              .attack_type_effectiveness_mod do |_, target, _, mod1, mod2|
                 if target.type1 == :DRAGON
                   next [4, mod2]
                 elsif target.type2 == :DRAGON
@@ -15,7 +15,7 @@ AbilityBuilder.add(:DENSITY, "Density", "Full body moves deal more damage to lig
               .move_score { |_, _, _, move| next 0.7 if move.function == 0x31 }
 
 AbilityBuilder.add(:HEAVENPIERCER, "Heaven Piercer", "Stabbing moves hit Flying-types super effectively.")
-              .type_effectiveness_mod do |_, target, move, mod1, mod2|
+              .attack_type_effectiveness_mod do |_, target, move, mod1, mod2|
                 if move.is_stabbing_move?
                   if target.type1 == :FLYING
                     next [4, mod2]
@@ -86,10 +86,17 @@ AbilityBuilder.add(:HOARDING, "Hoarding", "Stockpile at the end of turns when da
 
 AbilityBuilder.add(:REVERB, "Reverb", "Sound moves hit twice. Second hit deals 0.3x damage.")
               .hit_count_mod { |_, move| 2 if move.isSoundBased? }
-              .damage_mod { |attacker, _, move, hit, _|
+              .damage_mod { |attacker, _, move, _, ai|
                 if move.isSoundBased?
-                  next 0.3 if attacker.effects[:Reverb]
-                  attacker.effects[:Reverb] = true
+                  if ai
+                    next 1.3
+                  else
+                    if attacker.effects[:Reverb]
+                      attacker.effects[:Reverb] = false
+                      next 0.3
+                    end
+                    attacker.effects[:Reverb] = true
+                  end
                 end
                 nil
               }
@@ -110,11 +117,11 @@ AbilityBuilder.add(:OPENWOUNDS, "Open Wounds", "On contact, inflict stacking dam
               .disrupt_score { next 1.1 }
 
 BattleEffects.add(:OpenWounds)
-             .on_turn_end do |pkmn|
+             .on_turn_end { |pkmn|
                next if pkmn.ability == :MAGICGUARD
                i = pkmn.effects[:OpenWounds]
                UniLib.damage_pkmn(pkmn, pkmn.totalhp / 16 * i, _INTL("{1} was hurt by its wounds!", pkmn.pbThis)) if i > 0
-             end
+             }
              .should_switch_score { |_, pkmn, _| next pkmn.effects[:OpenWounds] * 20 unless pkmn.ability == :MAGICGUARD }
              .set_display { |pkmn| next "Open Wounds: #{pkmn.effects[:OpenWounds]}" }
              .register_negative_effect
@@ -150,9 +157,9 @@ AbilityBuilder.add(:CAMOUFLAGE, "Camouflage", "Gain resistances (but not immunit
                   dtypes, types = [defender.pokemon.type1], []
                   dtypes.push(defender.pokemon.type2) unless defender.pokemon.type2.nil?
                   if Reborn
-                    $cache.pkmn[defender.species].pokemonData.each { |form|
-                      types |= [form.Type1] - dtypes if form.Type1
-                      types |= [form.Type2] - dtypes if form.Type2
+                    $cache.pkmn[defender.species].pokemonData.each { |_, data|
+                      types |= [data.Type1] - dtypes if data.Type1
+                      types |= [data.Type2] - dtypes if data.Type2
                     }
                   else
                     t1, t2 = $cache.pkmn[defender.species].Type1, $cache.pkmn[defender.species].Type2
@@ -227,6 +234,7 @@ AbilityBuilder.add(:FORTITUDE, "Fortitude", "Special attacks use special defense
 
 AbilityBuilder.add(:SPECTRALBODY, "Spectral Body", "Ghost STAB and resistances.")
               .type_fake(:GHOST)
+              .defend_type_effectiveness_mod { |attacker, _, move, _, mod2| [0, mod2] if [:FIGHTING, :NORMAL].include? move.pbType(attacker)  }
 
 AbilityBuilder.add(:OVERCHARGED, "Overcharged", "Gain speed on switch in, but wears off after attacking.")
               .on_battle_entry do |pkmn, _, _|
@@ -243,7 +251,7 @@ AbilityBuilder.add(:OVERCHARGED, "Overcharged", "Gain speed on switch in, but we
                   pkmn.effects[:Overcharged] = nil
                 end
               end
-              .switch_in_score do
+              .switch_in_score do |_, pkmn|
                 boost = pkmn.permanent_effect(:Overcharged) ? pkmn.permanent_effect(:Overcharged) : 2
                 next 25 * boost if boost > 0
               end

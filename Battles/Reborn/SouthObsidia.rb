@@ -56,6 +56,9 @@ RemiX.gym(1) {
                  .set_pkmn(0, :BARBOACH, 24, :OBLIVIOUS)
                  .set_pkmn(1, :SPINDA, 24, :OWNTEMPO)
 
+  TrainerModifier.add(:BEAUTY, "Suzy", 0)
+                 .set_pkmn(0, :TSAREENA, 45, :QUEENLYMAJESTY, moves: [:SYNTHESIS, :AROMATHERAPY, :DOUBLEKICK, :TROPKICK], nature: :ADAMANT, iv: 31)
+
 }
 
 RemiX.gym(3) {

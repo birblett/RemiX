@@ -87,20 +87,21 @@ PokeModifier.add(:PIDGEOT)
 PokeModifier.add(:RATTATA)
             .stats(40, 46, 0, 0, 0, 0)
             .abilities({ 1 => :HUSTLE, 2 => :STRONGJAW })
+            .compatible_moves([:FIREFANG, :ICEFANG, :THUNDERFANG])
 
-# RATTATA-A
+# RATTATAALOLA
 PokeModifier.add(:RATTATA, "Alolan")
             .ability(2, :STRONGJAW)
             .level_moves([30, :HYPERFANG])
             .compatible_moves([:FIREFANG, :ICEFANG, :THUNDERFANG])
-            .egg_moves([:FIREFANG, :ICEFANG, :THUNDERFANG])
 
 # RATICATE
 PokeModifier.add(:RATICATE)
             .stats(65, 68, 0, 0, 0, 117)
             .abilities({ 1 => :HUSTLE, 2 => :STRONGJAW })
+            .compatible_moves([:FIREFANG, :ICEFANG, :THUNDERFANG])
 
-# RATICATE-A
+# RATICATEALOLA
 PokeModifier.add(:RATICATE, "Alolan")
             .stats(65, 100, 0, 0, 70, 85)
             .ability(2, :STRONGJAW)
@@ -209,15 +210,15 @@ PokeModifier.add(:GOLBAT)
 
 # ODDISH
 PokeModifier.add(:ODDISH)
-            .set_aaa
+            .set_aaa(1)
 
 # GLOOM
 PokeModifier.add(:GLOOM)
-            .set_aaa
+            .set_aaa(1)
 
 # VILEPLUME
 PokeModifier.add(:VILEPLUME)
-            .set_aaa
+            .set_aaa(1)
 
 # PARAS
 PokeModifier.add(:PARAS)
@@ -554,6 +555,10 @@ PokeModifier.add(:MAGMAR)
             .abilities({ 1 => :VITALSPIRIT, 2 => :FILTER })
             .level_moves([[16, :VACUUMWAVE], [42, :AURASPHERE], [60, :FOCUSBLAST]])
 
+# PINSIR
+PokeModifier.add(:PINSIR)
+            .set_plates(:FIGHTING)
+
 # TAUROS
 PokeModifier.add(:TAUROS)
             .stats(70, 0, 80, 80, 0, 0)
@@ -567,7 +572,7 @@ PokeModifier.add_form(:MAGIKARP, "Mega Form")
             .type1(:WATER).type2(:DRAGON)
             .abilities({ 0 => :DRAGONFORCE, 1 => nil, 2 => :DRAGONFORCE })
             .stats(100, 120, 80, 20, 200, 120)
-            .asset_override(nil, "RemiX/Assets/gigakarp.png")
+            .asset_override(asset: "RemiX/Assets/gigakarp.png")
 
 # MAGIKARP-A
 PokeModifier.add(:MAGIKARP, "Aevian")

@@ -1,16 +1,18 @@
 # ROWLET
 PokeModifier.add(:ROWLET)
-            .ability(2, :CURSEDBODY)
+            .stats(78, 0, 45, 0, 0, 0)
+            .abilities({ 1 => :LONGREACH, 2 => :CURSEDBODY })
 
 # DARTRIX
 PokeModifier.add(:DARTRIX)
-            .ability(2, :CURSEDBODY)
+            .stats(88, 80, 65, 50, 0, 67)
+            .abilities({ 1 => :LONGREACH, 2 => :CURSEDBODY })
 
 # DECIDUEYE
 PokeModifier.add(:DECIDUEYE)
-            .stats(0, 0, 100, 75, 0, 0)
+            .stats(103, 112, 80, 55, 0, 80)
             .type2(:FLYING)
-            .ability(2, :SPECTRALBODY)
+            .abilities({ 1 => :LONGREACH, 2 => :SPECTRALBODY })
             .level_moves([50, :SWORDSDANCE])
 
 # LITTEN
@@ -66,6 +68,7 @@ PokeModifier.add(:LYCANROC, "Midnight")
 
 # LYCANROC-DUSK
 PokeModifier.add(:LYCANROC, "Dusk")
+            .type2(nil)
             .set_camo(1)
 
 # MUDBRAY

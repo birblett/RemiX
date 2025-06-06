@@ -38,6 +38,12 @@ TORKOAL_CREST = CrestBuilder.add(:TORKOAL, "Gain the Water-type. Water moves dea
             .damage_mod { |attacker, _, move, _, _| next 3 if move.type == :WATER and attacker.battle.weather == :SUNNYDAY }
             .sym
 
+FLYGON_CREST = CrestBuilder.add(:FLYGON, "Halved Attack. Gain Adaptability. Ground moves neutral on airborne.")
+            .ability_provider { :ADAPTABILITY }
+            .battle_stat_mods { |_, bs| bs[1].mul(0.5) }
+            .attack_type_effectiveness_mod { |_, target, _, _, _| [2, 2] if target.isAirborne? }
+            .sym
+
 MILOTIC_CREST = CrestBuilder.add(:MILOTIC, "First move matches secondary type and uses highest stat. Burns if Marvel Scale.")
             .add_receiver(:MILOTIC, Reborn ? 0 : "Aevian")
             .on_battle_entry { |pkmn, _, _|

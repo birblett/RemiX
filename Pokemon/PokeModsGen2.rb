@@ -128,7 +128,8 @@ PokeModifier.add(:BELLOSSOM)
 # SUDOWOODO
 PokeModifier.add(:SUDOWOODO)
             .type2(:GRASS)
-            .set_pokebilities
+            .set_pokebilities(1)
+            .level_moves([0, :SEEDBOMB])
 
 # HOPPIP
 PokeModifier.add(:HOPPIP)
@@ -151,16 +152,19 @@ PokeModifier.add(:AIPOM)
 
 # SUNKERN
 PokeModifier.add(:SUNKERN)
+            .stats(0, 50, 0, 50, 0, 50)
             .type2(:FIRE)
             .ability(0, :COMBUSTION)
             .set_pokebilities(1)
 
 # SUNFLORA
 PokeModifier.add(:SUNFLORA)
-            .stats(0, 50, 0, 0, 0, 80)
+            .stats(0, 60, 0, 0, 0, 80)
             .type2(:FIRE)
             .ability(0, :COMBUSTION)
             .set_pokebilities(1)
+            .level_moves([[10, :EMBER], [16, :FIRESPIN], [25, :INCINERATE], [37, :FLAMETHROWER], [43, :TRIATTACK], [50, :FIREBLAST]])
+            .compatible_moves(:HYPERVOICE)
 
 # QUAGSIRE
 PokeModifier.add(:QUAGSIRE)
@@ -207,6 +211,7 @@ PokeModifier.add(:FORRETRESS)
 PokeModifier.add(:DUNSPARCE)
             .stats(0, 80, 80, 80, 80, 0)
             .ability(2, :PUNKROCK)
+            .set_plates(:SKYPLATE)
 
 # STEELIX
 PokeModifier.add(:STEELIX)
@@ -244,6 +249,11 @@ PokeModifier.add(:SHUCKLE)
 PokeModifier.add(:HERACROSS, "Mega")
             .stats(0, 0, 0, 30, 0, 85)
 
+# URSARING
+PokeModifier.add(:URSARING)
+            .set_plates(:EARTHPLATE)
+            .add_evolution({ :species => :URSALUNA, :method => :LevelDay, :parameter => 104 })
+
 # MAGCARGO
 PokeModifier.add(:MAGCARGO)
             .stat(:SPA, 110)
@@ -275,13 +285,18 @@ PokeModifier.add(:DELIBIRD)
 PokeModifier.add(:HOUNDOOM)
             .ability(0, :STRONGJAW)
 
+# DONPHAN
+PokeModifier.add(:DONPHAN)
+            .level_moves([30, :BODYPRESS])
+
 # PORYGON2
 PokeModifier.add(:PORYGON2)
             .set_camo(1)
 
-# DONPHAN
-PokeModifier.add(:DONPHAN)
-            .level_moves([30, :BODYPRESS])
+# TURTONATOR
+PokeModifier.add(:STANTLER)
+            .remove_level_moves(:PSYSHIELDBASH)
+            .level_moves([47, :PSYSHIELDBASH])
 
 # MILTANK
 PokeModifier.add(:MILTANK)

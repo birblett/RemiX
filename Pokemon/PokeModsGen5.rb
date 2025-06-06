@@ -120,14 +120,16 @@ PokeModifier.add(:UNFEZANT)
 # BLITZLE
 PokeModifier.add(:BLITZLE)
             .ability(0, :RECKLESS)
-            .level_moves([45, :FLAREBLITZ])
             .set_camo(1)
+            .set_pokebilities(1)
+            .level_moves([[25, :FLAMEWHEEL], [45, :FLAREBLITZ]])
 
 # ZEBSTRIKA
 PokeModifier.add(:ZEBSTRIKA)
             .ability(0, :RECKLESS)
-            .level_moves([45, :FLAREBLITZ])
             .set_camo(1)
+            .set_pokebilities(1)
+            .level_moves([[25, :FLAMEWHEEL], [45, :FLAREBLITZ]])
 
 # ROGGENROLA
 PokeModifier.add(:ROGGENROLA)
@@ -159,12 +161,12 @@ PokeModifier.add(:AUDINO, "Mega")
 # GURDURR
 PokeModifier.add(:GURDURR)
             .type2(:STEEL)
-            .level_moves([[15, :METALCLAW], [24, :SMARTSTRIKE], [33, :IRONHEAD], [51, :METEORMASH]])
+            .level_moves([[15, :BULLETPUNCH], [24, :SMARTSTRIKE], [33, :IRONHEAD], [51, :METEORMASH]])
 
 # CONKELDURR
 PokeModifier.add(:CONKELDURR)
             .type2(:STEEL)
-            .level_moves([[15, :METALCLAW], [24, :SMARTSTRIKE], [33, :IRONHEAD], [51, :METEORMASH]])
+            .level_moves([[15, :BULLETPUNCH], [24, :SMARTSTRIKE], [33, :IRONHEAD], [51, :METEORMASH]])
 
 # SEISMITOAD
 PokeModifier.add(:SEISMITOAD)
@@ -174,25 +176,13 @@ PokeModifier.add(:SEISMITOAD)
 PokeModifier.add(:SEWADDLE)
             .ability(1, :SHARPNESS)
 
-# SEWADDLE-A
-PokeModifier.add(:SEWADDLE, "Aevian")
-            .set_camo(1) if Rejuv
-
 # SWADLOON
 PokeModifier.add(:SWADLOON)
             .ability(1, :SHARPNESS)
 
-# SWADLOON-A
-PokeModifier.add(:SWADLOON, "Aevian")
-            .set_camo(1) if Rejuv
-
 # LEAVANNY
 PokeModifier.add(:LEAVANNY)
             .ability(1, :SHARPNESS)
-
-# LEAVANNY-A
-PokeModifier.add(:LEAVANNY, "Aevian")
-            .set_camo(1) if Rejuv
 
 # VENIPEDE
 PokeModifier.add(:VENIPEDE)
@@ -431,11 +421,10 @@ PokeModifier.add(:CRYOGONAL)
 
 # ACCELGOR
 PokeModifier.add(:ACCELGOR)
-            .type2(:WATER)
+            .type2(:ELECTRIC)
             .abilities({ 1 => :TECHNICIAN, 2 => :DAZZLING })
-            .ability(1, :TECHNICIAN)
-            .level_moves([[12, :BUBBLEBEAM], [30, :SURF], [57, :MUDDYWATER], [70, :HYDROPUMP]])
-            .compatible_moves([:SURF, :WATERFALL])
+            .level_moves([[12, :THUNDERSHOCK], [30, :DISCHARGE], [38, :SHOCKWAVE], [57, :THUNDERBOLT], [70, :THUNDERCLAP]])
+            .compatible_moves([:SURF, :THUNDER])
 
 # STUNFISK
 PokeModifier.add(:STUNFISK)

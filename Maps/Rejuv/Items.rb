@@ -18,7 +18,7 @@ UniLib.category("Raticate Crest, Route 4") {
     MapEvent.add_event(map, RAT_FAMILY_BOSS)
   end
 
-  Assets.redirect(:BMP, "Graphics/Characters/pkmn_raticate_alola", "BirbAltBalance/Assets/pkmn_raticate_alola")
+  Assets.redirect(:BMP, "Graphics/Characters/pkmn_raticate_alola", "RemiX/Assets/pkmn_raticate_alola")
 
 }
 UniLib.category("Electrode-H Crest, Tyluric Temple") {

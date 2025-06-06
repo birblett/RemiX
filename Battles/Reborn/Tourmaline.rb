@@ -59,5 +59,6 @@ RemiX.gym(14) {
   # teknite from beryl
   TrainerModifier.add(:VOLCARONA, "Fulgor", 0)
                  .set_pkmn(0, :VOLCARONA, 100, :FLAMEBODY, item: :LEFTOVERS, moves: [:QUIVERDANCE, :SIGNALBEAM, :GIGADRAIN, :HEATWAVE], ev: PULSE2)
+                 .set_pkmn(0, :VOLCARONA, 100, :SHIELDDUST, item: :LEFTOVERS, moves: [:QUIVERDANCE, :ETHEREALTEMPEST, :AURASPHERE, :ROOST], form: VOLCARONA_AEVIAN, ev: PULSE2)
 
 }

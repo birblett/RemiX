@@ -6,6 +6,24 @@ UniLib.category("Catalyst, Opal") {
 
 }
 
+UniLib.category("Ancient Teachings, Peridot Factory") {
+
+  MapEvent.add_map_event(12) { |map| MapEvent.add_overworld_item(map, 3, 7, "Item", :ANCIENTTEACH, :AncientTeachings, "itemball") }
+
+}
+
+UniLib.category("Cherrim Crest, Pyrous") {
+
+  MapEvent.add_map_event(27) { |map| MapEvent.add_overworld_item(map, 18, 12, "Item", CHERRIM_CREST, :CherrimCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Vespiquen Crest, Pyrous") {
+
+  MapEvent.add_map_event(206) { |map| MapEvent.add_overworld_item(map, 19, 36, "Item", VESPIQUEN_CREST, :VespiquenCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
 UniLib.category("Girafarig Crest, Spinel") {
 
   MapEvent.add_map_event(239) { |map| MapEvent.add_overworld_item(map, 24, 48, "Item", GIRAFARIG_CREST, :GirafarigCrest, "itemball", graphic: { character_hue: 310 }) }
