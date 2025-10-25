@@ -17,27 +17,35 @@ PokeModifier.add(:DECIDUEYE)
 
 # LITTEN
 PokeModifier.add(:LITTEN)
-            .ability(2, :OBLIVIOUS)
+            .abilities({ 1 => :INTIMIDATE, 2 => :UNAWARE })
 
 # TORRACAT
 PokeModifier.add(:TORRACAT)
-            .ability(2, :OBLIVIOUS)
+            .abilities({ 1 => :INTIMIDATE, 2 => :UNAWARE })
 
 # INCINEROAR
 PokeModifier.add(:INCINEROAR)
-            .ability(2, :UNAWARE)
+            .abilities({ 1 => :INTIMIDATE, 2 => :UNAWARE })
 
 # POPPLIO
-PokeModifier.add(:PRIMARINA)
-            .ability(2, :CUTECHARM)
+PokeModifier.add(:POPPLIO)
+            .abilities({ 1 => :LIQUIDVOICE, 2 => :CUTECHARM })
 
 # BRIONNE
 PokeModifier.add(:BRIONNE)
-            .ability(2, :CUTECHARM)
+            .abilities({ 1 => :LIQUIDVOICE, 2 => :CUTECHARM })
 
 # PRIMARINA
 PokeModifier.add(:PRIMARINA)
-            .ability(2, :ANALYTIC)
+            .abilities({ 1 => :LIQUIDVOICE, 2 => :ANALYTIC })
+
+# PIKIPEK
+PokeModifier.add(:PIKIPEK)
+            .set_camo(1)
+
+# TRUMBEAK
+PokeModifier.add(:TRUMBEAK)
+            .set_camo(1)
 
 # TOUCANNON
 PokeModifier.add(:TOUCANNON)
@@ -45,16 +53,16 @@ PokeModifier.add(:TOUCANNON)
 
 # GRUBBIN
 PokeModifier.add(:GRUBBIN)
-            .ability(2, :PLUS)
+            .ability(1, :PLUS)
 
 # CHARJABUG
 PokeModifier.add(:CHARJABUG)
-            .ability(2, :POWERSPOT)
+            .ability(1, :POWERSPOT)
 
 # VIKAVOLT
 PokeModifier.add(:VIKAVOLT)
             .stats(75, 0, 88, 0, 0, 57)
-            .ability(2, :OVERCHARGED)
+            .ability(1, :OVERCHARGED)
 
 # LYCANROC-MIDDAY
 PokeModifier.add(:LYCANROC)
@@ -84,6 +92,14 @@ PokeModifier.add(:MUDSDALE)
 PokeModifier.add(:ARAQUANID)
             .stat(:SPA, 70)
 
+# FOMANTIS
+PokeModifier.add(:FOMANTIS)
+            .set_plates([:INSECTPLATE, :FISTPLATE])
+
+# LURANTIS
+PokeModifier.add(:LURANTIS)
+            .set_plates([:INSECTPLATE, :FISTPLATE])
+
 # SALANDIT
 PokeModifier.add(:SALANDIT)
             .stats(58, 0, 60, 0, 0, 0)
@@ -91,6 +107,7 @@ PokeModifier.add(:SALANDIT)
 # SALAZZLE
 PokeModifier.add(:SALAZZLE)
             .stats(78, 0, 90, 0, 0, 0)
+            .ability(1, :MERCILESS)
 
 # BEWEAR
 PokeModifier.add(:BEWEAR)
@@ -101,6 +118,10 @@ PokeModifier.add(:TSAREENA)
             .type2(:FIGHTING)
             .level_moves([[20, :DOUBLEKICK], [38, :THUNDEROUSKICK]])
 
+# COMFEY
+PokeModifier.add(:COMFEY)
+            .set_plates(:MEADOWPLATE)
+
 # ORANGURU
 PokeModifier.add(:ORANGURU)
             .set_camo(1)
@@ -109,17 +130,32 @@ PokeModifier.add(:ORANGURU)
 PokeModifier.add(:PASSIMIAN)
             .abilities({ 1 => :DEFIANT, 2 => :SCRAPPY })
 
+# WIMPOD
+PokeModifier.add(:WIMPOD)
+            .set_plates(:EARTHPLATE)
+
 # GOLISOPOD
 PokeModifier.add(:GOLISOPOD)
             .ability(0, :POISONHEAL)
 
+# WIMPOD-A
+PokeModifier.add(:WIMPOD)
+            .set_pokebilities(1)
+
+# GOLISOPOD
+PokeModifier.add(:GOLISOPOD)
+            .ability(0, :POISONHEAL)
+            .set_plates(:EARTHPLATE)
+
 # GOLISOPOD-A
 PokeModifier.add(:GOLISOPOD, "Aevian")
-            .set_pokebilities if Rejuv
+            .set_pokebilities
+            .set_plates(:SPLASHPLATE)
 
 # PYUKUMUKU
 PokeModifier.add(:PYUKUMUKU)
             .stats(135, 0, 80, 0, 80, 0)
+            .set_plates(:TOXICPLATE)
 
 # TURTONATOR
 PokeModifier.add(:TURTONATOR)

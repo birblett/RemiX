@@ -28,6 +28,8 @@ PBStuff::STABBINGMOVE |= [:ICICLESPEAR]
 
 PBStuff::BITEMOVE |= [:BUGBITE]
 
+UniLib::WIND_MOVES |= [:AIRSLASH, :RAZORWIND]
+
 # simple mods
 
 MoveModifier.add(:DRAGONRUSH).accuracy(85)
@@ -36,6 +38,6 @@ MoveModifier.add(:ROCKSLIDE).accuracy(95)
 
 MoveModifier.add(:STONEEDGE).accuracy(85)
 
-MoveModifier.add(:PLAYROUGH).damage(85).accuracy(100)
+MoveModifier.add(:PLAYROUGH).accuracy(100)
 
 MoveModifier.add(:LUSTERPURGE).damage(95)

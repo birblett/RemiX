@@ -6,15 +6,15 @@ RemiX.gym(9) {
 
   TrainerModifier.add(:Clown, "Bert", 0)
                  .set_pkmn(0, :EXEGGUTOR, 68, :CHLOROPHYLL)
-                 .set_pkmn(1, :DELIBIRD, 75, :VITALSPIRIT)
+                 .set_pkmn(1, :DELIBIRD, 75, :REFRIGERATE)
 
   TrainerModifier.add(:Clown, "Leonardo", 0)
-                 .set_pkmn(0, :LUXRAY, 68, :RIVALRY)
+                 .set_pkmn(0, :LUXRAY, 68, :GUTS)
                  .set_pkmn(1, :PYROAR, 69, :RIVALRY)
 
   TrainerModifier.add(:Clown, "Arthur", 0)
                  .set_pkmn(0, :VENUSAUR, 69, :THICKFAT)
-                 .set_pkmn(1, :UNFEZANT, 69, :SUPPERLUCK)
+                 .set_pkmn(1, :UNFEZANT, 69, :SUPERLUCK)
 
   TrainerModifier.add(:Clown, "Bingo", 0)
                  .set_pkmn(0, :CONKELDURR, 69, :GUTS)

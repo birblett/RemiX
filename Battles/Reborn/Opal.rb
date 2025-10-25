@@ -100,6 +100,10 @@ RemiX.gym(4) {
 
 RemiX.gym(5) {
 
+  TrainerModifier.add(:BEAUTY, "Lulu", 0)
+                 .set_pkmn(0, :SMEARGLE, 50, :OWNTEMPO, item: :SPOOKYPLATE, moves: [:SPORE, :QUIVERDANCE, :JUDGMENT, :BOOMBURST])
+                 .set_pkmn(1, :MUSHARNA, 50, :DOOMSEER)
+
   TrainerModifier.add(:COOLTRAINER_Male, "Mikey", 0)
                  .set_pkmn(0, :TOGEDEMARU, 50, :IRONBARBS)
 

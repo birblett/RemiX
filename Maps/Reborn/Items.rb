@@ -6,9 +6,30 @@ UniLib.category("Catalyst, Opal") {
 
 }
 
+UniLib.category("Furret Crest, Obsidia") {
+
+  MapEvent.add_map_event(104) { |map|
+    map.events[3].pages[0].list[24].parameters = ["poke = PokeBattle_Pokemon.new(:CASTFORM, $Trainer.party[pbGet(1)].level); poke.item = FURRET_CREST; pbStartTrade("]
+    map.events[3].pages[0].list[26].parameters = ["poke,"]
+  }
+
+}
+
+UniLib.category("Kricketune, Rhodochrine Taillow") {
+
+  MapEvent.add_map_event(150) { |map| MapEvent.add_overworld_item(map, 84, 108, "Item", KRICKETUNE_CREST, :KricketuneCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
 UniLib.category("Ancient Teachings, Peridot Factory") {
 
   MapEvent.add_map_event(12) { |map| MapEvent.add_overworld_item(map, 3, 7, "Item", :ANCIENTTEACH, :AncientTeachings, "itemball") }
+
+}
+
+UniLib.category("Pyroar Crest, Apophyll Cave") {
+
+  MapEvent.add_map_event(31) { |map| MapEvent.add_overworld_item(map, 17, 9, "Item", PYROAR_CREST, :PyroarCrest, "itemball", graphic: { character_hue: 310 }) }
 
 }
 
@@ -24,21 +45,88 @@ UniLib.category("Vespiquen Crest, Pyrous") {
 
 }
 
+UniLib.category("Swalot Crest, Byxbysion Wasteland") {
+
+  MapEvent.add_map_event(209) { |map| MapEvent.add_overworld_item(map, 34, 8, "Item", SWALOT_CREST, :SwalotCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Watchog Crest, Byxbysion Wasteland") {
+
+  MapEvent.add_map_event(209) { |map| MapEvent.add_overworld_item(map, 104, 61, "Item", WATCHOG_CREST, :WatchogCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Magcargo Crest, Pyrous (Strength)") {
+
+  MapEvent.add_map_event(35) { |map| MapEvent.add_overworld_item(map, 62, 12, "Item", MAGCARGO_CREST, :MagcargoCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Lumineon Crest, Ametrine (Strength)") {
+
+  MapEvent.add_map_event(382) { |map| MapEvent.add_overworld_item(map, 53, 17, "Item", LUMINEON_CREST, :LumineonCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Noctowl Crest, Chrysolia Forest") {
+
+  MapEvent.add_map_event(234) { |map| MapEvent.add_overworld_item(map, 55, 54, "Item", NOCTOWL_CREST, :NoctowlCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
 UniLib.category("Girafarig Crest, Spinel") {
 
   MapEvent.add_map_event(239) { |map| MapEvent.add_overworld_item(map, 24, 48, "Item", GIRAFARIG_CREST, :GirafarigCrest, "itemball", graphic: { character_hue: 310 }) }
 
 }
 
-UniLib.category("Magcargo Crest, Pyrous Strength") {
-
-  MapEvent.add_map_event(35) { |map| MapEvent.add_overworld_item(map, 62, 12, "Item", MAGCARGO_CREST, :MagcargoCrest, "itemball", graphic: { character_hue: 310 }) }
-
-}
-
 UniLib.category("Lapras Crest, Spinel") {
 
   MapEvent.add_map_event(510) { |map| MapEvent.add_overworld_item(map, 19, 11, "Item", LAPRAS_CREST, :LaprasCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Miltank Crest, Route 1") {
+
+  MapEvent.add_map_event(290) { |map| map.events[100].pages[0].list[40].parameters[1] = "Kernel.pbReceiveItem(UniLib.set_switch(:MiltankCrest, UniLib.get_switch_or_default(:MiltankCrest, 0) + 1) == 5 ? MILTANK_CREST : :MOOMOOMILK)" }
+
+}
+
+UniLib.category("Stantler Crest, North Aventurine Forest") {
+
+  MapEvent.add_map_event(289) { |map| MapEvent.add_overworld_item(map, 53, 11, "Item", STANTLER_CREST, :StantlerCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Raticate Crest, Vanhanen Castle") {
+
+  MapEvent.add_map_event(292) { |map| MapEvent.add_overworld_item(map, 18, 30, "Item", RATICATE_CREST, :RaticateCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Mightyena Crest, 7th Street") {
+
+  MapEvent.add_map_event(637) { |map| map.events[5].pages[0].list[7].parameters[1] = "Kernel.pbReceiveItem(MIGHTYENA_CREST)" }
+
+}
+
+UniLib.category("Ariados Crest, Underroot (Crystal Key)") {
+
+  MapEvent.add_map_event(153) { |map| MapEvent.add_overworld_item(map, 82, 53, "Item", ARIADOS_CREST, :AriadosCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Clefable Crest, Wasteland Wall") {
+
+  MapEvent.add_map_event(280) { |map| MapEvent.add_overworld_item(map, 16, 6, "Item", CLEFABLE_CREST, :ClefableCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Swanna Crest, Iolia Valley") {
+
+  MapEvent.add_map_event(340) { |map| MapEvent.add_overworld_item(map, 13, 7, "Item", SWANNA_CREST, :SwannaCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_map_event(507) { |map| MapEvent.add_overworld_item(map, 13, 7, "Item", SWANNA_CREST, :SwannaCrest, "itemball", graphic: { character_hue: 310 }) }
 
 }
 
@@ -66,9 +154,9 @@ UniLib.category("Gogoat Crest, Fiore Mansion Right") {
 
 }
 
-UniLib.category("Feraligatr Crest, Azurine Island") {
+UniLib.category("Samurott Crest, Azurine Island") {
 
-  MapEvent.add_map_event(569) { |map| MapEvent.add_overworld_item(map, 48, 83, "Item", FERALIGATR_CREST, :FeraligatrCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_map_event(569) { |map| MapEvent.add_overworld_item(map, 48, 83, "Item", SAMUROTT_CREST, :SamurottCrest, "itemball", graphic: { character_hue: 310 }) }
 
 }
 
@@ -78,9 +166,9 @@ UniLib.category("Whiscash Crest, Route 1 Celestinine Dive") {
 
 }
 
-UniLib.category("Typhlosion Crest, Sunrise 4") {
+UniLib.category("Ludicolo Crest, Sunrise 4") {
 
-  MapEvent.add_map_event(579) { |map| MapEvent.add_overworld_item(map, 5, 3, "Item", TYPHLOSION_CREST, :TyphlosionCrest, "itemballb", graphic: { character_hue: 310 }) }
+  MapEvent.add_map_event(579) { |map| MapEvent.add_overworld_item(map, 5, 3, "Item", LUDICOLO_CREST, :LudicoloCrest, "itemballb", graphic: { character_hue: 310 }) }
 
 }
 

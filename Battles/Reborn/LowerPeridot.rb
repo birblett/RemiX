@@ -18,30 +18,30 @@ RemiX.gym(0) {
                  .set_pkmn(2, :TENTACOOL, 11, :LIQUIDOOZE)
 
   TrainerModifier.add(:Casanova, "Saad", 0)
-                 .set_pkmn(0, :SIMISAGE, 9, :GLUTTONY, item: SIMISAGE_CREST, moves: [:TRIATTACK, :SEEDBOMB, :NASTYPLOT])
+                 .set_pkmn(0, :SIMISAGE, 2, :GLUTTONY, item: SIMISAGE_CREST, moves: [:TRIATTACK, :SEEDBOMB, :NASTYPLOT])
 
   TrainerModifier.add(:Casanova, "Andy", 0)
-                 .set_pkmn(0, :PURRLOIN, 14, :LIMBER)
+                 .set_pkmn(0, :PURRLOIN, 10, :LIMBER)
 
   TrainerModifier.add(:SEACREST, "Seacrest", 0)
-                 .set_pkmn(0, :BUTTERFREE, 13, :COMPOUNDEYES)
-                 .set_pkmn(1, :BEAUTIFLY, 13, :GALEFORCE)
-                 .set_pkmn(2, :BEEDRILL, 13, :SERENEGRACE, item: :CATALYZER)
+                 .set_pkmn(0, :BUTTERFREE, 11, :COMPOUNDEYES)
+                 .set_pkmn(1, :BEAUTIFLY, 11, :GALEFORCE)
+                 .set_pkmn(2, :BEEDRILL, 11, :SERENEGRACE, item: :CATALYZER)
 
   TrainerModifier.add(:Doxy, "Marigold", 0)
-                 .set_pkmn(0, :PIKIPEK, 12, :KEENEYE)
-                 .set_pkmn(1, :BOUNSWEET, 13, :LEAFGUARD, moves: [:SPLASH, :PLAYNICE, :RAPIDSPIN, :RAPIDSPIN])
+                 .set_pkmn(0, :PIKIPEK, 10, :KEENEYE)
+                 .set_pkmn(1, :BOUNSWEET, 10, :LEAFGUARD, moves: [:SPLASH, :PLAYNICE, :RAPIDSPIN, :RAPIDSPIN])
 
   TrainerModifier.add(:COOLTRAINER_Male, "Seth", 0)
-                 .set_pkmn(0, :WIMPOD, 13, :WIMPOUT)
-                 .set_pkmn(1, :QWILFISH, 15, :INTIMIDATE)
+                 .set_pkmn(0, :WIMPOD, 10, :WIMPOUT)
+                 .set_pkmn(1, :QWILFISH, 13, :INTIMIDATE)
 
   TrainerModifier.add(:Punk, "Macy", 0)
-                 .set_pkmn(0, :LOPUNNY, 14, :KLUTZ, item: :ASSAULTVEST, moves: [:SWITCHEROO, :QUICKATTACK, :KNOCKOFF])
+                 .set_pkmn(0, :LOPUNNY, 13, :KLUTZ, item: :ASSAULTVEST, moves: [:SWITCHEROO, :QUICKATTACK, :KNOCKOFF])
 
   TrainerModifier.add(:StreetRat, "Bob", 0)
-                 .set_pkmn(0, :GLAMEOW, 13, :LIMBER, moves: [:FAKEOUT, :SCRATCH, nil, nil])
-                 .set_pkmn(1, :SKIPLOOM, 13, :AERILATE, moves: [:DOUBLEEDGE, :SYNTHESIS])
+                 .set_pkmn(0, :GLAMEOW, 8, :LIMBER, moves: [:FAKEOUT, :SCRATCH, nil, nil])
+                 .set_pkmn(1, :SKIPLOOM, 9, :AERILATE, moves: [:DOUBLEEDGE, :SYNTHESIS])
 
   # mosswater
 

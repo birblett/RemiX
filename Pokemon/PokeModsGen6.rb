@@ -1,18 +1,19 @@
 # CHESPIN
 PokeModifier.add(:CHESPIN)
             .abilities({ 1 => :IRONBARBS, 2 => :FILTER })
+            .set_pokebilities(1)
 
 # QUILLADIN
 PokeModifier.add(:QUILLADIN)
             .abilities({ 1 => :IRONBARBS, 2 => :FILTER })
+            .set_pokebilities(1)
             .level_moves([[31, :IRONDEFENSE], [47, :BODYPRESS]])
 
 # CHESNAUGHT
 PokeModifier.add(:CHESNAUGHT)
-            .abilities({ 1 => :IRONBARBS, 2 => :HEATPROOF })
+            .abilities({ 1 => :IRONBARBS, 2 => :FILTER })
             .set_pokebilities
-            .remove_compatible_moves(:IRONDEFENSE)
-            .level_moves([47, :BODYPRESS])
+            .level_moves([[31, :IRONDEFENSE], [47, :BODYPRESS]])
 
 # FENNEKIN
 PokeModifier.add(:FENNEKIN)
@@ -50,6 +51,14 @@ PokeModifier.add(:TALONFLAME)
             .stats(0, 85, 72, 85, 72, 0)
             .level_moves([[6, :GUST], [18, :AIRCUTTER], [30, :AIRSLASH], [36, :HEATWAVE], [49, :HURRICANE]])
 
+# SCATTERBUG
+PokeModifier.add(:SCATTERBUG)
+            .set_stab
+
+# SPEWPA
+PokeModifier.add(:SPEWPA)
+            .set_stab
+
 # VIVILLON
 PokeModifier.add(:VIVILLON)
             .set_stab
@@ -67,14 +76,20 @@ PokeModifier.add(:PYROAR)
 # FLABEBE
 PokeModifier.add(:FLABEBE)
             .stats(0, 0, 0, 79, 61, 0)
+            .abilities({ 1 => :SYMBIOSIS, 2 => :CHLOROPHYLL })
+            .set_plates(:MEADOWPLATE)
 
 # FLOETTE
 PokeModifier.add(:FLOETTE)
             .stats(0, 0, 0, 98, 75, 0)
+            .abilities({ 1 => :SYMBIOSIS, 2 => :CHLOROPHYLL })
+            .set_plates(:MEADOWPLATE)
 
 # FLORGES
 PokeModifier.add(:FLORGES)
             .stats(90, 50, 0, 149, 120, 0)
+            .abilities({ 1 => :SYMBIOSIS, 2 => :CHLOROPHYLL })
+            .set_plates(:MEADOWPLATE)
 
 # PANCHAM
 PokeModifier.add(:PANCHAM)
@@ -105,13 +120,23 @@ PokeModifier.add(:AROMATISSE)
             .abilities({ 1 => :AROMAVEIL, 2 => :PIXILATE })
             .level_moves([65, :EXTREMESPEED])
 
+# SWIRLIX
+PokeModifier.add(:SWIRLIX)
+            .set_plates(:FISTPLATE)
+
+# SLURPUFF
+PokeModifier.add(:SLURPUFF)
+            .set_plates(:FISTPLATE)
+
 # SKRELP
 PokeModifier.add(:SKRELP)
             .ability(1, :FORTITUDE)
+            .set_plates(:DRACOPLATE)
 
 # DRAGALGE
 PokeModifier.add(:DRAGALGE)
             .ability(1, :FORTITUDE)
+            .set_plates(:SPLASHPLATE)
 
 # CLAUNCHER
 PokeModifier.add(:CLAUNCHER)
@@ -137,6 +162,10 @@ PokeModifier.add(:TYRUNT)
 PokeModifier.add(:TYRANTRUM)
             .abilities({ 1 => :ROCKHEAD, 2 => :OVERBITE })
 
+# AMAURA
+PokeModifier.add(:AMAURA)
+            .set_stab
+
 # AURORUS
 PokeModifier.add(:AURORUS)
             .stats(0, 60, 0, 0, 0, 74)
@@ -159,13 +188,17 @@ PokeModifier.add(:GOOMY)
 PokeModifier.add(:SLIGGOO)
             .set_camo(1)
 
+# SLIGGOOA-H
+PokeModifier.add(:SLIGGOO, "Hisuian")
+            .set_plates(:SPLASHPLATE)
+
 # GOODRA
 PokeModifier.add(:GOODRA)
             .set_camo(1)
 
 # GOODRA-H
 PokeModifier.add(:GOODRA, "Hisuian")
-            .set_plates(:SPLASHPLATE) if Rejuv
+            .set_plates(:SPLASHPLATE)
 
 # KLEFKI
 PokeModifier.add(:KLEFKI)

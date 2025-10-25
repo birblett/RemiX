@@ -1,5 +1,5 @@
 # 7th street shop
-class SylveonMartAdapter < PokemonMartAdapter
+class CrestMartAdapter < PokemonMartAdapter
 
   def initialize(stock)
     super()
@@ -10,13 +10,18 @@ class SylveonMartAdapter < PokemonMartAdapter
 
 end
 
-class SylveonMartScreen < PokemonMartScreen
-  def initialize(scene, prices)
+class CrestMartScreen < PokemonMartScreen
+
+  def initialize(scene, prices, not_enough_money, buy_prompt, not_enough_room, buy_success)
     @scene = scene
     @prices = prices
+    @not_enough_money = not_enough_money
+    @buy_prompt = buy_prompt
+    @not_enough_room = not_enough_room
+    @buy_success = buy_success
     @stock = @prices.keys
     clean_stock
-    @adapter = SylveonMartAdapter.new(@prices)
+    @adapter = CrestMartAdapter.new(@prices)
   end
 
   def clean_stock
@@ -30,75 +35,85 @@ class SylveonMartScreen < PokemonMartScreen
       item = @scene.pbChooseBuyItem
       break if item.nil?
       if @adapter.getMoney() < (price = @adapter.getPrice(item))
-        pbDisplayPaused(_INTL("  (you don't have enough money)"))
+        pbDisplayPaused(_INTL(@not_enough_money))
         next
       end
-      next unless pbConfirm(_INTL(" (buy the {1}?)", @adapter.getDisplayName(item)))
+      next unless pbConfirm(_INTL(@buy_prompt, @adapter.getDisplayName(item)))
       added = 0
       if @adapter.addItem(item)
         added = 1
       end
       if added != 1
-        added.times { raise _INTL("Failed to delete stored items") unless@adapter.removeItem(item) }
-        pbDisplayPaused(_INTL("  (no more room...)"))
+        added.times { raise _INTL("Failed to delete stored items") unless @adapter.removeItem(item) }
+        pbDisplayPaused(_INTL(@not_enough_room))
       else
         @adapter.setMoney(@adapter.getMoney() - price)
         $unilib_switches[item.to_s.concat("_PURCHASED")] = true
         clean_stock
-        pbDisplayPaused(_INTL("  bweh!!"))
+        pbDisplayPaused(_INTL(@buy_success, @adapter.getDisplayName(item)))
       end
     end
     @scene.pbEndBuyScene
   end
 
 end
-def crest_mart
+
+class SylveonMartScreen < CrestMartScreen
+
+  def initialize(scene, prices)
+    super(scene, prices,
+          "  you don't have enough money. this is so sad",
+          "  buy the {1}?",
+          "  how did we get here",
+          "  bwee!!")
+  end
+
+end
+
+def sylveon_mart
   prices = {
     :CATALYZER => 4000,
+    :ANCIENTTEACH => 4000,
+    :AAA_CAPSULE => 4000,
     SIMISAGE_CREST => 5000,
     SIMISEAR_CREST => 5000,
     SIMIPOUR_CREST => 5000,
-    CASTFORM_CREST => 5000,
+    CASTFORM_CREST => 10000,
     LINOONE_CREST => 10000,
     FEAROW_CREST => 10000
   }
   # post luna
-  if $game_switches[460]
+  if $Trainer.numbadges >= 9
     prices[DONPHAN_CREST] = 10000
-    prices[HITMONTOP_CREST] = 12000
-    prices[HITMONLEE_CREST] = 12000
-    prices[HITMONCHAN_CREST] = 12000
+    prices[EMOLGA_CREST] = 10000
   end
-  # post restoration
-  if $game_switches[581]
-    prices[TORKOAL_CREST] = 15000
-    prices[WISHIWASHI_CREST] = 15000
-    prices[MEGANIUM_CREST] = 15000
-    prices[CLAYDOL_CREST] = 15000
-    prices[HARIYAMA_CREST] = 15000
+  # post ciel
+  if $Trainer.numbadges >= 13
+    prices[HARIYAMA_CREST] = 14000
+    prices[SAWK_CREST] = 14000
+    prices[THROH_CREST] = 14000
   end
   # post adrienn
-  if $game_switches[651]
+  if $Trainer.numbadges >= 14
     prices[INFERNAPE_CREST] = 15000
     prices[EMPOLEON_CREST] = 15000
     prices[TORTERRA_CREST] = 15000
   end
   # post amaria
-  if $game_switches[657]
-    prices[CRYOGONAL_CREST] = 18000
-    prices[GOTHITELLE_CREST] = 18000
-    prices[LUXRAY_CREST] = 18000
+  if $Trainer.numbadges >= 16
+    prices[CRYOGONAL_CREST] = 17000
+    prices[GOTHITELLE_CREST] = 17000
   end
   # post hardy
-  if $game_switches[658]
-    prices[DRUDDIGON_CREST] = 18000
+  if $Trainer.numbadges >= 17
+    prices[COFAGRIGUS_CREST] = 18000
     prices[KOMALA_CREST] = 18000
-    prices[ZANGOOSE_CREST] = 18000
   end
   # post saphira
-  if $game_switches[659]
-    prices[ROTOM_CREST] = 21000
-    prices[MILOTIC_CREST] = 21000
+  if $Trainer.numbadges >= 18
+    prices[ROTOM_CREST] = 20000
+    prices[MILOTIC_CREST] = 20000
+    prices[NOIVERN_CREST] = 20000
   end
   stock = prices.keys
   stock.reject! { |k| $unilib_switches[k.to_s.concat("_PURCHASED")] }
@@ -106,9 +121,80 @@ def crest_mart
 end
 
 MapEvent.add_map_event(324) { |map|
-  sylvie = MapEvent.basic_npc(35, 31, "crest_shop_7th", "pkmn_sylveon", ["bwee...?"],
-                              variable_id: 160, variable_value: 13, script: "crest_mart", sfx: "700Cry")
+  sylvie = MapEvent.basic_npc(35, 31, "crest_shop_7th", "pkmn_sylveon", ["lumalee lumabop welcome to the sylvieshop"],
+                              variable_id: 160, variable_value: 13, script: "sylveon_mart", sfx: "700Cry")
   MapEvent.add_event(map, sylvie)
+}
+
+class FlareonMartScreen < CrestMartScreen
+
+  def initialize(scene, prices)
+    super(scene, prices,
+          "  Come back when you're a little... richer :3",
+          "  You want the {1}?",
+          "  I think you've had a few hundred too many of those, friend!",
+          "  * thunderous applause *")
+  end
+
+end
+
+def flareon_mart
+  prices = {
+    :CATALYZER => 4000,
+    :ANCIENTTEACH => 4000,
+    :AAA_CAPSULE => 4000,
+    LUXRAY_CREST => 8000,
+    HITMONTOP_CREST => 11000,
+    HITMONLEE_CREST => 11000,
+    HITMONCHAN_CREST => 11000
+  }
+  # post charlotte
+  if $Trainer.numbadges >= 11
+    prices[DRUDDIGON_CREST] = 12000
+    prices[CRABOMINABLE_CREST] = 12000
+  end
+  # post terra
+  if $Trainer.numbadges >= 12
+    prices[WISHIWASHI_CREST] = 13000
+    prices[SHIINOTIC_CREST] = 13000
+  end
+  # post ciel
+  if $Trainer.numbadges >= 13
+    prices[TORKOAL_CREST] = 14000
+    prices[SEVIPER_CREST] = 14000
+    prices[ZANGOOSE_CREST] = 14000
+  end
+  # post adrienn
+  if $Trainer.numbadges >= 14
+    prices[MEGANIUM_CREST] = 15000
+    prices[TYPHLOSION_CREST] = 15000
+    prices[FERALIGATR_CREST] = 15000
+  end
+  # post amaria
+  if $Trainer.numbadges >= 16
+    prices[BEHEEYEM_CREST] = 17000
+    prices[STANTLER_CREST] = 17000
+  end
+  # post hardy
+  if $Trainer.numbadges >= 17
+    prices[LEAFEON_CREST] = 18000
+    prices[GLACEON_CREST] = 18000
+    prices[CLAYDOL_CREST] = 18000
+  end
+  # post saphira
+  if $Trainer.numbadges >= 18
+    prices[YANMEGA_CREST] = 20000
+    prices[CINCCINO_CREST] = 20000
+  end
+  stock = prices.keys
+  stock.reject! { |k| $unilib_switches[k.to_s.concat("_PURCHASED")] }
+  FlareonMartScreen.new(PokemonMartScene.new, prices).pbBuyScreen if stock.size > 0
+end
+
+MapEvent.add_map_event(412) { |map|
+  flarey = MapEvent.basic_npc(31, 38, "crest_shop_route_4", "pkmn_flareon", ["* poof! *", "Welcome to the flareyshop!"],
+                              switch: 2048, script: "flareon_mart", sfx: "136Cry")
+  MapEvent.add_event(map, flarey)
 }
 
 def shadow_relearn

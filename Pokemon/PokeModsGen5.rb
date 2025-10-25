@@ -176,20 +176,34 @@ PokeModifier.add(:SEISMITOAD)
 PokeModifier.add(:SEWADDLE)
             .ability(1, :SHARPNESS)
 
+# SEWADDLE-A
+PokeModifier.add(:SEWADDLE, "Aevian")
+            .set_camo(1)
+
 # SWADLOON
 PokeModifier.add(:SWADLOON)
             .ability(1, :SHARPNESS)
+
+# SWADLOON-A
+PokeModifier.add(:SWADLOON, "Aevian")
+            .set_camo(1)
 
 # LEAVANNY
 PokeModifier.add(:LEAVANNY)
             .ability(1, :SHARPNESS)
 
+# LEAVANNY-A
+PokeModifier.add(:LEAVANNY, "Aevian")
+            .set_camo(1)
+
 # VENIPEDE
 PokeModifier.add(:VENIPEDE)
+            .set_plates(:SPLASHPLATE)
             .compatible_moves(:GUNKSHOT)
 
 # WHIRLIPEDE
 PokeModifier.add(:WHIRLIPEDE)
+            .set_plates(:SPLASHPLATE)
             .compatible_moves(:GUNKSHOT)
 
 # SCOLIPEDE
@@ -214,7 +228,7 @@ PokeModifier.add(:BASCULIN, "Red-Striped")
 
 # BASCULIN-WS
 PokeModifier.add(:BASCULIN, "White-Striped")
-            .level_moves([1, :WAVECRASH]) if Rejuv
+            .level_moves([1, :WAVECRASH])
 
 # BASCULIN-BS
 PokeModifier.add(:BASCULIN, "Blue-Striped")
@@ -227,6 +241,10 @@ PokeModifier.add(:MARACTUS)
             .type2(:GROUND)
             .ability(2, :OPENWOUNDS)
             .level_moves([[3, :SANDTOMB], [14, :BULLDOZE], [21, :DIG], [30, :SCORCHINGSANDS], [35, :EARTHPOWER], [40, :SHOREUP]])
+
+# DWEBBLE
+PokeModifier.add(:DWEBBLE)
+            .set_camo(1)
 
 # CRUSTLE
 PokeModifier.add(:CRUSTLE)
@@ -246,7 +264,7 @@ PokeModifier.add(:SIGILYPH)
 
 # SIGILYPH-A
 PokeModifier.add(:SIGILYPH, "Aevian")
-            .set_pokebilities(1) if Rejuv
+            .set_pokebilities(1)
 
 # SIGILYPH-AMALGAM
 PokeModifier.add(:SIGILYPH, "Amalgamation")
@@ -280,11 +298,11 @@ PokeModifier.add(:GARBODOR)
 
 # ZORUA-H
 PokeModifier.add(:ZORUA, "Hisuian")
-            .set_camo(1) if Rejuv
+            .set_camo(1)
 
 # ZOROARK-H
 PokeModifier.add(:ZOROARK, "Hisuian")
-            .set_camo(1) if Rejuv
+            .set_camo(1)
 
 # MINCCINO
 PokeModifier.add(:MINCCINO)
@@ -339,10 +357,12 @@ PokeModifier.add(:GALVANTULA)
 # KLINK
 PokeModifier.add(:KLINK)
             .ability(1, :OVERCLOCKING)
+            .set_camo(1)
 
 # KLANG
 PokeModifier.add(:KLANG)
             .ability(1, :OVERCLOCKING)
+            .set_camo(1)
 
 # KLINKLANG
 PokeModifier.add(:KLINKLANG)
@@ -386,7 +406,7 @@ PokeModifier.add(:LITWICK)
 
 # LITWICK-A
 PokeModifier.add(:LITWICK, "Aevian")
-            .set_pokebilities(1) if Rejuv
+            .set_pokebilities(1)
 
 # LAMPENT
 PokeModifier.add(:LAMPENT)
@@ -395,7 +415,7 @@ PokeModifier.add(:LAMPENT)
 
 # LAMPENT-A
 PokeModifier.add(:LAMPENT, "Aevian")
-            .set_pokebilities(1) if Rejuv
+            .set_pokebilities(1)
 
 # CHANDELURE
 PokeModifier.add(:CHANDELURE)
@@ -404,7 +424,7 @@ PokeModifier.add(:CHANDELURE)
 
 # CHANDELURE-A
 PokeModifier.add(:CHANDELURE, "Aevian")
-            .set_pokebilities(1) if Rejuv
+            .set_pokebilities(1)
 
 # CUBCHOO
 PokeModifier.add(:CUBCHOO)
@@ -428,11 +448,19 @@ PokeModifier.add(:ACCELGOR)
 
 # STUNFISK
 PokeModifier.add(:STUNFISK)
-            .ability(2, :CAMOUFLAGE)
+            .ability(2, :CAMOUFLAGE) if Rejuv
 
-# STUNFISK
-PokeModifier.add(:STUNFISK)
-            .ability(2, :CAMOUFLAGE)
+# STUNFISK-G
+PokeModifier.add(:STUNFISK, "Galarian")
+            .ability(2, :CAMOUFLAGE) if Rejuv
+
+# MIENFOO
+PokeModifier.add(:MIENFOO)
+            .set_plates(:SKYPLATE)
+
+# MIENSHAO
+PokeModifier.add(:MIENSHAO)
+            .set_plates(:SKYPLATE)
 
 # DRUDDIGON
 PokeModifier.add(:DRUDDIGON)
@@ -442,6 +470,14 @@ PokeModifier.add(:DRUDDIGON)
 PokeModifier.add(:GOLURK)
             .ability(1, :TAKEOFF)
             .level_moves([50, :FLY])
+
+# PAWNIARD
+PokeModifier.add(:PAWNIARD)
+            .set_plates(:TOXICPLATE)
+
+# BISHARP
+PokeModifier.add(:BISHARP)
+            .set_plates(:TOXICPLATE)
 
 # BOUFFALANT
 PokeModifier.add(:BOUFFALANT)
@@ -453,7 +489,7 @@ PokeModifier.add(:BRAVIARY)
 
 # BRAVIARY-H
 PokeModifier.add(:BRAVIARY, "Hisuian")
-            .set_camo(1) if Rejuv
+            .set_camo(1)
 
 # HEATMOR
 PokeModifier.add(:HEATMOR)
@@ -466,6 +502,12 @@ PokeModifier.add(:DURANT)
 # HYDREIGON
 PokeModifier.add(:HYDREIGON)
             .ability(2, :SNIPER)
+
+# VOLCARONA
+PokeModifier.add(:VOLCARONA)
+            .level_moves([75, :QUIVERDANCE])
+            .remove_level_moves(:QUIVERDANCE)
+            .remove_compatible_moves(:QUIVERDANCE)
 
 # COBALION
 PokeModifier.add(:COBALION)

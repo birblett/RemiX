@@ -1,7 +1,7 @@
 RemiX.gym(1) {
 
   TrainerModifier.add(:YOUNGSTER, "Baxter", 0)
-                 .set_pkmn(0, :CHARJABUG, 23, :SWARM)
+                 .set_pkmn(0, :CHARJABUG, 23, :BATTERY)
                  .set_pkmn(1, :PSYDUCK, 25, :DAMP)
 
   TrainerModifier.add(:COOLTRAINER_Female, "Jacee", 0)

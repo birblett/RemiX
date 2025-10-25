@@ -17,20 +17,21 @@ PokeModifier.add(:TORTERRA)
 PokeModifier.add(:CHIMCHAR)
             .ability(Reborn ? 1 : 2, :MAGICGUARD)
             .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE]])
+            .compatible_moves(:CHARGEBEAM)
 
 # MONFERNO
 PokeModifier.add(:MONFERNO)
             .type2(:ELECTRIC)
             .ability(Reborn ? 1 : 2, :MAGICGUARD)
             .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [42, :THUNDERBOLT], [55, :THUNDER]])
-            .compatible_moves(:VOLTSWITCH)
+            .compatible_moves([:VOLTSWITCH, :CHARGEBEAM])
 
 # INFERNAPE
 PokeModifier.add(:INFERNAPE)
             .type2(:ELECTRIC)
             .ability(Reborn ? 1 : 2, :MAGICGUARD)
             .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [42, :THUNDERBOLT], [50, :WILDCHARGE], [55, :THUNDER]])
-            .compatible_moves(:VOLTSWITCH)
+            .compatible_moves([:VOLTSWITCH, :CHARGEBEAM])
 
 # PIPLUP
 PokeModifier.add(:PIPLUP)
@@ -81,13 +82,23 @@ PokeModifier.add(:LUXIO)
 PokeModifier.add(:LUXRAY)
             .ability(0, :STRONGJAW)
 
+
+# BUDEW
+PokeModifier.add(:BUDEW)
+            .set_pokebilities(1)
+
+# BUDEW-A
+PokeModifier.add(:BUDEW, "Aevian")
+            .set_pokebilities(1)
+
 # ROSERADE
 PokeModifier.add(:ROSERADE)
             .set_pokebilities
 
 # ROSERADE-A
 PokeModifier.add(:ROSERADE, "Aevian")
-            .set_pokebilities(1) if Rejuv
+            .set_pokebilities
+
 
 # RAMPARDOS
 PokeModifier.add(:RAMPARDOS)
@@ -132,11 +143,11 @@ PokeModifier.add(:CHERRIM, "Sunshine")
 
 # SHELLOS-A-EAST
 PokeModifier.add(:SHELLOS, "East Aevian")
-            .stats(48, 34, 0, 76, 0, 57) if Rejuv
+            .stats(48, 34, 0, 76, 0, 57)
 
 # GASTRODON-A-EAST
 PokeModifier.add(:GASTRODON, "East Aevian")
-            .stats(83, 39, 0, 118, 0, 92) if Rejuv
+            .stats(83, 39, 0, 118, 0, 92)
 
 # AMBIPOM
 PokeModifier.add(:AMBIPOM)
@@ -169,9 +180,21 @@ PokeModifier.add(:MISMAGIUS)
             .type2(:FAIRY)
             .level_moves([[5, :DRAININGKISS], [25, :DAZZLINGGLEAM], [40, :MOONBLAST]])
 
+# MISMAGIUS-A
+PokeModifier.add(:MISMAGIUS, "Aevian")
+            .stats(0, 110, 100, 60, 0, 0)
+
+# GLAMEOW
+PokeModifier.add(:GLAMEOW)
+            .set_pokebilities(1)
+
 # PURUGLY
 PokeModifier.add(:PURUGLY)
             .set_pokebilities
+
+# CHINGLING
+PokeModifier.add(:CHINGLING)
+            .set_plates(:IRONPLATE)
 
 # STUNKY
 PokeModifier.add(:STUNKY)
@@ -183,13 +206,17 @@ PokeModifier.add(:SKUNTANK)
 
 # BRONZOR
 PokeModifier.add(:BRONZOR)
-            .type2(:ELECTRIC)
-            .level_moves([[15, :SPARK], [25, :SHOCKWAVE], [45, :DISCHARGE]])
+            .type2(:WATER)
+            .ability(1, :RAINDISH)
+            .level_moves([[5, :BUBBLE], [7, :WITHDRAW], [11, :SOAK], [18, :BUBBLEBEAM], [26, :CLAMP], [38, :MUDDYWATER], [50, :LIQUIDATION]])
+            .compatible_moves([:BRINE, :THUNDER])
 
 # BRONZONG
 PokeModifier.add(:BRONZONG)
-            .type2(:ELECTRIC)
-            .level_moves([[15, :SPARK], [25, :SHOCKWAVE], [45, :DISCHARGE]])
+            .type2(:WATER)
+            .ability(1, :RAINDISH)
+            .level_moves([[0, :RAINDANCE], [5, :BUBBLE], [7, :WITHDRAW], [11, :SOAK], [18, :BUBBLEBEAM], [26, :CLAMP], [38, :MUDDYWATER], [50, :LIQUIDATION]])
+            .compatible_moves([:BRINE, :THUNDER])
 
 # CHATOT
 PokeModifier.add(:CHATOT)

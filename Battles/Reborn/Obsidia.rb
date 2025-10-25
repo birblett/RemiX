@@ -41,6 +41,9 @@ RemiX.gym(1) {
                  .set_pkmn(4, :VENOMOTH, 29, :TINTEDLENS, moves: [:HIDDENPOWER, :SILVERWIND, :SLEEPPOWDER, :QUIVERDANCE], hptype: :WATER)
                  .set_pkmn(5, :PINECO, 25, :STURDY, item: :BUGINIUMZ, moves: [:EXPLOSION, :BUGBITE, nil, nil], iv: 31)
 
+  TrainerModifier.add(:KLINKLANG, "Mechanightmare", 0)
+                 .set_pkmn(0, :KLINKLANG, 35, :OVERCLOCKING)
+
 }
 
 RemiX.gym(13) {

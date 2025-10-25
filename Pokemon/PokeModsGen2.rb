@@ -99,7 +99,7 @@ PokeModifier.add(:FLAAFFY)
 
 # FLAAFFY-A
 PokeModifier.add(:FLAAFFY, "Aevian")
-            .ability(2, :FLUFFY) if Rejuv
+            .ability(2, :FLUFFY)
 
 # AMPHAROS
 PokeModifier.add(:AMPHAROS)
@@ -111,7 +111,7 @@ PokeModifier.add(:AMPHAROS)
 
 # AMPHAROS-A
 PokeModifier.add(:AMPHAROS, "Aevian")
-            .ability(2, :FLUFFY) if Rejuv
+            .ability(2, :FLUFFY)
 
 # AMPHAROS-M
 PokeModifier.add(:AMPHAROS, "Mega")
@@ -163,7 +163,7 @@ PokeModifier.add(:SUNFLORA)
             .type2(:FIRE)
             .ability(0, :COMBUSTION)
             .set_pokebilities(1)
-            .level_moves([[10, :EMBER], [16, :FIRESPIN], [25, :INCINERATE], [37, :FLAMETHROWER], [43, :TRIATTACK], [50, :FIREBLAST]])
+            .level_moves([[10, :EMBER], [16, :FIRESPIN], [25, :INCINERATE], [37, :FLAMETHROWER], [43, :TRIATTACK], [50, :HEATWAVE], [60, :FIREBLAST]])
             .compatible_moves(:HYPERVOICE)
 
 # QUAGSIRE
@@ -192,6 +192,10 @@ PokeModifier.add(:UMBREON)
 PokeModifier.add(:MISDREAVUS)
             .type2(:FAIRY)
             .level_moves([[5, :DRAININGKISS], [25, :DAZZLINGGLEAM], [40, :MOONBLAST]])
+
+# MISDREAVUS-A
+PokeModifier.add(:MISDREAVUS, "Aevian")
+            .stats(0, 0, 85, 60, 0, 0)
 
 # UNOWN
 PokeModifier.add(:UNOWN)
@@ -248,6 +252,10 @@ PokeModifier.add(:SHUCKLE)
 # HERACROSS-M
 PokeModifier.add(:HERACROSS, "Mega")
             .stats(0, 0, 0, 30, 0, 85)
+
+# TEDDIURSA
+PokeModifier.add(:TEDDIURSA)
+            .set_plates(:EARTHPLATE)
 
 # URSARING
 PokeModifier.add(:URSARING)
@@ -317,6 +325,14 @@ PokeModifier.add(:ENTEI)
 PokeModifier.add(:SUICUNE)
             .type2(:FAIRY)
             .ability(2, :INTIMIDATE)
+
+# LARVITAR
+PokeModifier.add(:LARVITAR)
+            .set_plates(:DREADPLATE)
+
+# PUPITAR
+PokeModifier.add(:PUPITAR)
+            .set_plates(:DREADPLATE)
 
 # TYRANITAR
 PokeModifier.add(:TYRANITAR)

@@ -1,5 +1,6 @@
 AbilityBuilder.add(:GALEFORCE, "Gale Force", "Wind-based moves are stronger.", "1.3x damage on wind-based moves.")
               .damage_mod { |_, _, move, _, _| next 1.3 if move.is_wind_move? }
+              .insert_in_move("0C3", :pbTwoTurnAttack, "@immediate = false", "@immediate = true if attacker.ability == :GALEFORCE")
 
 AbilityBuilder.add(:DRAGONSLAYER, "Dragonslayer", "All moves are effective on Dragons.")
               .attack_type_effectiveness_mod do |_, target, _, mod1, mod2|

@@ -5,7 +5,8 @@ module RemiX
     :FLOWERGARDEN2 => true,
     :FLOWERGARDEN3 => true,
     :FLOWERGARDEN4 => true,
-    :FLOWERGARDEN5 => true
+    :FLOWERGARDEN5 => true,
+    :SUPERHEATED => true
   }
 
 end
@@ -15,7 +16,7 @@ UniLib.insert_in_method(:PokeBattle_Field, :moveData, :HEAD,
     move_data = data.clone
     move_data.delete(:fieldchange)
     return move_data
-  end unless RemiX::IGNORED_FIELDS[@effect]")
+  end unless RemiX::IGNORED_FIELDS[@effect] || $battle != nil && $battle.pbIsWild?")
 
 # clear body is added to instead of replacing existing ability in swamp field
 

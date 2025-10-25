@@ -49,7 +49,7 @@ PokeModifier.add(:SHIFTRY)
 
 # SWELLOW
 PokeModifier.add(:SWELLOW)
-            .stat(:SPA, 95)
+            .stat(:SPA, 85)
 
 # RALTS
 PokeModifier.add(:RALTS)
@@ -67,6 +67,12 @@ PokeModifier.add(:GARDEVOIR)
 PokeModifier.add(:MASQUERAIN)
             .type2(:WATER)
             .level_moves([[17, :BUBBLEBEAM], [40, :SURF], [65, :HYDROPUMP]])
+
+# NINJASK
+PokeModifier.add(:NINJASK)
+            .set_camo(1)
+            .remove_level_moves(:BATONPASS)
+            .remove_compatible_moves(:BATONPASS)
 
 # WHISMUR
 PokeModifier.add(:WHISMUR)
@@ -101,7 +107,11 @@ PokeModifier.add(:AGGRON)
 
 # AGGRON-M
 PokeModifier.add(:AGGRON, "Mega")
-            .type2(:FLYING)
+            .type2(:DRAGON)
+
+# MEDITITE
+PokeModifier.add(:MEDITITE)
+            .set_plates(:ICICLEPLATE)
 
 # MEDICHAM
 PokeModifier.add(:MEDICHAM)
@@ -149,7 +159,7 @@ PokeModifier.add(:ROSELIA)
 
 # ROSELIA-A
 PokeModifier.add(:ROSELIA, "Aevian")
-            .set_pokebilities(1) if Rejuv
+            .set_pokebilities(1)
 
 # GULPIN
 PokeModifier.add(:GULPIN)
@@ -190,9 +200,11 @@ PokeModifier.add(:SPOINK)
 
 # GRUMPIG
 PokeModifier.add(:GRUMPIG)
+            .stats(0, 0, 0, 100, 0, 90)
             .type2(:GROUND)
             .ability(1, :SWINEFORCE)
             .level_moves([[5, :MUDSLAP], [16, :MUDSHOT], [30, :EARTHPOWER], [37, :EARTHQUAKE]])
+            .compatible_moves([:ICEPUNCH, :FIREPUNCH, :THUNDERPUNCH])
 
 # SPINDA
 PokeModifier.add(:SPINDA)
@@ -200,20 +212,32 @@ PokeModifier.add(:SPINDA)
             .level_moves([[50, :OVERHEAT], [50, :LEAFSTORM], [50, :DRACOMETEOR], [50, :FLEURCANNON], [50, :ICEHAMMER]])
             .set_camo(1)
 
+# TRAPINCH
+PokeModifier.add(:TRAPINCH)
+            .set_plates([:FLAMEPLATE, :INSECTPLATE])
+            .level_moves([50, :FIRSTIMPRESSION])
+
 # VIBRAVA
 PokeModifier.add(:VIBRAVA)
             .stat(:SPA, 70)
+            .abilities({ 1 => nil, 2 => :REVERB })
+            .set_plates([:FLAMEPLATE, :INSECTPLATE])
+            .level_moves([50, :FIRSTIMPRESSION])
 
 # FLYGON
 PokeModifier.add(:FLYGON)
             .stat(:SPA, 100)
-            .ability(2, :REVERB)
+            .abilities({ 1 => nil, 2 => :REVERB })
             .set_plates([:FLAMEPLATE, :INSECTPLATE])
-            .level_moves([60, :BUGBUZZ])
+            .level_moves([[50, :FIRSTIMPRESSION], [60, :BUGBUZZ], [80, :CLANGINGSCALES]])
+
+# CACNEA
+PokeModifier.add(:CACNEA)
+            .abilities({ 1 => :WATERABSORB, 2 => :OPENWOUNDS })
 
 # CACTURNE
 PokeModifier.add(:CACTURNE)
-            .ability(2, :OPENWOUNDS)
+            .abilities({ 1 => :WATERABSORB, 2 => :OPENWOUNDS })
             .level_moves([40, :DARKESTLARIAT])
 
 # ALTARIA
@@ -275,11 +299,12 @@ PokeModifier.add(:MILOTIC)
 
 # MILOTIC-A
 PokeModifier.add(:MILOTIC, "Aevian")
-            .ability(0, :MARVELSCALE) if Rejuv
+            .ability(0, :MARVELSCALE)
 
 # KECLEON
 PokeModifier.add(:KECLEON)
             .stats(70, 0, 0, 90, 0, 0)
+            .set_plates(:ALL)
 
 # SHUPPET
 PokeModifier.add(:SHUPPET)

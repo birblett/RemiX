@@ -9,7 +9,7 @@ PokeModifier.add(:IVYSAUR)
 # VENUSAUR
 PokeModifier.add(:VENUSAUR)
             .abilities({ 1 => :CHLOROPHYLL, 2 => :THICKFAT })
-            .set_plates(:FIRE)
+            .set_plates(:FLAMEPLATE)
             .level_moves([60, :WEATHERBALL])
 
 # CHARMANDER
@@ -47,7 +47,12 @@ PokeModifier.add(:BLASTOISE, "Mega")
 
 # CATERPIE
 PokeModifier.add(:CATERPIE)
-            .level_moves([[100, :SUNSTEELSTRIKE], [100, :VCREATE]])
+            .set_pokebilities(1)
+            .level_moves([[100, :SUNSTEELSTRIKE], [100, :VCREATE], [100, :DRAGONASCENT]])
+
+# METAPOD
+PokeModifier.add(:METAPOD)
+            .set_pokebilities(1)
 
 # BUTTERFREE
 PokeModifier.add(:BUTTERFREE)
@@ -58,29 +63,39 @@ PokeModifier.add(:BUTTERFREE)
 PokeModifier.add(:BUTTERFREE, "Giga")
             .stat(:DEF, 70) if Rejuv
 
+# WEEDLE
+PokeModifier.add(:WEEDLE)
+            .set_pokebilities(1)
+
+# KAKUNA
+PokeModifier.add(:KAKUNA)
+            .set_pokebilities(1)
+
 # BEEDRILL
 PokeModifier.add(:BEEDRILL)
             .stat(:SPE, 85)
-            .ability(1, :SNIPER)
-            .ability(2, :SERENEGRACE)
+            .abilities({ 1 => :SNIPER, 2 => :SERENEGRACE })
             .set_pokebilities(1)
 
 # PIDGEY
 PokeModifier.add(:PIDGEY)
             .swap(:ATK, :SPA)
             .ability(2, :GALEFORCE)
+            .level_moves([56, :RAZORWIND])
             .egg_moves(:OMINOUSWIND)
 
 
 # PIDGEOTTO
 PokeModifier.add(:PIDGEOTTO)
             .swap(:ATK, :SPA)
+            .level_moves([56, :RAZORWIND])
             .ability(2, :GALEFORCE)
 
 # PIDGEOT
 PokeModifier.add(:PIDGEOT)
             .swap(:ATK, :SPA)
             .ability(2, :GALEFORCE)
+            .level_moves([56, :RAZORWIND])
             .compatible_moves([:HYPERVOICE])
 
 # RATTATA
@@ -89,7 +104,7 @@ PokeModifier.add(:RATTATA)
             .abilities({ 1 => :HUSTLE, 2 => :STRONGJAW })
             .compatible_moves([:FIREFANG, :ICEFANG, :THUNDERFANG])
 
-# RATTATAALOLA
+# RATTATA-A
 PokeModifier.add(:RATTATA, "Alolan")
             .ability(2, :STRONGJAW)
             .level_moves([30, :HYPERFANG])
@@ -101,7 +116,7 @@ PokeModifier.add(:RATICATE)
             .abilities({ 1 => :HUSTLE, 2 => :STRONGJAW })
             .compatible_moves([:FIREFANG, :ICEFANG, :THUNDERFANG])
 
-# RATICATEALOLA
+# RATICATE-A
 PokeModifier.add(:RATICATE, "Alolan")
             .stats(65, 100, 0, 0, 70, 85)
             .ability(2, :STRONGJAW)
@@ -139,21 +154,21 @@ PokeModifier.add(:RAICHU, "Alolan")
 
 # SANDSHREW
 PokeModifier.add(:SANDSHREW)
-            .ability(2, :TOUGHCLAWS)
+            .abilities({ 1 => :SANDRUSH, 2 => :ADAPTABILITY })
 
 # SANDSHREW-A
 PokeModifier.add(:SANDSHREW, "Alolan")
-            .ability(2, :TECHNICIAN)
+            .abilities({ 1 => :SLUSHRUSH, 2 => :TECHNICIAN })
             .level_moves([75, :TRIPLEAXEL])
 
 # SANDSLASH
 PokeModifier.add(:SANDSLASH)
             .stat(:SPE, 75)
-            .ability(2, :TOUGHCLAWS)
+            .abilities({ 1 => :SANDRUSH, 2 => :ADAPTABILITY })
 
 # SANDSLASH-A
 PokeModifier.add(:SANDSLASH, "Alolan")
-            .ability(2, :TECHNICIAN)
+            .abilities({ 1 => :SLUSHRUSH, 2 => :TECHNICIAN })
             .level_moves([75, :TRIPLEAXEL])
 
 # NIDORAN
@@ -202,11 +217,13 @@ PokeModifier.add(:WIGGLYTUFF)
 
 # ZUBAT
 PokeModifier.add(:ZUBAT)
-            .ability(2, :AIRLOCK)
+            .abilities({ 1 => :INFILTRATOR, 2 => :AIRLOCK })
+            .set_camo(1)
 
 # GOLBAT
 PokeModifier.add(:GOLBAT)
-            .ability(2, :AIRLOCK)
+            .abilities({ 1 => :INFILTRATOR, 2 => :AIRLOCK })
+            .set_camo(1)
 
 # ODDISH
 PokeModifier.add(:ODDISH)
@@ -514,6 +531,10 @@ PokeModifier.add(:WEEZING)
             .abilities({ 1 => Reborn ? :FLASHFIRE : :NEUTRALIZINGGAS, 2 => :STENCH })
             .level_moves([[7, :EMBER], [18, :WILLOWISP], [21, :FLAMEBURST], [35, :LAVAPLUME], [45, :FIREBLAST]])
 
+# RHYHORN
+PokeModifier.add(:RHYHORN)
+            .set_plates([:ZAPPLATE, :ICICLEPLATE, :FLAMEPLATE])
+
 # RHYDON
 PokeModifier.add(:RHYDON)
             .set_plates([:ZAPPLATE, :ICICLEPLATE, :FLAMEPLATE])
@@ -557,7 +578,7 @@ PokeModifier.add(:MAGMAR)
 
 # PINSIR
 PokeModifier.add(:PINSIR)
-            .set_plates(:FIGHTING)
+            .set_plates(:FISTPLATE)
 
 # TAUROS
 PokeModifier.add(:TAUROS)
@@ -576,19 +597,21 @@ PokeModifier.add_form(:MAGIKARP, "Mega Form")
 
 # MAGIKARP-A
 PokeModifier.add(:MAGIKARP, "Aevian")
-            .compatible_moves(:CALMMIND) if Rejuv
+            .compatible_moves(:CALMMIND)
 
 # GYARADOS-A
 PokeModifier.add(:GYARADOS, "Aevian")
-            .compatible_moves(:CALMMIND) if Rejuv
+            .compatible_moves(:CALMMIND)
 
 # LAPRAS
 PokeModifier.add(:LAPRAS)
             .set_pokebilities
+            .set_plates(:DRACOPLATE)
 
 # EEVEE
 PokeModifier.add(:EEVEE)
             .stats(70, 70, 70, 70, 70, 70)
+            .set_plates(:ALL)
 
 # VAPOREON
 PokeModifier.add(:VAPOREON)
@@ -604,7 +627,7 @@ PokeModifier.add(:JOLTEON)
             .stat(:ATK, 100)
             .type2(:FLYING)
             .ability(2, :AERILATE)
-            .set_plates(:ELECTRIC)
+            .set_plates(:ZAPPLATE)
             .level_moves([[13, :GUST], [30, :AIRSLASH], [40, :FAKEOUT], [50, :HURRICANE]])
 
 # FLAREON
@@ -612,7 +635,7 @@ PokeModifier.add(:FLAREON)
             .stats(110, 0, 95, 60, 100, 0)
             .type2(:NORMAL)
             .abilities({ 1 => :MAGICGUARD, 2 => :GUTS })
-            .set_plates(:FIRE)
+            .set_plates(:FLAMEPLATE)
             .level_moves([[28, :FACADE], [38, :BODYSLAM], [50, :DOUBLEEDGE]])
 
 # PORYGON

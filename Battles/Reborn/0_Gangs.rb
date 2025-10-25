@@ -5,6 +5,11 @@ UniLib.category("Magma") {
                  .set_pkmn(1, :MAGCARGO, 35, :MAGMAARMOR, item: :CATALYZER, moves: [:SOLARBEAM, :LAVAPLUME, :RECOVER, :SHELLSMASH])
                  .set_pkmn(2, :HOUNDOOM, 35, :STRONGJAW)
 
+  TrainerModifier.add(:MAGMA1, "Nihil", 1)
+                 .set_pkmn(0, :NINETALES, 65, :DROUGHT, item: :HEATROCK)
+                 .set_pkmn(1, :MAGCARGO, 65, :MAGMAARMOR, item: :CATALYZER, moves: [:SOLARBEAM, :LAVAPLUME, :EARTHPOWER, :SHELLSMASH])
+                 .set_pkmn(2, :HOUNDOOM, 55, :STRONGJAW)
+
   TrainerModifier.add(:MAGMA1, "Kriz", 0)
                  .set_pkmn(0, :NUMEL, 35, :OBLIVIOUS)
                  .set_pkmn(1, :BRAIXEN, 35, :BLAZE)
@@ -15,10 +20,29 @@ UniLib.category("Magma") {
                  .set_pkmn(1, :HOUNDOUR, 35, :STRONGJAW)
                  .set_pkmn(2, :DARUMAKA, 35, :HUSTLE)
 
+  TrainerModifier.add(:MAGMA2, "Darm", 1)
+                 .set_pkmn(0, :HOUNDOOM, 65, :STRONGJAW)
+                 .set_pkmn(1, :DARMANITAN, 65, :SHEERFORCE)
+                 .set_pkmn(2, :DARMANITAN, 65, :SHEERFORCE)
+
   TrainerModifier.add(:MAGMA2, "Break", 0)
                  .set_pkmn(0, :HOUNDOUR, 35, :STRONGJAW)
                  .set_pkmn(1, :LITLEO, 35, :RIVALRY)
                  .set_pkmn(2, :LAMPENT, 35, :FLASHFIRE)
+
+  TrainerModifier.add(:Maxwell, "Maxwell", 0)
+                 .set_pkmn(0, :NINETALES, 41, :DROUGHT, item: :HEATROCK, ev: SPASPE)
+                 .set_pkmn(1, :HEATMOR, 43, :TOUGHCLAWS, item: :MUSCLEBAND, moves: [:HONECLAWS, :FIREPUNCH, :THUNDERPUNCH, :SUCKERPUNCH], ev: ATKSPE)
+                 .set_pkmn(2, :CHARIZARD, 45, :SOLARPOWER, item: :CHOICESPECS, moves: [:FLAMETHROWER, :SOLARBEAM, :AIRSLASH, :FOCUSBLAST], gender: "F", nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(3, :HOUNDOOM, 42, :STRONGJAW, item: :LIFEORB, moves: [:CRUNCH, :FIREFANG, :THUNDERFANG, :HOWL], nature: :JOLLY, ev: ATKSPE)
+
+  TrainerModifier.add(:Maxwell, "Maxwell", 1)
+                 .set_pkmn(0, :NINETALES, 65, :DROUGHT, item: :HEATROCK, moves: [:WILLOWISP, :FIREBLAST, :MOONBLAST, :HIDDENPOWER], hptype: :GROUND, ev: SPASPE)
+                 .set_pkmn(1, :HEATMOR, 67, :TOUGHCLAWS, item: :MUSCLEBAND, moves: [:HONECLAWS, :FIRELASH, :THUNDERPUNCH, :SUCKERPUNCH], ev: ATKSPE)
+                 .set_pkmn(2, :TURTONATOR, 66, :SHELLARMOR, item: :WISEGLASSES, moves: [:SHELLSMASH, :FLAMETHROWER, :EXPLOSION, :DRAGONPULSE], nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(3, :CHARIZARD, 70, :SOLARPOWER, item: :CHARIZARDITEY, moves: [:FLAMETHROWER, :SOLARBEAM, :AIRSLASH, :ROOST], gender: "F", nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(4, :HOUNDOOM, 66, :STRONGJAW, item: :LIFEORB, moves: [:CRUNCH, :FIREFANG, :THUNDERFANG, :ICEFANG], nature: :JOLLY, ev: ATKSPE)
+                 .set_pkmn(5, :INFERNAPE, 67, :MAGICGUARD, item: :LIFEORB, moves: [:THUNDERBOLT, :FIREBLAST, :NASTYPLOT, :HIDDENPOWER], hptype: :ICE, gender: "F", nature: :TIMID, ev: SPASPE)
 
 }
 
@@ -35,7 +59,7 @@ UniLib.category("Aqua") {
                  .set_pkmn(2, :SHARPEDO, 35, :ROUGHSKIN)
 
   TrainerModifier.add(:AQUA1, "Razzy", 1)
-                 .set_pkmn(0, :OCTILLERY, 65, :SUCTIONCUPS)
+                 .set_pkmn(0, :OCTILLERY, 65, :MEGALAUNCHER)
                  .set_pkmn(1, :SHARPEDO, 65, :ROUGHSKIN)
                  .set_pkmn(2, :FERALIGATR, 65, :SHEERFORCE)
 

@@ -23,7 +23,7 @@ RemiX.gym(0) {
 
   TrainerModifier.add(:YOUNGSTER, "Jackie", 0)
                  .set_pkmn(0, :ZIGZAGOON, 12, :GLUTTONY, item: :ORANBERRY, moves: [:BELLYDRUM, :EXTREMESPEED, :BITE, nil])
-                 .set_pkmn(1, :BIBAREL, 14, :SIMPLE, moves: [:SWORDSDANCE, :QUICKATTACK, :AQUAJET, nil])
+                 .set_pkmn(1, :BIBAREL, 21, :SIMPLE, moves: [:GROWL, nil, nil, nil])
 
   TrainerModifier.add(:YOUNGSTER, "Jimmy", 0)
                  .set_pkmn(0, :PATRAT, 1, :RUNAWAY, item: :LEFTOVERS)
@@ -48,7 +48,7 @@ RemiX.gym(0) {
                  .set_pkmn(1, :NIDORINO, 15, :HUSTLE)
 
   TrainerModifier.add(:StreetRat, "Erick", 0)
-                 .set_pkmn(0, :KAKUNA, 12, :SHIELDDUST)
+                 .set_pkmn(0, :KAKUNA, 12, :SERENEGRACE)
                  .set_pkmn(1, :PINECO, 14, :STURDY, ev: HPATK, nature: :BRAVE, moves: [:PROTECT, :EXPLOSION])
 
   TrainerModifier.add(:StreetRat, "Charlie", 0)

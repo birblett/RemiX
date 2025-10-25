@@ -1,3 +1,16 @@
+UniLib.category("Replace Larvesta Mystery Egg with Wimpod-A") {
+
+  # add wimpod-a
+  MapEvent.add_map_event(133) { |map| map.events[6].pages[1].list[243].parameters = ["PokeBattle_Pokemon.new(:WIMPOD, 1, $Trainer, true, WIMPOD_AEVIAN)"] }
+
+  # remove from fire
+  UniLib.replace_in_function(:pbMonoRandEvents, "mixegg.push(10, 13, 17)", "mixegg.push(10, 13)")
+
+  # add to ground
+  UniLib.replace_in_function(:pbMonoRandEvents, "mixegg.push(11)", "mixegg.push(11, 17)")
+
+}
+
 UniLib.category("Corey's Pokemon") {
 
   # skrelp
@@ -21,16 +34,98 @@ UniLib.category("Aevian Sewaddle, Amaria's Boat Dock") {
 
   MapEvent.add_map_event(14) { |map|
     MapEvent.add_static_pkmn(map, 15, 5, "Aevian Sewaddle", :SEWADDLE, 13, "pkmn_sewaddle_aevian", :SEWADDLE_AEVIAN, form: SEWADDLE_AEVIAN,
-                             dir: 8, sfx: "540Cry", txt: "Buh-!?", wincon_code: UniLib::NOT_LOST_CMD, should_remove: true)
+                             dir: 8, sfx: "540Cry", txt: "Buh-!?", win_event: [911, 0, [0, 1, 4]], should_remove: true)
   }
 
   Assets.redirect(:BMP, "pkmn_sewaddle_aevian", "Remix/Assets/pkmn_sewaddle_aevian")
 
 }
 
-UniLib.category("Aevian Bronzong, Route 3/LCCC") {
+UniLib.category("Aevian Shellos, Route 1 Lab") {
+
+  KRISTILINE_NPC = EventBuilder.new("Kristiline NPC", 7, 25)
+                .add_page
+                  .set_graphic("kristiline_npc", redirect: "Remix/Assets/kristiline_npc", direction: 8)
+                  .event_if([0, :KRISTILINE_NPC_SPOKEN_TO, 1])
+                    .event_set_unilib_switch(:KRISTILINE_NPC_SPOKEN_TO, true)
+                    .event_show_text("Oh!!! You surprised me!")
+                    .event_show_text("I'm doing research on the ecology of the Reborn region!")
+                    .event_show_text("I wanted to do field work on Azurine Island but the lab there is closed...")
+                    .event_show_text("Oh I know! Can you collect some Shellos for me? I'll exchange it with one from my hometown.")
+                  .event_else
+                    .event_if([0, :KRISTILINE_NPC_TRADED_WITH, 1])
+                      .event_show_text("Oh hi! Have a Shellos for me?")
+                    .event_else
+                      .event_show_text("Welcome back! Shellos, perchance?")
+                    .event_end_if
+                  .event_end_if
+                  .event_prompt("Yes", "No")
+                    .event_prompt_choice
+                      .event_run_scripts("pbChoosePokemon(1, 2, proc { |poke| !poke.egg? and poke.species == :SHELLOS and poke.form <= 1 })",)
+                      .event_if([1, 1, 0, -1, 0])
+                        .event_show_text("Awww... oh well, the offer's always open!")
+                      .event_else
+                        .event_show_text("Thank you very much!! Let's begin!")
+                        .event_if([0, :KRISTILINE_NPC_TRADED_WITH, 1])
+                          .event_run_scripts("form = $Trainer.party[pbGet(1)].form == 0 ? SHELLOS_WEST_AEVIAN : SHELLOS_EAST_AEVIAN",
+                                             "poke = PokeBattle_Pokemon.new(:SHELLOS, $Trainer.party[pbGet(1)].level, $Trainer, true, form)",
+                                             "poke.iv = [31, 31, 31, 31, 31, 31]",
+                                             "KNOWN_TRAINERS[\"Nyna\"] = 15446",
+                                             "pbStartTrade(pbGet(1), poke, \"tModLoader\", \"Nyna\")")
+                        .event_else
+                          .event_run_scripts("form = $Trainer.party[pbGet(1)].form == 0 ? SHELLOS_WEST_AEVIAN : SHELLOS_EAST_AEVIAN",
+                                             "poke = PokeBattle_Pokemon.new(:SHELLOS, $Trainer.party[pbGet(1)].level, $Trainer, true, form)",
+                                             "KNOWN_TRAINERS[\"Nyna\"] = 15446",
+                                             "pbStartTrade(pbGet(1), poke, \"Shellos\", \"Nyna\")")
+                        .event_end_if
+                        .event_show_text("Feel free to come back with more Shellos!")
+                        .event_set_unilib_switch(:KRISTILINE_NPC_TRADED_WITH, true)
+                      .event_end_if
+                    .event_next_prompt
+                      .event_show_text("Awww... oh well, the offer's always open!")
+                  .event_end_prompt(true)
+                .end_page
+
+  MapEvent.add_map_event(294) { |map| MapEvent.add_event(map, KRISTILINE_NPC) }
+
+}
+
+UniLib.category("Aevian Bronzor, Route 3/LCCC") {
 
   MapEvent.add_map_event(407) { |map| map.events[5].pages[0].list[8].parameters = [12, "p = PokeBattle_Pokemon.new(:BRONZOR, 5, $Trainer, true, BRONZOR_AEVIAN); p.item = :METALCOAT;  Kernel.pbAddPokemon(p)"] }
+
+}
+
+UniLib.category("Aevian Litwick, Calcenon") {
+
+  UniLib.set_switch_condition(:AEVIAN_LITWICK_COMPOUND, proc { UniLib.is_switch_on(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) })
+
+  UniLib.set_switch_condition(:AEVIAN_LITWICK_COMPOUND_2, proc { !UniLib.is_switch_on(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) })
+
+  LITWICK_AEVIAN_EVENT = EventBuilder.new("Aevian Litwick", 70, 35)
+                .add_page
+                  .set_switch_1(:AEVIAN_LITWICK_COMPOUND_2)
+                  .set_graphic("pkmn_litwick_aevian") # intentionally have a blank graphic
+                  .event_show_text("The streetlamp seems to have gone out...")
+                  .event_if([12, "$PokemonBag.pbHasItem?(:SOULCANDLE); $PokemonBag.pbHasItem?(:SOULCANDLE)"])
+                    .event_show_text("The Soul Candle is reacting.")
+                    .event_show_text("Hold it out?")
+                    .event_prompt("Yes", "No")
+                    .event_prompt_choice
+                      .event_run_scripts("$PokemonBag.pbDeleteItem(:SOULCANDLE)")
+                      .event_exclaim
+                      .event_show_text("Something lunged for the candle!")
+                      .event_wild_battle(:LITWICK, 45, LITWICK_AEVIAN)
+                      .event_set_unilib_switch(:AEVIAN_LITWICK, true, true)
+                    .event_next_prompt
+                    .event_end_prompt(true)
+                  .event_end_if
+                .end_page
+
+  MapEvent.add_map_event(413) { |map|
+    EventBuilder.new(map.events[57]).set_switch_2(:AEVIAN_LITWICK_COMPOUND)
+    MapEvent.add_event(map, LITWICK_AEVIAN_EVENT)
+  }
 
 }
 
@@ -38,7 +133,7 @@ UniLib.category("Aevian Snorunts, Ametrine") {
 
   MapEvent.add_map_event(439) { |map|
     args = ["Aevian Snorunt", :SNORUNT, 58, "pkmn_snorunt_aevian"]
-    kwargs = { sfx: "361Cry", txt: "Appa!", step_anime: false, win_event: [911, 0, []], should_remove: true }
+    kwargs = { sfx: "361Cry", txt: "Appa!", step_anime: false, win_event: [911, 0, [0, 1, 4]], should_remove: true }
     MapEvent.add_static_pkmn(map, 88, 94, *args, :SNORUNT_AEVIAN_1, form: SNORUNT_AEVIAN, dir: 2, **kwargs)
     MapEvent.add_static_pkmn(map, 59, 99, *args, :SNORUNT_AEVIAN_2, form: SNORUNT_AEVIAN, dir: 8, **kwargs)
     MapEvent.add_static_pkmn(map, 38, 95, *args, :SNORUNT_AEVIAN_3, form: SNORUNT_AEVIAN, dir: 7, **kwargs)
@@ -66,7 +161,7 @@ UniLib.category("Hisuian Growlithe, Pyrous, Post-Adrienne") {
 
 UniLib.category("Aevian Larvesta Egg, Teknite Ridge, Post-Fulgor") {
 
-  UniLib.set_switch_condition(:AEVIAN_LARVESTA_COMPOUND) { !$unilib_switches[:AEVIAN_LARVESTA] && $game_variables[472] >= 2 }
+  UniLib.set_switch_condition(:AEVIAN_LARVESTA_COMPOUND) { !UniLib.is_switch_on(:AEVIAN_LARVESTA) && $game_variables[472] >= 2 }
 
   AEVIAN_LARVESTA_EVENT = EventBuilder.new("Aevian Larvesta", 20, 57)
                 .add_page
@@ -87,6 +182,40 @@ UniLib.category("Aevian Larvesta Egg, Teknite Ridge, Post-Fulgor") {
                 .end_page unless defined? AEVIAN_LARVESTA_EVENT
 
   MapEvent.add_map_event(642) { |map| MapEvent.add_event(map, AEVIAN_LARVESTA_EVENT) }
+
+}
+
+UniLib.category("Aevian Jangmo-o, Byxbysion Wastelands, Post-Hardy") {
+
+  UniLib.set_switch_condition(:AEVIAN_JANGMOO_COMPOUND) { !UniLib.is_switch_on(:AEVIAN_JANGMOO) && $game_switches[658] }
+
+  JANGMOO_AEVIAN_EVENT = EventBuilder.new("Aevian Jangmo-o", 7, 49)
+                .add_page
+                  .set_graphic("pkmn_jangmoo_aevian", redirect: "Remix/Assets/pkmn_jangmoo_aevian", direction: 4)
+                  .set_switch_1(:AEVIAN_JANGMOO_COMPOUND)
+                  .set_movement(step_anime: true)
+                  .event_exclaim
+                  .event_play_se("782Cry")
+                  .event_show_text("Yah!")
+                  .event_wild_battle(:JANGMOO, 65, JANGMOO_AEVIAN)
+                  .event_if_battle_result(1, 4)
+                    .event_set_unilib_switch(:AEVIAN_JANGMOO, true, true)
+                  .event_end_if
+                .end_page unless defined? JANGMOO_AEVIAN_EVENT
+
+  DISPENSARY = EventBuilder.new("Dispensary", 6, 49)
+                .add_page
+                .set_graphic("egg_larvesta_aevian_1", redirect: "Remix/Assets/egg_larvesta_aevian")
+                .set_switch_1(:AEVIAN_JANGMOO_COMPOUND)
+                .event_store_temp
+                .event_exclaim
+                .event_run_scripts("Kernel.pbItemBall(:ANTIDOTE)")
+                .end_page unless defined? DISPENSARY
+
+  MapEvent.add_map_event(209) { |map|
+    MapEvent.add_event(map, JANGMOO_AEVIAN_EVENT)
+    MapEvent.add_event(map, DISPENSARY)
+  }
 
 }
 

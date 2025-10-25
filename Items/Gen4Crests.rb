@@ -43,6 +43,17 @@ GASTRODON_CREST = CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buf
             }
             .sym
 
+LUMINEON_CREST = CrestBuilder.add(:LUMINEON, "Gain Ice Scales. Ice moves super effective on Steel-types.")
+            .ability_provider { :ICESCALES }
+            .attack_type_effectiveness_mod { |attacker, target, move, mod1, mod2|
+              if move.pbType(attacker) == :ICE
+                [target.type1 == :STEEL ? 4 : mod1, target.type2 == :STEEL ? 4 : mod2]
+              else
+                [mod1, mod2]
+              end
+            }
+            .sym
+
 YANMEGA_CREST = CrestBuilder.add(:YANMEGA, "Weak moves have 2x power.")
             .damage_mod { |_, _, move, _, _| next 2 if move.basedamage <= 60 }
             .sym

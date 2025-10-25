@@ -1,0 +1,1 @@
+UniLib.replace_in_function(:pbShowBattleStats, "if @battle.pbOwnedByPlayer?(pkmn.index) || @battle.pbOwnedByAIPartner?(pkmn.index) || $DEBUG", "if true")

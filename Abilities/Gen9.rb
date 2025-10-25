@@ -1,18 +1,23 @@
 AbilityBuilder.add(:WELLBAKEDBODY, "Well-Baked Body", "Fire-type moves boost defense.", "Fire-type move immunity, +2 to defense when hit by one.")
               .type_effectiveness_mod_simple do |pkmn, type, send|
                 if type == :FIRE
-                  if send
-                    if pkmn.pbCanIncreaseStatStage?(PBStats::DEFENSE)
-                      pkmn.pbIncreaseStatBasic(PBStats::DEFENSE, 2)
-                      pkmn.battle.pbCommonAnimation("StatUp", pkmn, nil)
-                      UniLib.display_if_visible(pkmn.battle, _INTL("{1}'s Well-Baked Body sharply raised its Defense!", pkmn.pbThis))
-                    else
-                      UniLib.display_if_visible(pkmn.battle, _INTL("It doesn't affect {1}...", pkmn.pbThis))
-                    end
+                  if send and pkmn.pbCanIncreaseStatStage?(PBStats::DEFENSE)
+                    pkmn.pbIncreaseStatBasic(PBStats::DEFENSE, 2)
+                    pkmn.battle.pbCommonAnimation("StatUp", pkmn, nil)
+                    UniLib.display_if_visible(pkmn.battle, _INTL("{1}'s Well-Baked Body sharply raised its Defense!", pkmn.pbThis))
                   end
                   next 0
                 end
               end
+              .on_turn_end { |pkmn|
+                if pkmn.pbCanIncreaseStatStage?(PBStats::DEFENSE)
+                  pkmn.pbIncreaseStatBasic(PBStats::DEFENSE, 2)
+                  pkmn.battle.pbCommonAnimation("StatUp", pkmn, nil)
+                  UniLib.display_if_visible(pkmn.battle, _INTL("{1}'s Well-Baked Body sharply raised its Defense!", pkmn.pbThis))
+                end
+              }
+
+UniLib.insert_in_method(:PokeBattle_Battler, :burningFieldPassiveDamage?, :HEAD, "return false if @ability == :WELLBAKEDBODY")
 
 AbilityBuilder.add(:WINDRIDER, "Wind Rider", "Gain Charge when hit by wind move...", "Gain Charge when hit by wind move, or when Tailwind is used.")
               .on_damage_taken do |defender, _, move, _|

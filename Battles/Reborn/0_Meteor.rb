@@ -202,7 +202,7 @@ RemiX.meteor {
                    .set_pkmn(1, :SPEAROW, 25, :SNIPER)
 
     TrainerModifier.add(:MeteorGrunt, "Chad", 1)
-                   .set_pkmn(0, :VENOMOTH, 45, :SHIELDDUST)
+                   .set_pkmn(0, :VENOMOTH, 45, :DRAGONSLAYER)
                    .set_pkmn(1, :EMBOAR, 45, :THICKFAT)
                    .set_pkmn(2, :FEAROW, 45, :KEENEYE)
 
@@ -335,6 +335,11 @@ RemiX.meteor {
                    .set_pkmn(1, :VILEPLUME, 44, :WELLBAKEDBODY)
                    .set_pkmn(2, :SALAZZLE, 44, :CORROSION)
 
+    TrainerModifier.add(:MeteorDame, "Diana", 1)
+                   .set_pkmn(0, :MANECTRIC, 55, :TECHNICIAN)
+                   .set_pkmn(1, :SALAZZLE, 55, :CORROSION)
+                   .set_pkmn(2, :VILEPLUME, 55, :FLASHFIRE)
+
     TrainerModifier.add(:MeteorDame, "Diana", 2)
                    .set_pkmn(0, :NOCTOWL, 70, :INSOMNIA, item: NOCTOWL_CREST)
                    .set_pkmn(1, :MANECTRIC, 70, :TECHNICIAN, moves: [:OVERHEAT, :SHOCKWAVE, :THUNDERWAVE, :FROSTBREATH])
@@ -466,6 +471,11 @@ RemiX.meteor {
     TrainerModifier.add(:MeteorKnight, "Kenan", 0)
                    .set_pkmn(0, :MACHOKE, 44, :GUTS)
                    .set_pkmn(1, :GOLEM, 44, :DENSITY)
+
+    TrainerModifier.add(:MeteorKnight, "Kenan", 1)
+                   .set_pkmn(0, :MACHOKE, 55, :GUTS)
+                   .set_pkmn(1, :DARMANITAN, 55, :SHEERFORCE)
+                   .set_pkmn(2, :GOLEM, 55, :DENSITY)
 
     TrainerModifier.add(:MeteorKnight, "Kenan", 2)
                    .set_pkmn(0, :BLISSEY, 71, :SERENEGRACE, item: BLISSEY_CREST, moves: [:FRUSTRATION, :DRAINPUNCH, :ICEPUNCH, :EARTHQUAKE], happiness: 0)
@@ -1023,6 +1033,11 @@ RemiX.meteor {
 
   UniLib.category("David") {
 
+    TrainerModifier.add(:Orderly, "David", 1)
+                   .set_pkmn(0, :FERROSEED, 55, :IRONBARBS)
+                   .set_pkmn(1, :VIBRAVA, 55, :LEVITATE)
+                   .set_pkmn(2, :LUXRAY, 55, :INTIMIDATE)
+
     TrainerModifier.add(:NWOrderly, "David", 0)
                    .set_pkmn(0, :FERROTHORN, 80, :IRONBARBS, ev: EVEN102, iv: 32)
                    .set_pkmn(1, :JUMPLUFF, 80, :AERILATE, moves: [:LEECHSEED, :SUBSTITUTE, :SLEEPPOWDER, :FRUSTRATION], happiness: 0)
@@ -1062,6 +1077,12 @@ RemiX.meteor {
                    .set_pkmn(0, :EELEKTRIK, 39, :LEVITATE)
                    .set_pkmn(1, :SLOWBRO, 39, :OBLIVIOUS)
                    .set_pkmn(2, :MAGNETON, 39, :MAGNETPULL)
+
+    TrainerModifier.add(:Orderly, "John", 2)
+                   .set_pkmn(0, :TOUCANNON, 55, :KEENEYE)
+                   .set_pkmn(1, :EELEKTROSS, 55, :LEVITATE)
+                   .set_pkmn(2, :SLOWBRO, 55, :OBLIVIOUS)
+                   .set_pkmn(3, :MAGNETON, 55, :MAGNETPULL)
 
     # fiore
     TrainerModifier.add(:NWOrderly, "John", 0)
@@ -1104,7 +1125,7 @@ RemiX.meteor {
     TrainerModifier.add(:Orderly, "Roth", 0)
                    .set_pkmn(0, :CLOYSTER, 39, :SKILLLINK, moves: [:SPIKES, :ICICLESPEAR, :ROCKBLAST, :SHELLSMASH])
                    .set_pkmn(1, :ZEBSTRIKA, 39, :RECKLESS, moves: [:WILDCHARGE, :FLAREBLITZ, :DOUBLEEDGE])
-                   .set_pkmn(2, :KLANG, 39, :OVERLOCKING)
+                   .set_pkmn(2, :KLANG, 39, :OVERCLOCKING)
 
     TrainerModifier.add(:NWOrderly, "Roth", 0)
                    .set_pkmn(0, :CLOYSTER, 80, :SKILLLINK, item: :FOCUSSASH)

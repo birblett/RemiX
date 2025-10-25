@@ -16,6 +16,14 @@ class EncounterMod
 
   }
 
+  # route 2
+  [358, 360].each {
+    self.add(_1)
+        .add(LANDNIGHT, :NOCTOWL, :DECREASE, 5)
+        .add(LANDNIGHT, :SHROOMISH, :ADD, [5, 45, 51])
+        .add_form_override(:SHROOMISH, SHROOMISH_AEVIAN)
+  }
+
   # route 4
   self.add(412)
       .add(ALL_LAND, :AUDINO, :DECREASE, 5)
@@ -60,19 +68,17 @@ class EncounterMod
 
   # tourmaline desert
   [694, 703, 704, 705].each {
-
     self.add(_1)
         .add(CAVE, :MARACTUS, :DECREASE, 5)
         .add(CAVE, :BUDEW, :ADD, [5, 55, 70])
         .add_form_override(:BUDEW, BUDEW_AEVIAN)
-
   }
 
+  # mirage tower (not present)
   self.add(695)
       .add(SUPERROD, :MUK, :DECREASE, 30)
       .add(SUPERROD, :QWILFISH, :ADD, [30, 60, 85])
       .add_form_override(:QWILFISH, QWILFISH_HISUIAN)
-      .enable_logging
 
   # 1r253 scrapyard
   self.add(663)
@@ -82,20 +88,22 @@ class EncounterMod
 
   # tanzan depths (lower)
   [615, 618].each {
-
     self.add(_1)
         .add(CAVE, :ARBOK, :DECREASE, 1)
         .add(CAVE, :LAPRAS, :ADD, [1, 90, 100])
         .add_form_override(:LAPRAS, LAPRAS_AEVIAN)
-
   }
 
 end
 
+# agate circus
 LILLIGANT_HISUIAN_EVO_LOCS |= [355, 356, 357]
 
+# citae astrae
 BRAVIARY_HISUIAN_EVO_LOCS |= [306]
 
+# never after
 SLIGGOO_HISUIAN_EVO_LOCS |= (696..702).map { _1 }
 
+# pyrous mountain
 AVALUGG_HISUIAN_EVO_LOCS |= [27, 33, 34, 35] + (199..205).map { _1 }

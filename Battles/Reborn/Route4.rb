@@ -16,8 +16,8 @@ RemiX.gym(10) {
                  .set_pkmn(1, :ABOMASNOW, 70, :SNOWWARNING, moves: [:WOODHAMMER, :EARTHQUAKE, :BLIZZARD, :PROTECT])
 
   TrainerModifier.add(:COOLTRAINER_Male, "George", 0)
-                 .set_pkmn(0, :PUPITAR, 70, :SHEDSKIN, moves: [:SANDSTORM, :POWERUPPUNCH, :OUTRAGE, :CRUNCH])
-                 .set_pkmn(1, :KINGLER, 71, :HYPERCUTTER, moves: [:CRABHAMMER, :KNOCKOFF, :SUPERPOWER, :XSCISSOR])
+                 .set_pkmn(0, :PUPITAR, 70, :SHEDSKIN, item: :DREADPLATE, moves: [:SANDSTORM, :POWERUPPUNCH, :OUTRAGE, :CRUNCH])
+                 .set_pkmn(1, :TYRANITAR, 71, :SANDSTREAM, item: :EARTHPLATE, moves: [:STONEEDGE, :EARTHQUAKE, :CRUNCH, :DRAGONDANCE])
 
 }
 

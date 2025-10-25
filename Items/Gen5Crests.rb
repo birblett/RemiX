@@ -1,4 +1,4 @@
-WATCHOG_CREST = CrestBuilder.add(:WATCHOG, "Take less damage before attacking...", "Take less damage before attacking; deal more to opponents who have already moved.")
+WATCHOG_CREST = CrestBuilder.add(:WATCHOG, "Take less damage before attacking; deal more to opponents who have already moved.")
             .damage_mod { |attacker, target, move, _, ai| next 1.3 if (ai ? ai.pbAIfaster?(move, nil, attacker, target) : target.hasMovedThisRound?) }
             .damage_taken_mod { |target, attacker, move, _, ai| next 0.7 if (ai ? ai.pbAIfaster?(move, nil, attacker, target) : !target.hasMovedThisRound?) }
             .sym
