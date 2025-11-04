@@ -83,7 +83,7 @@ RemiX.gym(13) {
 
   TrainerModifier.add(:MASTERMIND, "Eustace", 0)
                  .set_pkmn(0, :MANECTRIC, 81, :LIGHTNINGROD, ev: SPASPE)
-                 .set_pkmn(1, :SCEPTILE, 81, :UNBURDEN, ev: ATKSPE)
+                 .set_pkmn(1, :SCEPTILE, 81, :UNBURDEN, moves: [:SWORDSDANCE, :ROCKSLIDE, :LEAFBLADE, :EARTHQUAKE], ev: ATKSPE)
                  .set_pkmn(2, :SHARPEDO, 82, :SPEEDBOOST, ev: ATKSPE)
                  .set_pkmn(3, :SCIZOR, 83, :TECHNICIAN, ev: ATKSPE)
                  .set_pkmn(4, :ALAKAZAM, 84, :MAGICGUARD, ev: SPASPE)

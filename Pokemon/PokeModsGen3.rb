@@ -1,11 +1,25 @@
+# TREECKO
+PokeModifier.add(:TREECKO)
+            .ability(1, :SHARPNESS)
+            .level_moves([[16, :THIEF], [35, :NIGHTSLASH], [46, :THROATCHOP]])
+
+# GROVYLE
+PokeModifier.add(:GROVYLE)
+            .type2(:DARK)
+            .ability(1, :SHARPNESS)
+            .level_moves([[16, :THIEF], [35, :NIGHTSLASH], [46, :THROATCHOP]])
+
 # SCEPTILE
 PokeModifier.add(:SCEPTILE)
-            .type2(:DRAGON)
-            .level_moves([[24, :TWISTER], [36, :DRAGONBREATH], [51, :DRAGONPULSE]])
-            .compatible_moves(:DRACOMETEOR)
+            .stats(0, 105, 0, 85, 0, 0)
+            .type2(:DARK)
+            .ability(1, :SHARPNESS)
+            .level_moves([[16, :THIEF], [35, :NIGHTSLASH], [46, :THROATCHOP], [87, :SACREDSWORD], [95, :DRAGONPULSE]])
+            .compatible_moves([:KNOCKOFF, :DRACOMETEOR])
 
 # SCEPTILE-M
 PokeModifier.add(:SCEPTILE, "Mega")
+            .stats(0, 100, 0, 155, 0, 0)
             .ability(0, :DAZZLING)
 
 # MUDKIP
@@ -42,6 +56,21 @@ PokeModifier.add(:DUSTOX)
             .level_moves([[40, :UTURN], [45, :STICKYWEB]])
             .set_camo(1)
 
+# LOTAD
+PokeModifier.add(:LOTAD)
+            .ability(2, :REVEL)
+            .level_moves([[47, :PETALDANCE], [60, :REVELATIONDANCE]])
+
+# LOMBRE
+PokeModifier.add(:LOMBRE)
+            .ability(2, :REVEL)
+            .level_moves([[47, :PETALDANCE], [60, :REVELATIONDANCE]])
+
+# LUDICOLO
+PokeModifier.add(:LUDICOLO)
+            .ability(2, :REVEL)
+            .level_moves([[47, :PETALDANCE], [60, :REVELATIONDANCE]])
+
 # SHIFTRY
 PokeModifier.add(:SHIFTRY)
             .ability(2, :SHARPNESS)
@@ -61,7 +90,7 @@ PokeModifier.add(:KIRLIA)
 
 # GARDEVOIR
 PokeModifier.add(:GARDEVOIR)
-            .ability(0, :FAIRYAURA)
+            .abilities({ 0 => :FAIRYAURA, 1 => :QUEENLYMAJESTY })
 
 # MASQUERAIN
 PokeModifier.add(:MASQUERAIN)
@@ -175,8 +204,10 @@ PokeModifier.add(:SHARPEDO)
 
 # WAILORD
 PokeModifier.add(:WAILORD)
+            .stats(160, 0, 70, 0, 70, 40)
             .type2(:DARK)
-            .level_moves([[23, :RAPIDSPIN], [35, :GYROBALL], [40, :DARKESTLARIAT]])
+            .set_aaa
+            .level_moves([[23, :RAPIDSPIN], [35, :GYROBALL], [40, :DARKESTLARIAT], [55, :SUCKERPUNCH]])
 
 # NUMEL
 PokeModifier.add(:NUMEL)
@@ -242,6 +273,7 @@ PokeModifier.add(:CACTURNE)
 
 # ALTARIA
 PokeModifier.add(:SWABLU)
+            .type1(:DRAGON)
             .ability(1, :FLUFFY)
 
 # ALTARIA
@@ -333,6 +365,11 @@ PokeModifier.add(:CHIMECHO)
             .type2(:FAIRY)
             .set_plates(:IRONPLATE)
             .level_moves([[0, :DRAININGKISS], [30, :DAZZLINGGLEAM], [45, :MOONBLAST]])
+
+# ABSOL
+PokeModifier.add(:ABSOL)
+            .type2(:FAIRY)
+            .level_moves([[12, :FAIRYWIND], [17, :CHARM], [44, :PLAYROUGH]])
 
 # ABSOL-M
 PokeModifier.add(:ABSOL, "Mega")

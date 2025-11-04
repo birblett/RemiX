@@ -36,6 +36,17 @@ PokeModifier.add(:GRENINJA)
             .type2(:GHOST)
             .level_moves([[25, :HEX], [36, :PHANTOMFORCE], [45, :SHADOWBALL]])
 
+# BUNNELBY
+PokeModifier.add(:BUNNELBY)
+            .stats(0, 30, 0, 38, 0, 0)
+            .type1(:FAIRY)
+
+# DIGGERSBY
+PokeModifier.add(:DIGGERSBY)
+            .stats(0, 48, 0, 70, 0, 0)
+            .type1(:FAIRY)
+            .level_moves([[0, :PLAYROUGH], [42, :DRAININGKISS], [55, :MOONBLAST]])
+
 # FLETCHLING
 PokeModifier.add(:FLETCHLING)
             .stats(0, 0, 0, 50, 40, 0)
@@ -87,7 +98,6 @@ PokeModifier.add(:FLOETTE)
 
 # FLORGES
 PokeModifier.add(:FLORGES)
-            .stats(90, 50, 0, 149, 120, 0)
             .abilities({ 1 => :SYMBIOSIS, 2 => :CHLOROPHYLL })
             .set_plates(:MEADOWPLATE)
 
@@ -108,7 +118,7 @@ PokeModifier.add(:MEOWSTIC, "Male")
 
 # MEOWSTIC
 PokeModifier.add(:MEOWSTIC, "Female")
-            .stats(70, 0, 70, 99, 75, 0)
+            .stats(70, 0, 75, 89, 80, 0)
             .ability(0, :DOOMSEER)
 
 # SPRITZEE

@@ -109,6 +109,7 @@ RemiX.gym(5) {
 
   TrainerModifier.add(:StreetRat, "Owen", 0)
                  .set_pkmn(0, :NINETALES, 50, :FLASHFIRE)
+                 .set_pkmn(1, :BEARTIC, 50, :SLUSHRUSH)
 
 }
 

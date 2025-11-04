@@ -133,11 +133,17 @@ PokeModifier.add(:FEAROW)
             .type1(:GROUND)
             .set_stab
 
+# EKANS
+PokeModifier.add(:EKANS)
+            .stats(60, 0, 50, 0, 60, 0)
+            .type2(:DRAGON)
+            .level_moves([[8, :TWISTER], [15, :DRAGONTAIL], [20, :TOXICSPIKES], [31, :DRAGONRAGE], [40, :DRAGONRUSH]])
+
 # ARBOK
 PokeModifier.add(:ARBOK)
-            .stats(80, 0, 80, 0, 90, 0)
-            .type2(:GROUND)
-            .level_moves([[10, :MUDSLAP], [18, :BULLDOZE], [25, :MUDSHOT], [50, :SHOREUP], [55, :EARTHQUAKE]])
+            .stats(80, 0, 80, 0, 80, 0)
+            .type2(:DRAGON)
+            .level_moves([[8, :TWISTER], [15, :DRAGONTAIL], [20, :TOXICSPIKES], [31, :DRAGONRAGE], [40, :DRAGONRUSH]])
 
 # PIKACHU
 PokeModifier.add(:PIKACHU)
@@ -578,6 +584,7 @@ PokeModifier.add(:MAGMAR)
 
 # PINSIR
 PokeModifier.add(:PINSIR)
+            .type2(:NORMAL)
             .set_plates(:FISTPLATE)
 
 # TAUROS
@@ -610,8 +617,9 @@ PokeModifier.add(:LAPRAS)
 
 # EEVEE
 PokeModifier.add(:EEVEE)
-            .stats(70, 70, 70, 70, 70, 70)
+            .stats(80, 80, 70, 80, 70, 100)
             .set_plates(:ALL)
+            .level_moves([60, :GILDEDARROW])
 
 # VAPOREON
 PokeModifier.add(:VAPOREON)
@@ -632,9 +640,9 @@ PokeModifier.add(:JOLTEON)
 
 # FLAREON
 PokeModifier.add(:FLAREON)
-            .stats(110, 0, 95, 60, 100, 0)
+            .stats(100, 110, 95, 60, 130, 0)
             .type2(:NORMAL)
-            .abilities({ 1 => :MAGICGUARD, 2 => :GUTS })
+            .abilities({ 1 => :POISONHEAL, 2 => :GUTS })
             .set_plates(:FLAMEPLATE)
             .level_moves([[28, :FACADE], [38, :BODYSLAM], [50, :DOUBLEEDGE]])
 
@@ -667,7 +675,7 @@ PokeModifier.add(:AERODACTYL)
 
 # ARTICUNO
 PokeModifier.add(:ARTICUNO)
-            .ability(1, :GALEWINGS)
+            .abilities({ 1 => :TINTEDLENS, 2 => :TURBOJET })
 
 # ZAPDOS
 PokeModifier.add(:ZAPDOS)

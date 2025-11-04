@@ -2,35 +2,39 @@
 PokeModifier.add(:TURTWIG)
             .ability(1, :SKILLLINK)
             .level_moves([22, :BULLETSEED])
+            .egg_moves(:ROCKBLAST)
 
 # GROTLE
 PokeModifier.add(:GROTLE)
             .ability(1, :SKILLLINK)
             .level_moves([26, :BULLETSEED])
+            .egg_moves(:ROCKBLAST)
 
 # TORTERRA
 PokeModifier.add(:TORTERRA)
             .ability(1, :SKILLLINK)
             .level_moves([[28, :BULLETSEED], [40, :BONERUSH]])
+            .egg_moves(:ROCKBLAST)
 
 # CHIMCHAR
 PokeModifier.add(:CHIMCHAR)
-            .ability(Reborn ? 1 : 2, :MAGICGUARD)
+            .ability(1, :MAGICGUARD)
             .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE]])
             .compatible_moves(:CHARGEBEAM)
 
 # MONFERNO
 PokeModifier.add(:MONFERNO)
             .type2(:ELECTRIC)
-            .ability(Reborn ? 1 : 2, :MAGICGUARD)
-            .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [42, :THUNDERBOLT], [55, :THUNDER]])
+            .ability(1, :MAGICGUARD)
+            .level_moves([[7, :THUNDERSHOCK], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [35, :FLAMETHROWER], [42, :THUNDERBOLT], [55, :THUNDER]])
             .compatible_moves([:VOLTSWITCH, :CHARGEBEAM])
 
 # INFERNAPE
 PokeModifier.add(:INFERNAPE)
+            .stats(0, 102, 0, 108, 66, 111)
             .type2(:ELECTRIC)
-            .ability(Reborn ? 1 : 2, :MAGICGUARD)
-            .level_moves([[7, :THUNDERSHOCK], [15, :NUZZLE], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [42, :THUNDERBOLT], [50, :WILDCHARGE], [55, :THUNDER]])
+            .ability(1, :MAGICGUARD)
+            .level_moves([[7, :THUNDERSHOCK], [20, :SPARK], [26, :DISCHARGE], [33, :THUNDERPUNCH], [35, :FLAMETHROWER], [42, :THUNDERBOLT], [55, :THUNDER]])
             .compatible_moves([:VOLTSWITCH, :CHARGEBEAM])
 
 # PIPLUP
@@ -312,6 +316,7 @@ PokeModifier.add(:MAGNEZONE)
 # LICKILICKY
 PokeModifier.add(:LICKILICKY)
             .ability(2, :UNAWARE)
+            .level_moves([30, :RAPIDSPIN])
             .set_camo(1)
             .set_pokebilities(1)
 
@@ -338,6 +343,7 @@ PokeModifier.add(:MAGMORTAR)
             .type2(:FIGHTING)
             .ability(2, :MEGALAUNCHER)
             .level_moves([[16, :VACUUMWAVE], [42, :FOCUSBLAST], [60, :AURASPHERE]])
+            .compatible_moves(:DARKPULSE)
 
 # TOGEKISS
 PokeModifier.add(:TOGEKISS)
@@ -345,11 +351,11 @@ PokeModifier.add(:TOGEKISS)
 
 # LEAFEON
 PokeModifier.add(:LEAFEON)
-            .stats(100, 95, 0, 0, 0, 110)
+            .stats(95, 130, 100, 0, 0, 110)
             .type2(:ROCK)
             .abilities({ 1 => :TINTEDLENS, 2 => :CHLOROPHYLL })
             .set_plates(:MEADOWPLATE)
-            .level_moves([[15, :SWORDSDANCE], [20, :ROCKTHROW], [28, :ROCKTOMB], [42, :ROCKSLIDE], [55, :STONEEDGE]])
+            .level_moves([[15, :SWORDSDANCE], [20, :ROCKTHROW], [28, :ROCKTOMB], [42, :ROCKSLIDE], [55, :STONEEDGE], [70, :ACCELEROCK]])
 
 # GLACEON
 PokeModifier.add(:GLACEON)

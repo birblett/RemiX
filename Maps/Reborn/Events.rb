@@ -145,7 +145,33 @@ UniLib.category("Aevian Snorunts, Ametrine") {
 
 }
 
-UniLib.category("Hisuian Growlithe, Pyrous, Post-Adrienne") {
+UniLib.category("Hisuian Zorua, Ametrine, Blake's Hideout") {
+
+  UniLib.set_switch_condition(:HISUIAN_ZORUA_COMPOUND) { !UniLib.is_switch_on(:HISUIAN_ZORUA) }
+
+  HISUIAN_ZORUA_EVENT = EventBuilder.new("Hisuian Zorua", 130, 71)
+                .add_page
+                  .set_graphic("egg_zorua_hisuian", redirect: "Remix/Assets/egg_zorua_hisuian")
+                  .set_switch_1(:HISUIAN_ZORUA_COMPOUND)
+                  .event_show_text("A lonely egg. It's cold to the touch.")
+                  .event_show_text("Take it?")
+                  .event_prompt("Yes", "No")
+                  .event_prompt_choice
+                    .event_play_se("itemlevel")
+                    .event_show_text("\\PN got the Egg!")
+                    .event_run_scripts("egg = Kernel.pbGenerateEgg(:ZORUA)",
+                                       "egg.form = ZORUA_HISUIAN", "pbAddPokemonSilent(egg)")
+                    .event_set_unilib_switch(:HISUIAN_ZORUA, true, true)
+                  .event_next_prompt
+                    .event_show_text("Better leave it alone...")
+                  .event_end_prompt(true)
+                .end_page unless defined? HISUIAN_ZORUA_EVENT
+
+  MapEvent.add_map_event(439) { |map| MapEvent.add_event(map, HISUIAN_ZORUA_EVENT) }
+
+}
+
+UniLib.category("Hisuian Growlithe, Pyrous, Post-Adrienn") {
 
 
   UniLib.set_switch_condition(:GROWLITHE_HISUIAN_COMPOUND, proc { !$game_switches[651] })
@@ -156,6 +182,40 @@ UniLib.category("Hisuian Growlithe, Pyrous, Post-Adrienne") {
   }
 
   Assets.redirect(:BMP, "pkmn_growlithe_hisuian", "Remix/Assets/pkmn_growlithe_hisuian")
+
+}
+
+UniLib.category("Aevian Jangmo-o, Byxbysion Wastelands, Post-Adrienn") {
+
+  UniLib.set_switch_condition(:AEVIAN_JANGMOO_COMPOUND) { !UniLib.is_switch_on(:AEVIAN_JANGMOO) && $game_switches[651] }
+
+  JANGMOO_AEVIAN_EVENT = EventBuilder.new("Aevian Jangmo-o", 7, 49)
+                .add_page
+                  .set_graphic("pkmn_jangmoo_aevian", redirect: "Remix/Assets/pkmn_jangmoo_aevian", direction: 4)
+                  .set_switch_1(:AEVIAN_JANGMOO_COMPOUND)
+                  .set_movement(step_anime: true)
+                  .event_exclaim
+                  .event_play_se("782Cry")
+                  .event_show_text("Yah!")
+                  .event_wild_battle(:JANGMOO, 65, JANGMOO_AEVIAN)
+                  .event_if_battle_result(1, 4)
+                    .event_set_unilib_switch(:AEVIAN_JANGMOO, true, true)
+                  .event_end_if
+                .end_page unless defined? JANGMOO_AEVIAN_EVENT
+
+  DISPENSARY = EventBuilder.new("Dispensary", 6, 49)
+                .add_page
+                  .set_graphic("egg_larvesta_aevian_1", redirect: "Remix/Assets/egg_larvesta_aevian")
+                  .set_switch_1(:AEVIAN_JANGMOO_COMPOUND)
+                  .event_store_temp
+                  .event_exclaim
+                  .event_run_scripts("Kernel.pbItemBall(:ANTIDOTE)")
+                .end_page unless defined? DISPENSARY
+
+  MapEvent.add_map_event(209) { |map|
+    MapEvent.add_event(map, JANGMOO_AEVIAN_EVENT)
+    MapEvent.add_event(map, DISPENSARY)
+  }
 
 }
 
@@ -182,40 +242,6 @@ UniLib.category("Aevian Larvesta Egg, Teknite Ridge, Post-Fulgor") {
                 .end_page unless defined? AEVIAN_LARVESTA_EVENT
 
   MapEvent.add_map_event(642) { |map| MapEvent.add_event(map, AEVIAN_LARVESTA_EVENT) }
-
-}
-
-UniLib.category("Aevian Jangmo-o, Byxbysion Wastelands, Post-Hardy") {
-
-  UniLib.set_switch_condition(:AEVIAN_JANGMOO_COMPOUND) { !UniLib.is_switch_on(:AEVIAN_JANGMOO) && $game_switches[658] }
-
-  JANGMOO_AEVIAN_EVENT = EventBuilder.new("Aevian Jangmo-o", 7, 49)
-                .add_page
-                  .set_graphic("pkmn_jangmoo_aevian", redirect: "Remix/Assets/pkmn_jangmoo_aevian", direction: 4)
-                  .set_switch_1(:AEVIAN_JANGMOO_COMPOUND)
-                  .set_movement(step_anime: true)
-                  .event_exclaim
-                  .event_play_se("782Cry")
-                  .event_show_text("Yah!")
-                  .event_wild_battle(:JANGMOO, 65, JANGMOO_AEVIAN)
-                  .event_if_battle_result(1, 4)
-                    .event_set_unilib_switch(:AEVIAN_JANGMOO, true, true)
-                  .event_end_if
-                .end_page unless defined? JANGMOO_AEVIAN_EVENT
-
-  DISPENSARY = EventBuilder.new("Dispensary", 6, 49)
-                .add_page
-                .set_graphic("egg_larvesta_aevian_1", redirect: "Remix/Assets/egg_larvesta_aevian")
-                .set_switch_1(:AEVIAN_JANGMOO_COMPOUND)
-                .event_store_temp
-                .event_exclaim
-                .event_run_scripts("Kernel.pbItemBall(:ANTIDOTE)")
-                .end_page unless defined? DISPENSARY
-
-  MapEvent.add_map_event(209) { |map|
-    MapEvent.add_event(map, JANGMOO_AEVIAN_EVENT)
-    MapEvent.add_event(map, DISPENSARY)
-  }
 
 }
 
@@ -249,6 +275,28 @@ UniLib.category("Hisuian Sneasel, Route 4 Upper Cave") {
                 .end_page unless defined? HISUIAN_SNEASEL_TRADER
 
   MapEvent.add_map_event(750) { |map| MapEvent.add_event(map, HISUIAN_SNEASEL_TRADER) }
+
+}
+
+UniLib.category("Aevian Paras, Byxbysion Grotto, Garbodor Area, Post-Amaria") {
+
+  UniLib.set_switch_condition(:AEVIAN_PARAS_COMPOUND) { !UniLib.is_switch_on(:AEVIAN_PARAS) && $game_switches[657] }
+
+  PARAS_AEVIAN_EVENT = EventBuilder.new("Aevian Paras", 19, 10)
+                .add_page
+                  .set_graphic("pkmn_paras_aevian", redirect: "Remix/Assets/pkmn_paras_aevian", direction: 8)
+                  .set_switch_1(:AEVIAN_PARAS_COMPOUND)
+                  .set_movement(step_anime: true)
+                  .event_exclaim
+                  .event_play_se("046Cry")
+                  .event_show_text("ueghhaeghuhgh.")
+                  .event_wild_battle(:PARAS, 86, PARAS_AEVIAN, :XENWASTE)
+                  .event_if_battle_result(1, 4)
+                    .event_set_unilib_switch(:AEVIAN_PARAS, true, true)
+                  .event_end_if
+                .end_page unless defined? PARAS_AEVIAN_EVENT
+
+  MapEvent.add_map_event(221) { |map| MapEvent.add_event(map, PARAS_AEVIAN_EVENT) }
 
 }
 

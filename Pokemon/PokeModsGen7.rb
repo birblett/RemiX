@@ -76,7 +76,7 @@ PokeModifier.add(:LYCANROC, "Midnight")
 
 # LYCANROC-DUSK
 PokeModifier.add(:LYCANROC, "Dusk")
-            .type2(nil)
+            .type2(:ROCK)
             .set_camo(1)
 
 # MUDBRAY

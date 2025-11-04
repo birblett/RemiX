@@ -816,6 +816,14 @@ RemiX.meteor {
                    .set_pkmn(1, :FLORGES, 75, :FLOWERVEIL)
                    .set_pkmn(2, :SYLVEON, 75, :PIXILATE)
 
+    # zekrom duo
+    TrainerModifier.add(:NWCultistF, "Angela", 2)
+                   .set_pkmn(0, :GOODRA, 95, :GOOEY, item: :CATALYZER, moves: [:MUDDYWATER, :POWERWHIP, :BLIZZARD, :FIREBLAST], ev: PULSE2)
+                   .set_pkmn(1, :CACTURNE, 95, :OPENWOUNDS, item: :LIFEORB, moves: [:FAKEOUT, :SUCKERPUNCH, :OBSTRUCT, :BRICKBREAK], ev: PULSE2)
+                   .set_pkmn(2, :SYLVEON, 95, :PIXILATE, ev: PULSE2)
+                   .set_pkmn(3, :FLORGES, 95, :FLOWERVEIL, ev: PULSE2)
+
+    # resh duo
     TrainerModifier.add(:NWCultistF, "Angela", 1)
                    .set_pkmn(0, :CRADILY, 95, :STORMDRAIN, ev: PULSE2)
                    .set_pkmn(1, :GOODRA, 95, :GOOEY, item: :CATALYZER, moves: [:MUDDYWATER, :POWERWHIP, :BLIZZARD, :FIREBLAST], ev: PULSE2)
@@ -835,6 +843,20 @@ RemiX.meteor {
                    .set_pkmn(1, :JOLTEON, 75, :AERILATE, moves: [:FAKEOUT, :LASTRESORT, nil, nil])
                    .set_pkmn(2, :DRAMPA, 75, :BERSERK)
 
+    TrainerModifier.add(:NWCultist, "Arcturus", 1)
+                   .set_pkmn(0, :VAPOREON, 90, :SAPSIPPER, moves: [:SURF, :EARTHQUAKE, :WISH, :PROTECT], ev: HPSPD)
+                   .set_pkmn(1, :JOLTEON, 90, :AERILATE, moves: [:DISCHARGE, :FAKEOUT, :HYPERVOICE, :VOLTSWITCH], ev: SPASPE)
+                   .set_pkmn(2, :LANTURN, 90, :ILLUMINATE, ev: HPSPA)
+                   .set_pkmn(3, :DRAMPA, 90, :BERSERK, ev: HPSPA)
+
+    # zekrom duo
+    TrainerModifier.add(:NWCultist, "Arcturus", 3)
+                   .set_pkmn(0, :LANTURN, 95, :ILLUMINATE, ev: PULSE2)
+                   .set_pkmn(1, :JOLTEON, 95, :AERILATE, item: :LIFEORB, moves: [:FAKEOUT, :HYPERVOICE, :HIDDENPOWER, :VOLTSWITCH], hptype: :ICE, ev: PULSE2)
+                   .set_pkmn(2, :VAPOREON, 95, :SAPSIPPER, moves: [:SURF, :EARTHQUAKE, :WISH, :PROTECT], ev: PULSE2)
+                   .set_pkmn(3, :DRAMPA, 95, :BERSERK, item: :CHOICESPECS, ev: PULSE2)
+
+    # resh duo
     TrainerModifier.add(:NWCultist, "Arcturus", 2)
                    .set_pkmn(0, :LANTURN, 95, :ILLUMINATE, ev: PULSE2)
                    .set_pkmn(1, :JOLTEON, 95, :AERILATE, item: :LIFEORB, moves: [:FAKEOUT, :HYPERVOICE, :HIDDENPOWER, :VOLTSWITCH], hptype: :ICE, ev: PULSE2)

@@ -33,7 +33,7 @@ UniLib.category("Pyroar Crest, Apophyll Cave") {
 
 }
 
-UniLib.category("Cherrim Crest, Pyrous") {
+UniLib.category("Cherrim Crest, :Pyrous") {
 
   MapEvent.add_map_event(27) { |map| MapEvent.add_overworld_item(map, 18, 12, "Item", CHERRIM_CREST, :CherrimCrest, "itemball", graphic: { character_hue: 310 }) }
 
@@ -172,9 +172,9 @@ UniLib.category("Ludicolo Crest, Sunrise 4") {
 
 }
 
-UniLib.category("Gastrodon Crest, Kingsbury 22") {
+UniLib.category("Swanna Crest, Kingsbury 22") {
 
-  MapEvent.add_map_event(575) { |map| MapEvent.add_overworld_item(map, 2, 4, "Item", GASTRODON_CREST, :GastrodonCrest, "itemballb", graphic: { character_hue: 310 }) }
+  MapEvent.add_map_event(575) { |map| MapEvent.add_overworld_item(map, 2, 4, "Item", SWANNA_CREST, :SwannaCrest, "itemballb", graphic: { character_hue: 310 }) }
 
 }
 

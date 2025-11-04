@@ -56,9 +56,12 @@ RemiX.gym(14) {
   TrainerModifier.add(:STATRESHIRAM, "Dragon", 0)
                  .set_pkmn(0, :RESHIRAM, 90, :TURBOBLAZE)
 
+  TrainerModifier.add(:STATZEKROM, "Dragon", 0)
+                 .set_pkmn(0, :ZEKROM, 90, :TERAVOLT, item: :GROUNDIUMZ, moves: [:BOLTSTRIKE, :ROOST, :OUTRAGE, :EARTHPOWER], nature: :JOLLY, iv: 31, ev: [252, 4, 0, 0, 0, 252])
+
   # teknite from beryl
   TrainerModifier.add(:VOLCARONA, "Fulgor", 0)
-                 .set_pkmn(0, :VOLCARONA, 100, :FLAMEBODY, item: :LEFTOVERS, moves: [:QUIVERDANCE, :SIGNALBEAM, :GIGADRAIN, :HEATWAVE], ev: PULSE2)
-                 .set_pkmn(0, :VOLCARONA, 100, :SHIELDDUST, item: :LEFTOVERS, moves: [:QUIVERDANCE, :ETHEREALTEMPEST, :AURASPHERE, :ROOST], form: VOLCARONA_AEVIAN, ev: PULSE2)
+                 .set_pkmn(0, :VOLCARONA, 100, :FLAMEBODY, item: :LEFTOVERS, moves: [:QUIVERDANCE, :SIGNALBEAM, :GIGADRAIN, :HEATWAVE], gender: "M", ev: PULSE2)
+                 .set_pkmn(1, :VOLCARONA, 100, :SHIELDDUST, item: :LEFTOVERS, moves: [:QUIVERDANCE, :ETHEREALTEMPEST, :AURASPHERE, :ROOST], gender: "F", form: VOLCARONA_AEVIAN, ev: PULSE2)
 
 }

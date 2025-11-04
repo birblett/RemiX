@@ -14,16 +14,16 @@ KRICKETUNE_CREST = CrestBuilder.add(:KRICKETUNE, "Consecutive move uses increase
 
 GASTRODON_CREST = CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buff effects.")
             .add_receiver(:GASTRODON, "East Sea")
-            .add_receiver(:GASTRODON, Reborn ? 0 : "West Aevian")
-            .add_receiver(:GASTRODON, Reborn ? 0 : "East Aevian")
+            .add_receiver(:GASTRODON, Reborn ? GASTRODON_WEST_AEVIAN : "West Aevian")
+            .add_receiver(:GASTRODON, Reborn ? GASTRODON_EAST_AEVIAN : "East Aevian")
             .on_battle_entry { |pkmn, _, _|
               battle = pkmn.battle
               case pkmn.pokemon.form
-              when 2
+              when GASTRODON_WEST_AEVIAN
                 pkmn.status = :POISON
                 battle.pbCommonAnimation("Poison", pkmn, nil)
                 UniLib.display_if_visible(battle, _INTL("{1} was poisoned by its {2}!", pkmn.pbThis, getItemName(pkmn.item)))
-              when 3
+              when GASTRODON_EAST_AEVIAN
                 pkmn.status = :BURN
                 battle.pbCommonAnimation("Burn", pkmn, nil)
                 UniLib.display_if_visible(battle, _INTL("{1} was burned by its {2}!", pkmn.pbThis, getItemName(pkmn.item)))
@@ -36,8 +36,8 @@ GASTRODON_CREST = CrestBuilder.add(:GASTRODON, "Form-dependent switch-in and buf
             .battle_stat_mods { |pkmn, bs|
               case pkmn.pokemon.form
               when 1 then bs[3].mul(1.3)
-              when 2 then bs[4].mul(1.3)
-              when 3 then bs[5].mul(1.3)
+              when GASTRODON_WEST_AEVIAN then bs[4].mul(1.3)
+              when GASTRODON_EAST_AEVIAN then bs[5].mul(1.3)
               else bs[2].mul(1.3)
               end
             }

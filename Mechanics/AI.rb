@@ -7,6 +7,13 @@ UniLib.replace_in_method(:PokeBattle_AI, :protectcode, target, "if should_protec
 target = Reborn ? "miniscore *= 8" : "miniscore*=8"
 UniLib.replace_in_method(:PokeBattle_AI, :protectcode, target, "miniscore *= 16")
 
+UniLib.insert_in_method(:PokeBattle_AI, :hypercode, "miniscore *= 0.5 if @battle.doublebattle",
+    "if @attacker.crested == :CLAYDOL
+      miniscore *= -4 if miniscore < 0
+      miniscore *= 2
+      miniscore *= 3 if @battle.doublebattle
+    end")
+
 class PokeBattle_AI
 
   def should_protect

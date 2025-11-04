@@ -4,7 +4,7 @@ UniLib.remix_load("Abilities") unless UniLib.cached(UniLib::ABILITY)
 UniLib.remix_load("Pokemon") unless UniLib.cached(UniLib::POKEMON)
 UniLib.remix_load("Items") unless UniLib.cached(UniLib::ITEM)
 UniLib.remix_load "Mechanics"
-UniLib.remix_load("Battles")  unless UniLib.cached(UniLib::BATTLE)
+UniLib.remix_load("Battles")
 
 if Rejuv
   UniLib.remix_load "Maps/Rejuv"

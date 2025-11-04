@@ -17,14 +17,14 @@ PokeModifier.add(:TEPIG)
 PokeModifier.add(:PIGNITE)
             .stats(0, 0, 60, 55, 0, 65)
             .type2(:ROCK)
-            .level_moves([[0, :ROCKTHROW], [20, :ROCKTOMB], [37, :ROCKSLIDE], [50, :STONEEDGE]])
+            .level_moves([[0, :ROCKTHROW], [20, :ROCKTOMB], [28, :STEALTHROCK], [37, :ROCKSLIDE], [50, :STONEEDGE]])
             .compatible_moves(:ROCKPOLISH)
 
 # EMBOAR
 PokeModifier.add(:EMBOAR)
             .stats(0, 0, 80, 65, 0, 85)
             .type2(:ROCK)
-            .level_moves([[0, :ROCKTHROW], [20, :ROCKTOMB], [37, :ROCKSLIDE], [50, :STONEEDGE]])
+            .level_moves([[0, :ROCKTHROW], [20, :ROCKTOMB], [28, :STEALTHROCK], [37, :ROCKSLIDE], [50, :STONEEDGE]])
             .compatible_moves(:ROCKPOLISH)
 
 # OSHAWOTT
@@ -95,6 +95,7 @@ PokeModifier.add(:MUNNA)
 
 # MUSHARNA
 PokeModifier.add(:MUSHARNA)
+            .stats(0, 0, 100, 100, 0, 0)
             .type2(:POISON)
             .ability(0, :DOOMSEER)
             .level_moves([[4, :POISONGAS], [10, :SLUDGE], [16, :ACIDSPRAY], [26, :VENOSHOCK], [40, :SLUDGEBOMB]])
@@ -324,11 +325,17 @@ PokeModifier.add(:VANILLITE)
 
 # VANILLISH
 PokeModifier.add(:VANILLISH)
+            .stat(:SPE, 64)
+            .type2(:FAIRY)
             .ability(2, :TINTEDLENS)
+            .level_moves([[0, :FAIRYWIND], [36, :PLAYROUGH], [45, :DAZZLINGGLEAM], [56, :MOONBLAST]])
 
 # VANILLUXE
 PokeModifier.add(:VANILLUXE)
+            .stat(:SPE, 87)
+            .type2(:FAIRY)
             .ability(2, :TINTEDLENS)
+            .level_moves([[0, :FAIRYWIND], [36, :PLAYROUGH], [45, :DAZZLINGGLEAM], [56, :MOONBLAST]])
 
 # DEERLING
 PokeModifier.add(:DEERLING)
@@ -397,6 +404,7 @@ PokeModifier.add(:ELGYEM)
 
 # BEHEEYEM
 PokeModifier.add(:BEHEEYEM)
+            .stats(0, 60, 85, 0, 0, 0)
             .set_camo(1)
 
 # LITWICK
@@ -430,14 +438,15 @@ PokeModifier.add(:CHANDELURE, "Aevian")
 PokeModifier.add(:CUBCHOO)
             .level_moves([45, :MOUNTAINGALE])
 
+# CUBCHOO
+PokeModifier.add(:CUBCHOO)
+            .type2(:NORMAL)
+            .level_moves([[7, :TACKLE], [30, :BODYSLAM], [45, :MOUNTAINGALE]])
+
 # BEARTIC
 PokeModifier.add(:BEARTIC)
-            .level_moves([45, :MOUNTAINGALE])
-
-# CRYOGONAL
-PokeModifier.add(:CRYOGONAL)
-            .type2(:STEEL)
-            .level_moves([[14, :MAGNETBOMB], [22, :MIRRORSHOT], [45, :FLASHCANNON]])
+            .type2(:NORMAL)
+            .level_moves([[7, :TACKLE], [30, :BODYSLAM], [45, :MOUNTAINGALE]])
 
 # ACCELGOR
 PokeModifier.add(:ACCELGOR)
@@ -493,6 +502,7 @@ PokeModifier.add(:BRAVIARY, "Hisuian")
 
 # HEATMOR
 PokeModifier.add(:HEATMOR)
+            .stats(0, 105, 70, 0, 70, 70)
             .set_aaa
 
 # DURANT
@@ -502,12 +512,6 @@ PokeModifier.add(:DURANT)
 # HYDREIGON
 PokeModifier.add(:HYDREIGON)
             .ability(2, :SNIPER)
-
-# VOLCARONA
-PokeModifier.add(:VOLCARONA)
-            .level_moves([75, :QUIVERDANCE])
-            .remove_level_moves(:QUIVERDANCE)
-            .remove_compatible_moves(:QUIVERDANCE)
 
 # COBALION
 PokeModifier.add(:COBALION)

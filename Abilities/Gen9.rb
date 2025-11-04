@@ -10,7 +10,7 @@ AbilityBuilder.add(:WELLBAKEDBODY, "Well-Baked Body", "Fire-type moves boost def
                 end
               end
               .on_turn_end { |pkmn|
-                if pkmn.pbCanIncreaseStatStage?(PBStats::DEFENSE)
+                if pkmn.pbCanIncreaseStatStage?(PBStats::DEFENSE) && (pkmn.battle.FE == :BURNING || pkmn.battle.FE == :VOLCANIC || pkmn.battle.FE == :INFERNAL)
                   pkmn.pbIncreaseStatBasic(PBStats::DEFENSE, 2)
                   pkmn.battle.pbCommonAnimation("StatUp", pkmn, nil)
                   UniLib.display_if_visible(pkmn.battle, _INTL("{1}'s Well-Baked Body sharply raised its Defense!", pkmn.pbThis))
@@ -19,7 +19,7 @@ AbilityBuilder.add(:WELLBAKEDBODY, "Well-Baked Body", "Fire-type moves boost def
 
 UniLib.insert_in_method(:PokeBattle_Battler, :burningFieldPassiveDamage?, :HEAD, "return false if @ability == :WELLBAKEDBODY")
 
-AbilityBuilder.add(:WINDRIDER, "Wind Rider", "Gain Charge when hit by wind move...", "Gain Charge when hit by wind move, or when Tailwind is used.")
+AbilityBuilder.add(:WINDPOWER, "Wind Power", "Gain Charge when hit by wind move...", "Gain Charge when hit by wind move, or when Tailwind is used.")
               .on_damage_taken do |defender, _, move, _|
                 if move.is_wind_move? and defender.pbCanIncreaseStatStage?(PBStats::ATTACK,true)
                   UniLib.display_if_visible(defender.battle, _INTL("{1} rode the wind!", defender.pbThis))
@@ -29,7 +29,7 @@ AbilityBuilder.add(:WINDRIDER, "Wind Rider", "Gain Charge when hit by wind move.
                 end
               end
               .insert_in_move_before("05B", :pbEffect, "return 0", "attacker.battle.battlers.each do |battler|
-                  if !battler.nil? and battler.ability == :WINDRIDER and battler.pbCanIncreaseStatStage?(PBStats::ATTACK,true)
+                  if !battler.nil? and battler.ability == :WINDPOWER and battler.pbCanIncreaseStatStage?(PBStats::ATTACK,true)
                     UniLib.display_if_visible(battler.battle, _INTL(\"{1} rode the wind!\", battler.pbThis))
                     battler.effects[:Charge] = 2
                     pbShowAnimation(:CHARGE, battler, nil, 0, false, true)

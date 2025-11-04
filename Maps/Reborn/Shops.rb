@@ -78,9 +78,9 @@ def sylveon_mart
     SIMISAGE_CREST => 5000,
     SIMISEAR_CREST => 5000,
     SIMIPOUR_CREST => 5000,
-    CASTFORM_CREST => 10000,
     LINOONE_CREST => 10000,
-    FEAROW_CREST => 10000
+    FEAROW_CREST => 10000,
+    LOADED_DICE => 25000
   }
   # post luna
   if $Trainer.numbadges >= 9
@@ -101,6 +101,7 @@ def sylveon_mart
   end
   # post amaria
   if $Trainer.numbadges >= 16
+    prices[TORKOAL_CREST] = 17000
     prices[CRYOGONAL_CREST] = 17000
     prices[GOTHITELLE_CREST] = 17000
   end
@@ -120,11 +121,20 @@ def sylveon_mart
   SylveonMartScreen.new(PokemonMartScene.new, prices).pbBuyScreen if stock.size > 0
 end
 
-MapEvent.add_map_event(324) { |map|
-  sylvie = MapEvent.basic_npc(35, 31, "crest_shop_7th", "pkmn_sylveon", ["lumalee lumabop welcome to the sylvieshop"],
-                              variable_id: 160, variable_value: 13, script: "sylveon_mart", sfx: "700Cry")
-  MapEvent.add_event(map, sylvie)
-}
+SYLVIE = EventBuilder.new("Sylvie", 35, 31)
+              .add_page
+                .set_graphic("pkmn_sylveon")
+                .set_movement(step_anime: true)
+                .set_variable(160, 13)
+                .event_play_se("700Cry")
+                .event_show_text("lumalee lumabop welcome to the sylvieshop")
+                .event_run_scripts("sylveon_mart")
+                .event_show_text("bweh!")
+              .end_page unless defined? SYLVIE
+
+MapEvent.add_map_event(324) { |map| MapEvent.add_event(map, SYLVIE) }
+
+# route 4 shop
 
 class FlareonMartScreen < CrestMartScreen
 
@@ -160,7 +170,7 @@ def flareon_mart
   end
   # post ciel
   if $Trainer.numbadges >= 13
-    prices[TORKOAL_CREST] = 14000
+    prices[CASTFORM_CREST] = 14000
     prices[SEVIPER_CREST] = 14000
     prices[ZANGOOSE_CREST] = 14000
   end
@@ -174,6 +184,7 @@ def flareon_mart
   if $Trainer.numbadges >= 16
     prices[BEHEEYEM_CREST] = 17000
     prices[STANTLER_CREST] = 17000
+    prices[LUVDISC_CREST] => 17000
   end
   # post hardy
   if $Trainer.numbadges >= 17
@@ -191,11 +202,20 @@ def flareon_mart
   FlareonMartScreen.new(PokemonMartScene.new, prices).pbBuyScreen if stock.size > 0
 end
 
-MapEvent.add_map_event(412) { |map|
-  flarey = MapEvent.basic_npc(31, 38, "crest_shop_route_4", "pkmn_flareon", ["* poof! *", "Welcome to the flareyshop!"],
-                              switch: 2048, script: "flareon_mart", sfx: "136Cry")
-  MapEvent.add_event(map, flarey)
-}
+FLAREY = EventBuilder.new("flarey", 32, 40)
+              .add_page
+                .set_graphic("pkmn_flareon")
+                .set_movement(step_anime: true)
+                .set_switch_1(2048)
+                .event_play_se("136Cry")
+                .event_show_text("* poof! *", "Welcome to the flareyshop!")
+                .event_run_scripts("flareon_mart")
+                .event_show_text("Come back soon! Your moneys are delicious!")
+              .end_page unless defined? FLAREY
+
+MapEvent.add_map_event(412) { |map| MapEvent.add_event(map, FLAREY) }
+
+# 7th street shadow relearn tutor (post-amaria)
 
 def shadow_relearn
   chosen = -1
@@ -251,6 +271,13 @@ end
 
 MapEvent.add_map_event(325) { |map|
   the_weeder = MapEvent.basic_npc(35, 11, "shadow_tutor_7th", "trchar035", ["...", "... Duuuude..."],
-                              switch: 657, script: "shadow_relearn", step_anime: false, dir: 4)
+                              switch: 651, script: "shadow_relearn", step_anime: false, dir: 4)
   MapEvent.add_event(map, the_weeder)
+}
+
+# spinel shop (post-restoration)
+
+MapEvent.add_map_event(241) { |map|
+  map.events[79].pages[0].list[5].parameters = ["setPrice(:ARMORFOSSIL,9800);setPrice(:BLACKAUGURITE,9800)"]
+  map.events[79].pages[0].list[12].parameters = [":ARMORFOSSIL,:BLACKAUGURITE"]
 }

@@ -119,7 +119,7 @@ RemiX.gym(18) {
 
   TrainerModifier.add(:SPIRITM, "Quinn", 0)
                  .set_pkmn(0, :GENGAR, 100, [:LEVITATE, :DOOMSEER], ev: SPASPE)
-                 .set_pkmn(1, :SCEPTILE, 100, [:UNBURDEN, :DOOMSEER], ev: ATKSPE)
+                 .set_pkmn(1, :SCEPTILE, 100, [:UNBURDEN, :DOOMSEER], moves: [:KNOCKOFF, :LEAFBLADE, :SWORDSDANCE, :EARTHQUAKE], nature: :JOLLY, ev: ATKSPE)
                  .set_pkmn(2, :METAGROSS, 100, [:IRONFIST, :DOOMSEER], item: :LIFEORB, moves: [:METEORMASH, :BULLETPUNCH, :PSYCHIC, :THUNDERPUNCH], nature: :BRAVE, ev: ATKSPA)
                  .set_pkmn(3, :DRAGONITE, 100, [:MULTISCALE, :DOOMSEER], ev: HPATK)
                  .set_pkmn(4, :SLOWBRO, 100, [:REGENERATOR, :DOOMSEER], item: :MAGICALSEED, nature: :MODEST, ev: SPASPE)

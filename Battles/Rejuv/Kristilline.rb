@@ -8,7 +8,7 @@ RemiX.chapter(7) {
 
   TrainerModifier.add(:SERVANT, "Mary", 0)
                  .set_pkmn(0, :EISCUE, 50, :ICEFACE, item: :SITRUSBERRY, moves: [:AURORAVEIL, :ICICLECRASH, :LIQUIDATION, :BELLYDRUM], nature: :JOLLY, ev: ATKSPE)
-                 .set_pkmn(1, :SCEPTILE, 50, :UNBURDEN, item: :ELEMENTALSEED, moves: [:LEAFBLADE, :ACROBATICS, :DRAINPUNCH, :DUALCHOP], nature: :ADAMANT, ev: [188, 252, 0, 0, 0, 68])
+                 .set_pkmn(1, :SCEPTILE, 50, :UNBURDEN, item: :ELEMENTALSEED, moves: [:LEAFBLADE, :KNOCKOFF, :DRAINPUNCH, :DUALCHOP], nature: :ADAMANT, ev: [188, 252, 0, 0, 0, 68])
                  .set_pkmn(2, :INTELEON, 50, :SNIPER, item: :ICICLEPLATE, moves: [:SNIPESHOT, :GILDEDARROW, :UTURN, :TEARFULLOOK], nature: :TIMID, ev: SPASPE)
                  .set_pkmn(3, :SANDSLASH, 50, :SLUSHRUSH, item: :LIFEORB, moves: [:IRONHEAD, :ICICLECRASH, :ICESHARD, :SWORDSDANCE], nature: :ADAMANT, ev: ATKSPE, form: 1)
                  .set_pkmn(4, :MRRIME, 50, :ICEBODY, item: :ZAPPLATE, moves: [:BLIZZARD, :THUNDERBOLT, :PSYCHIC, :AURORAVEIL], nature: :TIMID, ev: SPASPE)

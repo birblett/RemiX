@@ -128,7 +128,7 @@ BattleEffects.add(:OpenWounds)
              .register_negative_effect
 
 AbilityBuilder.add(:TURBOJET, "Turbojet", "1.5x speed under weather.", )
-              .battle_speed_mods { |pkmn| next 1.5 unless pkmn.battle.weather.nil? }
+              .battle_speed_mods { |pkmn| next 1.5 if !pkmn.battle.weather.nil? || [:MOUNTAIN, :SNOWYMOUNTAIN].include?(pkmn.battle.FE) }
               .switch_in_score { |_, pkmn| next pkmn.battle.weather.nil? ? -20 : 50 }
               .disrupt_score { next 1.3 }
 

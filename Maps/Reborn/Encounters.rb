@@ -1,5 +1,13 @@
 class EncounterMod
 
+  ([27, 33, 34, 35] + (199..205).map { _1 }).each {
+    self.add(_1)
+        .add(CAVE, :SLUGMA, :DECREASE, 5)
+        .add(CAVE, :SANDYGAST, :ADD, [5, 30, 37])
+        .add_form_override(:SANDYGAST, SANDYGAST_FIERY_AEVIAN)
+
+  }
+
   # azurine island
   self.add(206)
       .add(LANDNIGHT, :PALPITOAD, :DECREASE, 5)
@@ -24,6 +32,26 @@ class EncounterMod
         .add_form_override(:SHROOMISH, SHROOMISH_AEVIAN)
   }
 
+  # ametrine mtn 1-5f
+  [364, 390, 432, 366, 373, 374, 375].each {
+    self.add(_1)
+        .add(CAVE, :CUBCHOO, :DECREASE, 5)
+        .add(CAVE, :SANDYGAST, :ADD, [4, 50, 60])
+        .add(CAVE, :PALOSSAND, :ADD, [1, 60, 70])
+        .add_form_override(:SANDYGAST, SANDYGAST_ICY_AEVIAN)
+        .add_form_override(:PALOSSAND, PALOSSAND_ICY_AEVIAN)
+  }
+
+  # route 3 (cave)
+  [405, 409, 410, 411].each {
+    self.add(_1)
+        .add(CAVE, :GRAVELER, :DECREASE, 5)
+        .add(CAVE, :SANDYGAST, :ADD, [4, 50, 60])
+        .add(CAVE, :PALOSSAND, :ADD, [1, 55, 65])
+        .add_form_override(:SANDYGAST, SANDYGAST_ROCKY_AEVIAN)
+        .add_form_override(:PALOSSAND, PALOSSAND_ROCKY_AEVIAN)
+  }
+
   # route 4
   self.add(412)
       .add(ALL_LAND, :AUDINO, :DECREASE, 5)
@@ -33,6 +61,12 @@ class EncounterMod
       .add(ALL_LAND, :FLAAFFY, :ADD, [3, 55, 60])
       .add_form_override(:MAREEP, MAREEP_AEVIAN)
       .add_form_override(:FLAAFFY, FLAAFFY_AEVIAN)
+
+  # route 3 (murina room)
+  self.add(438)
+      .add(CAVE, :SIGILYPH, :ADD, [100, 1, 100])
+      .add_form_override(:SIGILYPH, SIGILYPH_AEVIAN)
+      .add(DENSITY, CAVE, 10)
 
   # ametrine
   self.add(439)
@@ -93,6 +127,10 @@ class EncounterMod
         .add(CAVE, :LAPRAS, :ADD, [1, 90, 100])
         .add_form_override(:LAPRAS, LAPRAS_AEVIAN)
   }
+
+  # route 4 (snivy nest)
+  self.add(716)
+      .add_form_override(:BASCULIN, BASCULIN_WHITE_STRIPED)
 
 end
 

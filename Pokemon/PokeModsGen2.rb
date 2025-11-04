@@ -122,7 +122,9 @@ PokeModifier.add(:AMPHAROS, "Mega")
 # BELLOSSOM
 PokeModifier.add(:BELLOSSOM)
             .stat(:SPE, 60)
-            .ability(2, :DROUGHT)
+            .type2(:FAIRY)
+            .abilities({ 1 => nil, 2 => nil })
+            .set_aaa(1)
             .set_pokebilities(1)
 
 # SUDOWOODO

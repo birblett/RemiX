@@ -21,9 +21,9 @@ THROH_CREST = CrestBuilder.add(:THROH, "Throwing moves reduce attack and defense
             .role_provider { :PHAZER }
             .sym
 
-SAWK_CREST = CrestBuilder.add(:SAWK, "Grants Dazzling and Tinted Lens, boosts speed.")
-            .ability_provider { [:DAZZLING, :TINTEDLENS] }
-            .battle_stat_mods { |_, bs| bs[5].mul(1.2) }
+SAWK_CREST = CrestBuilder.add(:SAWK, "Grants Scrappy and boosts speed.")
+            .ability_provider { :SCRAPPY }
+            .battle_stat_mods { |_, bs| bs[5].mul(1.15) }
             .sym
 
 KROOKODILE_CREST = CrestBuilder.add(:KROOKODILE, "Attacks change secondary type; grants Open Wounds.")
@@ -33,10 +33,10 @@ KROOKODILE_CREST = CrestBuilder.add(:KROOKODILE, "Attacks change secondary type;
             .sym
 
 SWANNA_CREST = CrestBuilder.add(:SWANNA, "+Rain Dish; take less, deal more damage in the rain.")
-            .damage_mod { |attacker, _, _, _, _| next 1.3 if attacker.battle.weather == :RAINDANCE }
-            .damage_taken_mod { |target, _, _, _, _| next 0.8 if target.battle.weather == :RAINDANCE }
+            .damage_mod { |attacker, _, _, _, _| next 1.3 if attacker.battle.weather == :RAINDANCE || [:WATERSURFACE, :UNDERWATER].include?(attacker.battle.FE) }
+            .damage_taken_mod { |target, _, _, _, _| next 0.8 if target.battle.weather == :RAINDANCE || [:WATERSURFACE, :UNDERWATER].include?(target.battle.FE) }
             .ability_provider { :RAINDISH }
-            .switch_in_score { |_, pkmn| next 40 if pkmn.battle.weather == :RAINDANCE }
+            .switch_in_score { |_, pkmn| next 40 if pkmn.battle.weather == :RAINDANCE || [:WATERSURFACE, :UNDERWATER].include?(attacker.battle.FE) }
             .sym
 
 EMOLGA_CREST = CrestBuilder.add(:EMOLGA, "Turns into a Kilowattrel.")
