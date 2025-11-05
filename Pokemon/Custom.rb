@@ -1,3 +1,11 @@
+# mega magikarp
+
+PokeModifier.add_form(:MAGIKARP, "Mega Form")
+            .type1(:WATER).type2(:DRAGON)
+            .abilities({ 0 => :DRAGONFORCE, 1 => nil, 2 => :DRAGONFORCE })
+            .stats(100, 120, 80, 20, 200, 120)
+            .asset_override(asset: "RemiX/Assets/gigakarp.png")
+
 # ursaluna blood moon
 URSALUNA_BLOOD_MOON = PokeModifier.add_form(:URSALUNA, "Blood Moon")
             .abilities({ 0 => :SCRAPPY, 1 => :KEENEYE, 2 => :SCRAPPY})

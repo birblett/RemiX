@@ -72,9 +72,9 @@ end
 
 def sylveon_mart
   prices = {
-    :CATALYZER => 4000,
+    CATALYZER => 4000,
     :ANCIENTTEACH => 4000,
-    :AAA_CAPSULE => 4000,
+    ACTUATION_PILL => 4000,
     SIMISAGE_CREST => 5000,
     SIMISEAR_CREST => 5000,
     SIMIPOUR_CREST => 5000,
@@ -150,9 +150,9 @@ end
 
 def flareon_mart
   prices = {
-    :CATALYZER => 4000,
+    CATALYZER => 4000,
     :ANCIENTTEACH => 4000,
-    :AAA_CAPSULE => 4000,
+    ACTUATION_PILL => 4000,
     LUXRAY_CREST => 8000,
     HITMONTOP_CREST => 11000,
     HITMONLEE_CREST => 11000,
