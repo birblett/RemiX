@@ -32,6 +32,19 @@ AbilityBuilder.add(:OVERCLOCKING, "Overclocking", "Boosts damage but wears off o
               .damage_mod { |attacker, _, _, _, _| next attacker.effects[:Overclocking] }
               .on_turn_end { |pkmn| pkmn.effects[:Overclocking] -= 0.1 if pkmn.effects[:Overclocking] > 0.9 }
 
+AbilityBuilder.add(:SHELLSHOCK, "Shell Shock", "+1 def on entry, lost when damaged; 1.2x damage without a def boost.")
+              .on_battle_entry do |pkmn, _, _|
+                pkmn.pbIncreaseStat(PBStats::DEFENSE, 1)
+                pkmn.effects[:ShellShock] = true
+              end
+              .on_damage_taken do |defender, _, _, damage|
+                if damage > 0 && defender.effects[:ShellShock]
+                  defender.pbReduceStat(PBStats::DEFENSE, 1) if defender.pbCanReduceStatStage?(PBStats::DEFENSE, false, true)
+                  pkmn.effects[:ShellShock] = nil
+                end
+              end
+              .damage_mod { |pkmn, _, _, _, _| next 1.2 if pkmn.stages[PBStats::DEFENSE] <= 0 }
+
 AbilityBuilder.add(:DRAGONFORCE, "Dragonforce", "...")
               .on_move_attempt { |pkmn, move| UniLib.display_if_visible(pkmn.battle, _INTL("{1} is ascending!", pkmn.pbThis, (pkmn.type2 = move.type).capitalize)) if move.move == :DRAGONASCENT and pkmn.type2 != :FLYING }
               .damage_mod { |pkmn, _, move, _, ai| next 1.5 if ai and move.move == :DRAGONASCENT and pkmn.type2 != :FLYING }

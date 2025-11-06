@@ -196,9 +196,21 @@ UniLib.category("Bastiodon Crest, Sugiline Cave") {
 
 }
 
+UniLib.category("Ampharos Crest, Ametrine Icium-Z Room") {
+
+  MapEvent.add_map_event(379) { |map| MapEvent.add_overworld_item(map, 23, 23, "Item", AMPHAROS_CREST, :AmpharosCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
 UniLib.category("Darmanitan Crest, Teknite Outer Rock Climb") {
 
   MapEvent.add_map_event(646) { |map| MapEvent.add_overworld_item(map, 21, 6, "Item", DARMANITAN_CREST, :DarmanitanCrest, "itemball", graphic: { character_hue: 310 }) }
+
+}
+
+UniLib.category("Silvally Crest, Route 4 Rock Climb") {
+
+  MapEvent.add_map_event(710) { |map| MapEvent.add_overworld_item(map, 17, 14, "Item", SILVALLY_CREST, :SilvallyCrest, "itemball", graphic: { character_hue: 310 }) }
 
 }
 

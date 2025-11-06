@@ -89,6 +89,7 @@ def sylveon_mart
   end
   # post ciel
   if $Trainer.numbadges >= 13
+    prices[PALOSSAND_CREST] = 14000
     prices[HARIYAMA_CREST] = 14000
     prices[SAWK_CREST] = 14000
     prices[THROH_CREST] = 14000

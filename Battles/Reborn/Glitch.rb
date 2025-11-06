@@ -11,7 +11,7 @@ RemiX.gym(10) {
                  .set_pkmn(1, :SEADRA, 79, :SNIPER)
 
   TrainerModifier.add(:GLITCH1, "C", 0)
-                 .set_pkmn(0, :OMANYTE, 79, :MINERALIZE, moves: [:SHELLSMASH, :HYDROPUMP, :BLIZZARD, :RETURN], happiness: 255)
+                 .set_pkmn(0, :OMANYTE, 79, :SHELLSHOCK, moves: [:HIDDENPOWER, :HYDROPUMP, :BLIZZARD, :RETURN], hptype: :GRASS, happiness: 255)
                  .set_pkmn(1, :FARFETCHD, 79, :SNIPER, item: :STICK, moves: [:BRAVEBIRD, :FIRSTIMPRESSION, :SWORDSDANCE, :SLASH])
 
   TrainerModifier.add(:GLITCH2, "7g", 0)

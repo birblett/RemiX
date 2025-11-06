@@ -92,6 +92,7 @@ PokeModifier.add(:PICHU)
 
 # TOGETIC
 PokeModifier.add(:TOGETIC)
+            .stats([80, 0, 0, 0, 0, 0])
             .level_moves([[45, :MOONBLAST]])
 
 # XATU

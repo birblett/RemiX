@@ -2,7 +2,7 @@ RemiX.gym(16) {
 
   TrainerModifier.add(:GUITARIST, "Alistair", 0)
                  .set_pkmn(0, :LUNATONE, 90, :LEVITATE, ev: HPSPA)
-                 .set_pkmn(1, :CARRACOSTA, 90, :SWIFTSWIM, item: :CATALYZER, moves: [:EARTHQUAKE, :LIQUIDATION, :ROCKSLIDE, :SHELLSMASH], ev: ATKSPE)
+                 .set_pkmn(1, :RAMPARDOS, 90, :SHEERFORCE, item: :LIFEORB, moves: [:CRUNCH, :KNOCKOFF, :ROCKSLIDE, :THUNDERPUNCH])
                  .set_pkmn(2, :ARMALDO, 90, :SWIFTSWIM, ev: ATKSPE)
 
   TrainerModifier.add(:GUITARIST, "Xavier", 0)

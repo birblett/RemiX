@@ -186,11 +186,4 @@ PokeModifier.add(:ARCTOVISH)
 PokeModifier.add(:DURALUDON)
             .abilities({ 2 => :STAMINA })
 
-# URSALUNA-BLOOD MOON
-PokeModifier.add(:URSALUNA, "Blood Moon")
-            .abilities({ 0 => :SCRAPPY, 2 => :KEENEYE })
-            .set_pokebilities(1)
-
-
-
 end

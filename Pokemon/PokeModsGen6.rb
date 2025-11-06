@@ -160,9 +160,26 @@ PokeModifier.add(:TYRUNT)
 PokeModifier.add(:TYRANTRUM)
             .abilities({ 1 => :ROCKHEAD, 2 => :OVERBITE })
 
+# AMAURA
+PokeModifier.add(:AMAURA)
+            .type1(:ICE)
+            .type2(:DRAGON)
+            .abilities({ 1 => :SAURIC })
+            .level_moves([[10, :DRAGONBREATH], [40, :TRIATTACK], [55, :DRAGONPULSE]])
+            .compatible_moves([:NATUREPOWER, :DRACOMETEOR])
+            .remove_level_moves([:NATUREPOWER, :ROCKTHROW])
+            .remove_compat_egg_moves([:ROCKBLAST, :ROCKSLIDE, :ROCKTOMB, :SANDSTORM, :STONEEDGE])
+
 # AURORUS
 PokeModifier.add(:AURORUS)
-            .stats([0, 60, 0, 0, 0, 74])
+            .stats([0, 80, 0, 0, 0, 55])
+            .type1(:ICE)
+            .type2(:DRAGON)
+            .abilities({ 1 => :SAURIC })
+            .level_moves([[10, :DRAGONBREATH], [40, :TRIATTACK], [55, :DRAGONPULSE]])
+            .compatible_moves([:NATUREPOWER, :DRACOMETEOR])
+            .remove_level_moves([:NATUREPOWER, :ROCKTHROW])
+            .remove_compat_egg_moves([:ROCKBLAST, :ROCKSLIDE, :ROCKTOMB, :SANDSTORM, :STONEEDGE])
 
 # SYLVEON
 PokeModifier.add(:SYLVEON)

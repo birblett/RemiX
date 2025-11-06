@@ -448,7 +448,7 @@ RemiX.meteor {
 
     TrainerModifier.add(:MeteorAceF, "Hilda", 0)
                    .set_pkmn(0, :DRUDDIGON, 75, :ROUGHSKIN)
-                   .set_pkmn(1, :CARRACOSTA, 75, :STURDY, item: :CATALYZER, moves: [:EARTHQUAKE, :WATERFALL, :SHELLSMASH, :BLIZZARD])
+                   .set_pkmn(1, :CARRACOSTA, 75, :STURDY, item: :CATALYZER, moves: [:GYROBALL, :SCALD, :CURSE, :ICEBEAM])
                    .set_pkmn(2, :CROBAT, 75, :AIRLOCK)
                    .set_pkmn(3, :CHESNAUGHT, 75, :BULLETPROOF)
                    .set_pkmn(4, :WATCHOG, 76, :ANALYTIC, item: WATCHOG_CREST, moves: [:FRUSTRATION, :KNOCKOFF, :LOWKICK, :ICEPUNCH], happiness: 0)
@@ -991,7 +991,7 @@ RemiX.meteor {
     TrainerModifier.add(:OrderlyF, "Callie", 0)
                    .set_pkmn(0, :DUGTRIO, 39, :NEUROFORCE, moves: [:FLASHCANNON, :EARTHPOWER, :HIDDENPOWER, :STEALTHROCK], hptype: :ELECTRIC)
                    .set_pkmn(1, :CRAWDAUNT, 39, :ADAPTABILITY)
-                   .set_pkmn(2, :HYPNO, 39, :INSOMNIA, item: HYPNO_CREST)
+                   .set_pkmn(2, :HYPNO, 39, :INSOMNIA)
 
     TrainerModifier.add(:NWOrderlyF, "Callie", 0)
                    .set_pkmn(0, :DUGTRIO, 80, :NEUROFORCE, item: :FOCUSSASH, moves: [:EARTHPOWER, :FLASHCANNON, :HIDDENPOWER, :STEALTHROCK], hptype: :ELECTRIC, form: 1)
@@ -1026,7 +1026,7 @@ RemiX.meteor {
     TrainerModifier.add(:OrderlyF, "Christina", 0)
                    .set_pkmn(0, :ELGYEM, 39, :TELEPATHY)
                    .set_pkmn(1, :EELEKTRIK, 39, :LEVITATE)
-                   .set_pkmn(2, :CRYOGONAL, 39, :LEVITATE, item: CRYOGONAL_CREST)
+                   .set_pkmn(2, :CRYOGONAL, 39, :LEVITATE)
 
     TrainerModifier.add(:NWOrderlyF, "Christina", 0)
                    .set_pkmn(0, :BEHEEYEM, 91, :TELEPATHY, item: :CHOICESPECS)
@@ -1041,7 +1041,7 @@ RemiX.meteor {
 
     TrainerModifier.add(:OrderlyF, "Danielle", 0)
                    .set_pkmn(0, :PRINPLUP, 39, :TORRENT)
-                   .set_pkmn(1, :PROBOPASS, 39, :STURDY, item: PROBOPASS_CREST)
+                   .set_pkmn(1, :PROBOPASS, 39, :STURDY)
                    .set_pkmn(2, :EMPOLEON, 39, :TORRENT)
 
     TrainerModifier.add(:NWOrderlyF, "Danielle", 0)
@@ -1122,7 +1122,7 @@ RemiX.meteor {
     TrainerModifier.add(:Orderly, "Matt", 0)
                    .set_pkmn(0, :KLANG, 39, :OVERCLOCKING)
                    .set_pkmn(1, :HYPNO, 39, :INSOMNIA)
-                   .set_pkmn(2, :CLAYDOL, 39, :LEVITATE, item: CLAYDOL_CREST)
+                   .set_pkmn(2, :CLAYDOL, 39, :LEVITATE)
 
   }
 

@@ -179,13 +179,17 @@ PokeModifier.add(:MINUN)
 
 # VOLBEAT
 PokeModifier.add(:VOLBEAT)
-            .abilities({ 0 => :ILLUMINATE })
-            .set_camo
-            .level_moves([[25, :SLASH], [36, :RETURN], [44, :SWORDSDANCE]])
+            .stats([0, 83, 0, 0, 0, 0])
+            .type2(:FAIRY)
+            .abilities({ 0 => :ILLUMINATE, 1 => :PIXILATE })
+            .level_moves([[44, :SWORDSDANCE]])
             .compatible_moves([:KNOCKOFF])
 
 # ILLUMISE
 PokeModifier.add(:ILLUMISE)
+            .stats([0, 0, 0, 83, 0, 0])
+            .type2(:PSYCHIC)
+            .level_moves([[7, :CONFUSION], [24, :PSYSHOCK], [38, :PSYCHIC]])
             .compatible_moves([:REFLECT])
 
 # ROSELIA
@@ -279,14 +283,18 @@ PokeModifier.add(:CACTURNE)
 
 # SWABLU
 PokeModifier.add(:SWABLU)
+            .stats([0, 0, 50, 50, 0, 0])
             .type1(:DRAGON)
             .abilities({ 1 => :FLUFFY })
+            .egg_moves([:PLAYROUGH])
 
 # ALTARIA
 PokeModifier.add(:ALTARIA)
             .stats([0, 0, 80, 80, 0, 0])
+            .type2(:FAIRY)
             .abilities({ 1 => :FLUFFY })
-            .level_moves([[55, :TAKEHEART]])
+            .level_moves([[43, :DAZZLINGGLEAM]])
+            .remove_level_moves([:PECK, :PLUCK, :SKYATTACK])
 
 # LUNATONE
 PokeModifier.add(:LUNATONE)

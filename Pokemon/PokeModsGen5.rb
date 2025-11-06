@@ -43,7 +43,7 @@ PokeModifier.add(:SAMUROTT)
 
 # WATCHOG
 PokeModifier.add(:WATCHOG)
-            .stats([70, 130, 65, 0, 65, 55])
+            .stats([90, 110, 65, 0, 65, 55])
             .abilities({ 0 => :ILLUMINATE })
 
 # HERDIER
@@ -275,12 +275,19 @@ PokeModifier.add(:COFAGRIGUS)
 
 # TIRTOUGA
 PokeModifier.add(:TIRTOUGA)
-            .set_camo(1)
+            .abilities({ 2 => :SHELLARMOR })
+            .set_pokebilities(1)
+            .remove_level_moves([:SHELLSMASH])
 
 # CARRACOSTA
 PokeModifier.add(:CARRACOSTA)
-            .stats([0, 0, 0, 98, 0, 0])
-            .set_camo(1)
+            .stats([0, 0, 0, 108, 0, 22])
+            .type2(:STEEL)
+            .abilities({ 2 => :SHELLARMOR })
+            .set_pokebilities(1)
+            .level_moves([[0, :IRONHEAD], [31, :HEAVYSLAM], [45, :GYROBALL]])
+            .compatible_moves([:FLASHCANNON])
+            .remove_level_moves([:SMACKDOWN, :ROCKSLIDE, :SHELLSMASH])
 
 # ARCHEN
 PokeModifier.add(:ARCHEN)

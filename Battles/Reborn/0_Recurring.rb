@@ -120,10 +120,10 @@ UniLib.category("Shade") {
   TrainerModifier.add(:SHADE, "Shade", 0)
                  .set_pkmn(0, :GENGAR, 40, :LEVITATE, item: :WIDELENS, moves: [:HYPNOSIS, :DREAMEATER, :SHADOWBALL, :THUNDERBOLT], nature: :TIMID, ev: SPASPE)
                  .set_pkmn(1, :DHELMISE, 41, :STEELWORKER, item: :IRONPLATE, moves: [:BRICKBREAK, :GYROBALL, :ANCHORSHOT, :SHADOWCLAW], ev: HPATK, iv: 32)
-                 .set_pkmn(2, :ROTOM, 41, :LEVITATE, item: ROTOM_CREST, moves: [:PAINSPLIT, :CONFUSERAY, :SHADOWBALL, :DISCHARGE], nature: :TIMID, ev: SPASPE)
+                 .set_pkmn(2, :ROTOM, 41, :LEVITATE, item: ROTOM_CREST, moves: [:PAINSPLIT, :CONFUSERAY, :SHADOWBALL, :DISCHARGE], nature: :MODEST, ev: SPASPE)
                  .set_pkmn(3, :ZOROARK, 41, :ILLUSION, item: :LIFEORB, moves: [:SHADOWBALL, :HYPERVOICE, :FLAMETHROWER, :UTURN], form: ZOROARK_HISUIAN, nature: :TIMID, ev: SPASPE)
                  .set_pkmn(4, :DOUBLADE, 41, :NOGUARD, item: :EVIOLITE, moves: [:GYROBALL, :SHADOWSNEAK, :BRICKBREAK, :SWORDSDANCE], ev: HPATK, iv: 32)
-                 .set_pkmn(5, :MIMIKYU, 42, :DISGUISE, item: :LIFEORB, moves: [:SHADOWSNEAK, :SWORDSDANCE, :SHADOWCLAW, :PLAYROUGH], ev: ATKSPE)
+                 .set_pkmn(5, :MIMIKYU, 42, :DISGUISE, item: :SYNTHETICSEED, moves: [:SHADOWSNEAK, :SWORDSDANCE, :SHADOWCLAW, :PLAYROUGH], nature: :ADAMANT, ev: ATKSPE)
 
 }
 
@@ -543,7 +543,7 @@ UniLib.category("Zero") {
 
   # devon
   TrainerModifier.add(:ZEL, "ZEL", 4)
-                 .set_pkmn(0, :AURORUS, 74, :SNOWWARNING, item: :FOCUSSASH, moves: [:FLASHCANNON, :STEALTHROCK, :BLIZZARD, :THUNDERBOLT], ev: HPSPA)
+                 .set_pkmn(0, :AURORUS, 74, :SNOWWARNING, item: :FOCUSSASH, moves: [:DRAGONPULSE, :STEALTHROCK, :BLIZZARD, :THUNDERBOLT], ev: HPSPA)
                  .set_pkmn(1, :GLACEON, 83, :NOGUARD, item: :CHOICESCARF, moves: [:BLIZZARD, :FOCUSBLAST, :SHADOWBALL, :SIGNALBEAM], ev: SPASPE)
                  .set_pkmn(2, :ALAKAZAM, 81, :MAGICGUARD, item: :LIFEORB, ev: SPASPE)
                  .set_pkmn(3, :ESPEON, 83, :SPOOKYSEASON, item: :SYNTHETICSEED, moves: [:HYPERVOICE, :LIGHTSCREEN, :REFLECT, :PSYSHOCK], nature: :TIMID, ev: SPASPE)

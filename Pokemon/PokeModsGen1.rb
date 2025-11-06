@@ -647,12 +647,21 @@ PokeModifier.add(:PORYGON)
 
 # OMANYTE
 PokeModifier.add(:OMANYTE)
-            .abilities({ 2 => :MINERALIZE })
+            .stats([0, 0, 0, 0, 45, 50])
+            .type1(:GROUND)
+            .abilities({ 0 => :SHELLSHOCK })
+            .level_moves([[19, :MUDBOMB], [56, :EARTHPOWER]])
+            .compatible_moves([:CALMMIND])
+            .remove_level_moves([:LEER, :SHELLSMASH, :ROCKBLAST])
 
 # OMASTAR
 PokeModifier.add(:OMASTAR)
-            .stats([75, 0, 135, 0, 0, 0])
-            .abilities({ 2 => :MINERALIZE })
+            .stats([80, 0, 0, 0, 60, 70])
+            .type1(:GROUND)
+            .abilities({ 0 => :SHELLSHOCK })
+            .level_moves([[19, :MUDBOMB], [56, :EARTHPOWER]])
+            .compatible_moves([:CALMMIND])
+            .remove_level_moves([:LEER, :SHELLSMASH, :ROCKBLAST])
 
 # KABUTO
 PokeModifier.add(:KABUTO)
@@ -660,7 +669,6 @@ PokeModifier.add(:KABUTO)
 
 # KABUTOPS
 PokeModifier.add(:KABUTOPS)
-            .stats([0, 0, 120, 0, 0, 0])
             .abilities({ 2 => :LIQUEFACTION })
 
 # AERODACTYL
@@ -679,9 +687,21 @@ PokeModifier.add(:ZAPDOS)
 PokeModifier.add(:MOLTRES)
             .abilities({ 1 => :MAGICGUARD })
 
+# DRATINI
+PokeModifier.add(:DRATINI)
+            .level_moves([[47, :DRAGONCLAW]])
+            .remove_level_moves([:DRAGONRUSH])
+
+# DRAGONAIR
+PokeModifier.add(:DRAGONAIR)
+            .level_moves([[47, :DRAGONCLAW]])
+            .remove_level_moves([:DRAGONRUSH])
+
 # DRAGONITE
 PokeModifier.add(:DRAGONITE)
-            .stats([95, 120, 0, 110, 0, 0])
+            .abilities({ 1 => :THICKFAT })
+            .level_moves([[47, :DRAGONCLAW]])
+            .remove_level_moves([:DRAGONRUSH])
 
 # MEW
 PokeModifier.add(:MEW)

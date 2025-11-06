@@ -100,9 +100,18 @@ PokeModifier.add(:ROSERADE)
 PokeModifier.add(:ROSERADE, "Aevian Form")
             .set_pokebilities
 
+# CRANIDOS
+PokeModifier.add(:CRANIDOS)
+            .type2(:DARK)
+            .level_moves([[21, :BITE], [32, :CRUNCH]])
+            .compatible_moves([:KNOCKOFF])
+
 # RAMPARDOS
 PokeModifier.add(:RAMPARDOS)
             .stats([0, 0, 70, 0, 55, 0])
+            .type2(:DARK)
+            .level_moves([[21, :BITE], [32, :CRUNCH]])
+            .compatible_moves([:KNOCKOFF])
 
 # BASTIODON
 PokeModifier.add(:BASTIODON)
@@ -342,6 +351,7 @@ PokeModifier.add(:MAGMORTAR)
 
 # TOGEKISS
 PokeModifier.add(:TOGEKISS)
+            .stats([90, 45, 0, 125, 110, 90])
             .level_moves([[30, :GILDEDARROW], [40, :MOONBLAST], [50, :GILDEDHELIX]])
 
 # LEAFEON
