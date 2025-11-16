@@ -217,7 +217,6 @@ PokeModifier.add(:WAILORD)
             .stats([160, 0, 70, 0, 70, 40])
             .type2(:DARK)
             .set_aaa
-            .set_stab(1)
             .level_moves([[23, :RAPIDSPIN], [35, :GYROBALL], [40, :DARKESTLARIAT], [55, :SUCKERPUNCH]])
 
 # NUMEL
@@ -290,7 +289,7 @@ PokeModifier.add(:SWABLU)
 
 # ALTARIA
 PokeModifier.add(:ALTARIA)
-            .stats([0, 0, 80, 80, 0, 0])
+            .stats([0, 71, 55, 95, 0, 89])
             .type2(:FAIRY)
             .abilities({ 1 => :FLUFFY })
             .level_moves([[43, :DAZZLINGGLEAM]])
@@ -455,3 +454,4 @@ PokeModifier.add(:RAYQUAZA, "Mega Form")
 # JIRACHI
 PokeModifier.add(:JIRACHI)
             .abilities({ 2 => :DOOMSEER })
+            .set_stab(1)

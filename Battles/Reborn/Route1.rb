@@ -11,7 +11,7 @@ RemiX.gym(7) {
                  .set_pkmn(0, :FLAREON, 60, :FLASHFIRE, item: :GANLONBERRY, moves: [:NATURALGIFT, :LASTRESORT, nil, nil])
                  .set_pkmn(1, :FLAREON, 60, :FLASHFIRE, item: :BELUEBERRY, moves: [:NATURALGIFT, :SUPERPOWER, :FLAREBLITZ, :IRONTAIL])
                  .set_pkmn(2, :FLAREON, 61, :GUTS, item: :TOXICORB, moves: [:PROTECT, :SUPERPOWER, :FLAREBLITZ, :FACADE], ev: HPATK)
-                 .set_pkmn(3, :FLAREON, 61, :MAGICGUARD, item: :LEFTOVERS, moves: [:CURSE, :DOUBLEEDGE, :FLAREBLITZ, :PROTECT], ev: HPSPD)
+                 .set_pkmn(3, :FLAREON, 61, :GUTS, item: :LEFTOVERS, moves: [:CURSE, :DOUBLEEDGE, :FLAREBLITZ, :PROTECT], ev: HPSPD)
 
   TrainerModifier.add(:HIKER, "Rufus", 0)
                  .set_pkmn(0, :EXPLOUD, 59, :PUNKROCK, item: :CATALYZER, moves: [:BOOMBURST, :SHADOWBALL, :FLAMETHROWER, :ICEBEAM])

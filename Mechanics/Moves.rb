@@ -22,6 +22,10 @@ UniLib.replace_in_method(:PokeBattle_Move_05B, :pbEffect, target,
 
 UniLib.insert_in_method(:PokeBattle_Move_20C, :pbType, :HEAD, "return attacker.type2.nil? ? attacker.type1 : attacker.type2") if Rejuv
 
+# splintered stormshards sets rocky field (reborn)
+
+UniLib.replace_in_method(:PokeBattle_Move_807, :pbEffect, "@battle.breakField", "@battle.setField(:ROCKY,3)")
+
 # categories
 
 PBStuff::STABBINGMOVE |= [:ICICLESPEAR]

@@ -122,10 +122,12 @@ PokeModifier.add(:RATICATE, "Alolan Form")
 # SPEAROW
 PokeModifier.add(:SPEAROW)
             .type1(:GROUND)
+            .set_stab
 
 # FEAROW
 PokeModifier.add(:FEAROW)
             .type1(:GROUND)
+            .set_stab
 
 # EKANS
 PokeModifier.add(:EKANS)
@@ -227,17 +229,14 @@ PokeModifier.add(:GOLBAT)
 # ODDISH
 PokeModifier.add(:ODDISH)
             .set_aaa(1)
-            .set_stab(1)
 
 # GLOOM
 PokeModifier.add(:GLOOM)
             .set_aaa(1)
-            .set_stab(1)
 
 # VILEPLUME
 PokeModifier.add(:VILEPLUME)
             .set_aaa(1)
-            .set_stab(1)
 
 # PARAS
 PokeModifier.add(:PARAS)
@@ -317,6 +316,9 @@ PokeModifier.add(:GROWLITHE)
             .set_camo(1)
             .set_pokebilities(1)
 
+# GROWLITHE-HISUI
+PokeModifier.add(:GROWLITHE, "Hisuian Form")
+            .egg_moves([:HEADSMASH])
 # ARCANINE
 PokeModifier.add(:ARCANINE)
             .abilities({ 1 => :RECKLESS })
@@ -691,17 +693,20 @@ PokeModifier.add(:MOLTRES)
 PokeModifier.add(:DRATINI)
             .level_moves([[47, :DRAGONCLAW]])
             .remove_level_moves([:DRAGONRUSH])
+            .remove_compat_egg_moves([:DRAGONCLAW])
 
 # DRAGONAIR
 PokeModifier.add(:DRAGONAIR)
             .level_moves([[47, :DRAGONCLAW]])
             .remove_level_moves([:DRAGONRUSH])
+            .remove_compat_egg_moves([:DRAGONCLAW])
 
 # DRAGONITE
 PokeModifier.add(:DRAGONITE)
             .abilities({ 1 => :THICKFAT })
             .level_moves([[47, :DRAGONCLAW]])
             .remove_level_moves([:DRAGONRUSH])
+            .remove_compat_egg_moves([:DRAGONCLAW])
 
 # MEW
 PokeModifier.add(:MEW)

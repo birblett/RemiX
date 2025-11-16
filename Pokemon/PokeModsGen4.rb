@@ -162,9 +162,14 @@ PokeModifier.add(:CHERRIM, "Sunshine")
 PokeModifier.add(:SHELLOS, "East Aevian Form")
             .stats([48, 34, 0, 76, 0, 57])
 
+# GASTRODON-AEVIUM-W
+PokeModifier.add(:GASTRODON, "West Aevian Form")
+            .level_moves([[39, :EARTHPOWER]])
+
 # GASTRODON-AEVIUM-E
 PokeModifier.add(:GASTRODON, "East Aevian Form")
             .stats([83, 39, 0, 118, 0, 92])
+            .level_moves([[39, :EARTHPOWER]])
 
 # AMBIPOM
 PokeModifier.add(:AMBIPOM)
@@ -210,6 +215,14 @@ PokeModifier.add(:PURUGLY)
 # CHINGLING
 PokeModifier.add(:CHINGLING)
             .set_plates([:IRONPLATE])
+
+# STUNKY
+PokeModifier.add(:STUNKY)
+            .set_stab(1)
+
+# SKUNTANK
+PokeModifier.add(:SKUNTANK)
+            .set_stab(1)
 
 # BRONZOR
 PokeModifier.add(:BRONZOR)
@@ -351,8 +364,8 @@ PokeModifier.add(:MAGMORTAR)
 
 # TOGEKISS
 PokeModifier.add(:TOGEKISS)
-            .stats([90, 45, 0, 125, 110, 90])
-            .level_moves([[30, :GILDEDARROW], [40, :MOONBLAST], [50, :GILDEDHELIX]])
+            .stats([100, 45, 0, 110, 110, 90])
+            .level_moves([[30, :GILDEDARROW], [40, :MOONBLAST], [80, :GILDEDHELIX]])
 
 # LEAFEON
 PokeModifier.add(:LEAFEON)

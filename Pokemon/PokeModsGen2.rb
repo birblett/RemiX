@@ -1,18 +1,21 @@
 # CHIKORITA
 PokeModifier.add(:CHIKORITA)
             .abilities({ 1 => :LEAFGUARD, 2 => :WONDERSKIN })
+            .set_stab
             .level_moves([[6, :FAIRYWIND], [12, :SWEETKISS], [21, :DRAININGKISS]])
 
 # BAYLEEF
 PokeModifier.add(:BAYLEEF)
             .type2(:FAIRY)
             .abilities({ 1 => :LEAFGUARD, 2 => :WONDERSKIN })
+            .set_stab
             .level_moves([[6, :FAIRYWIND], [12, :SWEETKISS], [21, :DRAININGKISS], [30, :DAZZLINGGLEAM], [40, :MOONBLAST]])
 
 # MEGANIUM
 PokeModifier.add(:MEGANIUM)
             .type2(:FAIRY)
             .abilities({ 1 => :LEAFGUARD, 2 => :WONDERSKIN })
+            .set_stab
             .level_moves([[6, :FAIRYWIND], [12, :SWEETKISS], [21, :DRAININGKISS], [30, :DAZZLINGGLEAM], [40, :MOONBLAST]])
 
 # CYNDAQUIL
@@ -54,7 +57,6 @@ PokeModifier.add(:FERALIGATR)
 # FURRET
 PokeModifier.add(:FURRET)
             .set_aaa
-            .set_stab(1)
 
 # HOOTHOOT
 PokeModifier.add(:HOOTHOOT)
@@ -69,9 +71,14 @@ PokeModifier.add(:NOCTOWL)
             .type2(nil)
             .level_moves([[5, :GUST], [10, :AIRCUTTER]])
 
+# LEDIAN
+PokeModifier.add(:LEDIAN)
+            .set_stab(1)
+
 # ARIADOS
 PokeModifier.add(:ARIADOS)
             .stats([0, 0, 0, 0, 0, 55])
+            .set_stab(1)
 
 # CROBAT
 PokeModifier.add(:CROBAT)
@@ -130,7 +137,6 @@ PokeModifier.add(:BELLOSSOM)
             .stats([0, 0, 0, 0, 0, 60])
             .type2(:FAIRY)
             .abilities({ 2 => nil })
-            .set_aaa(1)
             .set_stab(1)
             .set_pokebilities(1)
 
@@ -285,7 +291,6 @@ PokeModifier.add(:PILOSWINE)
 # CORSOLA
 PokeModifier.add(:CORSOLA)
             .set_aaa
-            .set_stab(1)
 
 # OCTILLERY
 PokeModifier.add(:OCTILLERY)

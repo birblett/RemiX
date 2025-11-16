@@ -228,14 +228,17 @@ PokeModifier.add(:LILLIGANT)
 
 # BASCULIN-RS
 PokeModifier.add(:BASCULIN, "Red-Striped")
+            .set_stab
             .level_moves([[1, :WAVECRASH]])
 
 # BASCULIN-WS
 PokeModifier.add(:BASCULIN, "White-Striped")
+            .set_stab
             .level_moves([[1, :WAVECRASH]])
 
 # BASCULIN-BS
 PokeModifier.add(:BASCULIN, "Blue-Striped")
+            .set_stab
             .level_moves([[1, :WAVECRASH]])
 
 # MARACTUS
@@ -340,6 +343,14 @@ PokeModifier.add(:VANILLUXE)
             .type2(:FAIRY)
             .abilities({ 2 => :TINTEDLENS })
             .level_moves([[0, :FAIRYWIND], [36, :PLAYROUGH], [45, :DAZZLINGGLEAM], [56, :MOONBLAST]])
+
+# DEERLING
+PokeModifier.add(:DEERLING)
+            .set_stab
+
+# SAWSBUCK
+PokeModifier.add(:SAWSBUCK)
+            .set_stab
 
 # ESCAVALIER
 PokeModifier.add(:ESCAVALIER)
@@ -504,7 +515,6 @@ PokeModifier.add(:BRAVIARY, "Hisuian Form")
 PokeModifier.add(:HEATMOR)
             .stats([0, 105, 70, 0, 70, 70])
             .set_aaa
-            .set_stab(1)
 
 # DURANT
 PokeModifier.add(:DURANT)
@@ -513,10 +523,6 @@ PokeModifier.add(:DURANT)
 # HYDREIGON
 PokeModifier.add(:HYDREIGON)
             .abilities({ 2 => :SNIPER })
-
-# VOLCARONA
-PokeModifier.add(:VOLCARONA)
-            .remove_level_moves([:QUIVERDANCE])
 
 # COBALION
 PokeModifier.add(:COBALION)

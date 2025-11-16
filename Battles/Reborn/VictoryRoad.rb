@@ -183,7 +183,7 @@ RemiX.gym(18) {
 
   TrainerModifier.add(:SPIRITM, "Josh", 0)
                  .set_pkmn(0, :AERODACTYL, 100, [:PRESSURE, :GUTS], moves: [:STEALTHROCK, :TAUNT, :SMACKDOWN, :EARTHQUAKE], ev: ATKSPE, unilib_flags: { radiant: true })
-                 .set_pkmn(1, :FLAREON, 100, [:MAGICGUARD, :GUTS], item: :TOXICORB, moves: [:FACADE, :FLAREBLITZ, :PROTECT, :WISH], nature: :ADAMANT, ev: HPATK, unilib_flags: { radiant: true })
+                 .set_pkmn(1, :FLAREON, 100, [:POISONHEAL, :GUTS], item: :TOXICORB, moves: [:FACADE, :FLAREBLITZ, :PROTECT, :WISH], nature: :ADAMANT, ev: HPATK, unilib_flags: { radiant: true })
                  .set_pkmn(2, :SCEPTILE, 100, [:UNBURDEN, :GUTS], ev: ATKSPE, unilib_flags: { radiant: true })
                  .set_pkmn(3, :CARRACOSTA, 100, [:STURDY, :GUTS], item: :CATALYZER, moves: [:EARTHQUAKE, :IRONHEAD, :AQUAJET, :CURSE], ev: HPATK, unilib_flags: { radiant: true })
                  .set_pkmn(4, :SCRAFTY, 100, [:MOXIE, :GUTS], moves: [:DRAINPUNCH, :BULKUP, :EARTHQUAKE, :ICEPUNCH], ev: HPSPD, unilib_flags: { radiant: true })

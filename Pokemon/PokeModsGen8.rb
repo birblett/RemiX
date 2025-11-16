@@ -58,11 +58,15 @@ PokeModifier.add(:DREDNAW)
 # COALOSSAL
 PokeModifier.add(:COALOSSAL)
             .stats([0, 0, 0, 0, 0, 60])
+            .set_stab
+
+# FLAPPLE
+PokeModifier.add(:FLAPPLE)
+            .set_stab
 
 # APPLETUN
 PokeModifier.add(:APPLETUN)
             .set_aaa(1)
-            .set_stab(1)
 
 # SANDACONDA
 PokeModifier.add(:SANDACONDA)

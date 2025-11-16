@@ -32,61 +32,70 @@ UniLib.category("Corey's Pokemon") {
 
 UniLib.category("Aevian Sewaddle, Amaria's Boat Dock") {
 
-  MapEvent.add_map_event(14) { |map|
-    MapEvent.add_static_pkmn(map, 15, 5, "Aevian Sewaddle", :SEWADDLE, 13, "pkmn_sewaddle_aevian", :SEWADDLE_AEVIAN, form: SEWADDLE_AEVIAN,
-                             dir: 8, sfx: "540Cry", txt: "Buh-!?", win_event: [911, 0, [0, 1, 4]], should_remove: true)
-  }
-
-  Assets.redirect(:BMP, "pkmn_sewaddle_aevian", "Remix/Assets/pkmn_sewaddle_aevian")
+  MapEvent.add_builder(14, "Aevian Sewaddle", 15, 5)
+          .add_page(switch_1: UniLib.inverted_switch(:SEWADDLE_AEVIAN))
+          .set_graphic("pkmn_sewaddle_aevian", redirect: "Remix/Assets/pkmn_sewaddle_aevian", direction: 8)
+          .set_movement(step_anime: true) {
+            play_se "504Cry"
+            text "Buh-!?"
+            wild_battle(:SEWADDLE, 16, SEWADDLE_AEVIAN) {
+              result(win, caught) {
+                erase_event
+                switches[:SEWADDLE_AEVIAN] = true
+              }
+            }
+          }
+          .copy_to(555, "Aevian Sewaddle", 13, 6)
 
 }
 
 UniLib.category("Aevian Shellos, Route 1 Lab") {
 
-  KRISTILINE_NPC = EventBuilder.new("Kristiline NPC", 7, 25)
-                .add_page
-                  .set_graphic("kristiline_npc", redirect: "Remix/Assets/kristiline_npc", direction: 8)
-                  .event_if([0, :KRISTILINE_NPC_SPOKEN_TO, 1])
-                    .event_set_unilib_switch(:KRISTILINE_NPC_SPOKEN_TO, true)
-                    .event_show_text("Oh!!! You surprised me!")
-                    .event_show_text("I'm doing research on the ecology of the Reborn region!")
-                    .event_show_text("I wanted to do field work on Azurine Island but the lab there is closed...")
-                    .event_show_text("Oh I know! Can you collect some Shellos for me? I'll exchange it with one from my hometown.")
-                  .event_else
-                    .event_if([0, :KRISTILINE_NPC_TRADED_WITH, 1])
-                      .event_show_text("Oh hi! Have a Shellos for me?")
-                    .event_else
-                      .event_show_text("Welcome back! Shellos, perchance?")
-                    .event_end_if
-                  .event_end_if
-                  .event_prompt("Yes", "No")
-                    .event_prompt_choice
-                      .event_run_scripts("pbChoosePokemon(1, 2, proc { |poke| !poke.egg? and poke.species == :SHELLOS and poke.form <= 1 })",)
-                      .event_if([1, 1, 0, -1, 0])
-                        .event_show_text("Awww... oh well, the offer's always open!")
-                      .event_else
-                        .event_show_text("Thank you very much!! Let's begin!")
-                        .event_if([0, :KRISTILINE_NPC_TRADED_WITH, 1])
-                          .event_run_scripts("form = $Trainer.party[pbGet(1)].form == 0 ? SHELLOS_WEST_AEVIAN : SHELLOS_EAST_AEVIAN",
-                                             "poke = PokeBattle_Pokemon.new(:SHELLOS, $Trainer.party[pbGet(1)].level, $Trainer, true, form)",
-                                             "poke.iv = [31, 31, 31, 31, 31, 31]",
-                                             "KNOWN_TRAINERS[\"Nyna\"] = 15446",
-                                             "pbStartTrade(pbGet(1), poke, \"tModLoader\", \"Nyna\")")
-                        .event_else
-                          .event_run_scripts("form = $Trainer.party[pbGet(1)].form == 0 ? SHELLOS_WEST_AEVIAN : SHELLOS_EAST_AEVIAN",
-                                             "poke = PokeBattle_Pokemon.new(:SHELLOS, $Trainer.party[pbGet(1)].level, $Trainer, true, form)",
-                                             "KNOWN_TRAINERS[\"Nyna\"] = 15446",
-                                             "pbStartTrade(pbGet(1), poke, \"Shellos\", \"Nyna\")")
-                        .event_end_if
-                        .event_show_text("Feel free to come back with more Shellos!")
-                        .event_set_unilib_switch(:KRISTILINE_NPC_TRADED_WITH, true)
-                      .event_end_if
-                    .event_next_prompt
-                      .event_show_text("Awww... oh well, the offer's always open!")
-                  .event_end_prompt(true)
-                .end_page
-
-  MapEvent.add_map_event(294) { |map| MapEvent.add_event(map, KRISTILINE_NPC) }
+  MapEvent.add_builder(294, "Kristiline NPC", 7, 25)
+          .add_page
+          .set_graphic("kristiline_npc", redirect: "Remix/Assets/kristiline_npc", direction: 8) {
+            branch(switches[:KRISTILINE_NPC_SPOKEN_TO]) {
+              branch(switches[:KRISTILINE_NPC_TRADED_WITH]) {
+                text "Welcome back! Shellos, perchance?"
+              }.else {
+                text "Oh hi! Have a Shellos for me?"
+              }
+            }.else {
+              switches[:KRISTILINE_NPC_SPOKEN_TO] = true
+              text "Oh!!! You surprised me!"
+              text "I'm doing research on the ecology of the Reborn region!"
+              text "I wanted a look at the aquatic fauna here but I forgot my Surf HM..."
+              text "Oh I know! Can you collect some Shellos for me? I'll exchange them with specimens from my hometown."
+            }
+            show_choices {
+              choice("Yes") {
+                branch(:kristiline_trader_check, proc {
+                  pbChoosePokemon(1, 2, proc { |poke| !poke.egg? and poke.species == :SHELLOS and poke.form <= 1 })
+                  pbGet(1) != -1
+                }) {
+                  text "Thank you very much!! Let's begin!"
+                  script_named(:trade_aevian_shellos) {
+                    form = $Trainer.party[pbGet(1)].form == 0 ? SHELLOS_WEST_AEVIAN : SHELLOS_EAST_AEVIAN
+                    poke = PokeBattle_Pokemon.new(:SHELLOS, $Trainer.party[pbGet(1)].level, $Trainer, true, form)
+                    KNOWN_TRAINERS["Nyna"] = 15446 unless KNOWN_TRAINERS["Nyna"]
+                    if UniLib.switch_on?(:KRISTILINE_NPC_TRADED_WITH)
+                      pbStartTrade(pbGet(1), poke, "Shellos", "Nyna")
+                    else
+                      poke.iv = [31, 31, 31, 31, 31, 31]
+                      pbStartTrade(pbGet(1), poke, "tModLoader", "Nyna")
+                    end
+                  }
+                  switches[:KRISTILINE_NPC_TRADED_WITH] = true
+                  text "Feel free to come back with more Shellos!"
+                }.else {
+                  text "Awww... oh well, the offer's always open!"
+                }
+              }
+              default_choice("No") {
+                text "Awww... oh well, the offer's always open!"
+              }
+            }
+          }
 
 }
 
@@ -98,150 +107,159 @@ UniLib.category("Aevian Bronzor, Route 3/LCCC") {
 
 UniLib.category("Aevian Litwick, Calcenon") {
 
-  UniLib.set_switch_condition(:AEVIAN_LITWICK_COMPOUND, proc { UniLib.is_switch_on(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) })
+  UniLib.set_switch_condition(:AEVIAN_LITWICK_COMPOUND) { UniLib.switch_on?(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) }
 
-  UniLib.set_switch_condition(:AEVIAN_LITWICK_COMPOUND_2, proc { !UniLib.is_switch_on(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) })
+  UniLib.set_switch_condition(:AEVIAN_LITWICK_COMPOUND_2) { !UniLib.switch_on?(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) }
 
-  LITWICK_AEVIAN_EVENT = EventBuilder.new("Aevian Litwick", 70, 35)
-                .add_page
-                  .set_switch_1(:AEVIAN_LITWICK_COMPOUND_2)
-                  .set_graphic("pkmn_litwick_aevian") # intentionally have a blank graphic
-                  .event_show_text("The streetlamp seems to have gone out...")
-                  .event_if([12, "$PokemonBag.pbHasItem?(:SOULCANDLE); $PokemonBag.pbHasItem?(:SOULCANDLE)"])
-                    .event_show_text("The Soul Candle is reacting.")
-                    .event_show_text("Hold it out?")
-                    .event_prompt("Yes", "No")
-                    .event_prompt_choice
-                      .event_run_scripts("$PokemonBag.pbDeleteItem(:SOULCANDLE)")
-                      .event_exclaim
-                      .event_show_text("Something lunged for the candle!")
-                      .event_wild_battle(:LITWICK, 45, LITWICK_AEVIAN)
-                      .event_set_unilib_switch(:AEVIAN_LITWICK, true, true)
-                    .event_next_prompt
-                    .event_end_prompt(true)
-                  .event_end_if
-                .end_page
+  MapEvent.add_builder(413, "Aevian Litwick", 70, 35)
+          .add_page(switch_1: :AEVIAN_LITWICK_COMPOUND_2)
+          .set_graphic("pkmn_litwick_aevian") {
+            text "The streetlamp seems to have gone out..."
+            branch(:has_soul_candle, proc { $PokemonBag.pbHasItem?(:SOULCANDLE) }) {
+              text "The Soul Candle is reacting."
+              show_choices("Hold it out?") {
+                choice("Yes") {
+                  script_named(:remove_soul_candle) { $PokemonBag.pbDeleteItem(:SOULCANDLE) }
+                  exclaim
+                  text "Something lunged for the candle!"
+                  wild_battle(:LITWICK, 45, LITWICK_AEVIAN) {
+                    result(win, caught) {
+                      switches[:AEVIAN_LITWICK] = true
+                    }
+                  }
+                }
+                default_choice("No") {}
+              }
+            }
+          }
 
-  MapEvent.add_map_event(413) { |map|
-    EventBuilder.new(map.events[57]).set_switch_2(:AEVIAN_LITWICK_COMPOUND)
-    MapEvent.add_event(map, LITWICK_AEVIAN_EVENT)
-  }
+  MapEvent.add_map_event(413) { |map| EventBuilder.new(map.events[57]).set_switch_2(:AEVIAN_LITWICK_COMPOUND) }
 
 }
 
 UniLib.category("Aevian Snorunts, Ametrine") {
 
-  MapEvent.add_map_event(439) { |map|
-    args = ["Aevian Snorunt", :SNORUNT, 58, "pkmn_snorunt_aevian"]
-    kwargs = { sfx: "361Cry", txt: "Appa!", step_anime: false, win_event: [911, 0, [0, 1, 4]], should_remove: true }
-    MapEvent.add_static_pkmn(map, 88, 94, *args, :SNORUNT_AEVIAN_1, form: SNORUNT_AEVIAN, dir: 2, **kwargs)
-    MapEvent.add_static_pkmn(map, 59, 99, *args, :SNORUNT_AEVIAN_2, form: SNORUNT_AEVIAN, dir: 8, **kwargs)
-    MapEvent.add_static_pkmn(map, 38, 95, *args, :SNORUNT_AEVIAN_3, form: SNORUNT_AEVIAN, dir: 7, **kwargs)
-    MapEvent.add_static_pkmn(map, 59, 120, *args, :SNORUNT_AEVIAN_4, form: SNORUNT_AEVIAN, dir: 2, **kwargs)
-    MapEvent.add_static_pkmn(map, 83, 117, *args, :SNORUNT_AEVIAN_5, form: SNORUNT_AEVIAN, dir: 5, **kwargs)
-  }
+  UniLib.register_inverted(:SNORUNT_AEVIAN_1, :SNORUNT_AEVIAN_2, :SNORUNT_AEVIAN_3, :SNORUNT_AEVIAN_4, :SNORUNT_AEVIAN_5)
 
-  Assets.redirect(:BMP, "pkmn_snorunt_aevian", "Remix/Assets/pkmn_snorunt_aevian")
+  MapEvent.add_builder(439, "Aevian Snorunt 1", 88, 94)
+          .add_page(switch_1: :SNORUNT_AEVIAN_1)
+          .set_graphic("pkmn_snorunt_aevian", redirect: "Remix/Assets/pkmn_snorunt_aevian", direction: 2) {
+            play_se "361Cry"
+            text "Appa!"
+            wild_battle(:SNORUNT, 58, SNORUNT_AEVIAN) {
+              result(win, caught) {
+                erase_event
+                switches[:SNORUNT_AEVIAN_1] = true
+              }
+            }
+          }
+          .copy_to(439, "Aevian Snorunt 2", 59, 99, parameter_mappings: { SNORUNT_AEVIAN_1: :SNORUNT_AEVIAN_2 })
+          .set_page(1, switch_1: :SNORUNT_AEVIAN_2).set_graphic(direction: 8)
+          .copy_to(439, "Aevian Snorunt 2", 38, 95, parameter_mappings: { SNORUNT_AEVIAN_2: :SNORUNT_AEVIAN_3 })
+          .set_page(1, switch_1: :SNORUNT_AEVIAN_3).set_graphic(direction: 7)
+          .copy_to(439, "Aevian Snorunt 2", 59, 120, parameter_mappings: { SNORUNT_AEVIAN_3: :SNORUNT_AEVIAN_4 })
+          .set_page(1, switch_1: :SNORUNT_AEVIAN_4).set_graphic(direction: 2)
+          .copy_to(439, "Aevian Snorunt 2", 83, 117, parameter_mappings: { SNORUNT_AEVIAN_4: :SNORUNT_AEVIAN_5 })
+          .set_page(1, switch_1: :SNORUNT_AEVIAN_5).set_graphic(direction: 5)
 
 }
 
 UniLib.category("Hisuian Zorua, Ametrine, Blake's Hideout") {
 
-  UniLib.set_switch_condition(:HISUIAN_ZORUA_COMPOUND) { !UniLib.is_switch_on(:HISUIAN_ZORUA) }
-
-  HISUIAN_ZORUA_EVENT = EventBuilder.new("Hisuian Zorua", 130, 71)
-                .add_page
-                  .set_graphic("egg_zorua_hisuian", redirect: "Remix/Assets/egg_zorua_hisuian")
-                  .set_switch_1(:HISUIAN_ZORUA_COMPOUND)
-                  .event_show_text("A lonely egg. It's cold to the touch.")
-                  .event_show_text("Take it?")
-                  .event_prompt("Yes", "No")
-                  .event_prompt_choice
-                    .event_play_se("itemlevel")
-                    .event_show_text("\\PN got the Egg!")
-                    .event_run_scripts("egg = Kernel.pbGenerateEgg(:ZORUA)",
-                                       "egg.form = ZORUA_HISUIAN", "pbAddPokemonSilent(egg)")
-                    .event_set_unilib_switch(:HISUIAN_ZORUA, true, true)
-                  .event_next_prompt
-                    .event_show_text("Better leave it alone...")
-                  .event_end_prompt(true)
-                .end_page unless defined? HISUIAN_ZORUA_EVENT
-
-  MapEvent.add_map_event(439) { |map| MapEvent.add_event(map, HISUIAN_ZORUA_EVENT) }
+  MapEvent.add_builder(439, "Hisuian Zorua Egg", 130, 71)
+          .add_page(switch_1: UniLib.inverted_switch(:HISUIAN_ZORUA))
+          .set_graphic("egg_zorua_hisuian", redirect: "Remix/Assets/egg_zorua_hisuian") {
+            text "A lonely egg. It's cold to the touch."
+            show_choices("Take it?") {
+              choice("Yes") {
+                play_se "itemlevel"
+                text "\\PN got the Egg!"
+                script_anonymous {
+                  egg = Kernel.pbGenerateEgg(:ZORUA)
+                  egg.form = ZORUA_HISUIAN
+                  pbAddPokemonSilent(egg)
+                }
+                switches[:HISUIAN_ZORUA] = true
+              }
+              default_choice("No") {
+                text "Better leave it alone..."
+              }
+            }
+          }
 
 }
 
 UniLib.category("Hisuian Growlithe, Pyrous, Post-Adrienn") {
 
 
-  UniLib.set_switch_condition(:GROWLITHE_HISUIAN_COMPOUND, proc { !$game_switches[651] })
+  UniLib.set_switch_condition(:GROWLITHE_HISUIAN_COMPOUND, proc { $game_switches[651] && !UniLib.switch_on?(:GROWLITHE_HISUIAN) })
 
-  MapEvent.add_map_event(27) { |map|
-    MapEvent.add_static_pkmn(map, 18, 13, "Hisuian Growlithe", :GROWLITHE, 65, "pkmn_growlithe_hisuian", :GROWLITHE_HISUIAN_COMPOUND,
-                             form: GROWLITHE_HISUIAN, dir: 3, sfx: "058Cry", txt: "Bork!", step_anime: false, win_event: [911, 0, []], should_remove: true)
-  }
-
-  Assets.redirect(:BMP, "pkmn_growlithe_hisuian", "Remix/Assets/pkmn_growlithe_hisuian")
+  MapEvent.add_builder(27, "Hisuian Growlithe", 18, 13)
+          .add_page(switch_1: :GROWLITHE_HISUIAN_COMPOUND)
+          .set_graphic("pkmn_growlithe_hisuian", redirect: "Remix/Assets/pkmn_growlithe_hisuian", direction: 3)
+          .set_movement(step_anime: false) {
+            play_se "058Cry"
+            text "Buh-!?"
+            wild_battle(:GROWLITHE, 55, GROWLITHE_HISUIAN, post_creation: proc { |poke| poke.moves[1] = PBMove.new(:HEADSMASH) }) {
+              result(win, caught) {
+                erase_event
+                switches[:GROWLITHE_HISUIAN] = true
+              }
+            }
+          }
 
 }
 
 UniLib.category("Aevian Jangmo-o, Byxbysion Wastelands, Post-Adrienn") {
 
-  UniLib.set_switch_condition(:AEVIAN_JANGMOO_COMPOUND) { !UniLib.is_switch_on(:AEVIAN_JANGMOO) && $game_switches[651] }
+  UniLib.set_switch_condition(:AEVIAN_JANGMOO_COMPOUND) { $game_switches[651] && !UniLib.switch_on?(:AEVIAN_JANGMOO) }
 
-  JANGMOO_AEVIAN_EVENT = EventBuilder.new("Aevian Jangmo-o", 7, 49)
-                .add_page
-                  .set_graphic("pkmn_jangmoo_aevian", redirect: "Remix/Assets/pkmn_jangmoo_aevian", direction: 4)
-                  .set_switch_1(:AEVIAN_JANGMOO_COMPOUND)
-                  .set_movement(step_anime: true)
-                  .event_exclaim
-                  .event_play_se("782Cry")
-                  .event_show_text("Yah!")
-                  .event_wild_battle(:JANGMOO, 65, JANGMOO_AEVIAN)
-                  .event_if_battle_result(1, 4)
-                    .event_set_unilib_switch(:AEVIAN_JANGMOO, true, true)
-                  .event_end_if
-                .end_page unless defined? JANGMOO_AEVIAN_EVENT
+  MapEvent.add_builder(209, "Aevian Jangmo-o", 7, 49)
+          .add_page(switch_1: :AEVIAN_JANGMOO_COMPOUND)
+          .set_graphic("pkmn_jangmoo_aevian", redirect: "Remix/Assets/pkmn_jangmoo_aevian", direction: 4)
+          .set_movement(step_anime: true) {
+            exclaim
+            play_se "782Cry"
+            text "Yah!"
+            wild_battle(:JANGMOO, 65, JANGMOO_AEVIAN, item: :ANTIDOTE) {
+              result(win, caught) {
+                switches[:AEVIAN_JANGMOO] = true
+              }
+            }
+          }
 
-  DISPENSARY = EventBuilder.new("Dispensary", 6, 49)
-                .add_page
-                  .set_graphic("egg_larvesta_aevian_1", redirect: "Remix/Assets/egg_larvesta_aevian")
-                  .set_switch_1(:AEVIAN_JANGMOO_COMPOUND)
-                  .event_store_temp
-                  .event_exclaim
-                  .event_run_scripts("Kernel.pbItemBall(:ANTIDOTE)")
-                .end_page unless defined? DISPENSARY
-
-  MapEvent.add_map_event(209) { |map|
-    MapEvent.add_event(map, JANGMOO_AEVIAN_EVENT)
-    MapEvent.add_event(map, DISPENSARY)
-  }
+  MapEvent.add_builder(209, "Dispensary", 6, 49)
+          .add_page
+          .set_graphic("egg_larvesta_aevian_1") {
+            script_anonymous { Kernel.pbItemBall(:ANTIDOTE) }
+          }
 
 }
 
 UniLib.category("Aevian Larvesta Egg, Teknite Ridge, Post-Fulgor") {
 
-  UniLib.set_switch_condition(:AEVIAN_LARVESTA_COMPOUND) { !UniLib.is_switch_on(:AEVIAN_LARVESTA) && $game_variables[472] >= 2 }
+  UniLib.set_switch_condition(:AEVIAN_LARVESTA_COMPOUND) { !UniLib.switch_on?(:AEVIAN_LARVESTA) && $game_variables[472] >= 2 }
 
-  AEVIAN_LARVESTA_EVENT = EventBuilder.new("Aevian Larvesta", 20, 57)
-                .add_page
-                  .set_graphic("egg_larvesta_aevian", redirect: "Remix/Assets/egg_larvesta_aevian")
-                  .set_switch_1(:AEVIAN_LARVESTA_COMPOUND)
-                  .event_show_text("A single Egg has been left in the nest.")
-                  .event_show_text("Take it?")
-                  .event_prompt("Yes", "No")
-                  .event_prompt_choice
-                    .event_play_se("itemlevel")
-                    .event_show_text("\\PN got the Egg!")
-                    .event_run_scripts("egg = Kernel.pbGenerateEgg(:LARVESTA)",
-                                       "egg.form = LARVESTA_AEVIAN", "pbAddPokemonSilent(egg)")
-                    .event_set_unilib_switch(:AEVIAN_LARVESTA, true, true)
-                  .event_next_prompt
-                    .event_show_text("Better leave it alone...")
-                  .event_end_prompt(true)
-                .end_page unless defined? AEVIAN_LARVESTA_EVENT
-
-  MapEvent.add_map_event(642) { |map| MapEvent.add_event(map, AEVIAN_LARVESTA_EVENT) }
+  MapEvent.add_builder(439, "Aevian Larvesta", 20, 57)
+          .add_page(switch_1: :AEVIAN_LARVESTA_COMPOUND)
+          .set_graphic("egg_larvesta_aevian", redirect: "Remix/Assets/egg_larvesta_aevian") {
+            text "A single Egg has been left in the nest."
+            show_choices("Take it?") {
+              choice("Yes") {
+                play_se "itemlevel"
+                text "\\PN got the Egg!"
+                script_anonymous {
+                  egg = Kernel.pbGenerateEgg(:LARVESTA)
+                  egg.form = LARVESTA_AEVIAN
+                  pbAddPokemonSilent(egg)
+                }
+                switches[:AEVIAN_LARVESTA] = true
+              }
+              default_choice("No") {
+                text "Better leave it alone..."
+              }
+            }
+          }
 
 }
 
@@ -249,54 +267,52 @@ UniLib.category("Hisuian Sneasel, Route 4 Upper Cave") {
 
   UniLib.set_switch_condition(:HISUIAN_SNEASEL_COMPOUND) { $game_self_switches[[750, 3, "A"]] }
 
-  HISUIAN_SNEASEL_TRADER = EventBuilder.new("Alice", 45, 39)
-                .add_page
-                  .set_graphic("rby_char3")
-                  .set_switch_1(:HISUIAN_SNEASEL_COMPOUND)
-                  .event_if([0, :HISUIAN_SNEASEL_TRADED, 1])
-                    .event_show_text("Q2FuIGkgaGF2ZSBhIHNuZWFzZWwgcGxlYXNl")
-                    .event_show_text("IHByZXR0eSBwbGVhc2UgeW91")
-                    .event_show_text("IG1heSBoYXZlIGEgc25lYXNlbCBpbiByZXR1c\nm4gYWxsIGkgd2")
-                    .event_show_text("FudCBpcyBhIHNuZWFzZWwgcGxlYXNlIG1heS\nBp")
-                    .event_run_scripts("pbChoosePokemon(1, 2, proc { |poke| !poke.egg? and poke.species == :SNEASEL and poke.form == 0 })")
-                    .event_if([1, 1, 0, -1, 0])
-                      .event_show_text("RAHHHH!!")
-                    .event_else
-                      .event_show_text("SSBLTk9XIFdIRVJFIFlPVSBMSVZF")
-                      .event_run_scripts("poke = PokeBattle_Pokemon.new(:SNEASEL, $Trainer.party[pbGet(1)].level, $Trainer, true, SNEASEL_HISUIAN)",
-                                         "KNOWN_TRAINERS[\"Alice\"] = 224",
-                                         "pbStartTrade(pbGet(1), poke, \"THE ONE\", \"Alice\")")
-                      .event_show_text("4")
-                      .event_set_unilib_switch(:HISUIAN_SNEASEL_TRADED, true)
-                    .event_end_if
-                  .event_else
-                    .event_show_text("YOUR MOTHER!")
-                  .event_end_if
-                .end_page unless defined? HISUIAN_SNEASEL_TRADER
-
-  MapEvent.add_map_event(750) { |map| MapEvent.add_event(map, HISUIAN_SNEASEL_TRADER) }
+  MapEvent.add_builder(750, "Alice", 45, 39)
+          .add_page(switch_1: :HISUIAN_SNEASEL_COMPOUND)
+          .set_graphic("rby_char3") {
+            branch(switches[:HISUIAN_SNEASEL_TRADED], false) {
+              text "Q2FuIGkgaGF2ZSBhIHNuZWFzZWwgcGxlYXNl"
+              text "IHByZXR0eSBwbGVhc2UgeW91"
+              text "IG1heSBoYXZlIGEgc25lYXNlbCBpbiByZXR1c\nm4gYWxsIGkgd2"
+              text "FudCBpcyBhIHNuZWFzZWwgcGxlYXNlIG1heS\nBp"
+              branch(proc {
+                pbChoosePokemon(1, 2, proc { |poke| !poke.egg? and poke.species == :SNEASEL and poke.form == 0 })
+                pbGet(1) != -1
+              }) {
+                text "SSBLTk9XIFdIRVJFIFlPVSBMSVZF"
+                script_anonymous {
+                  poke = PokeBattle_Pokemon.new(:SNEASEL, $Trainer.party[pbGet(1)].level, $Trainer, true, SNEASEL_HISUIAN)
+                  KNOWN_TRAINERS["Alice"] = 224 unless KNOWN_TRAINERS["Alice"]
+                  pbStartTrade(pbGet(1), poke, "THE ONE", "Alice")
+                }
+                text "4"
+              }.else {
+                text "RAHHHH!!"
+              }
+            }.else {
+              text "YOUR MOTHER!"
+            }
+          }
 
 }
 
 UniLib.category("Aevian Paras, Byxbysion Grotto, Garbodor Area, Post-Amaria") {
 
-  UniLib.set_switch_condition(:AEVIAN_PARAS_COMPOUND) { !UniLib.is_switch_on(:AEVIAN_PARAS) && $game_switches[657] }
+  UniLib.set_switch_condition(:AEVIAN_PARAS_COMPOUND) { !UniLib.switch_on?(:AEVIAN_PARAS) && $game_switches[657] }
 
-  PARAS_AEVIAN_EVENT = EventBuilder.new("Aevian Paras", 19, 10)
-                .add_page
-                  .set_graphic("pkmn_paras_aevian", redirect: "Remix/Assets/pkmn_paras_aevian", direction: 8)
-                  .set_switch_1(:AEVIAN_PARAS_COMPOUND)
-                  .set_movement(step_anime: true)
-                  .event_exclaim
-                  .event_play_se("046Cry")
-                  .event_show_text("ueghhaeghuhgh.")
-                  .event_wild_battle(:PARAS, 86, PARAS_AEVIAN, :XENWASTE)
-                  .event_if_battle_result(1, 4)
-                    .event_set_unilib_switch(:AEVIAN_PARAS, true, true)
-                  .event_end_if
-                .end_page unless defined? PARAS_AEVIAN_EVENT
-
-  MapEvent.add_map_event(221) { |map| MapEvent.add_event(map, PARAS_AEVIAN_EVENT) }
+  MapEvent.add_builder(221, "Aevian Paras", 19, 10)
+          .add_page(switch_1: :AEVIAN_PARAS_COMPOUND)
+          .set_graphic("pkmn_paras_aevian", redirect: "Remix/Assets/pkmn_paras_aevian", direction: 8)
+          .set_movement(step_anime: true) {
+            exclaim
+            play_se "046Cry"
+            text "ueghhaeghuhgh."
+            wild_battle(:PARAS, 86, PARAS_AEVIAN, item: :XENWASTE) {
+              result(win, caught) {
+                switches[:AEVIAN_PARAS] = true
+              }
+            }
+          }
 
 }
 

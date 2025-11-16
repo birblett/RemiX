@@ -62,6 +62,18 @@ PokeModifier.add(:TALONFLAME)
             .stats([0, 85, 72, 85, 72, 0])
             .level_moves([[6, :GUST], [18, :AIRCUTTER], [30, :AIRSLASH], [36, :HEATWAVE], [49, :HURRICANE]])
 
+# SCATTERBUG
+PokeModifier.add(:SCATTERBUG)
+            .set_stab
+
+# SPEWPA
+PokeModifier.add(:SPEWPA)
+            .set_stab
+
+# VIVILLON
+PokeModifier.add(:VIVILLON)
+            .set_stab
+
 # LITLEO
 PokeModifier.add(:LITLEO)
             .stats([0, 61, 0, 0, 0, 0])

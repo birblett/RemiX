@@ -2,7 +2,7 @@ FANCY_BALL = UniLib.from_graphics_path("RemiX/Assets/object_ball.png")
 
 UniLib.category("Catalyst, Opal") {
 
-  MapEvent.add_map_event(29) { |map| MapEvent.add_overworld_item(map, 43, 41, "Item", :CATALYZER, :OpalCatalyzer, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(29, :CATALYZER, :OpalCatalyzer, x: 43, y: 41, hue: 310)
 
 }
 
@@ -17,73 +17,73 @@ UniLib.category("Furret Crest, Obsidia") {
 
 UniLib.category("Kricketune, Rhodochrine Taillow") {
 
-  MapEvent.add_map_event(150) { |map| MapEvent.add_overworld_item(map, 84, 108, "Item", KRICKETUNE_CREST, :KricketuneCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(150, KRICKETUNE_CREST, :KricketuneCrest, x: 84, y: 108, hue: 310)
 
 }
 
 UniLib.category("Ancient Teachings, Peridot Factory") {
 
-  MapEvent.add_map_event(12) { |map| MapEvent.add_overworld_item(map, 3, 7, "Item", :ANCIENTTEACH, :AncientTeachings, "itemball") }
+  MapEvent.add_item(12, :ANCIENTTEACH, :AncientTeachings, x: 3, y: 7)
 
 }
 
 UniLib.category("Pyroar Crest, Apophyll Cave") {
 
-  MapEvent.add_map_event(31) { |map| MapEvent.add_overworld_item(map, 17, 9, "Item", PYROAR_CREST, :PyroarCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(31, PYROAR_CREST, :PyroarCrest, x: 17, y: 9, hue: 310)
 
 }
 
 UniLib.category("Cherrim Crest, :Pyrous") {
 
-  MapEvent.add_map_event(27) { |map| MapEvent.add_overworld_item(map, 18, 12, "Item", CHERRIM_CREST, :CherrimCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(27, CHERRIM_CREST, :CherrimCrest, x: 18, y: 12, hue: 310)
 
 }
 
 UniLib.category("Vespiquen Crest, Pyrous") {
 
-  MapEvent.add_map_event(206) { |map| MapEvent.add_overworld_item(map, 19, 36, "Item", VESPIQUEN_CREST, :VespiquenCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(206, VESPIQUEN_CREST, :VespiquenCrest, x: 19, y: 36, hue: 310)
 
 }
 
 UniLib.category("Swalot Crest, Byxbysion Wasteland") {
 
-  MapEvent.add_map_event(209) { |map| MapEvent.add_overworld_item(map, 34, 8, "Item", SWALOT_CREST, :SwalotCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(209, SWALOT_CREST, :SwalotCrest, x: 34, y: 8, hue: 310)
 
 }
 
 UniLib.category("Watchog Crest, Byxbysion Wasteland") {
 
-  MapEvent.add_map_event(209) { |map| MapEvent.add_overworld_item(map, 104, 61, "Item", WATCHOG_CREST, :WatchogCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(209, WATCHOG_CREST, :WatchogCrest, x: 104, y: 61, hue: 310)
 
 }
 
 UniLib.category("Magcargo Crest, Pyrous (Strength)") {
 
-  MapEvent.add_map_event(35) { |map| MapEvent.add_overworld_item(map, 62, 12, "Item", MAGCARGO_CREST, :MagcargoCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(35, MAGCARGO_CREST, :MagcargoCrest, x: 62, y: 12, hue: 310)
 
 }
 
 UniLib.category("Lumineon Crest, Ametrine (Strength)") {
 
-  MapEvent.add_map_event(382) { |map| MapEvent.add_overworld_item(map, 53, 17, "Item", LUMINEON_CREST, :LumineonCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(382, LUMINEON_CREST, :LumineonCrest, x: 53, y: 17, hue: 310)
 
 }
 
 UniLib.category("Noctowl Crest, Chrysolia Forest") {
 
-  MapEvent.add_map_event(234) { |map| MapEvent.add_overworld_item(map, 55, 54, "Item", NOCTOWL_CREST, :NoctowlCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(234, NOCTOWL_CREST, :NoctowlCrest, x: 55, y: 54, hue: 310)
 
 }
 
 UniLib.category("Girafarig Crest, Spinel") {
 
-  MapEvent.add_map_event(239) { |map| MapEvent.add_overworld_item(map, 24, 48, "Item", GIRAFARIG_CREST, :GirafarigCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(239, GIRAFARIG_CREST, :GirafarigCrest, x: 24, y: 48, hue: 310)
 
 }
 
 UniLib.category("Lapras Crest, Spinel") {
 
-  MapEvent.add_map_event(510) { |map| MapEvent.add_overworld_item(map, 19, 11, "Item", LAPRAS_CREST, :LaprasCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(510, LAPRAS_CREST, :LaprasCrest, x: 19, y: 11, hue: 310)
 
 }
 
@@ -95,13 +95,13 @@ UniLib.category("Miltank Crest, Route 1") {
 
 UniLib.category("Stantler Crest, North Aventurine Forest") {
 
-  MapEvent.add_map_event(289) { |map| MapEvent.add_overworld_item(map, 53, 11, "Item", STANTLER_CREST, :StantlerCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(289, STANTLER_CREST, :StantlerCrest, x: 53, y: 11, hue: 310)
 
 }
 
 UniLib.category("Raticate Crest, Vanhanen Castle") {
 
-  MapEvent.add_map_event(292) { |map| MapEvent.add_overworld_item(map, 18, 30, "Item", RATICATE_CREST, :RaticateCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(292, RATICATE_CREST, :RaticateCrest, x: 18, y: 30, hue: 310)
 
 }
 
@@ -113,127 +113,127 @@ UniLib.category("Mightyena Crest, 7th Street") {
 
 UniLib.category("Ariados Crest, Underroot (Crystal Key)") {
 
-  MapEvent.add_map_event(153) { |map| MapEvent.add_overworld_item(map, 82, 53, "Item", ARIADOS_CREST, :AriadosCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(153, ARIADOS_CREST, :AriadosCrest, x: 82, y: 53, hue: 310)
 
 }
 
 UniLib.category("Clefable Crest, Wasteland Wall") {
 
-  MapEvent.add_map_event(280) { |map| MapEvent.add_overworld_item(map, 16, 6, "Item", CLEFABLE_CREST, :ClefableCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(280, CLEFABLE_CREST, :ClefableCrest, x: 16, y: 6, hue: 310)
 
 }
 
 UniLib.category("Swanna Crest, Iolia Valley") {
 
-  MapEvent.add_map_event(340) { |map| MapEvent.add_overworld_item(map, 13, 7, "Item", SWANNA_CREST, :SwannaCrest, "itemball", graphic: { character_hue: 310 }) }
-  MapEvent.add_map_event(507) { |map| MapEvent.add_overworld_item(map, 13, 7, "Item", SWANNA_CREST, :SwannaCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(340, SWANNA_CREST, :SwannaCrest, x: 13, y: 7, hue: 310)
+  MapEvent.add_item(507, SWANNA_CREST, :SwannaCrest, x: 13, y: 7, hue: 310)
 
 }
 
 UniLib.category("Relicanth Crest, Celestinine Cascade") {
 
-  MapEvent.add_map_event(359) { |map| MapEvent.add_overworld_item(map, 26, 55, "Item", RELICANTH_CREST, :RelicanthCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(359, RELICANTH_CREST, :RelicanthCrest, x: 26, y: 55, hue: 310)
 
 }
 
 UniLib.category("Avalugg Crest, Route 4") {
 
-  MapEvent.add_map_event(412) { |map| MapEvent.add_overworld_item(map, 54, 45, "Item", AVALUGG_CREST, :AvaluggCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(412, AVALUGG_CREST, :AvaluggCrest, x: 54, y: 45, hue: 310)
 
 }
 
 UniLib.category("Lanturn Crest, Ametrine Dive") {
 
-  MapEvent.add_map_event(402) { |map| MapEvent.add_overworld_item(map, 33, 33, "Item", LANTURN_CREST, :LanturnCrest, "itemballb", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(402, LANTURN_CREST, :LanturnCrest, x: 33, y: 33, hue: 310)
 
 }
 
 UniLib.category("Gogoat Crest, Fiore Mansion Right") {
 
-  MapEvent.add_map_event(359) { |map| MapEvent.add_overworld_item(map, 25, 11, "Item", GOGOAT_CREST, :GogoatCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(359, GOGOAT_CREST, :GogoatCrest, x: 25, y: 11, hue: 310)
 
 }
 
 UniLib.category("Samurott Crest, Azurine Island") {
 
-  MapEvent.add_map_event(569) { |map| MapEvent.add_overworld_item(map, 48, 83, "Item", SAMUROTT_CREST, :SamurottCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(569, SAMUROTT_CREST, :SamurottCrest, x: 48, y: 83, hue: 310)
 
 }
 
 UniLib.category("Whiscash Crest, Route 1 Celestinine Dive") {
 
-  MapEvent.add_map_event(388) { |map| MapEvent.add_overworld_item(map, 17, 9, "Item", WHISCASH_CREST, :WhiscashCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(388, WHISCASH_CREST, :WhiscashCrest, x: 17, y: 9, hue: 310)
 
 }
 
 UniLib.category("Ludicolo Crest, Sunrise 4") {
 
-  MapEvent.add_map_event(579) { |map| MapEvent.add_overworld_item(map, 5, 3, "Item", LUDICOLO_CREST, :LudicoloCrest, "itemballb", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(579, LUDICOLO_CREST, :LudicoloCrest, x: 5, y: 3, hue: 310)
 
 }
 
 UniLib.category("Swanna Crest, Kingsbury 22") {
 
-  MapEvent.add_map_event(575) { |map| MapEvent.add_overworld_item(map, 2, 4, "Item", SWANNA_CREST, :SwannaCrest, "itemballb", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(575, SWANNA_CREST, :SwannaCrest, x: 2, y: 4, hue: 310)
 
 }
 
 UniLib.category("Oricorio Crest, Fairview 10") {
 
-  MapEvent.add_map_event(579) { |map| MapEvent.add_overworld_item(map, 65, 27, "Item", ORICORIO_CREST, :OricorioCrest, "itemballb", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(579, ORICORIO_CREST, :OricorioCrest, x: 65, y: 27, hue: 310)
 
 }
 
 UniLib.category("Rampardos Crest, Teknite Cave") {
 
-  MapEvent.add_map_event(645) { |map| MapEvent.add_overworld_item(map, 13, 24, "Item", RAMPARDOS_CREST, :RampardosCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(645, RAMPARDOS_CREST, :RampardosCrest, x: 13, y: 24, hue: 310)
 
 }
 
 UniLib.category("Bastiodon Crest, Sugiline Cave") {
 
-  MapEvent.add_map_event(659) { |map| MapEvent.add_overworld_item(map, 38, 36, "Item", BASTIODON_CREST, :BastiodonCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(659, BASTIODON_CREST, :BastiodonCrest, x: 38, y: 36, hue: 310)
 
 }
 
 UniLib.category("Ampharos Crest, Ametrine Icium-Z Room") {
 
-  MapEvent.add_map_event(379) { |map| MapEvent.add_overworld_item(map, 23, 23, "Item", AMPHAROS_CREST, :AmpharosCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(379, AMPHAROS_CREST, :AmpharosCrest, x: 23, y: 23, hue: 310)
 
 }
 
 UniLib.category("Darmanitan Crest, Teknite Outer Rock Climb") {
 
-  MapEvent.add_map_event(646) { |map| MapEvent.add_overworld_item(map, 21, 6, "Item", DARMANITAN_CREST, :DarmanitanCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(646, DARMANITAN_CREST, :DarmanitanCrest, x: 21, y: 6, hue: 310)
 
 }
 
 UniLib.category("Silvally Crest, Route 4 Rock Climb") {
 
-  MapEvent.add_map_event(710) { |map| MapEvent.add_overworld_item(map, 17, 14, "Item", SILVALLY_CREST, :SilvallyCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(710, SILVALLY_CREST, :SilvallyCrest, x: 17, y: 14, hue: 310)
 
 }
 
 UniLib.category("Probopass Crest, Sugiline Cave") {
 
-  MapEvent.add_map_event(662) { |map| MapEvent.add_overworld_item(map, 47, 23, "Item", PROBOPASS_CREST, :ProbopassCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(662, PROBOPASS_CREST, :ProbopassCrest, x: 47, y: 23, hue: 310)
 
 }
 
 UniLib.category("Dusknoir Crest, Teknite Fulgor Room") {
 
-  MapEvent.add_map_event(747) { |map| MapEvent.add_overworld_item(map, 13, 10, "Item", DUSKNOIR_CREST, :DusknoirCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(747, DUSKNOIR_CREST, :DusknoirCrest, x: 13, y: 10, hue: 310)
 
 }
 
 UniLib.category("Dedenne Crest, Never After") {
 
-  MapEvent.add_map_event(700) { |map| MapEvent.add_overworld_item(map, 12, 27, "Item", DEDENNE_CREST, :DedenneCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(700, DEDENNE_CREST, :DedenneCrest, x: 12, y: 27, hue: 310)
 
 }
 
 UniLib.category("Electrode Crest, Obsidia Meteor Base") {
 
-  MapEvent.add_map_event(765) { |map| MapEvent.add_overworld_item(map, 25, 53, "Item", ELECTRODE_CREST, :ElectrodeCrest, "itemball", graphic: { character_hue: 310 }) }
+  MapEvent.add_item(765, ELECTRODE_CREST, :ElectrodeCrest, x: 25, y: 53, hue: 310)
 
 }
