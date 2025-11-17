@@ -24,7 +24,7 @@ UniLib.insert_in_method(:PokeBattle_Move_307, :pbNumHits,
 
 MAGIKARPITE = ItemBuilder.add(:MAGIKARPITE, "Magikarpite", "Allows Magikarp to Mega-Evolve in battle.").crystal.no_use.no_use_in_battle.sym
 
-SUPER_MEGA_BOTTLE_CAP = ItemBuilder.add(:SUPER_MEGA_BOTTLE_CAP, "SMBC", "Modifies EV's, IV's, nature, and ability.").medicine
+SUPER_MEGA_BOTTLE_CAP = ItemBuilder.add(:SUPER_MEGA_BOTTLE_CAP, "SMBC", "Modifies EV's, IV's, nature, and ability.").medicine.sym
 
 NATURE_DISP = {
   [0, 0] => :QUIRKY,

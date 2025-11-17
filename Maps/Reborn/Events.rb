@@ -1,3 +1,34 @@
+UniLib.category("Ominous Being") {
+
+  UniLib.set_switch_compound(:OMINOUS_BEING)
+
+  MapEvent.add_builder(29, "Ominous Thing", 29, 49)
+          .add_page
+          .set_graphic("ominous_thing", redirect: "RemiX/Assets/ominous_thing")
+          .set_movement(step_anime: true, move_frequency: 1) {
+            text "An ominous fissure. It pulsates slightly."
+            script_anonymous {
+              Kernel.pbMessage("Throw in $#{UniLib.get_switch_or_default(:OMINOUS_BEING, 20)}?")
+            }
+            show_choices {
+              choice("Yes") {
+                branch(proc { $Trainer.money >= UniLib.get_switch_or_default(:OMINOUS_BEING, 20) }) {
+                  text "You throw in some money."
+                  text "..."
+                  script_anonymous {
+                    Kernel.pbReceiveItem(SUPER_MEGA_BOTTLE_CAP)
+                    UniLib.set_switch(:OMINOUS_BEING, UniLib.get_switch_or_default(:OMINOUS_BEING, 20) + 20)
+                  }
+                }.else {
+                  text "You don't have enough money."
+                }
+              }
+              choice("No") {}
+            }
+          }
+
+}
+
 UniLib.category("Replace Larvesta Mystery Egg with Wimpod-A") {
 
   # add wimpod-a
@@ -107,9 +138,9 @@ UniLib.category("Aevian Bronzor, Route 3/LCCC") {
 
 UniLib.category("Aevian Litwick, Calcenon") {
 
-  UniLib.set_switch_condition(:AEVIAN_LITWICK_COMPOUND) { UniLib.switch_on?(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) }
+  UniLib.set_switch_compound(:AEVIAN_LITWICK_COMPOUND) { UniLib.switch_on?(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) }
 
-  UniLib.set_switch_condition(:AEVIAN_LITWICK_COMPOUND_2) { !UniLib.switch_on?(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) }
+  UniLib.set_switch_compound(:AEVIAN_LITWICK_COMPOUND_2) { !UniLib.switch_on?(:AEVIAN_LITWICK) && PBDayNight.isNight?(pbGetTimeNow) }
 
   MapEvent.add_builder(413, "Aevian Litwick", 70, 35)
           .add_page(switch_1: :AEVIAN_LITWICK_COMPOUND_2)
@@ -192,7 +223,7 @@ UniLib.category("Hisuian Zorua, Ametrine, Blake's Hideout") {
 UniLib.category("Hisuian Growlithe, Pyrous, Post-Adrienn") {
 
 
-  UniLib.set_switch_condition(:GROWLITHE_HISUIAN_COMPOUND, proc { $game_switches[651] && !UniLib.switch_on?(:GROWLITHE_HISUIAN) })
+  UniLib.set_switch_compound(:GROWLITHE_HISUIAN_COMPOUND, proc { $game_switches[651] && !UniLib.switch_on?(:GROWLITHE_HISUIAN) })
 
   MapEvent.add_builder(27, "Hisuian Growlithe", 18, 13)
           .add_page(switch_1: :GROWLITHE_HISUIAN_COMPOUND)
@@ -212,7 +243,7 @@ UniLib.category("Hisuian Growlithe, Pyrous, Post-Adrienn") {
 
 UniLib.category("Aevian Jangmo-o, Byxbysion Wastelands, Post-Adrienn") {
 
-  UniLib.set_switch_condition(:AEVIAN_JANGMOO_COMPOUND) { $game_switches[651] && !UniLib.switch_on?(:AEVIAN_JANGMOO) }
+  UniLib.set_switch_compound(:AEVIAN_JANGMOO_COMPOUND) { $game_switches[651] && !UniLib.switch_on?(:AEVIAN_JANGMOO) }
 
   MapEvent.add_builder(209, "Aevian Jangmo-o", 7, 49)
           .add_page(switch_1: :AEVIAN_JANGMOO_COMPOUND)
@@ -238,7 +269,7 @@ UniLib.category("Aevian Jangmo-o, Byxbysion Wastelands, Post-Adrienn") {
 
 UniLib.category("Aevian Larvesta Egg, Teknite Ridge, Post-Fulgor") {
 
-  UniLib.set_switch_condition(:AEVIAN_LARVESTA_COMPOUND) { !UniLib.switch_on?(:AEVIAN_LARVESTA) && $game_variables[472] >= 2 }
+  UniLib.set_switch_compound(:AEVIAN_LARVESTA_COMPOUND) { !UniLib.switch_on?(:AEVIAN_LARVESTA) && $game_variables[472] >= 2 }
 
   MapEvent.add_builder(439, "Aevian Larvesta", 20, 57)
           .add_page(switch_1: :AEVIAN_LARVESTA_COMPOUND)
@@ -265,7 +296,7 @@ UniLib.category("Aevian Larvesta Egg, Teknite Ridge, Post-Fulgor") {
 
 UniLib.category("Hisuian Sneasel, Route 4 Upper Cave") {
 
-  UniLib.set_switch_condition(:HISUIAN_SNEASEL_COMPOUND) { $game_self_switches[[750, 3, "A"]] }
+  UniLib.set_switch_compound(:HISUIAN_SNEASEL_COMPOUND) { $game_self_switches[[750, 3, "A"]] }
 
   MapEvent.add_builder(750, "Alice", 45, 39)
           .add_page(switch_1: :HISUIAN_SNEASEL_COMPOUND)
@@ -298,7 +329,7 @@ UniLib.category("Hisuian Sneasel, Route 4 Upper Cave") {
 
 UniLib.category("Aevian Paras, Byxbysion Grotto, Garbodor Area, Post-Amaria") {
 
-  UniLib.set_switch_condition(:AEVIAN_PARAS_COMPOUND) { !UniLib.switch_on?(:AEVIAN_PARAS) && $game_switches[657] }
+  UniLib.set_switch_compound(:AEVIAN_PARAS_COMPOUND) { !UniLib.switch_on?(:AEVIAN_PARAS) && $game_switches[657] }
 
   MapEvent.add_builder(221, "Aevian Paras", 19, 10)
           .add_page(switch_1: :AEVIAN_PARAS_COMPOUND)

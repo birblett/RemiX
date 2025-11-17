@@ -38,7 +38,7 @@ UniLib.category("Mightyena Crest") {
 }
 UniLib.category("Torkoal Crest") {
 
-  UniLib.set_switch_condition(:TorkoalBoss, proc { !$game_switches[11] })
+  UniLib.set_switch_compound(:TorkoalBoss, proc { !$game_switches[11] })
 
   TORKOAL_BOSS = MapEvent.static_pkmn(56, 14, "Torkoal Boss", :TORKOAL_BOSS, 60, "pkmn_torkoal", :TorkoalBoss,
                                       dir: 2,
