@@ -388,21 +388,21 @@ PokeModifier.add(:KLINKLANG)
 PokeModifier.add(:TYNAMO)
             .type2(:WATER)
             .abilities({ 2 => :STINGINGCELLS })
-            .level_moves([[24, :BUBBLEBEAM], [35, :MUDDYWATER], [45, :LIQUIDATION]])
+            .level_moves([[15, :WATERGUN], [24, :BUBBLEBEAM], [35, :MUDDYWATER], [45, :LIQUIDATION]])
             .compatible_moves([:SURF, :WATERFALL])
 
 # EELEKTRIK
 PokeModifier.add(:EELEKTRIK)
             .type2(:WATER)
             .abilities({ 2 => :STINGINGCELLS })
-            .level_moves([[24, :BUBBLEBEAM], [35, :MUDDYWATER], [45, :LIQUIDATION]])
+            .level_moves([[15, :WATERGUN], [24, :BUBBLEBEAM], [35, :MUDDYWATER], [45, :LIQUIDATION]])
             .compatible_moves([:SURF, :WATERFALL])
 
 # EELEKTROSS
 PokeModifier.add(:EELEKTROSS)
             .type2(:WATER)
             .abilities({ 2 => :STINGINGCELLS })
-            .level_moves([[24, :BUBBLEBEAM], [35, :MUDDYWATER], [45, :LIQUIDATION]])
+            .level_moves([[15, :WATERGUN], [24, :BUBBLEBEAM], [35, :MUDDYWATER], [45, :LIQUIDATION]])
             .compatible_moves([:SURF, :WATERFALL])
 
 # ELGYEM

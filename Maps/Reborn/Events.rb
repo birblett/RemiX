@@ -164,7 +164,7 @@ UniLib.category("Aevian Litwick, Calcenon") {
             }
           }
 
-  MapEvent.add_map_event(413) { |map| EventBuilder.new(map.events[57]).set_switch_2(:AEVIAN_LITWICK_COMPOUND) }
+  MapEvent.add_map_event(413) { |map| EventBuilder.new(map.events[57]).set_page(0, switch_2: :AEVIAN_LITWICK_COMPOUND) }
 
 }
 
